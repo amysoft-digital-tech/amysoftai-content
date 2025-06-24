@@ -1,0 +1,364 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amysoftai.com/schemas/chapter-validation.json",
+  "title": "Chapter Content Validation Schema",
+  "description": "Validation schema for chapter content in Beyond the AI Plateau",
+  "type": "object",
+  "required": [
+    "frontmatter",
+    "content_sections"
+  ],
+  "properties": {
+    "frontmatter": {
+      "$ref": "../metadata/content-metadata-schema.json",
+      "description": "Chapter metadata following content metadata schema"
+    },
+    "content_sections": {
+      "type": "object",
+      "required": [
+        "introduction",
+        "main_content",
+        "quick_wins",
+        "conclusion"
+      ],
+      "properties": {
+        "introduction": {
+          "type": "object",
+          "required": ["word_count_range"],
+          "properties": {
+            "word_count_range": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "type": "integer",
+                  "minimum": 200
+                },
+                "maximum": {
+                  "type": "integer",
+                  "minimum": 500
+                }
+              }
+            },
+            "required_elements": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "problem_statement",
+                  "chapter_overview",
+                  "learning_objectives",
+                  "prerequisite_check"
+                ]
+              }
+            }
+          }
+        },
+        "main_content": {
+          "type": "object",
+          "required": ["sections"],
+          "properties": {
+            "sections": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "required": ["title", "content_type", "minimum_word_count"],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 10,
+                    "maxLength": 100
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "concept_explanation",
+                      "implementation_guide",
+                      "code_examples",
+                      "best_practices",
+                      "common_pitfalls",
+                      "advanced_techniques"
+                    ]
+                  },
+                  "minimum_word_count": {
+                    "type": "integer",
+                    "minimum": 300
+                  },
+                  "required_elements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "code_examples": {
+                    "type": "object",
+                    "properties": {
+                      "minimum_count": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "complexity_levels": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": ["basic", "intermediate", "advanced"]
+                        }
+                      },
+                      "languages": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "template_integration": {
+              "type": "object",
+              "properties": {
+                "minimum_templates": {
+                  "type": "integer",
+                  "minimum": 5
+                },
+                "template_categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "context-setup",
+                      "problem-analysis",
+                      "solution-generation",
+                      "code-review",
+                      "optimization"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "quick_wins": {
+          "type": "object",
+          "required": ["minimum_count", "implementation_time"],
+          "properties": {
+            "minimum_count": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 7
+            },
+            "implementation_time": {
+              "type": "string",
+              "enum": ["5 minutes", "10 minutes", "15 minutes", "30 minutes"]
+            },
+            "required_elements": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "step_by_step_instructions",
+                  "expected_outcomes",
+                  "validation_methods",
+                  "troubleshooting_tips"
+                ]
+              }
+            }
+          }
+        },
+        "practical_exercises": {
+          "type": "object",
+          "properties": {
+            "minimum_count": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "difficulty_progression": {
+              "type": "boolean",
+              "description": "Exercises should progress from basic to advanced"
+            },
+            "real_world_scenarios": {
+              "type": "boolean",
+              "description": "Exercises should use realistic development scenarios"
+            }
+          }
+        },
+        "conclusion": {
+          "type": "object",
+          "required": ["word_count_range"],
+          "properties": {
+            "word_count_range": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "type": "integer",
+                  "minimum": 200
+                },
+                "maximum": {
+                  "type": "integer",
+                  "minimum": 400
+                }
+              }
+            },
+            "required_elements": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "key_takeaways",
+                  "next_steps",
+                  "related_chapters",
+                  "additional_resources"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "quality_requirements": {
+      "type": "object",
+      "properties": {
+        "total_word_count": {
+          "type": "object",
+          "properties": {
+            "foundation_tier": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "type": "integer",
+                  "minimum": 4000
+                },
+                "maximum": {
+                  "type": "integer",
+                  "minimum": 6000
+                }
+              }
+            },
+            "advanced_tier": {
+              "type": "object",
+              "properties": {
+                "minimum": {
+                  "type": "integer",
+                  "minimum": 6000
+                },
+                "maximum": {
+                  "type": "integer",
+                  "minimum": 8000
+                }
+              }
+            }
+          }
+        },
+        "technical_accuracy": {
+          "type": "object",
+          "properties": {
+            "code_validation_required": {
+              "type": "boolean",
+              "default": true
+            },
+            "expert_review_required": {
+              "type": "boolean",
+              "default": true
+            },
+            "current_technology_versions": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+        "accessibility_compliance": {
+          "type": "object",
+          "properties": {
+            "wcag_level": {
+              "type": "string",
+              "enum": ["AA", "AAA"],
+              "default": "AA"
+            },
+            "alt_text_required": {
+              "type": "boolean",
+              "default": true
+            },
+            "semantic_structure": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+        "cross_references": {
+          "type": "object",
+          "properties": {
+            "internal_links_validated": {
+              "type": "boolean",
+              "default": true
+            },
+            "external_links_current": {
+              "type": "boolean",
+              "default": true
+            },
+            "related_content_linked": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+    "validation_rules": {
+      "type": "object",
+      "properties": {
+        "header_hierarchy": {
+          "type": "object",
+          "properties": {
+            "h1_single": {
+              "type": "boolean",
+              "description": "Only one H1 per chapter",
+              "default": true
+            },
+            "semantic_progression": {
+              "type": "boolean",
+              "description": "Headers follow logical hierarchy",
+              "default": true
+            }
+          }
+        },
+        "code_formatting": {
+          "type": "object",
+          "properties": {
+            "language_specification": {
+              "type": "boolean",
+              "description": "All code blocks specify language",
+              "default": true
+            },
+            "syntax_highlighting": {
+              "type": "boolean",
+              "description": "Code blocks use proper syntax highlighting",
+              "default": true
+            },
+            "context_comments": {
+              "type": "boolean",
+              "description": "Code examples include explanatory comments",
+              "default": true
+            }
+          }
+        },
+        "template_integration": {
+          "type": "object",
+          "properties": {
+            "template_testing": {
+              "type": "boolean",
+              "description": "All templates tested in real scenarios",
+              "default": true
+            },
+            "effectiveness_metrics": {
+              "type": "boolean",
+              "description": "Templates include effectiveness data",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

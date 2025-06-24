@@ -1,0 +1,173 @@
+#!/bin/bash
+# Pre-commit hook for Beyond the AI Plateau content validation
+# This hook validates content quality, formatting, and schema compliance
+
+set -e
+
+echo "🔍 Running Beyond the AI Plateau content validation..."
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Check if validation scripts exist
+SCRIPTS_DIR="./scripts/content-processing"
+if [ ! -d "$SCRIPTS_DIR" ]; then
+    echo -e "${YELLOW}Warning: Content validation scripts directory not found${NC}"
+    echo "Creating basic validation structure..."
+    mkdir -p "$SCRIPTS_DIR"
+fi
+
+# Function to validate markdown files
+validate_markdown() {
+    local file="$1"
+    local errors=0
+    
+    echo "Validating: $file"
+    
+    # Check for frontmatter
+    if ! head -1 "$file" | grep -q "^---$"; then
+        echo -e "${RED}❌ Missing frontmatter in $file${NC}"
+        errors=$((errors + 1))
+    fi
+    
+    # Check for required metadata fields
+    if grep -q "^title:" "$file" && grep -q "^type:" "$file" && grep -q "^last_updated:" "$file"; then
+        echo -e "${GREEN}✅ Required metadata fields present${NC}"
+    else
+        echo -e "${RED}❌ Missing required metadata fields in $file${NC}"
+        errors=$((errors + 1))
+    fi
+    
+    # Check for proper header hierarchy
+    if grep -q "^# " "$file"; then
+        h1_count=$(grep -c "^# " "$file" || true)
+        if [ "$h1_count" -gt 1 ]; then
+            echo -e "${YELLOW}⚠️  Multiple H1 headers found in $file${NC}"
+        fi
+    fi
+    
+    # Check for code blocks with language specification
+    unspecified_blocks=$(grep -c "^```$" "$file" || true)
+    if [ "$unspecified_blocks" -gt 0 ]; then
+        echo -e "${YELLOW}⚠️  Found $unspecified_blocks code blocks without language specification in $file${NC}"
+    fi
+    
+    return $errors
+}
+
+# Function to validate prompt templates
+validate_template() {
+    local file="$1"
+    local errors=0
+    
+    echo "Validating template: $file"
+    
+    # Check for template-specific metadata
+    if grep -q "template_category:" "$file" && grep -q "use_case:" "$file"; then
+        echo -e "${GREEN}✅ Template-specific metadata present${NC}"
+    else
+        echo -e "${RED}❌ Missing template-specific metadata in $file${NC}"
+        errors=$((errors + 1))
+    fi
+    
+    # Check for usage instructions
+    if grep -q "## Usage" "$file" || grep -q "## Instructions" "$file"; then
+        echo -e "${GREEN}✅ Usage instructions found${NC}"
+    else
+        echo -e "${RED}❌ Missing usage instructions in $file${NC}"
+        errors=$((errors + 1))
+    fi
+    
+    # Check for variables (placeholders)
+    if grep -q "{[A-Z_][A-Z0-9_]*}" "$file"; then
+        echo -e "${GREEN}✅ Template variables found${NC}"
+    else
+        echo -e "${YELLOW}⚠️  No template variables found in $file${NC}"
+    fi
+    
+    return $errors
+}
+
+# Function to validate chapter content
+validate_chapter() {
+    local file="$1"
+    local errors=0
+    
+    echo "Validating chapter: $file"
+    
+    # Check word count (basic estimation)
+    word_count=$(wc -w < "$file")
+    if [ "$word_count" -lt 3000 ]; then
+        echo -e "${YELLOW}⚠️  Chapter may be too short ($word_count words) in $file${NC}"
+    elif [ "$word_count" -gt 8000 ]; then
+        echo -e "${YELLOW}⚠️  Chapter may be too long ($word_count words) in $file${NC}"
+    else
+        echo -e "${GREEN}✅ Word count appropriate ($word_count words)${NC}"
+    fi
+    
+    # Check for required sections
+    required_sections=("introduction" "conclusion" "quick win")
+    for section in "${required_sections[@]}"; do
+        if grep -qi "$section" "$file"; then
+            echo -e "${GREEN}✅ Found $section section${NC}"
+        else
+            echo -e "${YELLOW}⚠️  Missing $section section in $file${NC}"
+        fi
+    done
+    
+    return $errors
+}
+
+# Main validation logic
+total_errors=0
+files_checked=0
+
+# Get list of staged markdown files
+staged_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
+
+if [ -z "$staged_files" ]; then
+    echo -e "${GREEN}✅ No markdown files to validate${NC}"
+    exit 0
+fi
+
+echo "Validating staged markdown files..."
+
+for file in $staged_files; do
+    if [ -f "$file" ]; then
+        files_checked=$((files_checked + 1))
+        
+        # Determine file type and validate accordingly
+        if [[ "$file" == *"/templates/"* ]]; then
+            validate_template "$file"
+            template_errors=$?
+            total_errors=$((total_errors + template_errors))
+        elif [[ "$file" == *"/principles/"* ]] || [[ "$file" == *"/ch"*"/"* ]]; then
+            validate_chapter "$file"
+            chapter_errors=$?
+            total_errors=$((total_errors + chapter_errors))
+        else
+            validate_markdown "$file"
+            markdown_errors=$?
+            total_errors=$((total_errors + markdown_errors))
+        fi
+        
+        echo "---"
+    fi
+done
+
+# Summary
+echo -e "\n📊 Validation Summary:"
+echo "Files checked: $files_checked"
+echo "Total errors: $total_errors"
+
+if [ $total_errors -eq 0 ]; then
+    echo -e "${GREEN}✅ All content validation checks passed!${NC}"
+    exit 0
+else
+    echo -e "${RED}❌ Content validation failed with $total_errors errors${NC}"
+    echo "Please fix the errors above before committing."
+    exit 1
+fi

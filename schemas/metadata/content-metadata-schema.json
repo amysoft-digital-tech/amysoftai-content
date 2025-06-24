@@ -1,0 +1,280 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amysoftai.com/schemas/content-metadata.json",
+  "title": "Content Metadata Schema",
+  "description": "Standardized metadata schema for Beyond the AI Plateau content",
+  "type": "object",
+  "required": [
+    "title",
+    "type",
+    "tier",
+    "estimated_reading_time",
+    "word_count",
+    "last_updated",
+    "content_status"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Content title",
+      "minLength": 5,
+      "maxLength": 100
+    },
+    "type": {
+      "type": "string",
+      "enum": ["chapter", "template", "case-study", "documentation", "advanced-module"],
+      "description": "Content type classification"
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["foundation", "advanced", "elite"],
+      "description": "Content tier for pricing and access control"
+    },
+    "chapter": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "description": "Chapter number for sequential content"
+    },
+    "principle": {
+      "type": "string",
+      "enum": [
+        "context-mastery",
+        "dynamic-planning", 
+        "code-evolution",
+        "strategic-testing",
+        "intelligent-review"
+      ],
+      "description": "Associated elite principle"
+    },
+    "estimated_reading_time": {
+      "type": "string",
+      "pattern": "^\\d+\\s+(minutes?|hours?)$",
+      "description": "Estimated reading time (e.g., '15 minutes', '2 hours')"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Required knowledge or previous content"
+    },
+    "learning_objectives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10
+      },
+      "minItems": 1,
+      "maxItems": 5,
+      "description": "Specific learning outcomes"
+    },
+    "key_concepts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Main concepts covered in content"
+    },
+    "tools_referenced": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Development tools and frameworks mentioned"
+    },
+    "template_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of prompt templates included"
+    },
+    "code_example_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of code examples included"
+    },
+    "integration_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "pwa-compatible",
+          "offline-accessible",
+          "interactive-elements",
+          "progressive-loading",
+          "code-execution",
+          "template-testing"
+        ]
+      },
+      "description": "PWA and platform integration requirements"
+    },
+    "accessibility_features": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "alt-text-provided",
+          "semantic-markup",
+          "keyboard-navigation",
+          "screen-reader-compatible",
+          "high-contrast-support"
+        ]
+      },
+      "description": "Accessibility compliance features"
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total word count of content"
+    },
+    "target_word_count": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maximum": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "description": "Target word count range for content type"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "description": "Last modification date (YYYY-MM-DD)"
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Content creation date (YYYY-MM-DD)"
+    },
+    "author": {
+      "type": "string",
+      "description": "Primary content author"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional contributors"
+    },
+    "technical_accuracy_review": {
+      "type": "string",
+      "enum": ["pending", "in-progress", "completed", "not-required"],
+      "description": "Technical accuracy review status"
+    },
+    "content_status": {
+      "type": "string",
+      "enum": ["outline", "draft", "review", "final", "published"],
+      "description": "Content development status"
+    },
+    "review_notes": {
+      "type": "string",
+      "description": "Review feedback and notes"
+    },
+    "quality_metrics": {
+      "type": "object",
+      "properties": {
+        "readability_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "technical_accuracy_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "template_effectiveness_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "description": "Quality assessment metrics"
+    },
+    "related_content": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "relationship": {
+            "type": "string",
+            "enum": ["prerequisite", "follow-up", "related", "alternative", "advanced"]
+          }
+        },
+        "required": ["path", "relationship"]
+      },
+      "description": "Links to related content with relationship type"
+    },
+    "external_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["documentation", "tutorial", "tool", "framework", "article"]
+          }
+        },
+        "required": ["title", "url", "type"]
+      },
+      "description": "External resource references"
+    },
+    "seo_keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "description": "SEO keywords for content discovery"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced", "expert"],
+      "description": "Technical difficulty level"
+    },
+    "completion_time_estimate": {
+      "type": "string",
+      "pattern": "^\\d+\\s+(minutes?|hours?)$",
+      "description": "Estimated time to complete exercises/implementation"
+    },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "version": {
+            "type": "string"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["date", "version", "changes"]
+      },
+      "description": "Version history and changes"
+    }
+  }
+}

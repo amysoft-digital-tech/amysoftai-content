@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Content Strategy Discussion
+    url: https://github.com/amysoft-digital-tech/amysoftai-content/discussions
+    about: Discuss content strategy, approach, or high-level planning
+  - name: 🤝 Technical Consultation
+    url: https://github.com/amysoft-digital-tech/amysoftai-content/discussions/categories/technical
+    about: Get technical advice or consultation on implementation approaches
+  - name: 💡 Feature Requests
+    url: https://github.com/amysoft-digital-tech/amysoftai-content/discussions/categories/ideas
+    about: Suggest new features, templates, or content improvements

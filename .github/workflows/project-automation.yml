@@ -1,0 +1,227 @@
+name: Project Board Automation
+
+on:
+  issues:
+    types: [opened, closed, reopened]
+  pull_request:
+    types: [opened, closed, merged, ready_for_review, draft]
+
+jobs:
+  project-automation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to project
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/users/amysoft-digital-tech/projects/11
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set issue status to Backlog
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const projectId = 'PVT_kwHOCyNZyc4A8Syv';
+            const issueNodeId = context.payload.issue.node_id;
+            
+            // Query to get project item ID
+            const getItemQuery = `
+              query($projectId: ID!, $issueId: ID!) {
+                node(id: $projectId) {
+                  ... on ProjectV2 {
+                    items(first: 100) {
+                      nodes {
+                        id
+                        content {
+                          ... on Issue {
+                            id
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+            
+            const itemResult = await github.graphql(getItemQuery, {
+              projectId: projectId,
+              issueId: issueNodeId
+            });
+            
+            const projectItem = itemResult.node.items.nodes.find(
+              item => item.content && item.content.id === issueNodeId
+            );
+            
+            if (!projectItem) {
+              console.log('Issue not found in project');
+              return;
+            }
+            
+            // Set status to Backlog (this would need the actual field ID)
+            console.log('Issue added to project:', projectItem.id);
+
+      - name: Move PR to Review Required
+        if: github.event_name == 'pull_request' && github.event.action == 'ready_for_review'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log('PR ready for review, should move to Review Required column');
+
+      - name: Auto-assign content type label
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = context.payload.issue.title.toLowerCase();
+            const labels = [];
+            
+            // Auto-assign content type labels based on title
+            if (title.includes('chapter') || title.includes('ch0') || title.includes('ch1')) {
+              labels.push('foundation');
+            }
+            if (title.includes('template')) {
+              labels.push('templates');
+            }
+            if (title.includes('case study')) {
+              labels.push('case-studies');
+            }
+            if (title.includes('advanced')) {
+              labels.push('advanced');
+            }
+            if (title.includes('review')) {
+              labels.push('review');
+            }
+            
+            // Auto-assign priority based on milestone
+            const milestone = context.payload.issue.milestone;
+            if (milestone) {
+              if (milestone.title.includes('Foundation')) {
+                labels.push('high');
+              }
+            }
+            
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                labels: labels
+              });
+            }
+
+  content-validation:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run content validation
+        run: |
+          if [ -f "./scripts/content-processing/validate-content.sh" ]; then
+            chmod +x ./scripts/content-processing/validate-content.sh
+            ./scripts/content-processing/validate-content.sh
+          else
+            echo "Content validation script not found"
+          fi
+
+      - name: Comment PR with validation results
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '❌ Content validation failed. Please check the workflow logs and fix validation errors before merging.'
+            });
+
+      - name: Comment PR with validation success
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ Content validation passed. All quality checks completed successfully.'
+            });
+
+  milestone-progress:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues' && (github.event.action == 'closed' || github.event.action == 'reopened')
+    steps:
+      - name: Update milestone progress
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const milestone = context.payload.issue.milestone;
+            if (!milestone) return;
+            
+            // Get milestone issues
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              milestone: milestone.number,
+              state: 'all'
+            });
+            
+            const totalIssues = issues.data.length;
+            const closedIssues = issues.data.filter(issue => issue.state === 'closed').length;
+            const progress = totalIssues > 0 ? Math.round((closedIssues / totalIssues) * 100) : 0;
+            
+            console.log(`Milestone "${milestone.title}" progress: ${progress}% (${closedIssues}/${totalIssues})`);
+            
+            // Could update milestone description with progress here
+            if (progress === 100) {
+              console.log(`🎉 Milestone "${milestone.title}" completed!`);
+            }
+
+  weekly-progress-report:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Generate weekly progress report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            
+            // Get issues created in the last week
+            const newIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              since: oneWeekAgo.toISOString(),
+              state: 'all'
+            });
+            
+            // Get issues closed in the last week
+            const closedIssues = newIssues.data.filter(issue => 
+              issue.state === 'closed' && 
+              new Date(issue.closed_at) >= oneWeekAgo
+            );
+            
+            const report = `
+            ## Weekly Progress Report
+            
+            **Period:** ${oneWeekAgo.toDateString()} - ${new Date().toDateString()}
+            
+            ### Summary
+            - 📝 New issues created: ${newIssues.data.length}
+            - ✅ Issues completed: ${closedIssues.length}
+            - 🔄 Issues in progress: ${newIssues.data.length - closedIssues.length}
+            
+            ### Completed This Week
+            ${closedIssues.map(issue => `- ${issue.title} (#${issue.number})`).join('\n')}
+            
+            Generated automatically by GitHub Actions.
+            `;
+            
+            console.log(report);
+            
+            // Could create an issue with this report or post to discussions
