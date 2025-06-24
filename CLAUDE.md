@@ -1,3 +1,15 @@
+---
+title: "CLAUDE.md - Beyond the AI Plateau Content Repository"
+description: "Project instructions and comprehensive documentation for the Beyond the AI Plateau content repository"
+content_type: "project_documentation"
+target_audience: "development_team"
+integration_requirements: ["version-control", "content-management", "workflow-automation"]
+estimated_reading_time: "45 minutes"
+last_updated: "2025-06-24"
+accessibility_features: ["semantic-markup", "screen-reader-compatible"]
+priority: "critical"
+---
+
 # CLAUDE.md - Beyond the AI Plateau Content Repository
 
 ## Project Overview and Context
@@ -448,6 +460,56 @@ All acceptance criteria met:
 - [Content approval workflow]
 
 **Request**: [Create PR/Review PR/Merge PR] with appropriate GitHub CLI commands and best practices.
+```
+
+#### GitHub Issue Implementation Workflow Template
+```markdown
+**Context**: Starting work on next assigned GitHub issue in amysoftai-content repository following established workflow procedures.
+
+**Objective**: Pull next assigned issue and begin implementation following the project's standard workflow.
+
+**Workflow Steps to Execute**:
+
+1. **Retrieve Next Issue**:
+   ```bash
+   gh issue list --assignee @me --state open --limit 1
+   ```
+
+2. **Get Issue Details**:
+   ```bash
+   gh issue view [ISSUE_NUMBER] --comments
+   ```
+
+3. **Create Feature Branch**:
+   - Branch naming: `feature/[descriptive-name-based-on-issue]`
+   - Use lowercase with hyphens following project conventions
+   ```bash
+   git checkout -b feature/[branch-name]
+   git push -u origin feature/[branch-name]
+   ```
+
+4. **Update Issue Status**:
+   ```bash
+   gh issue comment [ISSUE_NUMBER] --body "Starting implementation. Created feature branch: feature/[branch-name]"
+   ```
+
+5. **Begin Implementation**:
+   - Follow CLAUDE.md content standards (lowercase-hyphen naming, frontmatter metadata, quality standards)
+   - Use TodoWrite tool to track implementation tasks if complex
+   - Ensure technical accuracy and project integration requirements
+
+6. **Track Progress with Commits**:
+   - Use conventional commit format
+   - Reference issue number in commits
+   - Include "Resolves: #[ISSUE_NUMBER]" in final commit
+
+**Project Context**:
+- Repository: amysoftai-content (Beyond the AI Plateau ebook project)
+- Content tiers: foundation ($24.95), advanced ($97), elite ($297)
+- Launch target: July 1, 2025
+- Quality standards: Enterprise-grade for senior developers
+
+**Request**: Execute this complete workflow starting with retrieving my next assigned issue and proceeding through implementation setup.
 ```
 
 ## Code Quality and Optimization Standards

@@ -50,7 +50,7 @@ validate_markdown() {
     fi
     
     # Check for code blocks with language specification
-    unspecified_blocks=$(grep -c "^```$" "$file" || true)
+    unspecified_blocks=$(grep -c '^```$' "$file" || true)
     if [ "$unspecified_blocks" -gt 0 ]; then
         echo -e "${YELLOW}⚠️  Found $unspecified_blocks code blocks without language specification in $file${NC}"
     fi
