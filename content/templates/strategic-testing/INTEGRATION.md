@@ -22,6 +22,38 @@ prerequisites: ["testing_frameworks", "development_workflows", "automation_tools
 
 This guide provides comprehensive instructions for integrating the strategic testing templates with popular testing frameworks, development workflows, and AI-assisted development tools. The templates are designed to work seamlessly with modern development practices while leveraging AI capabilities for enhanced productivity.
 
+## Usage Instructions
+
+### Quick Start Integration
+
+1. **Select Your Testing Framework**: Choose from supported frameworks (Jest, Cypress, JUnit, pytest, xUnit)
+2. **Configure Template Variables**: Set framework-specific variables in your template context
+3. **Apply Template Prompts**: Use the provided Claude Code prompts with your framework configuration
+4. **Integrate with CI/CD**: Configure your pipeline using the provided workflow examples
+5. **Validate Implementation**: Use the verification scripts to ensure proper integration
+
+### Step-by-Step Integration Process
+
+**Phase 1: Framework Assessment**
+- Identify your current testing stack and framework versions
+- Review compatibility requirements and prerequisites
+- Plan template adoption strategy based on team needs
+
+**Phase 2: Template Configuration**
+- Configure framework-specific template variables
+- Customize prompts for your project context
+- Set up development environment integration
+
+**Phase 3: Implementation**
+- Apply templates using provided Claude Code prompts
+- Integrate generated tests into your test suites
+- Configure CI/CD pipeline automation
+
+**Phase 4: Validation**
+- Run integration verification scripts
+- Measure performance improvements
+- Validate quality and coverage metrics
+
 ## Core Integration Principles
 
 ### AI-First Testing Approach
