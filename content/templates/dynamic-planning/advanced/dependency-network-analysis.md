@@ -1,10 +1,16 @@
 ---
 title: "Dependency Network Analysis Template"
 description: "Comprehensive framework for mapping, analyzing, and managing complex project dependencies with critical path optimization"
-type: "prompt_template"
-category: "dependency-mapping-critical-path"
-use_case: "complex-dependency-visualization"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "dependency-mapping-critical-path"
+use_case: "Map, analyze, and manage complex project dependencies with critical path optimization"
+target_scenario: "Use when managing complex projects with multiple dependencies requiring systematic analysis and critical path optimization"
 complexity_level: "advanced"
+estimated_reading_time: "15 minutes"
+word_count: 1844
+content_status: "final"
 estimated_time_savings: "80% (8 hours → 1.5 hours)"
 target_audience: "project_managers, tech_leads, program_managers"
 prerequisites: ["project_scope", "work_breakdown_structure", "team_dependencies"]

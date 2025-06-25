@@ -1,10 +1,16 @@
 ---
 title: "Backlog Prioritization Framework Template"
 description: "Strategic framework for product backlog prioritization using multiple criteria including business value, technical complexity, and risk assessment"
-type: "prompt_template"
-category: "sprint-planning-backlog"
-use_case: "strategic-backlog-management"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "sprint-planning-backlog"
+use_case: "Establish systematic backlog prioritization using multi-criteria analysis for optimal product development decisions"
+target_scenario: "Use when prioritizing product backlog for maximum business value delivery across multiple competing priorities and stakeholder requirements"
 complexity_level: "advanced"
+estimated_reading_time: "16 minutes"
+word_count: 1937
+content_status: "final"
 estimated_time_savings: "75% (6 hours → 1.5 hours)"
 target_audience: "product_owners, product_managers, tech_leads"
 prerequisites: ["product_strategy", "stakeholder_requirements", "technical_roadmap"]

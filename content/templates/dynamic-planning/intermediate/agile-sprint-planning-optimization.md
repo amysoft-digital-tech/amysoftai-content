@@ -1,10 +1,16 @@
 ---
 title: "Agile Sprint Planning Optimization Template"
 description: "Comprehensive framework for optimizing sprint planning sessions with capacity analysis, velocity tracking, and commitment strategies"
-type: "prompt_template"
-category: "sprint-planning-backlog"
-use_case: "sprint-planning-enhancement"
+type: "template"
+tier: "foundation"
+template_category: "dynamic-planning"
+template_subcategory: "sprint-planning-backlog"
+use_case: "Optimize sprint planning sessions through systematic capacity analysis and strategic work selection"
+target_scenario: "Use when conducting sprint planning sessions for Scrum or Kanban teams requiring improved commitment accuracy and velocity optimization"
 complexity_level: "intermediate"
+estimated_reading_time: "15 minutes"
+word_count: 1829
+content_status: "final"
 estimated_time_savings: "70% (4 hours → 1.2 hours)"
 target_audience: "scrum_masters, product_owners, development_teams"
 prerequisites: ["team_velocity_data", "product_backlog", "team_capacity"]

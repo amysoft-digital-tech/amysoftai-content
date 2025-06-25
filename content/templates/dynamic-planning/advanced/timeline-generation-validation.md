@@ -1,10 +1,16 @@
 ---
 title: "Timeline Generation and Validation Template"
 description: "Comprehensive framework for creating realistic project timelines with milestone validation, risk adjustment, and stakeholder alignment"
-type: "prompt_template"
-category: "timeline-generation-milestones"
-use_case: "realistic-timeline-creation"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "timeline-generation-milestones"
+use_case: "Create realistic project timelines with milestone validation and risk adjustment"
+target_scenario: "Use when developing project schedules requiring milestone validation, risk adjustment, and stakeholder alignment for successful delivery"
 complexity_level: "advanced"
+estimated_reading_time: "15 minutes"
+word_count: 1853
+content_status: "final"
 estimated_time_savings: "80% (4 hours → 50 minutes)"
 target_audience: "project_managers, delivery_managers, program_managers"
 prerequisites: ["work_breakdown_structure", "resource_allocation", "dependency_mapping"]

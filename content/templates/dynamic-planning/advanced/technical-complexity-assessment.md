@@ -1,10 +1,16 @@
 ---
 title: "Technical Complexity Assessment Template"
 description: "Systematic framework for evaluating and quantifying technical complexity to improve estimation accuracy and risk management"
-type: "prompt_template"
-category: "task-estimation-prioritization"
-use_case: "technical-difficulty-evaluation"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "task-estimation-prioritization"
+use_case: "Evaluate and quantify technical complexity to improve estimation accuracy and risk management"
+target_scenario: "Use when assessing technical difficulty of development tasks requiring objective complexity evaluation for better planning and resource allocation"
 complexity_level: "advanced"
+estimated_reading_time: "13 minutes"
+word_count: 1582
+content_status: "final"
 estimated_time_savings: "75% (4 hours → 1 hour)"
 target_audience: "tech_leads, senior_developers, architects"
 prerequisites: ["technical_requirements", "system_architecture"]

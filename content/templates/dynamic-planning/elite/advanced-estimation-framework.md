@@ -1,10 +1,16 @@
 ---
 title: "Advanced Estimation Framework Template"
 description: "Multi-method estimation template combining story points, time-based estimation, and risk-adjusted planning for accurate project planning"
-type: "prompt_template"
-category: "task-estimation-prioritization"
-use_case: "multi-method-estimation"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "task-estimation-prioritization"
+use_case: "Combine story points, time-based estimation, and risk-adjusted planning for accurate project planning"
+target_scenario: "Use when requiring comprehensive estimation for complex projects needing multiple estimation methods and risk adjustment considerations"
 complexity_level: "expert"
+estimated_reading_time: "12 minutes"
+word_count: 1418
+content_status: "final"
 estimated_time_savings: "80% (6 hours → 1.2 hours)"
 target_audience: "project_managers, tech_leads, estimation_specialists"
 prerequisites: ["historical_velocity", "team_capacity", "project_scope"]

@@ -1,10 +1,16 @@
 ---
 title: "Adaptive Planning Framework Template"
 description: "Dynamic planning methodology for responding to changing requirements, market conditions, and project constraints with systematic adaptation strategies"
-type: "prompt_template"
-category: "adaptive-planning-scope-adjustment"
-use_case: "dynamic-plan-adaptation"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "adaptive-planning-scope-adjustment"
+use_case: "Respond to changing requirements and market conditions with systematic adaptation strategies"
+target_scenario: "Use when managing projects with evolving requirements requiring systematic approaches to scope and timeline adaptation"
 complexity_level: "expert"
+estimated_reading_time: "18 minutes"
+word_count: 2158
+content_status: "final"
 estimated_time_savings: "85% (6 hours → 1 hour)"
 target_audience: "project_managers, product_managers, agile_coaches"
 prerequisites: ["baseline_plan", "change_management_process", "stakeholder_alignment"]

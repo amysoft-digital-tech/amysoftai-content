@@ -1,10 +1,16 @@
 ---
 title: "Comprehensive Risk Analysis Template"
 description: "Systematic framework for identifying, analyzing, and quantifying project risks with impact assessment and probability analysis"
-type: "prompt_template"
-category: "risk-assessment-mitigation"
-use_case: "complete-risk-identification"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "risk-assessment-mitigation"
+use_case: "Systematically identify, analyze, and quantify project risks across technical, business, and operational dimensions"
+target_scenario: "Use when starting new software development projects requiring comprehensive risk assessment or when conducting periodic risk reviews for ongoing projects"
 complexity_level: "advanced"
+estimated_reading_time: "15 minutes"
+word_count: 1859
+content_status: "final"
 estimated_time_savings: "80% (5 hours → 1 hour)"
 target_audience: "project_managers, tech_leads, risk_analysts"
 prerequisites: ["project_scope", "team_composition", "technical_architecture"]

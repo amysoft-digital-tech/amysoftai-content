@@ -1,10 +1,16 @@
 ---
 title: "Team Skill Matrix and Assignment Template"
 description: "Strategic framework for mapping team skills, optimizing assignments, and planning skill development for maximum project success"
-type: "prompt_template"
-category: "resource-allocation-team-planning"
-use_case: "skill-based-team-planning"
+type: "template"
+tier: "foundation"
+template_category: "dynamic-planning"
+template_subcategory: "resource-allocation-team-planning"
+use_case: "Map team skills and optimize assignments for maximum project success"
+target_scenario: "Use when optimizing team assignments requiring skill mapping and development planning for project success"
 complexity_level: "intermediate"
+estimated_reading_time: "12 minutes"
+word_count: 1435
+content_status: "final"
 estimated_time_savings: "70% (4 hours → 1.2 hours)"
 target_audience: "team_leads, resource_managers, project_managers"
 prerequisites: ["team_composition", "project_requirements", "skill_assessments"]

@@ -1,10 +1,16 @@
 ---
 title: "Work Breakdown Structure Generator Template"
 description: "AI-powered template for creating hierarchical work breakdown structures with effort estimation, resource allocation, and dependency mapping"
-type: "prompt_template"
-category: "project-scope-definition"
-use_case: "hierarchical-task-decomposition"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "project-scope-definition"
+use_case: "Create hierarchical work breakdown structures with effort estimation and resource allocation"
+target_scenario: "Use when creating comprehensive project plans requiring detailed task breakdown and resource allocation for complex deliverables"
 complexity_level: "advanced"
+estimated_reading_time: "13 minutes"
+word_count: 1585
+content_status: "final"
 estimated_time_savings: "85% (6 hours → 1 hour)"
 target_audience: "project_managers, tech_leads, delivery_managers"
 prerequisites: ["project_scope", "team_composition", "timeline_constraints"]

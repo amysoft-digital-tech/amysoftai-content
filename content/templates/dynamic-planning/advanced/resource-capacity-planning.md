@@ -1,10 +1,16 @@
 ---
 title: "Resource Capacity Planning Template"
 description: "Strategic framework for optimizing resource allocation, capacity utilization, and team assignment across complex software development projects"
-type: "prompt_template"
-category: "resource-allocation-team-planning"
-use_case: "strategic-resource-optimization"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "resource-allocation-team-planning"
+use_case: "Optimize resource allocation and capacity utilization across complex software development projects"
+target_scenario: "Use when planning resource allocation requiring optimal capacity utilization and team assignment for project success"
 complexity_level: "advanced"
+estimated_reading_time: "15 minutes"
+word_count: 1832
+content_status: "final"
 estimated_time_savings: "75% (5 hours → 1.25 hours)"
 target_audience: "project_managers, resource_managers, delivery_managers"
 prerequisites: ["team_composition", "project_scope", "skill_requirements"]

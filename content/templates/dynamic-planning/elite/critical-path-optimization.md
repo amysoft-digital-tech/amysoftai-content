@@ -1,10 +1,16 @@
 ---
 title: "Critical Path Optimization Template"
 description: "Advanced framework for identifying, analyzing, and optimizing critical paths to minimize project duration and maximize delivery efficiency"
-type: "prompt_template"
-category: "dependency-mapping-critical-path"
-use_case: "critical-path-analysis-optimization"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "dependency-mapping-critical-path"
+use_case: "Identify, analyze, and optimize critical paths to minimize project duration and maximize delivery efficiency"
+target_scenario: "Use when optimizing project schedules requiring critical path analysis and bottleneck elimination for accelerated delivery"
 complexity_level: "expert"
+estimated_reading_time: "13 minutes"
+word_count: 1577
+content_status: "final"
 estimated_time_savings: "85% (6 hours → 1 hour)"
 target_audience: "project_managers, program_managers, delivery_leads"
 prerequisites: ["project_schedule", "dependency_network", "resource_allocation"]

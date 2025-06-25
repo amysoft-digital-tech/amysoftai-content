@@ -1,10 +1,16 @@
 ---
 title: "Scope Change Impact Assessment Template"
 description: "Systematic framework for evaluating scope changes including impact analysis, stakeholder communication, and decision support for adaptive project management"
-type: "prompt_template"
-category: "adaptive-planning-scope-adjustment"
-use_case: "change-impact-analysis"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "adaptive-planning-scope-adjustment"
+use_case: "Evaluate scope changes with comprehensive impact analysis and stakeholder communication"
+target_scenario: "Use when managing scope change requests requiring systematic evaluation of project impact and stakeholder decision support"
 complexity_level: "advanced"
+estimated_reading_time: "17 minutes"
+word_count: 2053
+content_status: "final"
 estimated_time_savings: "80% (5 hours → 1 hour)"
 target_audience: "project_managers, product_managers, change_control_boards"
 prerequisites: ["baseline_scope", "change_request", "stakeholder_requirements"]

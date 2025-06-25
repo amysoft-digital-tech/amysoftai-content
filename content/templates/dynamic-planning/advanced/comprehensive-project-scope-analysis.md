@@ -1,10 +1,16 @@
 ---
 title: "Comprehensive Project Scope Analysis Template"
 description: "AI-powered template for complete project scope definition, stakeholder analysis, and work breakdown structure generation"
-type: "prompt_template"
-category: "project-scope-definition"
-use_case: "comprehensive-scope-analysis"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "project-scope-definition"
+use_case: "Complete project scope definition with stakeholder analysis and work breakdown structure generation"
+target_scenario: "Use when initiating projects requiring comprehensive scope definition and stakeholder alignment for successful project delivery"
 complexity_level: "advanced"
+estimated_reading_time: "9 minutes"
+word_count: 1093
+content_status: "final"
 estimated_time_savings: "80% (8 hours → 1.5 hours)"
 target_audience: "project_managers, tech_leads, senior_developers"
 prerequisites: ["project_requirements", "stakeholder_input"]

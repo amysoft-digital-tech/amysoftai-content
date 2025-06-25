@@ -1,10 +1,16 @@
 ---
 title: "Feature Decomposition Strategy Template"
 description: "AI-powered template for breaking down complex features into manageable development units with clear acceptance criteria and dependencies"
-type: "prompt_template"
-category: "project-scope-definition"
-use_case: "feature-breakdown-analysis"
+type: "template"
+tier: "foundation"
+template_category: "dynamic-planning"
+template_subcategory: "project-scope-definition"
+use_case: "Break down complex features into manageable development units with clear acceptance criteria"
+target_scenario: "Use when decomposing large features into developable components requiring systematic breakdown and dependency analysis"
 complexity_level: "intermediate"
+estimated_reading_time: "12 minutes"
+word_count: 1387
+content_status: "final"
 estimated_time_savings: "75% (4 hours → 1 hour)"
 target_audience: "product_managers, tech_leads, senior_developers"
 prerequisites: ["feature_requirements", "user_personas"]

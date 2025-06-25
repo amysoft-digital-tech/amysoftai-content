@@ -1,10 +1,16 @@
 ---
 title: "Story Point Calibration Template"
 description: "Team-specific story point calibration framework for consistent agile estimation and velocity measurement"
-type: "prompt_template"
-category: "task-estimation-prioritization"
-use_case: "agile-estimation-calibration"
+type: "template"
+tier: "foundation"
+template_category: "dynamic-planning"
+template_subcategory: "task-estimation-prioritization"
+use_case: "Establish team-specific story point calibration for consistent agile estimation and velocity measurement"
+target_scenario: "Use when establishing or refining agile estimation consistency within teams requiring shared understanding of effort complexity"
 complexity_level: "intermediate"
+estimated_reading_time: "14 minutes"
+word_count: 1665
+content_status: "final"
 estimated_time_savings: "70% (3 hours → 45 minutes)"
 target_audience: "scrum_masters, tech_leads, agile_teams"
 prerequisites: ["team_composition", "past_work_examples"]

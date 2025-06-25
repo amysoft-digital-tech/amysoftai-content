@@ -1,10 +1,16 @@
 ---
 title: "Risk Mitigation Strategy Design Template"
 description: "Strategic framework for designing and implementing proactive risk response plans with monitoring and contingency procedures"
-type: "prompt_template"
-category: "risk-assessment-mitigation"
-use_case: "proactive-risk-response-planning"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "risk-assessment-mitigation"
+use_case: "Design comprehensive risk mitigation strategies with specific action plans and resource requirements"
+target_scenario: "Use when developing detailed response plans for identified project risks requiring proactive management and contingency planning"
 complexity_level: "expert"
+estimated_reading_time: "14 minutes"
+word_count: 1670
+content_status: "final"
 estimated_time_savings: "85% (6 hours → 1 hour)"
 target_audience: "project_managers, risk_managers, senior_leadership"
 prerequisites: ["risk_analysis", "project_constraints", "organizational_capabilities"]

@@ -1,10 +1,16 @@
 ---
 title: "Cross-Team Dependency Coordination Template"
 description: "Strategic framework for managing complex dependencies across multiple teams and organizations with synchronized delivery coordination"
-type: "prompt_template"
-category: "resource-allocation-team-planning"
-use_case: "multi-team-coordination"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "resource-allocation-team-planning"
+use_case: "Manage complex dependencies across multiple teams with synchronized delivery coordination"
+target_scenario: "Use when coordinating complex projects spanning multiple teams requiring dependency management and synchronized delivery"
 complexity_level: "expert"
+estimated_reading_time: "16 minutes"
+word_count: 1922
+content_status: "final"
 estimated_time_savings: "80% (6 hours → 1.2 hours)"
 target_audience: "program_managers, delivery_managers, enterprise_architects"
 prerequisites: ["team_structure", "project_dependencies", "delivery_schedules"]

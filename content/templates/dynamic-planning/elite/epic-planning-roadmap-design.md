@@ -1,10 +1,16 @@
 ---
 title: "Epic Planning and Roadmap Design Template"
 description: "Strategic framework for epic-level planning and product roadmap design with cross-team coordination and long-term vision alignment"
-type: "prompt_template"
-category: "sprint-planning-backlog"
-use_case: "long-term-agile-planning"
+type: "template"
+tier: "advanced"
+template_category: "dynamic-planning"
+template_subcategory: "sprint-planning-backlog"
+use_case: "Design comprehensive epic-level planning and product roadmaps with cross-functional team coordination"
+target_scenario: "Use when planning large initiatives spanning multiple teams and quarters requiring strategic business outcome delivery through coordinated execution"
 complexity_level: "expert"
+estimated_reading_time: "16 minutes"
+word_count: 1946
+content_status: "final"
 estimated_time_savings: "80% (8 hours → 1.5 hours)"
 target_audience: "product_managers, program_managers, epic_owners"
 prerequisites: ["product_strategy", "epic_scope", "team_capacity"]

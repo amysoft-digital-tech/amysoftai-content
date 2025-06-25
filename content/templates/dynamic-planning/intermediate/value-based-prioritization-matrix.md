@@ -1,10 +1,16 @@
 ---
 title: "Value-Based Prioritization Matrix Template"
 description: "Strategic framework for prioritizing features and initiatives using multi-criteria value assessment and business impact analysis"
-type: "prompt_template"
-category: "task-estimation-prioritization"
-use_case: "strategic-feature-prioritization"
+type: "template"
+tier: "foundation"
+template_category: "dynamic-planning"
+template_subcategory: "task-estimation-prioritization"
+use_case: "Prioritize features and initiatives using multi-criteria value assessment and business impact analysis"
+target_scenario: "Use when prioritizing competing features or initiatives requiring objective assessment of business value, effort, and strategic alignment"
 complexity_level: "intermediate"
+estimated_reading_time: "14 minutes"
+word_count: 1704
+content_status: "final"
 estimated_time_savings: "75% (5 hours → 1.25 hours)"
 target_audience: "product_managers, business_analysts, project_managers"
 prerequisites: ["feature_requirements", "business_objectives", "stakeholder_input"]
