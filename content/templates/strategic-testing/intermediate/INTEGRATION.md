@@ -1,19 +1,23 @@
 ---
-title: "Testing Framework Integration Guide"
-description: "Comprehensive guide for integrating strategic testing templates with popular testing frameworks and development workflows"
-type: "documentation"
-tier: "foundation"
+title: "Strategic Testing Integration Guide"
+description: "Comprehensive guide for integrating strategic testing templates into development workflows and CI/CD pipelines"
+type: "template"
+tier: "advanced"
+template_category: "strategic-testing"
+template_subcategory: "test-automation-pipeline"
+template_id: "ST-006"
+template_version: "1.0"
+validation_status: "tested"
 estimated_reading_time: "15 minutes"
 word_count: 5200
 last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "integration-documentation"
-use_case: "framework-integration"
-target_scenario: "testing-workflow-integration"
+content_status: "final"
+use_case: "strategic-testing-integration"
+target_scenario: "Complete strategic testing workflow integration and automation"
 complexity_level: "intermediate"
-effectiveness_metrics: ["integration_success", "workflow_efficiency", "adoption_rate"]
-estimated_time_savings: "60-80%"
-prerequisites: ["testing_frameworks", "development_workflows", "automation_tools"]
+effectiveness_metrics: ["integration_success", "workflow_efficiency", "automation_coverage"]
+estimated_time_savings: "55-70%"
+prerequisites: ["ci_cd_pipelines", "test_automation", "workflow_management"]
 ---
 
 # Testing Framework Integration Guide
