@@ -1,4 +1,8 @@
 ---
+
+type: "template"
+template_category: "intelligent-review"
+use_case: "archived-category-file"
 title: "Category 1: Code Review Acceleration Templates"
 description: "Foundation-level templates for accelerating basic code review processes"
 content_type: "prompt_template_category"

@@ -1,6 +1,9 @@
 ---
 title: "Categories 4-8: Complete Intelligent Review Template Library"
 description: "Templates for Performance Review, Documentation Enhancement, Team Knowledge Transfer, Learning Opportunities, and Review Feedback Optimization"
+type: "template"
+template_category: "intelligent-review"
+use_case: "archived-category-grouping"
 content_type: "prompt_template_category"
 principle: "intelligent-review"
 categories: ["performance-review", "documentation-enhancement", "team-knowledge-transfer", "learning-opportunities", "review-feedback-optimization"]

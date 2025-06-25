@@ -1,4 +1,8 @@
 ---
+
+type: "template"
+template_category: "intelligent-review"
+use_case: "archived-category-file"
 title: "Category 2: Architecture Review Frameworks Templates"
 description: "Advanced templates for reviewing system architecture, design patterns, and scalability considerations"
 content_type: "prompt_template_category"

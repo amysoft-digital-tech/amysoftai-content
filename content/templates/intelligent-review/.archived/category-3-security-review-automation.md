@@ -1,4 +1,8 @@
 ---
+
+type: "template"
+template_category: "intelligent-review"
+use_case: "archived-category-file"
 title: "Category 3: Security Review Automation Templates"
 description: "Specialized templates for automated security vulnerability detection and compliance validation"
 content_type: "prompt_template_category"

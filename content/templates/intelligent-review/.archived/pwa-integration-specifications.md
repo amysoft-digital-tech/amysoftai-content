@@ -1,4 +1,8 @@
 ---
+
+type: "template"
+template_category: "intelligent-review"
+use_case: "archived-category-file"
 title: "PWA Integration Specifications for Intelligent Review Templates"
 description: "Technical specifications for integrating intelligent review templates into the Progressive Web Application platform"
 content_type: "integration_specification"
@@ -522,4 +526,6 @@ class TemplateFeatureManager {
 
 ---
 
-*This comprehensive PWA integration specification ensures the intelligent review templates are seamlessly integrated into the Progressive Web Application with optimal user experience, performance, and accessibility.*
+*This comprehensive PWA integration specification ensures the intelligent review templates are seamlessly integrated into the Progressive Web Application with optimal user experience, performance, and accessibility.*## Usage Context
+
+This file is archived and contains legacy template category information.
