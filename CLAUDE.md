@@ -464,11 +464,11 @@ All acceptance criteria met:
 
 #### GitHub Issue Implementation Workflow Template
 ```markdown
-**Context**: Starting work on next assigned GitHub issue in amysoftai-content repository following established workflow procedures.
+**Context**: Starting work on next assigned GitHub issue in amysoftai-content repository following established workflow procedures with context extraction integration.
 
-**Objective**: Pull next assigned issue and begin implementation following the project's standard workflow.
+**Objective**: Pull next assigned issue, match it with task documentation, extract relevant context from the context project, and begin implementation following the project's standard workflow.
 
-**Workflow Steps to Execute**:
+**Enhanced Workflow Steps to Execute**:
 
 1. **Retrieve Next Issue**:
    ```bash
@@ -480,7 +480,39 @@ All acceptance criteria met:
    gh issue view [ISSUE_NUMBER] --comments
    ```
 
-3. **Create Feature Branch**:
+3. **Match Issue with Task Documentation**:
+   - Read `content_repo_tasks.json` to find the task corresponding to this issue
+   - Identify the task number and detailed requirements
+   - Note any specific context or knowledge dependencies
+
+4. **Extract Task Number from Content Strategy**:
+   - Review `content_extraction_strategy.md` to find the matching task number
+   - Identify the specific content extraction requirements
+   - Note the context project location and knowledge areas needed
+
+5. **Construct Context Extraction Prompt**:
+   - Based on the task requirements and extraction strategy, formulate a precise prompt
+   - Structure the prompt to request specific knowledge from the context project
+   - Include details about the content type, technical requirements, and implementation approach needed
+   - Format: 
+     ```
+     For task [TASK_NUMBER] - [TASK_TITLE], I need to extract the following context from the context project:
+     
+     **Content Focus**: [Specific area of knowledge needed]
+     **Technical Requirements**: [Technology stack, frameworks, patterns]
+     **Implementation Approach**: [Methodology, structure, examples needed]
+     **Integration Points**: [How this connects to existing content]
+     **Quality Standards**: [Specific quality criteria for this content type]
+     
+     Please provide comprehensive context covering [specific knowledge areas] that will enable me to complete this content creation task effectively.
+     ```
+
+6. **Wait for Context Extraction**:
+   - Present the constructed prompt for context extraction from the context project
+   - Wait for the extracted context to be provided back
+   - Review the provided context to ensure it covers all necessary knowledge areas
+
+7. **Create Feature Branch**:
    - Branch naming: `feature/[descriptive-name-based-on-issue]`
    - Use lowercase with hyphens following project conventions
    ```bash
@@ -488,28 +520,38 @@ All acceptance criteria met:
    git push -u origin feature/[branch-name]
    ```
 
-4. **Update Issue Status**:
+8. **Update Issue Status**:
    ```bash
-   gh issue comment [ISSUE_NUMBER] --body "Starting implementation. Created feature branch: feature/[branch-name]"
+   gh issue comment [ISSUE_NUMBER] --body "Starting implementation. Created feature branch: feature/[branch-name]. Context extracted and ready for implementation."
    ```
 
-5. **Begin Implementation**:
+9. **Begin Implementation with Context**:
+   - Use the extracted context to inform content creation
    - Follow CLAUDE.md content standards (lowercase-hyphen naming, frontmatter metadata, quality standards)
    - Use TodoWrite tool to track implementation tasks if complex
    - Ensure technical accuracy and project integration requirements
+   - Apply the specific knowledge and patterns from the extracted context
 
-6. **Track Progress with Commits**:
-   - Use conventional commit format
-   - Reference issue number in commits
-   - Include "Resolves: #[ISSUE_NUMBER]" in final commit
+10. **Track Progress with Commits**:
+    - Use conventional commit format
+    - Reference issue number in commits
+    - Include "Resolves: #[ISSUE_NUMBER]" in final commit
+    - Note context sources used in commit messages
+
+**Context Extraction Integration**:
+- Task matching ensures alignment with project planning
+- Content strategy guides extraction specificity
+- Context project provides deep domain knowledge
+- Quality standards maintain consistency
 
 **Project Context**:
 - Repository: amysoftai-content (Beyond the AI Plateau ebook project)
 - Content tiers: foundation ($24.95), advanced ($97), elite ($297)
 - Launch target: July 1, 2025
 - Quality standards: Enterprise-grade for senior developers
+- Context project: Provides domain expertise and technical knowledge
 
-**Request**: Execute this complete workflow starting with retrieving my next assigned issue and proceeding through implementation setup.
+**Request**: Execute this complete workflow starting with retrieving my next assigned issue, matching it with task documentation, constructing the context extraction prompt, and waiting for context before proceeding with implementation.
 ```
 
 ## Code Quality and Optimization Standards
