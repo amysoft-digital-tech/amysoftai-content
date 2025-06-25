@@ -2,19 +2,23 @@
 title: "RESTful API Versioning and Evolution Strategy Template"
 description: "Comprehensive template for designing and implementing RESTful API versioning strategies that enable backward compatibility, seamless evolution, and consumer migration"
 type: "template"
-tier: "foundation"
-estimated_reading_time: "30 minutes"
-word_count: 12000
-last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "api-design-evolution"
+template_category: "code-evolution"
+template_subcategory: "api-evolution"
+tier: "advanced"
+template_id: "CE-008"
+template_version: "1.0"
+validation_status: "tested"
 use_case: "api-versioning"
-target_scenario: "api-evolution-management"
+target_scenario: "Designing and implementing API versioning strategies for backward compatibility and seamless consumer migration"
 complexity_level: "intermediate"
 risk_level: "moderate"
 effectiveness_metrics: ["backward_compatibility", "migration_success_rate", "api_adoption"]
 estimated_time_savings: "70-85%"
 prerequisites: ["rest_api_design", "api_management", "versioning_strategies", "consumer_management"]
+estimated_reading_time: "30 minutes"
+word_count: 12000
+last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # RESTful API Versioning and Evolution Strategy Template

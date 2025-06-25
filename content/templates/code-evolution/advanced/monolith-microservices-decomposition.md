@@ -2,19 +2,23 @@
 title: "Monolith to Microservices Decomposition Template"
 description: "Comprehensive template for systematically decomposing monolithic applications into microservices architecture with domain-driven design principles and gradual migration strategies"
 type: "template"
-tier: "foundation"
-estimated_reading_time: "35 minutes"
-word_count: 14000
-last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "code-architecture-evolution"
+template_category: "code-evolution"
+template_subcategory: "architecture-evolution"
+tier: "advanced"
+template_id: "CE-014"
+template_version: "1.0"
+validation_status: "tested"
 use_case: "microservices-migration"
-target_scenario: "architecture-modernization"
+target_scenario: "Decomposing monolithic applications into microservices using domain-driven design and gradual migration strategies"
 complexity_level: "advanced"
 risk_level: "high"
 effectiveness_metrics: ["scalability_improvement", "deployment_independence", "team_autonomy"]
 estimated_time_savings: "60-80%"
 prerequisites: ["domain_driven_design", "distributed_systems", "containerization", "api_design"]
+estimated_reading_time: "35 minutes"
+word_count: 14000
+last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Monolith to Microservices Decomposition Template

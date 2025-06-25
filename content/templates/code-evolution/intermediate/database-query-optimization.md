@@ -2,19 +2,23 @@
 title: "Database Query Optimization Template"
 description: "Systematic template for identifying and optimizing database performance bottlenecks through query analysis, indexing strategy, and execution plan optimization"
 type: "template"
-tier: "foundation"
-estimated_reading_time: "28 minutes"
-word_count: 11200
-last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "performance-optimization"
+template_category: "code-evolution"
+template_subcategory: "performance-optimization"
+tier: "advanced"
+template_id: "CE-005"
+template_version: "1.0"
+validation_status: "tested"
 use_case: "database-optimization"
-target_scenario: "query-performance-enhancement"
+target_scenario: "Optimizing database performance through systematic query analysis, indexing improvements, and execution plan enhancement"
 complexity_level: "intermediate"
 risk_level: "moderate"
 effectiveness_metrics: ["query_performance", "response_time_reduction", "resource_utilization"]
 estimated_time_savings: "70-85%"
 prerequisites: ["database_proficiency", "sql_knowledge", "performance_monitoring_tools"]
+estimated_reading_time: "28 minutes"
+word_count: 11200
+last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Database Query Optimization Template

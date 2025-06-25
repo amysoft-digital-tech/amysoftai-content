@@ -1,17 +1,24 @@
 ---
 title: "Testing Framework Integration for Code Evolution Templates"
 description: "Comprehensive integration guide for testing frameworks with code evolution templates, including automated validation, safety verification, and continuous testing strategies"
-type: "documentation"
-tier: "foundation"
+type: "template"
+template_category: "code-evolution"
+template_subcategory: "technical-debt-reduction"
+tier: "advanced"
+template_id: "CE-009"
+template_version: "1.0"
+validation_status: "tested"
+use_case: "testing-integration"
+target_scenario: "Integrating testing frameworks with code evolution processes for automated validation and safety verification"
+complexity_level: "intermediate"
+risk_level: "safe"
+effectiveness_metrics: ["test_coverage_improvement", "safety_validation", "automation_efficiency"]
+estimated_time_savings: "80-95%"
+prerequisites: ["testing_frameworks", "ci_cd_pipelines", "automation_tools"]
 estimated_reading_time: "25 minutes"
 word_count: 10000
 last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "integration-documentation"
-use_case: "testing-integration"
-target_scenario: "template-validation"
-complexity_level: "intermediate"
-integration_requirements: ["jest", "pytest", "junit", "cypress", "playwright"]
+content_status: "final"
 ---
 
 # Testing Framework Integration for Code Evolution Templates

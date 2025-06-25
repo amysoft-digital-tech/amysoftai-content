@@ -2,19 +2,23 @@
 title: "Database Schema Migration and Evolution Strategy Template"
 description: "Comprehensive template for designing and implementing database schema migrations with zero-downtime deployment, data integrity, and rollback strategies"
 type: "template"
-tier: "foundation"
-estimated_reading_time: "35 minutes"
-word_count: 14000
-last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "database-schema-migration"
+template_category: "code-evolution"
+template_subcategory: "database-migration"
+tier: "advanced"
+template_id: "CE-011"
+template_version: "1.0"
+validation_status: "tested"
 use_case: "schema-evolution-migration"
-target_scenario: "database-modernization"
+target_scenario: "Implementing database schema migrations with zero-downtime deployment and comprehensive rollback strategies"
 complexity_level: "advanced"
 risk_level: "high"
 effectiveness_metrics: ["migration_success_rate", "data_integrity", "zero_downtime_achievement"]
 estimated_time_savings: "70-85%"
 prerequisites: ["database_design", "migration_patterns", "transaction_management", "backup_recovery"]
+estimated_reading_time: "35 minutes"
+word_count: 14000
+last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Database Schema Migration and Evolution Strategy Template
