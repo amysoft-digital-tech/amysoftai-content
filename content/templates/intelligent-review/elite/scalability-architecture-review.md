@@ -1,15 +1,25 @@
 ---
 title: "Scalability Architecture Review Template"
 description: "Comprehensive framework for evaluating system scalability, performance bottlenecks, and growth capacity"
+type: "template"
+tier: "elite"
+template_category: "intelligent-review"
+template_subcategory: "architecture-review-frameworks"
+template_id: "IR-019"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "System scalability evaluation with performance bottleneck identification and growth capacity planning for distributed systems"
 integration_requirements: ["performance-monitoring", "load-testing", "capacity-planning"]
-template_category: "architecture-review-frameworks"
 effectiveness_metrics: ["scalability_assessment", "bottleneck_identification", "capacity_planning_accuracy"]
 estimated_time_savings: "70-90%"
+estimated_reading_time: "22 minutes"
+word_count: 6800
 complexity_level: "expert"
 prerequisites: ["scalability_engineering", "performance_analysis", "system_design"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Scalability Architecture Review Template

@@ -1,15 +1,25 @@
 ---
 title: "Automated Code Review Acceleration Template"
 description: "Accelerate code reviews with AI-powered analysis and automated feedback generation"
+type: "template"
+tier: "foundation"
+template_category: "intelligent-review"
+template_subcategory: "code-review-acceleration"
+template_id: "IR-001"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Accelerating code review processes with AI-powered analysis and automated feedback generation for development teams"
 integration_requirements: ["github", "gitlab", "code-review-tools"]
-template_category: "code-review-acceleration"
 effectiveness_metrics: ["review_time_reduction", "issue_detection_rate", "feedback_quality"]
 estimated_time_savings: "60-80%"
+estimated_reading_time: "15 minutes"
+word_count: 3120
 complexity_level: "intermediate"
 prerequisites: ["code_review_experience", "repository_access"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Automated Code Review Acceleration Template

@@ -1,15 +1,25 @@
 ---
 title: "Compliance Validation Framework Template"
 description: "Systematic framework for validating regulatory compliance and security standards adherence in code and architecture"
+type: "template"
+tier: "elite"
+template_category: "intelligent-review"
+template_subcategory: "security-review-automation"
+template_id: "IR-016"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Regulatory compliance validation and security standards adherence verification for enterprise code and architecture"
 integration_requirements: ["compliance-tools", "audit-systems", "governance-frameworks"]
-template_category: "security-review-automation"
 effectiveness_metrics: ["compliance_score", "audit_readiness", "gap_identification_accuracy"]
 estimated_time_savings: "75-85%"
+estimated_reading_time: "26 minutes"
+word_count: 7800
 complexity_level: "expert"
 prerequisites: ["regulatory_knowledge", "compliance_frameworks", "audit_experience"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Compliance Validation Framework Template

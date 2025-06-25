@@ -1,15 +1,25 @@
 ---
 title: "System Architecture Assessment Template"
 description: "Comprehensive framework for evaluating system architecture decisions, scalability, and maintainability"
+type: "template"
+tier: "elite"
+template_category: "intelligent-review"
+template_subcategory: "architecture-review-frameworks"
+template_id: "IR-020"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Comprehensive system architecture evaluation with scalability and maintainability assessment for complex software systems"
 integration_requirements: ["architecture-tools", "documentation-systems", "modeling-tools"]
-template_category: "architecture-review-frameworks"
 effectiveness_metrics: ["architecture_quality", "scalability_assessment", "maintainability_score"]
 estimated_time_savings: "60-80%"
+estimated_reading_time: "25 minutes"
+word_count: 7200
 complexity_level: "expert"
 prerequisites: ["system_design_experience", "architecture_patterns_knowledge"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # System Architecture Assessment Template

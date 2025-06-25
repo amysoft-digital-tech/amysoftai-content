@@ -1,15 +1,25 @@
 ---
 title: "Intelligent Feedback Generation Template"
 description: "Generate contextual, educational, and actionable code review feedback that accelerates developer growth"
+type: "template"
+tier: "advanced"
+template_category: "intelligent-review"
+template_subcategory: "code-review-acceleration"
+template_id: "IR-011"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Contextual and educational code review feedback generation that accelerates developer growth and learning"
 integration_requirements: ["code-analysis", "feedback-systems", "learning-management"]
-template_category: "code-review-acceleration"
 effectiveness_metrics: ["feedback_quality", "developer_growth_rate", "implementation_success_rate"]
 estimated_time_savings: "50-70%"
+estimated_reading_time: "17 minutes"
+word_count: 5200
 complexity_level: "advanced"
 prerequisites: ["code_review_experience", "mentorship_skills"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Intelligent Feedback Generation Template

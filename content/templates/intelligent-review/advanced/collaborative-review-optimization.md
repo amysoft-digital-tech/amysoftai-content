@@ -1,15 +1,25 @@
 ---
 title: "Collaborative Review Optimization Template"
 description: "Optimize team collaboration during code reviews with structured communication and knowledge sharing"
+type: "template"
+tier: "advanced"
+template_category: "intelligent-review"
+template_subcategory: "code-review-acceleration"
+template_id: "IR-007"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Team collaboration optimization during code reviews with structured communication and knowledge sharing"
 integration_requirements: ["team-communication", "knowledge-management", "review-tools"]
-template_category: "code-review-acceleration"
 effectiveness_metrics: ["collaboration_quality", "knowledge_transfer_rate", "review_consensus_time"]
 estimated_time_savings: "40-60%"
+estimated_reading_time: "16 minutes"
+word_count: 4800
 complexity_level: "advanced"
 prerequisites: ["team_review_experience", "communication_protocols"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Collaborative Review Optimization Template

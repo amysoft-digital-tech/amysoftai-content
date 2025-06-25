@@ -1,15 +1,25 @@
 ---
 title: "Automated Security Assessment Template"
 description: "Comprehensive framework for automated security code review, vulnerability detection, and security best practices validation"
+type: "template"
+tier: "elite"
+template_category: "intelligent-review"
+template_subcategory: "security-review-automation"
+template_id: "IR-015"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Comprehensive automated security assessment with vulnerability detection and compliance validation for enterprise systems"
 integration_requirements: ["security-scanners", "sast-tools", "compliance-frameworks"]
-template_category: "security-review-automation"
 effectiveness_metrics: ["vulnerability_detection_rate", "false_positive_rate", "security_compliance_score"]
 estimated_time_savings: "80-90%"
+estimated_reading_time: "28 minutes"
+word_count: 8500
 complexity_level: "expert"
 prerequisites: ["security_engineering", "threat_modeling", "compliance_requirements"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Automated Security Assessment Template

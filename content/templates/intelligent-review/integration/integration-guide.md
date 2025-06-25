@@ -1,15 +1,19 @@
 ---
 title: "Code Review Tools Integration Guide"
 description: "Comprehensive guide for integrating intelligent review templates with GitHub, GitLab, Azure DevOps, and other code review platforms"
-type: "integration_guide"
+type: "template"
 tier: "foundation"
+template_category: "intelligent-review"
+template_subcategory: "code-review-acceleration"
+template_id: "IR-022"
+template_version: "1.0"
+validation_status: "tested"
+target_scenario: "Development workflow optimization through intelligent review template integration with code review platforms"
 estimated_reading_time: "25 minutes"
 word_count: 5800
 last_updated: "2025-06-25"
-content_status: "complete"
-template_category: "intelligent-review"
+content_status: "final"
 use_case: "tool-integration"
-target_scenario: "development-workflow-optimization"
 complexity_level: "intermediate"
 effectiveness_metrics: ["integration_success_rate", "workflow_efficiency", "automation_adoption"]
 estimated_time_savings: "70-85%"

@@ -1,15 +1,25 @@
 ---
 title: "Threat Modeling Integration Template"
 description: "Comprehensive framework for integrating threat modeling into code review processes and security assessment workflows"
+type: "template"
+tier: "elite"
+template_category: "intelligent-review"
+template_subcategory: "security-review-automation"
+template_id: "IR-021"
+template_version: "1.0"
+validation_status: "tested"
 content_type: "prompt_template"
 target_audience: "senior_developers"
+target_scenario: "Threat modeling integration into development workflows with systematic security threat identification and countermeasure implementation"
 integration_requirements: ["threat-modeling-tools", "security-architecture", "risk-assessment"]
-template_category: "security-review-automation"
 effectiveness_metrics: ["threat_coverage", "risk_identification_accuracy", "mitigation_effectiveness"]
 estimated_time_savings: "60-80%"
+estimated_reading_time: "24 minutes"
+word_count: 7400
 complexity_level: "expert"
 prerequisites: ["threat_modeling_knowledge", "security_architecture", "risk_assessment"]
 last_updated: "2025-06-25"
+content_status: "final"
 ---
 
 # Threat Modeling Integration Template
