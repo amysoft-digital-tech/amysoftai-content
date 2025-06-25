@@ -26,6 +26,14 @@ prerequisites: ["testing_metrics", "performance_analysis", "roi_calculation"]
 
 This document provides comprehensive metrics for measuring the effectiveness of strategic testing templates, analyzing coverage completeness, and validating the return on investment for AI-assisted testing strategies. These metrics enable teams to quantify improvement and optimize template usage.
 
+## Usage Context
+
+Use this metrics framework when:
+- Measuring template effectiveness and ROI across testing initiatives
+- Analyzing coverage completeness for strategic testing template libraries  
+- Validating improvement metrics and time savings from AI-assisted testing
+- Establishing baseline measurements for testing strategy optimization
+
 ## Template Coverage Analysis
 
 ### Comprehensive Template Matrix
