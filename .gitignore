@@ -1,6 +1,10 @@
 # Task and Context Mapping Files (Project Documentation)
 # These files are now included as essential project documentation
 
+# Markdown files with validation issues (preserved locally)
+claude_code_content_creation_prompts.md
+launch_critical_content_extraction_strategy.md
+
 # Node modules and dependencies
 node_modules/
 npm-debug.log*
