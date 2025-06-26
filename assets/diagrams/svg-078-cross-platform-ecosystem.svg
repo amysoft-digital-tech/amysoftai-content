@@ -1,0 +1,473 @@
+<!-- ICE-02: Cross-Platform AI Development Ecosystem -->
+<!-- SVG ID: svg-078 -->
+<!-- Component: Integration Compound Effects -->
+<!-- Complexity: Expert -->
+<svg viewBox="0 0 2100 1300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ICE-02: Cross-Platform AI Development Ecosystem</title>
+  <desc id="desc">Comprehensive ecosystem diagram showing integration of all five principles across multiple development platforms, tools, and environments with unified context and workflow orchestration.</desc>
+  
+  <!-- Advanced Gradient Definitions -->
+  <defs>
+    <radialGradient id="centralHubGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:0.9" />
+    </radialGradient>
+    <linearGradient id="ecosystemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="platformGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vsCodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007acc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#005a9e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9900;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0078d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4285f4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f1502f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fc6d26;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24292e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10a37f;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#ea4335;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4285f4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="workflowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4338ca;stop-opacity:1" />
+    </linearGradient>
+    <filter id="ecosystemShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+    <filter id="hubGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="connectionPulse" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2100" height="1300" fill="url(#ecosystemGradient)"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="2100" height="80" fill="#1e3a8a"/>
+  <text x="40" y="35" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Cross-Platform AI Development Ecosystem</text>
+  <text x="40" y="60" fill="#93c5fd" font-family="Arial, sans-serif" font-size="16">Unified Five-Principle Integration Across All Platforms</text>
+  
+  <!-- Live Status Indicators -->
+  <circle cx="1950" cy="30" r="8" fill="#22c55e" filter="url(#connectionPulse)"/>
+  <text x="1970" y="35" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LIVE SYNC</text>
+  <circle cx="1950" cy="55" r="6" fill="#3b82f6" opacity="0.8"/>
+  <text x="1970" y="60" fill="#93c5fd" font-family="Arial, sans-serif" font-size="11">47 platforms</text>
+
+  <!-- Central Orchestration Hub -->
+  <g id="centralHub">
+    <circle cx="1050" cy="650" r="250" fill="url(#centralHubGradient)" filter="url(#hubGlow)"/>
+    <circle cx="1050" cy="650" r="200" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+    <circle cx="1050" cy="650" r="150" fill="none" stroke="#dbeafe" stroke-width="2" opacity="0.4"/>
+    <circle cx="1050" cy="650" r="100" fill="none" stroke="#bfdbfe" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Central AI Brain -->
+    <circle cx="1050" cy="650" r="80" fill="#1e40af" stroke="#ffffff" stroke-width="4"/>
+    <text x="1020" y="640" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">AI</text>
+    <text x="1000" y="660" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">CORE</text>
+    <text x="1005" y="680" fill="#dbeafe" font-family="Arial, sans-serif" font-size="12">Orchestrator</text>
+    
+    <!-- Hub Status Indicators -->
+    <g class="hub-indicators">
+      <circle cx="1050" cy="580" r="15" fill="#22c55e"/>
+      <text x="1030" y="555" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Integration Status</text>
+      <text x="1040" y="570" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">99.7% uptime</text>
+      
+      <circle cx="1150" cy="650" r="12" fill="#3b82f6"/>
+      <text x="1170" y="645" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Context Sync</text>
+      <text x="1170" y="658" fill="#dbeafe" font-family="Arial, sans-serif" font-size="8">Real-time</text>
+      
+      <circle cx="1050" cy="720" r="12" fill="#f59e0b"/>
+      <text x="1020" y="745" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Performance</text>
+      <text x="1025" y="755" fill="#fbbf24" font-family="Arial, sans-serif" font-size="8">Optimized</text>
+      
+      <circle cx="950" cy="650" r="12" fill="#8b5cf6"/>
+      <text x="905" y="645" fill="#ffffff" font-family="Arial, sans-serif" font-size="9">Workflow</text>
+      <text x="915" y="658" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="8">Active</text>
+    </g>
+  </g>
+
+  <!-- Platform Integration Ring -->
+  
+  <!-- VS Code Ecosystem (Top) -->
+  <g id="vsCodePlatform" class="platform-node">
+    <rect x="900" y="150" width="300" height="200" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="900" y="150" width="300" height="50" fill="url(#vsCodeGradient)" rx="15 15 0 0"/>
+    <text x="920" y="175" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">VS Code Ecosystem</text>
+    <text x="920" y="195" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="12">Development Environment Hub</text>
+    
+    <!-- Connection line to hub -->
+    <line x1="1050" y1="400" x2="1050" y2="350" stroke="#3b82f6" stroke-width="4" opacity="0.7"/>
+    <circle cx="1050" cy="365" r="8" fill="#3b82f6"/>
+    
+    <!-- VS Code Features -->
+    <rect x="920" y="220" width="120" height="60" fill="#f0f9ff" rx="8" stroke="#bae6fd" stroke-width="1"/>
+    <text x="930" y="235" fill="#0369a1" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Extensions</text>
+    <text x="930" y="250" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="9">Context AI: Active</text>
+    <text x="930" y="265" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="9">Code Review: 98%</text>
+    <text x="930" y="275" fill="#0369a1" font-family="Arial, sans-serif" font-size="8">47 plugins synced</text>
+    
+    <rect x="1060" y="220" width="120" height="60" fill="#fef7ff" rx="8" stroke="#e9d5ff" stroke-width="1"/>
+    <text x="1070" y="235" fill="#7c2d12" font-family="Arial, sans-serif" font-size="11" font-weight="bold">AI Assistant</text>
+    <text x="1070" y="250" fill="#7c2d12" font-family="Arial, sans-serif" font-size="9">Claude: Connected</text>
+    <text x="1070" y="265" fill="#7c2d12" font-family="Arial, sans-serif" font-size="9">GPT-4: Standby</text>
+    <text x="1070" y="275" fill="#a855f7" font-family="Arial, sans-serif" font-size="8">Response: 45ms avg</text>
+    
+    <rect x="920" y="290" width="260" height="40" fill="#f0fdf4" rx="8" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="930" y="305" fill="#166534" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Team Collaboration</text>
+    <text x="930" y="320" fill="#14532d" font-family="Arial, sans-serif" font-size="9">Live Share: 12 users • Context Sync: 100% • Conflicts: 0</text>
+  </g>
+
+  <!-- Cloud Platform Integration (Right) -->
+  <g id="cloudPlatform" class="platform-node">
+    <rect x="1650" y="500" width="300" height="200" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="1650" y="500" width="300" height="50" fill="url(#cloudGradient)" rx="15 15 0 0"/>
+    <text x="1670" y="525" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Cloud Platform Hub</text>
+    <text x="1670" y="545" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">AWS • Azure • GCP Integration</text>
+    
+    <!-- Connection line to hub -->
+    <line x1="1300" y1="650" x2="1650" y2="600" stroke="#f59e0b" stroke-width="4" opacity="0.7"/>
+    <circle cx="1475" cy="625" r="8" fill="#f59e0b"/>
+    
+    <!-- Cloud Services -->
+    <rect x="1670" y="570" width="120" height="60" fill="#fff7ed" rx="8" stroke="#fed7aa" stroke-width="1"/>
+    <text x="1680" y="585" fill="#9a3412" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Serverless</text>
+    <text x="1680" y="600" fill="#c2410c" font-family="Arial, sans-serif" font-size="9">Lambda: 156 funcs</text>
+    <text x="1680" y="615" fill="#c2410c" font-family="Arial, sans-serif" font-size="9">Functions: 99.9%</text>
+    <text x="1680" y="625" fill="#ea580c" font-family="Arial, sans-serif" font-size="8">Auto-scaling: On</text>
+    
+    <rect x="1810" y="570" width="120" height="60" fill="#eff6ff" rx="8" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="1820" y="585" fill="#1e40af" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Containers</text>
+    <text x="1820" y="600" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="9">K8s: 24 pods</text>
+    <text x="1820" y="615" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="9">Docker: Active</text>
+    <text x="1820" y="625" fill="#2563eb" font-family="Arial, sans-serif" font-size="8">Health: 100%</text>
+    
+    <rect x="1670" y="640" width="260" height="40" fill="#f0f9ff" rx="8" stroke="#bae6fd" stroke-width="1"/>
+    <text x="1680" y="655" fill="#0369a1" font-family="Arial, sans-serif" font-size="11" font-weight="bold">AI Services Integration</text>
+    <text x="1680" y="670" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="9">Bedrock • OpenAI • Vertex AI • Cost Optimized: $2.4K/month</text>
+  </g>
+
+  <!-- Git Platform Integration (Bottom) -->
+  <g id="gitPlatform" class="platform-node">
+    <rect x="900" y="950" width="300" height="200" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="900" y="950" width="300" height="50" fill="url(#gitGradient)" rx="15 15 0 0"/>
+    <text x="920" y="975" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Git Platform Hub</text>
+    <text x="920" y="995" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">GitHub • GitLab • Bitbucket</text>
+    
+    <!-- Connection line to hub -->
+    <line x1="1050" y1="900" x2="1050" y2="950" stroke="#ef4444" stroke-width="4" opacity="0.7"/>
+    <circle cx="1050" cy="925" r="8" fill="#ef4444"/>
+    
+    <!-- Git Features -->
+    <rect x="920" y="1020" width="120" height="60" fill="#fef2f2" rx="8" stroke="#fecaca" stroke-width="1"/>
+    <text x="930" y="1035" fill="#991b1b" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Pull Requests</text>
+    <text x="930" y="1050" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="9">Context-aware: On</text>
+    <text x="930" y="1065" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="9">Auto-review: 89%</text>
+    <text x="930" y="1075" fill="#dc2626" font-family="Arial, sans-serif" font-size="8">24 active PRs</text>
+    
+    <rect x="1060" y="1020" width="120" height="60" fill="#fff7ed" rx="8" stroke="#fed7aa" stroke-width="1"/>
+    <text x="1070" y="1035" fill="#9a3412" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Branch Strategy</text>
+    <text x="1070" y="1050" fill="#c2410c" font-family="Arial, sans-serif" font-size="9">GitFlow: Optimized</text>
+    <text x="1070" y="1065" fill="#c2410c" font-family="Arial, sans-serif" font-size="9">Conflicts: 0</text>
+    <text x="1070" y="1075" fill="#ea580c" font-family="Arial, sans-serif" font-size="8">Merge success: 98%</text>
+    
+    <rect x="920" y="1090" width="260" height="40" fill="#fefce8" rx="8" stroke="#fde047" stroke-width="1"/>
+    <text x="930" y="1105" fill="#a16207" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Intelligent Resolution</text>
+    <text x="930" y="1120" fill="#713f12" font-family="Arial, sans-serif" font-size="9">AI Conflict Resolution: 94% success • Context Preservation: 100%</text>
+  </g>
+
+  <!-- AI Platform Integration (Left) -->
+  <g id="aiPlatform" class="platform-node">
+    <rect x="150" y="500" width="300" height="200" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="150" y="500" width="300" height="50" fill="url(#aiGradient)" rx="15 15 0 0"/>
+    <text x="170" y="525" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">AI Service Ecosystem</text>
+    <text x="170" y="545" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">Multi-Model Integration Hub</text>
+    
+    <!-- Connection line to hub -->
+    <line x1="800" y1="650" x2="450" y2="600" stroke="#10a37f" stroke-width="4" opacity="0.7"/>
+    <circle cx="625" cy="625" r="8" fill="#10a37f"/>
+    
+    <!-- AI Services -->
+    <rect x="170" y="570" width="120" height="60" fill="#f0fdf4" rx="8" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="180" y="585" fill="#166534" font-family="Arial, sans-serif" font-size="11" font-weight="bold">OpenAI</text>
+    <text x="180" y="600" fill="#14532d" font-family="Arial, sans-serif" font-size="9">GPT-4: Primary</text>
+    <text x="180" y="615" fill="#14532d" font-family="Arial, sans-serif" font-size="9">Codex: Active</text>
+    <text x="180" y="625" fill="#22c55e" font-family="Arial, sans-serif" font-size="8">Latency: 234ms</text>
+    
+    <rect x="310" y="570" width="120" height="60" fill="#fef3c7" rx="8" stroke="#fde047" stroke-width="1"/>
+    <text x="320" y="585" fill="#a16207" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Anthropic</text>
+    <text x="320" y="600" fill="#92400e" font-family="Arial, sans-serif" font-size="9">Claude: Active</text>
+    <text x="320" y="615" fill="#92400e" font-family="Arial, sans-serif" font-size="9">Sonnet: Primary</text>
+    <text x="320" y="625" fill="#eab308" font-family="Arial, sans-serif" font-size="8">Latency: 156ms</text>
+    
+    <rect x="170" y="640" width="260" height="40" fill="#eff6ff" rx="8" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="180" y="655" fill="#1e40af" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Model Optimization</text>
+    <text x="180" y="670" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="9">Auto-selection: On • Cost: -34% • Performance: +67%</text>
+  </g>
+
+  <!-- Unified Context Architecture (Outer Ring) -->
+  <g id="contextArchitecture">
+    <circle cx="1050" cy="650" r="380" fill="none" stroke="#3b82f6" stroke-width="3" opacity="0.3" stroke-dasharray="10,5"/>
+    <circle cx="1050" cy="650" r="420" fill="none" stroke="#1e40af" stroke-width="2" opacity="0.2" stroke-dasharray="15,10"/>
+    
+    <!-- Context Sync Indicators -->
+    <g class="context-nodes">
+      <circle cx="1050" cy="230" r="12" fill="#22c55e" class="context-node"/>
+      <text x="1020" y="210" fill="#1e293b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Context Sync</text>
+      <text x="1030" y="255" fill="#059669" font-family="Arial, sans-serif" font-size="8">100% federated</text>
+      
+      <circle cx="1470" cy="650" r="12" fill="#3b82f6" class="context-node"/>
+      <text x="1490" y="645" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">Universal Format</text>
+      <text x="1490" y="658" fill="#2563eb" font-family="Arial, sans-serif" font-size="8">JSON-LD schema</text>
+      
+      <circle cx="1050" cy="1070" r="12" fill="#f59e0b" class="context-node"/>
+      <text x="1020" y="1095" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">Version Control</text>
+      <text x="1025" y="1105" fill="#d97706" font-family="Arial, sans-serif" font-size="8">Git integration</text>
+      
+      <circle cx="630" cy="650" r="12" fill="#8b5cf6" class="context-node"/>
+      <text x="550" y="645" fill="#1e293b" font-family="Arial, sans-serif" font-size="9">Access Control</text>
+      <text x="565" y="658" fill="#7c3aed" font-family="Arial, sans-serif" font-size="8">RBAC active</text>
+    </g>
+  </g>
+
+  <!-- Workflow Orchestration Layers (Corner Panels) -->
+  
+  <!-- Top-Left: Development Workflow -->
+  <g id="developmentWorkflow">
+    <rect x="50" y="100" width="400" height="250" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="50" y="100" width="400" height="40" fill="url(#workflowGradient)" rx="15 15 0 0"/>
+    <text x="70" y="125" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Development Workflow</text>
+    <text x="70" y="138" fill="#c7d2fe" font-family="Arial, sans-serif" font-size="12">AI-Enhanced Pipeline</text>
+    
+    <!-- Workflow Steps -->
+    <g class="workflow-steps">
+      <rect x="70" y="160" width="80" height="40" fill="#dbeafe" rx="6"/>
+      <text x="100" y="175" fill="#1e40af" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Code</text>
+      <text x="95" y="190" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="9">Creation</text>
+      
+      <path d="M 155 180 L 175 180" stroke="#6366f1" stroke-width="3" marker-end="url(#arrowhead)"/>
+      
+      <rect x="180" y="160" width="80" height="40" fill="#f3e8ff" rx="6"/>
+      <text x="210" y="175" fill="#7c3aed" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Review</text>
+      <text x="205" y="190" fill="#6d28d9" font-family="Arial, sans-serif" font-size="9">AI-Assisted</text>
+      
+      <path d="M 265 180 L 285 180" stroke="#6366f1" stroke-width="3" marker-end="url(#arrowhead)"/>
+      
+      <rect x="290" y="160" width="80" height="40" fill="#fef3c7" rx="6"/>
+      <text x="320" y="175" fill="#d97706" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Testing</text>
+      <text x="310" y="190" fill="#b45309" font-family="Arial, sans-serif" font-size="9">Automated</text>
+      
+      <path d="M 375 180 L 395 180" stroke="#6366f1" stroke-width="3" marker-end="url(#arrowhead)"/>
+      
+      <rect x="290" y="220" width="80" height="40" fill="#dcfce7" rx="6"/>
+      <text x="315" y="235" fill="#166534" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Deploy</text>
+      <text x="310" y="250" fill="#14532d" font-family="Arial, sans-serif" font-size="9">Continuous</text>
+      
+      <!-- Context Propagation -->
+      <rect x="70" y="280" width="360" height="50" fill="#f1f5f9" rx="8" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="80" y="300" fill="#334155" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Context Propagation</text>
+      <text x="80" y="315" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Real-time context flow • Quality gates active • Performance feedback: 45ms</text>
+    </g>
+  </g>
+
+  <!-- Top-Right: Collaboration Workflow -->
+  <g id="collaborationWorkflow">
+    <rect x="1650" y="100" width="400" height="250" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="1650" y="100" width="400" height="40" fill="#059669" rx="15 15 0 0"/>
+    <text x="1670" y="125" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Collaboration Workflow</text>
+    <text x="1670" y="138" fill="#d1fae5" font-family="Arial, sans-serif" font-size="12">Team Coordination Hub</text>
+    
+    <!-- Collaboration Features -->
+    <rect x="1670" y="160" width="170" height="80" fill="#f0fdf4" rx="8" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="1680" y="180" fill="#166534" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Team Coordination</text>
+    <text x="1680" y="195" fill="#14532d" font-family="Arial, sans-serif" font-size="10">Real-time communication</text>
+    <text x="1680" y="210" fill="#14532d" font-family="Arial, sans-serif" font-size="10">Task synchronization</text>
+    <text x="1680" y="225" fill="#22c55e" font-family="Arial, sans-serif" font-size="9">47 team members active</text>
+    
+    <rect x="1860" y="160" width="170" height="80" fill="#f0f9ff" rx="8" stroke="#bae6fd" stroke-width="1"/>
+    <text x="1870" y="180" fill="#0369a1" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Knowledge Sharing</text>
+    <text x="1870" y="195" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="10">Context federation</text>
+    <text x="1870" y="210" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="10">Cross-team learning</text>
+    <text x="1870" y="225" fill="#0284c7" font-family="Arial, sans-serif" font-size="9">156 shared contexts</text>
+    
+    <rect x="1670" y="260" width="360" height="70" fill="#fef7ff" rx="8" stroke="#e9d5ff" stroke-width="1"/>
+    <text x="1680" y="280" fill="#7c2d12" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Mentoring & Skill Development</text>
+    <text x="1680" y="295" fill="#7c2d12" font-family="Arial, sans-serif" font-size="10">AI-powered mentorship matching • Skill gap analysis</text>
+    <text x="1680" y="310" fill="#7c2d12" font-family="Arial, sans-serif" font-size="10">Learning path optimization • Progress tracking</text>
+    <text x="1680" y="325" fill="#a855f7" font-family="Arial, sans-serif" font-size="9">89% skill improvement rate • 34 active mentoring pairs</text>
+  </g>
+
+  <!-- Bottom-Left: Quality Assurance -->
+  <g id="qualityAssurance">
+    <rect x="50" y="950" width="400" height="250" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="50" y="950" width="400" height="40" fill="#dc2626" rx="15 15 0 0"/>
+    <text x="70" y="975" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Quality Assurance</text>
+    <text x="70" y="988" fill="#fecaca" font-family="Arial, sans-serif" font-size="12">Automated QA Orchestration</text>
+    
+    <!-- QA Components -->
+    <rect x="70" y="1010" width="170" height="80" fill="#fef2f2" rx="8" stroke="#fecaca" stroke-width="1"/>
+    <text x="80" y="1030" fill="#991b1b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CI/CD Pipeline</text>
+    <text x="80" y="1045" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="10">Continuous integration</text>
+    <text x="80" y="1060" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="10">Automated deployment</text>
+    <text x="80" y="1075" fill="#dc2626" font-family="Arial, sans-serif" font-size="9">Success rate: 98.7%</text>
+    
+    <rect x="260" y="1010" width="170" height="80" fill="#fff7ed" rx="8" stroke="#fed7aa" stroke-width="1"/>
+    <text x="270" y="1030" fill="#9a3412" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Testing Orchestration</text>
+    <text x="270" y="1045" fill="#c2410c" font-family="Arial, sans-serif" font-size="10">Unit: 94% coverage</text>
+    <text x="270" y="1060" fill="#c2410c" font-family="Arial, sans-serif" font-size="10">Integration: Automated</text>
+    <text x="270" y="1075" fill="#ea580c" font-family="Arial, sans-serif" font-size="9">E2E: AI-generated</text>
+    
+    <rect x="70" y="1110" width="360" height="70" fill="#fefce8" rx="8" stroke="#fde047" stroke-width="1"/>
+    <text x="80" y="1130" fill="#a16207" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Security & Performance Monitoring</text>
+    <text x="80" y="1145" fill="#713f12" font-family="Arial, sans-serif" font-size="10">Vulnerability scanning • Performance benchmarking • Code quality analysis</text>
+    <text x="80" y="1160" fill="#713f12" font-family="Arial, sans-serif" font-size="10">Security score: A+ • Performance: 89/100 • Technical debt: 7%</text>
+  </g>
+
+  <!-- Bottom-Right: Innovation Pipeline -->
+  <g id="innovationPipeline">
+    <rect x="1650" y="950" width="400" height="250" fill="url(#platformGradient)" rx="15" filter="url(#ecosystemShadow)"/>
+    <rect x="1650" y="950" width="400" height="40" fill="#7c3aed" rx="15 15 0 0"/>
+    <text x="1670" y="975" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Innovation Pipeline</text>
+    <text x="1670" y="988" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="12">Experimental Development Hub</text>
+    
+    <!-- Innovation Features -->
+    <rect x="1670" y="1010" width="170" height="80" fill="#fef7ff" rx="8" stroke="#e9d5ff" stroke-width="1"/>
+    <text x="1680" y="1030" fill="#7c2d12" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Feature Labs</text>
+    <text x="1680" y="1045" fill="#7c2d12" font-family="Arial, sans-serif" font-size="10">A/B testing active</text>
+    <text x="1680" y="1060" fill="#7c2d12" font-family="Arial, sans-serif" font-size="10">Experiment tracking</text>
+    <text x="1680" y="1075" fill="#a855f7" font-family="Arial, sans-serif" font-size="9">23 active experiments</text>
+    
+    <rect x="1860" y="1010" width="170" height="80" fill="#f0f9ff" rx="8" stroke="#bae6fd" stroke-width="1"/>
+    <text x="1870" y="1030" fill="#0369a1" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Technology Radar</text>
+    <text x="1870" y="1045" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="10">Tech evaluation</text>
+    <text x="1870" y="1060" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="10">Adoption tracking</text>
+    <text x="1870" y="1075" fill="#0284c7" font-family="Arial, sans-serif" font-size="9">12 tech assessments</text>
+    
+    <rect x="1670" y="1110" width="360" height="70" fill="#f0fdf4" rx="8" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="1680" y="1130" fill="#166534" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Knowledge Capture & Best Practices</text>
+    <text x="1680" y="1145" fill="#14532d" font-family="Arial, sans-serif" font-size="10">Pattern identification • Practice documentation • Knowledge transfer</text>
+    <text x="1680" y="1160" fill="#14532d" font-family="Arial, sans-serif" font-size="10">456 patterns captured • 89% transfer success • Innovation velocity: +67%</text>
+  </g>
+
+  <!-- Enterprise Features Panel -->
+  <g id="enterpriseFeatures">
+    <rect x="550" y="100" width="300" height="120" fill="url(#platformGradient)" rx="12" filter="url(#ecosystemShadow)"/>
+    <rect x="550" y="100" width="300" height="35" fill="#1e293b" rx="12 12 0 0"/>
+    <text x="570" y="120" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Enterprise Features</text>
+    <text x="570" y="133" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Global Scale Architecture</text>
+    
+    <rect x="570" y="150" width="120" height="50" fill="#f1f5f9" rx="6" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="580" y="165" fill="#334155" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Multi-Tenant</text>
+    <text x="580" y="180" fill="#64748b" font-family="Arial, sans-serif" font-size="9">47 organizations</text>
+    <text x="580" y="192" fill="#64748b" font-family="Arial, sans-serif" font-size="8">Isolation: 100%</text>
+    
+    <rect x="710" y="150" width="120" height="50" fill="#fef2f2" rx="6" stroke="#fecaca" stroke-width="1"/>
+    <text x="720" y="165" fill="#991b1b" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Security</text>
+    <text x="720" y="180" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="9">SOC 2 Type II</text>
+    <text x="720" y="192" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="8">Zero breaches</text>
+  </g>
+
+  <!-- Performance Analytics Panel -->
+  <g id="performanceAnalytics">
+    <rect x="550" y="1080" width="300" height="120" fill="url(#platformGradient)" rx="12" filter="url(#ecosystemShadow)"/>
+    <rect x="550" y="1080" width="300" height="35" fill="#059669" rx="12 12 0 0"/>
+    <text x="570" y="1100" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Performance Analytics</text>
+    <text x="570" y="1113" fill="#d1fae5" font-family="Arial, sans-serif" font-size="10">Real-time Ecosystem Insights</text>
+    
+    <rect x="570" y="1130" width="120" height="50" fill="#f0fdf4" rx="6" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="580" y="1145" fill="#166534" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Optimization</text>
+    <text x="580" y="1160" fill="#14532d" font-family="Arial, sans-serif" font-size="9">Cost: -23%</text>
+    <text x="580" y="1172" fill="#14532d" font-family="Arial, sans-serif" font-size="8">Speed: +89%</text>
+    
+    <rect x="710" y="1130" width="120" height="50" fill="#eff6ff" rx="6" stroke="#bfdbfe" stroke-width="1"/>
+    <text x="720" y="1145" fill="#1e40af" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Insights</text>
+    <text x="720" y="1160" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="9">ROI: 340%</text>
+    <text x="720" y="1172" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="8">Uptime: 99.9%</text>
+  </g>
+
+  <!-- Connection Lines Between Platforms -->
+  <g class="platform-connections">
+    <!-- Curved connections showing data flow -->
+    <path d="M 1050 350 Q 1200 400 1250 500" stroke="#3b82f6" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M 1250 700 Q 1200 800 1050 850" stroke="#f59e0b" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M 950 850 Q 800 800 750 700" stroke="#ef4444" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M 750 500 Q 800 400 950 350" stroke="#10a37f" stroke-width="3" fill="none" opacity="0.6"/>
+    
+    <!-- Data flow indicators -->
+    <circle cx="1150" cy="450" r="4" fill="#3b82f6" class="flow-indicator"/>
+    <circle cx="1150" cy="750" r="4" fill="#f59e0b" class="flow-indicator"/>
+    <circle cx="850" cy="750" r="4" fill="#ef4444" class="flow-indicator"/>
+    <circle cx="850" cy="450" r="4" fill="#10a37f" class="flow-indicator"/>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+  </defs>
+
+  <!-- Interactive Elements Styling -->
+  <style>
+    .platform-node:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .platform-node rect {
+      transition: all 0.3s ease;
+    }
+    .platform-node:hover rect {
+      filter: url(#ecosystemShadow);
+    }
+    .context-node:hover {
+      transform: scale(1.3);
+      transition: transform 0.3s ease;
+      filter: url(#connectionPulse);
+    }
+    .hub-indicators circle:hover {
+      transform: scale(1.2);
+      transition: transform 0.2s ease;
+    }
+    .workflow-steps rect:hover {
+      transform: translateY(-2px);
+      transition: transform 0.2s ease;
+    }
+    .flow-indicator {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+    #centralHub:hover {
+      transform: scale(1.05);
+      transition: transform 0.4s ease;
+    }
+  </style>
+</svg>
