@@ -1,0 +1,730 @@
+<svg viewBox="0 0 1800 1400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">DP-06: Intelligent Resource Allocation & Optimization Engine</title>
+  <desc id="desc">Advanced resource optimization system that dynamically allocates team members, skills, and time across projects while maximizing productivity and maintaining work-life balance through intelligent analysis and automated workload balancing.</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive elements -->
+  <defs>
+    <!-- Resource optimization gradients -->
+    <linearGradient id="optimizationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    
+    <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+    
+    <linearGradient id="workloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    
+    <linearGradient id="wellnessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    
+    <linearGradient id="managementGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    
+    <!-- AI intelligence gradient -->
+    <radialGradient id="aiIntelligenceGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#34d399"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </radialGradient>
+    
+    <!-- Header gradient -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    
+    <!-- Dashboard gradient -->
+    <linearGradient id="dashboardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    
+    <!-- Optimization glow effect -->
+    <filter id="optimizationGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Intelligence processing filter -->
+    <filter id="intelligenceProcessing">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Data flow arrow marker -->
+    <marker id="dataFlowArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#10b981"/>
+    </marker>
+    
+    <!-- Optimization indicator marker -->
+    <marker id="optimizationMarker" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <circle cx="4" cy="4" r="3" fill="#34d399"/>
+    </marker>
+    
+    <!-- Resource allocation animation -->
+    <g id="resourceAllocation">
+      <circle r="8" fill="none" stroke="#10b981" stroke-width="3" opacity="0.8">
+        <animate attributeName="r" values="8;16;8" dur="2.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Skill matching indicator -->
+    <g id="skillMatching">
+      <rect width="5" height="22" fill="#3b82f6" opacity="0.9">
+        <animate attributeName="height" values="22;32;22" dur="2.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2.1s" repeatCount="indefinite"/>
+      </animate>
+    </g>
+    
+    <!-- Wellness monitoring pulse -->
+    <g id="wellnessMonitoring">
+      <circle r="6" fill="#8b5cf6" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="6;10;6" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Data flow animation -->
+    <g id="dataFlow">
+      <circle r="3" fill="#34d399" opacity="0.9">
+        <animateMotion dur="3s" repeatCount="indefinite">
+          <mpath href="#flowPath"/>
+        </animateMotion>
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Flow path definition -->
+    <path id="flowPath" d="M 0 0 Q 50 25 100 0 Q 150 -25 200 0" fill="none" opacity="0"/>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1800" height="1400" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1800" height="90" fill="url(#headerGradient)"/>
+  <text x="50" y="35" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700">
+    Intelligent Resource Allocation &amp; Optimization Engine
+  </text>
+  <text x="50" y="60" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="18">
+    Advanced resource optimization system with dynamic allocation, skill matching, and automated workload balancing for maximum productivity
+  </text>
+  <text x="50" y="80" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="14">
+    Dynamic planning • Intelligent allocation • Team wellness • Real-time optimization
+  </text>
+  
+  <!-- Central AI Intelligence Engine -->
+  <g id="ai-intelligence-engine" transform="translate(900, 650)">
+    <!-- Central intelligence core -->
+    <circle cx="0" cy="0" r="80" fill="url(#aiIntelligenceGradient)" stroke="#059669" stroke-width="4" filter="url(#optimizationGlow)"/>
+    
+    <!-- Intelligence processing rings -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#34d399" stroke-width="2" opacity="0.6">
+      <animate attributeName="r" values="60;70;60" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#10b981" stroke-width="3" opacity="0.8">
+      <animate attributeName="r" values="45;55;45" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Central brain icon -->
+    <text x="0" y="-15" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">
+      AI
+    </text>
+    <text x="0" y="5" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">
+      Intelligence
+    </text>
+    <text x="0" y="25" text-anchor="middle" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="12">
+      Resource Optimization
+    </text>
+    
+    <!-- Intelligence status indicators -->
+    <g transform="translate(-60, -120)">
+      <text x="0" y="0" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+        Active Analysis:
+      </text>
+      <text x="0" y="15" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Skill Matching: Real-time
+      </text>
+      <text x="0" y="28" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Capacity Planning: Continuous
+      </text>
+      <text x="0" y="41" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Workload Balancing: Active
+      </text>
+      <text x="0" y="54" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Wellness Monitoring: Enabled
+      </text>
+    </g>
+    
+    <!-- Performance metrics -->
+    <g transform="translate(70, -120)">
+      <text x="0" y="0" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+        Optimization Metrics:
+      </text>
+      <text x="0" y="15" fill="#ecfdf5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Utilization Efficiency: 85%
+      </text>
+      <text x="0" y="28" fill="#ecfdf5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Skill Match Accuracy: 92%
+      </text>
+      <text x="0" y="41" fill="#ecfdf5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Workload Balance: 94%
+      </text>
+      <text x="0" y="54" fill="#ecfdf5" font-family="Inter, system-ui, sans-serif" font-size="10">
+        • Team Satisfaction: 89%
+      </text>
+    </g>
+  </g>
+  
+  <!-- Skill Matching & Capacity Planning Module -->
+  <g id="skill-capacity-module" transform="translate(150, 200)">
+    <rect x="0" y="0" width="500" height="300" fill="url(#dashboardGradient)" stroke="#3b82f6" stroke-width="3" rx="12"/>
+    
+    <!-- Module header -->
+    <rect x="0" y="0" width="500" height="60" fill="url(#skillGradient)" rx="12"/>
+    <rect x="0" y="48" width="500" height="12" fill="url(#skillGradient)"/>
+    <text x="250" y="35" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">
+      🧠 Skill Matching &amp; Capacity Planning
+    </text>
+    
+    <!-- Team skills matrix -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+        Team Skills &amp; Capacity Matrix:
+      </text>
+      
+      <!-- Skill categories with capacity indicators -->
+      <g transform="translate(0, 25)">
+        <!-- Frontend Development -->
+        <g>
+          <text x="0" y="15" fill="#dbeafe" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            Frontend Development
+          </text>
+          <rect x="180" y="5" width="200" height="12" fill="#1e40af" rx="6"/>
+          <rect x="180" y="5" width="170" height="12" fill="#60a5fa" rx="6"/>
+          <text x="390" y="15" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            85% (4/5 devs)
+          </text>
+        </g>
+        
+        <!-- Backend Development -->
+        <g transform="translate(0, 30)">
+          <text x="0" y="15" fill="#dbeafe" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            Backend Development
+          </text>
+          <rect x="180" y="5" width="200" height="12" fill="#1e40af" rx="6"/>
+          <rect x="180" y="5" width="130" height="12" fill="#fbbf24" rx="6"/>
+          <text x="390" y="15" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            65% (3/5 devs)
+          </text>
+        </g>
+        
+        <!-- QA & Testing -->
+        <g transform="translate(0, 60)">
+          <text x="0" y="15" fill="#dbeafe" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            QA &amp; Testing
+          </text>
+          <rect x="180" y="5" width="200" height="12" fill="#1e40af" rx="6"/>
+          <rect x="180" y="5" width="184" height="12" fill="#10b981" rx="6"/>
+          <text x="390" y="15" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            92% (2/2 QA)
+          </text>
+        </g>
+        
+        <!-- DevOps & Infrastructure -->
+        <g transform="translate(0, 90)">
+          <text x="0" y="15" fill="#dbeafe" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            DevOps &amp; Infrastructure
+          </text>
+          <rect x="180" y="5" width="200" height="12" fill="#1e40af" rx="6"/>
+          <rect x="180" y="5" width="156" height="12" fill="#8b5cf6" rx="6"/>
+          <text x="390" y="15" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            78% (1/1 DevOps)
+          </text>
+        </g>
+        
+        <!-- UI/UX Design -->
+        <g transform="translate(0, 120)">
+          <text x="0" y="15" fill="#dbeafe" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            UI/UX Design
+          </text>
+          <rect x="180" y="5" width="200" height="12" fill="#1e40af" rx="6"/>
+          <rect x="180" y="5" width="110" height="12" fill="#ef4444" rx="6"/>
+          <text x="390" y="15" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            55% (1/2 designers)
+          </text>
+          <use href="#skillMatching" transform="translate(450, 0)"/>
+        </g>
+        
+        <!-- Technical Leadership -->
+        <g transform="translate(0, 150)">
+          <text x="0" y="15" fill="#dbeafe" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            Technical Leadership
+          </text>
+          <rect x="180" y="5" width="200" height="12" fill="#1e40af" rx="6"/>
+          <rect x="180" y="5" width="176" height="12" fill="#059669" rx="6"/>
+          <text x="390" y="15" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            88% (2/2 leads)
+          </text>
+        </g>
+      </g>
+    </g>
+    
+    <!-- Connection line to AI engine -->
+    <path d="M 500 350 Q 600 400 680 550" stroke="#3b82f6" stroke-width="4" fill="none" marker-end="url(#dataFlowArrow)" opacity="0.8"/>
+    <use href="#dataFlow" transform="translate(500, 350)">
+      <animateMotion dur="3s" repeatCount="indefinite">
+        <mpath href="#flowPath"/>
+      </animateMotion>
+    </use>
+  </g>
+  
+  <!-- Automated Workload Distribution Module -->
+  <g id="workload-distribution-module" transform="translate(1150, 200)">
+    <rect x="0" y="0" width="500" height="300" fill="url(#dashboardGradient)" stroke="#f59e0b" stroke-width="3" rx="12"/>
+    
+    <!-- Module header -->
+    <rect x="0" y="0" width="500" height="60" fill="url(#workloadGradient)" rx="12"/>
+    <rect x="0" y="48" width="500" height="12" fill="url(#workloadGradient)"/>
+    <text x="250" y="35" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">
+      ⚖️ Automated Workload Distribution
+    </text>
+    
+    <!-- Team member workload visualization -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+        Team Member Workload Status:
+      </text>
+      
+      <!-- Individual team member workloads -->
+      <g transform="translate(0, 25)">
+        <!-- Sarah (Team Lead) -->
+        <g>
+          <circle cx="20" cy="15" r="12" fill="#10b981"/>
+          <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="700">
+            SL
+          </text>
+          <text x="45" y="10" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            Sarah (Team Lead)
+          </text>
+          <text x="45" y="22" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">
+            Workload: 75% | Available: 10h/week
+          </text>
+          
+          <!-- Dynamic rebalancing arrow -->
+          <path d="M 200 15 Q 230 10 260 15" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#optimizationMarker)"/>
+          <text x="270" y="18" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="9">
+            +5h from Alex
+          </text>
+        </g>
+        
+        <!-- Alex (Senior Dev) -->
+        <g transform="translate(0, 35)">
+          <circle cx="20" cy="15" r="12" fill="#f59e0b"/>
+          <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="700">
+            AD
+          </text>
+          <text x="45" y="10" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            Alex (Senior Developer)
+          </text>
+          <text x="45" y="22" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">
+            Workload: 95% | Needs redistribution
+          </text>
+          
+          <!-- Redistribution arrows -->
+          <path d="M 200 15 Q 180 5 160 15" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#optimizationMarker)"/>
+          <text x="120" y="8" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="9">
+            -5h to Sarah
+          </text>
+        </g>
+        
+        <!-- Maria (Mid-level) -->
+        <g transform="translate(0, 70)">
+          <circle cx="20" cy="15" r="12" fill="#3b82f6"/>
+          <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="700">
+            MD
+          </text>
+          <text x="45" y="10" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            Maria (Mid-level Developer)
+          </text>
+          <text x="45" y="22" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">
+            Workload: 80% | Optimal capacity
+          </text>
+        </g>
+        
+        <!-- James (Junior) -->
+        <g transform="translate(0, 105)">
+          <circle cx="20" cy="15" r="12" fill="#8b5cf6"/>
+          <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="700">
+            JD
+          </text>
+          <text x="45" y="10" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            James (Junior Developer)
+          </text>
+          <text x="45" y="22" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">
+            Workload: 60% | Available for growth tasks
+          </text>
+          
+          <!-- Growth opportunity arrow -->
+          <path d="M 300 15 Q 330 20 360 15" stroke="#8b5cf6" stroke-width="2" fill="none" marker-end="url(#optimizationMarker)"/>
+          <text x="370" y="18" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="9">
+            +learning tasks
+          </text>
+        </g>
+        
+        <!-- Lisa (QA) -->
+        <g transform="translate(0, 140)">
+          <circle cx="20" cy="15" r="12" fill="#ef4444"/>
+          <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="700">
+            LQ
+          </text>
+          <text x="45" y="10" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+            Lisa (QA Engineer)
+          </text>
+          <text x="45" y="22" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">
+            Workload: 85% | Peak testing phase
+          </text>
+        </g>
+      </g>
+      
+      <!-- Algorithms indicator -->
+      <g transform="translate(350, 200)">
+        <text x="0" y="0" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">
+          Active Algorithms:
+        </text>
+        <text x="0" y="15" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="9">
+          • Priority-based assignment
+        </text>
+        <text x="0" y="28" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="9">
+          • Skill-complexity matching
+        </text>
+        <text x="0" y="41" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="9">
+          • Load balancing optimization
+        </text>
+      </g>
+    </g>
+    
+    <!-- Connection line to AI engine -->
+    <path d="M 1150 350 Q 1100 400 1020 550" stroke="#f59e0b" stroke-width="4" fill="none" marker-end="url(#dataFlowArrow)" opacity="0.8"/>
+  </g>
+  
+  <!-- Team Wellness & Burnout Prevention Module -->
+  <g id="wellness-module" transform="translate(150, 850)">
+    <rect x="0" y="0" width="500" height="280" fill="url(#dashboardGradient)" stroke="#8b5cf6" stroke-width="3" rx="12"/>
+    
+    <!-- Module header -->
+    <rect x="0" y="0" width="500" height="60" fill="url(#wellnessGradient)" rx="12"/>
+    <rect x="0" y="48" width="500" height="12" fill="url(#wellnessGradient)"/>
+    <text x="250" y="35" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">
+      💜 Team Wellness &amp; Burnout Prevention
+    </text>
+    
+    <!-- Wellness metrics dashboard -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+        Real-Time Wellness Monitoring:
+      </text>
+      
+      <!-- Wellness indicators -->
+      <g transform="translate(0, 30)">
+        <!-- Team Satisfaction -->
+        <g>
+          <text x="0" y="15" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            Team Satisfaction
+          </text>
+          <g transform="translate(150, 5)">
+            <circle r="25" fill="none" stroke="#6366f1" stroke-width="4"/>
+            <circle r="25" fill="none" stroke="#a78bfa" stroke-width="4" 
+                    stroke-dasharray="132" stroke-dashoffset="20" 
+                    transform="rotate(-90)" stroke-linecap="round"/>
+            <text x="0" y="3" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">
+              85%
+            </text>
+          </g>
+          <use href="#wellnessMonitoring" transform="translate(200, 5)"/>
+        </g>
+        
+        <!-- Energy Levels -->
+        <g transform="translate(0, 60)">
+          <text x="0" y="15" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            Energy Levels
+          </text>
+          <g transform="translate(150, 5)">
+            <circle r="25" fill="none" stroke="#6366f1" stroke-width="4"/>
+            <circle r="25" fill="none" stroke="#fbbf24" stroke-width="4" 
+                    stroke-dasharray="132" stroke-dashoffset="35" 
+                    transform="rotate(-90)" stroke-linecap="round"/>
+            <text x="0" y="3" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">
+              75%
+            </text>
+          </g>
+        </g>
+        
+        <!-- Stress Indicators -->
+        <g transform="translate(0, 120)">
+          <text x="0" y="15" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+            Stress Levels
+          </text>
+          <g transform="translate(150, 5)">
+            <circle r="25" fill="none" stroke="#6366f1" stroke-width="4"/>
+            <circle r="25" fill="none" stroke="#10b981" stroke-width="4" 
+                    stroke-dasharray="132" stroke-dashoffset="66" 
+                    transform="rotate(-90)" stroke-linecap="round"/>
+            <text x="0" y="3" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700">
+              50%
+            </text>
+          </g>
+          <text x="200" y="15" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">
+            ✓ Healthy Range
+          </text>
+        </g>
+      </g>
+      
+      <!-- Burnout prevention strategies -->
+      <g transform="translate(250, 30)">
+        <text x="0" y="0" fill="#a78bfa" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+          Active Prevention Strategies:
+        </text>
+        
+        <g transform="translate(0, 20)">
+          <text x="0" y="0" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Auto workload adjustment when stress > 70%
+          </text>
+          <text x="0" y="15" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Skill rotation to prevent monotony
+          </text>
+          <text x="0" y="30" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Mandatory break scheduling
+          </text>
+          <text x="0" y="45" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Learning time allocation (20%)
+          </text>
+          <text x="0" y="60" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Pair programming opportunities
+          </text>
+          <text x="0" y="75" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Flexible deadline adjustment
+          </text>
+          <text x="0" y="90" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Mental health support integration
+          </text>
+          <text x="0" y="105" fill="#e9d5ff" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Recognition &amp; reward automation
+          </text>
+        </g>
+      </g>
+    </g>
+    
+    <!-- Connection line to AI engine -->
+    <path d="M 500 990 Q 600 900 680 750" stroke="#8b5cf6" stroke-width="4" fill="none" marker-end="url(#dataFlowArrow)" opacity="0.8"/>
+  </g>
+  
+  <!-- Real-time Resource Management Interface -->
+  <g id="management-interface" transform="translate(1150, 850)">
+    <rect x="0" y="0" width="500" height="280" fill="url(#dashboardGradient)" stroke="#ef4444" stroke-width="3" rx="12"/>
+    
+    <!-- Module header -->
+    <rect x="0" y="0" width="500" height="60" fill="url(#managementGradient)" rx="12"/>
+    <rect x="0" y="48" width="500" height="12" fill="url(#managementGradient)"/>
+    <text x="250" y="35" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">
+      📱 Real-time Resource Management Interface
+    </text>
+    
+    <!-- Mobile interface mockup -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+        Mobile-Optimized PWA Interface:
+      </text>
+      
+      <!-- Mobile device mockup -->
+      <g transform="translate(50, 25)">
+        <rect x="0" y="0" width="200" height="160" fill="#1f2937" stroke="#4b5563" stroke-width="2" rx="20"/>
+        <rect x="10" y="10" width="180" height="140" fill="#111827" rx="10"/>
+        
+        <!-- Mobile interface elements -->
+        <g transform="translate(20, 20)">
+          <!-- Header -->
+          <rect x="0" y="0" width="160" height="20" fill="#ef4444" rx="4"/>
+          <text x="80" y="13" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600">
+            Resource Dashboard
+          </text>
+          
+          <!-- Team status cards -->
+          <g transform="translate(0, 30)">
+            <rect x="0" y="0" width="75" height="40" fill="#10b981" stroke="#059669" stroke-width="1" rx="4"/>
+            <text x="37" y="12" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="600">
+              Available: 3
+            </text>
+            <text x="37" y="22" text-anchor="middle" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="6">
+              Team Members
+            </text>
+            <text x="37" y="32" text-anchor="middle" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="6">
+              Ready for tasks
+            </text>
+            
+            <rect x="85" y="0" width="75" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="1" rx="4"/>
+            <text x="122" y="12" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="600">
+              Busy: 2
+            </text>
+            <text x="122" y="22" text-anchor="middle" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="6">
+              Team Members
+            </text>
+            <text x="122" y="32" text-anchor="middle" fill="#fef3c7" font-family="Inter, system-ui, sans-serif" font-size="6">
+              At capacity
+            </text>
+          </g>
+          
+          <!-- Action buttons -->
+          <g transform="translate(0, 80)">
+            <rect x="0" y="0" width="45" height="25" fill="#3b82f6" stroke="#1e40af" stroke-width="1" rx="4"/>
+            <text x="22" y="14" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="600">
+              Adjust
+            </text>
+            
+            <rect x="55" y="0" width="45" height="25" fill="#10b981" stroke="#059669" stroke-width="1" rx="4"/>
+            <text x="77" y="14" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="600">
+              Optimize
+            </text>
+            
+            <rect x="110" y="0" width="45" height="25" fill="#ef4444" stroke="#dc2626" stroke-width="1" rx="4"/>
+            <text x="132" y="14" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="600">
+              Alert
+            </text>
+          </g>
+        </g>
+      </g>
+      
+      <!-- PWA features -->
+      <g transform="translate(280, 25)">
+        <text x="0" y="0" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+          PWA Capabilities:
+        </text>
+        
+        <g transform="translate(0, 20)">
+          <text x="0" y="0" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Offline resource data access
+          </text>
+          <text x="0" y="15" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Real-time sync when online
+          </text>
+          <text x="0" y="30" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Touch-friendly interface
+          </text>
+          <text x="0" y="45" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Push notifications for alerts
+          </text>
+          <text x="0" y="60" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Responsive design (320px+)
+          </text>
+          <text x="0" y="75" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Progressive loading
+          </text>
+          <text x="0" y="90" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Service worker caching
+          </text>
+          <text x="0" y="105" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10">
+            ✓ Background sync
+          </text>
+        </g>
+      </g>
+    </g>
+    
+    <!-- Connection line to AI engine -->
+    <path d="M 1150 990 Q 1100 900 1020 750" stroke="#ef4444" stroke-width="4" fill="none" marker-end="url(#dataFlowArrow)" opacity="0.8"/>
+  </g>
+  
+  <!-- Central Performance Metrics Panel -->
+  <g id="performance-metrics" transform="translate(650, 1200)">
+    <rect x="0" y="0" width="500" height="120" fill="url(#optimizationGradient)" stroke="#059669" stroke-width="2" rx="12"/>
+    
+    <!-- Metrics header -->
+    <rect x="0" y="0" width="500" height="40" fill="url(#headerGradient)" rx="12"/>
+    <rect x="0" y="28" width="500" height="12" fill="url(#headerGradient)"/>
+    <text x="250" y="25" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">
+      📊 Key Optimization Metrics
+    </text>
+    
+    <!-- Metrics grid -->
+    <g transform="translate(25, 55)">
+      <!-- Left column -->
+      <g>
+        <text x="0" y="0" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">
+          Utilization Efficiency:
+        </text>
+        <text x="130" y="0" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700">
+          85% (+12%)
+        </text>
+        
+        <text x="0" y="18" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">
+          Skill Match Accuracy:
+        </text>
+        <text x="130" y="18" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700">
+          92% (+8%)
+        </text>
+        
+        <text x="0" y="36" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">
+          Workload Balance Score:
+        </text>
+        <text x="130" y="36" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700">
+          94% (+15%)
+        </text>
+      </g>
+      
+      <!-- Right column -->
+      <g transform="translate(250, 0)">
+        <text x="0" y="0" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">
+          Team Satisfaction:
+        </text>
+        <text x="120" y="0" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700">
+          89% (+6%)
+        </text>
+        
+        <text x="0" y="18" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">
+          Burnout Prevention:
+        </text>
+        <text x="120" y="18" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700">
+          97% effective
+        </text>
+        
+        <text x="0" y="36" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">
+          Resource ROI:
+        </text>
+        <text x="120" y="36" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700">
+          234% annual
+        </text>
+      </g>
+    </g>
+    
+    <use href="#resourceAllocation" transform="translate(460, 80)"/>
+  </g>
+  
+  <!-- Mobile responsiveness indicator -->
+  <g id="mobile-indicator" transform="translate(50, 1350)">
+    <text x="0" y="0" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="12">
+      📱 PWA-Optimized • 🧠 AI-Enhanced • ⚖️ Dynamic Balancing • ♿ WCAG 2.1 AA Compliant
+    </text>
+    
+    <text x="1200" y="0" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">
+      Resource Intelligence: 85% utilization efficiency with 234% ROI
+    </text>
+  </g>
+
+</svg>

@@ -1,0 +1,573 @@
+<svg viewBox="0 0 1600 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ICE-05: Advanced Organizational Learning Acceleration Dashboard</title>
+  <desc id="desc">Sophisticated dashboard tracking knowledge transfer, skill development velocity, and organizational capability building through principle implementation, with predictive modeling for learning curve optimization.</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive elements -->
+  <defs>
+    <!-- Learning velocity gradients -->
+    <linearGradient id="velocityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+    
+    <linearGradient id="knowledgeFlowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    
+    <linearGradient id="skillMatrixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    
+    <linearGradient id="capabilityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    
+    <linearGradient id="optimizationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    
+    <!-- Five principles gradients -->
+    <linearGradient id="contextMasteryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    
+    <linearGradient id="dynamicPlanningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+    
+    <linearGradient id="codeEvolutionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    
+    <linearGradient id="strategicTestingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    
+    <linearGradient id="intelligentReviewGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    
+    <!-- Header gradient -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    
+    <!-- Predictive modeling gradient -->
+    <radialGradient id="predictiveGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </radialGradient>
+    
+    <!-- Interactive glow effects -->
+    <filter id="learningGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="velocityGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="predictiveGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="learningArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#10b981"/>
+    </marker>
+    
+    <marker id="velocityArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3b82f6"/>
+    </marker>
+    
+    <marker id="optimizationArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#f59e0b"/>
+    </marker>
+    
+    <!-- Learning velocity pulse animation -->
+    <g id="velocityPulse">
+      <circle r="6" fill="#3b82f6" opacity="0.8">
+        <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Knowledge flow animation -->
+    <g id="knowledgeFlow">
+      <circle r="4" fill="#10b981">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Skill development indicator -->
+    <g id="skillIndicator">
+      <circle r="5" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.7">
+        <animate attributeName="r" values="5;10;5" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Predictive modeling pulse -->
+    <g id="predictivePulse">
+      <circle r="8" fill="none" stroke="#fbbf24" stroke-width="3" opacity="0.6">
+        <animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Accessibility patterns for color-blind users -->
+    <pattern id="velocityPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#3b82f6"/>
+      <circle cx="2" cy="2" r="1" fill="white"/>
+    </pattern>
+    
+    <pattern id="knowledgePattern" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#10b981"/>
+      <path d="M0,6 L6,0" stroke="white" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1100" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1600" height="80" fill="url(#headerGradient)"/>
+  <text x="50" y="35" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700">
+    Advanced Organizational Learning Acceleration Dashboard
+  </text>
+  <text x="50" y="60" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="14">
+    Sophisticated tracking of knowledge transfer, skill development velocity, and capability building optimization
+  </text>
+  
+  <!-- Real-time learning indicator -->
+  <use href="#velocityPulse" x="1450" y="40"/>
+  <text x="1470" y="45" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12">Live Learning</text>
+  
+  <!-- Learning Velocity Analytics Panel (Top Left) -->
+  <g id="learningVelocityAnalytics">
+    <rect x="30" y="100" width="500" height="200" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2" filter="url(#velocityGlow)"/>
+    <rect x="30" y="100" width="500" height="50" fill="url(#velocityGradient)" rx="12 12 0 0"/>
+    <text x="280" y="130" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Learning Velocity Analytics
+    </text>
+    
+    <!-- Velocity metrics -->
+    <g id="velocityMetrics">
+      <text x="50" y="175" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Individual Learning Acceleration:</text>
+      <rect x="50" y="185" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="50" y="185" width="130" fill="#3b82f6" rx="4"/>
+      <text x="260" y="192" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">65% faster progression</text>
+      
+      <text x="300" y="175" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Team Learning Synergy:</text>
+      <rect x="300" y="185" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="300" y="185" width="180" fill="#10b981" rx="4"/>
+      <text x="510" y="192" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">300% improvement</text>
+      
+      <!-- Principle-specific velocity tracking -->
+      <text x="50" y="215" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Principle Mastery Velocity:</text>
+      
+      <rect x="50" y="230" width="80" height="20" fill="url(#contextMasteryGradient)" rx="4"/>
+      <text x="90" y="243" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Context</text>
+      <text x="140" y="243" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="10">+35%</text>
+      
+      <rect x="200" y="230" width="80" height="20" fill="url(#dynamicPlanningGradient)" rx="4"/>
+      <text x="240" y="243" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Planning</text>
+      <text x="290" y="243" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="10">+28%</text>
+      
+      <rect x="350" y="230" width="80" height="20" fill="url(#codeEvolutionGradient)" rx="4"/>
+      <text x="390" y="243" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Evolution</text>
+      <text x="440" y="243" fill="#d97706" font-family="Inter, system-ui, sans-serif" font-size="10">+32%</text>
+      
+      <rect x="50" y="260" width="80" height="20" fill="url(#strategicTestingGradient)" rx="4"/>
+      <text x="90" y="273" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Testing</text>
+      <text x="140" y="273" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10">+38%</text>
+      
+      <rect x="200" y="260" width="80" height="20" fill="url(#intelligentReviewGradient)" rx="4"/>
+      <text x="240" y="273" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Review</text>
+      <text x="290" y="273" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="10">+28%</text>
+      
+      <rect x="350" y="260" width="120" height="20" fill="url(#predictiveGradient)" rx="4"/>
+      <text x="410" y="273" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Compound Effect</text>
+      <text x="480" y="273" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700">430%</text>
+    </g>
+    
+    <!-- Velocity indicators -->
+    <use href="#velocityPulse" x="500" y="130"/>
+    <use href="#knowledgeFlow" x="480" y="192"/>
+    <use href="#skillIndicator" x="460" y="243"/>
+  </g>
+  
+  <!-- Knowledge Flow Visualization (Top Right) -->
+  <g id="knowledgeFlowVisualization">
+    <rect x="550" y="100" width="520" height="200" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2" filter="url(#learningGlow)"/>
+    <rect x="550" y="100" width="520" height="50" fill="url(#knowledgeFlowGradient)" rx="12 12 0 0"/>
+    <text x="810" y="130" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Knowledge Flow Network
+    </text>
+    
+    <!-- Knowledge transfer network -->
+    <g id="knowledgeNetwork">
+      <!-- Central knowledge hub -->
+      <circle cx="810" cy="200" r="25" fill="url(#knowledgeFlowGradient)" filter="url(#learningGlow)"/>
+      <text x="810" y="207" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Knowledge</text>
+      <text x="810" y="218" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8">Hub</text>
+      
+      <!-- Mentorship nodes -->
+      <circle cx="720" cy="170" r="18" fill="url(#velocityGradient)" filter="url(#velocityGlow)"/>
+      <text x="720" y="177" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600">Mentors</text>
+      <text x="720" y="150" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">95% effective</text>
+      
+      <circle cx="900" cy="170" r="18" fill="url(#skillMatrixGradient)" filter="url(#velocityGlow)"/>
+      <text x="900" y="177" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600">Teams</text>
+      <text x="900" y="150" text-anchor="middle" fill="#d97706" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">92% transfer</text>
+      
+      <circle cx="720" cy="230" r="18" fill="url(#capabilityGradient)" filter="url(#velocityGlow)"/>
+      <text x="720" y="237" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600">Learners</text>
+      <text x="720" y="250" text-anchor="middle" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">89% success</text>
+      
+      <circle cx="900" cy="230" r="18" fill="url(#optimizationGradient)" filter="url(#velocityGlow)"/>
+      <text x="900" y="237" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600">Innovation</text>
+      <text x="900" y="250" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">8 per quarter</text>
+      
+      <!-- Knowledge flow connections -->
+      <line x1="738" y1="175" x2="785" y2="190" stroke="#10b981" stroke-width="3" marker-end="url(#learningArrow)" opacity="0.7"/>
+      <line x1="882" y1="175" x2="835" y2="190" stroke="#10b981" stroke-width="3" marker-end="url(#learningArrow)" opacity="0.7"/>
+      <line x1="738" y1="225" x2="785" y2="210" stroke="#10b981" stroke-width="3" marker-end="url(#learningArrow)" opacity="0.7"/>
+      <line x1="882" y1="225" x2="835" y2="210" stroke="#10b981" stroke-width="3" marker-end="url(#learningArrow)" opacity="0.7"/>
+    </g>
+    
+    <!-- Knowledge flow metrics -->
+    <g id="flowMetrics">
+      <text x="570" y="175" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">Transfer Rate: 92%</text>
+      <text x="570" y="190" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">Retention: 94%</text>
+      <text x="570" y="205" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">Application: 89%</text>
+      
+      <text x="970" y="175" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">Cross-team: 50% faster</text>
+      <text x="970" y="190" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">Bottlenecks: -60%</text>
+      <text x="970" y="205" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">Acceleration: +65%</text>
+    </g>
+    
+    <!-- Flow indicators -->
+    <use href="#knowledgeFlow" x="810" y="130"/>
+    <use href="#knowledgeFlow" x="720" y="170"/>
+    <use href="#knowledgeFlow" x="900" y="170"/>
+  </g>
+  
+  <!-- Predictive Learning Optimization (Top Far Right) -->
+  <g id="predictiveLearning">
+    <rect x="1090" y="100" width="480" height="200" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="2" filter="url(#predictiveGlow)"/>
+    <rect x="1090" y="100" width="480" height="50" fill="url(#predictiveGradient)" rx="12 12 0 0"/>
+    <text x="1330" y="130" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      AI-Enhanced Learning Optimization
+    </text>
+    
+    <!-- Predictive analytics -->
+    <g id="predictiveAnalytics">
+      <text x="1110" y="175" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Predictive Performance Models:</text>
+      
+      <!-- Individual predictions -->
+      <rect x="1110" y="190" width="180" height="30" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+      <text x="1200" y="207" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Individual Progress</text>
+      <text x="1200" y="217" text-anchor="middle" fill="#d97706" font-family="Inter, system-ui, sans-serif" font-size="9">83% accuracy</text>
+      
+      <rect x="1310" y="190" width="180" height="30" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+      <text x="1400" y="207" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Team Velocity</text>
+      <text x="1400" y="217" text-anchor="middle" fill="#d97706" font-family="Inter, system-ui, sans-serif" font-size="9">91% accuracy</text>
+      
+      <!-- Optimization recommendations -->
+      <text x="1110" y="245" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Current Optimization Targets:</text>
+      <text x="1110" y="265" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10">• Focus on Code Evolution principle for Team Alpha</text>
+      <text x="1110" y="280" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10">• Increase pair programming sessions by 40%</text>
+      <text x="1110" y="295" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10">• Strategic Testing workshop recommended for Q2</text>
+    </g>
+    
+    <!-- Predictive indicators -->
+    <use href="#predictivePulse" x="1550" y="130"/>
+    <use href="#predictivePulse" x="1200" y="235"/>
+  </g>
+  
+  <!-- Skill Development Matrix (Middle Left) -->
+  <g id="skillDevelopmentMatrix">
+    <rect x="30" y="320" width="750" height="280" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="2" filter="url(#learningGlow)"/>
+    <rect x="30" y="320" width="750" height="50" fill="url(#skillMatrixGradient)" rx="12 12 0 0"/>
+    <text x="405" y="350" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Five Elite Principles Skill Development Matrix
+    </text>
+    
+    <!-- Skill matrix grid -->
+    <g id="skillMatrix">
+      <!-- Header row -->
+      <text x="70" y="390" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Principle</text>
+      <text x="200" y="390" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Foundation</text>
+      <text x="320" y="390" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Advanced</text>
+      <text x="440" y="390" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Elite</text>
+      <text x="560" y="390" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Team Progress</text>
+      <text x="680" y="390" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Velocity</text>
+      
+      <!-- Context Mastery row -->
+      <rect x="50" y="400" width="120" height="25" fill="url(#contextMasteryGradient)" rx="4"/>
+      <text x="110" y="417" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Context Mastery</text>
+      
+      <circle cx="200" cy="412" r="8" fill="#22c55e"/>
+      <text x="200" y="430" text-anchor="middle" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="8">95%</text>
+      
+      <circle cx="320" cy="412" r="8" fill="#facc15"/>
+      <text x="320" y="430" text-anchor="middle" fill="#ca8a04" font-family="Inter, system-ui, sans-serif" font-size="8">72%</text>
+      
+      <circle cx="440" cy="412" r="8" fill="#f87171"/>
+      <text x="440" y="430" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="8">28%</text>
+      
+      <rect x="520" y="405" width="80" height="15" fill="#dcfce7" rx="3"/>
+      <rect x="520" y="405" width="60" fill="#22c55e" rx="3"/>
+      <text x="610" y="416" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="9">75%</text>
+      
+      <text x="680" y="417" text-anchor="middle" fill="#22c55e" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">+35%</text>
+      
+      <!-- Dynamic Planning row -->
+      <rect x="50" y="440" width="120" height="25" fill="url(#dynamicPlanningGradient)" rx="4"/>
+      <text x="110" y="457" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Dynamic Planning</text>
+      
+      <circle cx="200" cy="452" r="8" fill="#22c55e"/>
+      <text x="200" y="470" text-anchor="middle" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="8">89%</text>
+      
+      <circle cx="320" cy="452" r="8" fill="#facc15"/>
+      <text x="320" y="470" text-anchor="middle" fill="#ca8a04" font-family="Inter, system-ui, sans-serif" font-size="8">64%</text>
+      
+      <circle cx="440" cy="452" r="8" fill="#f87171"/>
+      <text x="440" y="470" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="8">22%</text>
+      
+      <rect x="520" y="445" width="80" height="15" fill="#dbeafe" rx="3"/>
+      <rect x="520" y="445" width="56" fill="#3b82f6" rx="3"/>
+      <text x="610" y="456" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="9">70%</text>
+      
+      <text x="680" y="457" text-anchor="middle" fill="#3b82f6" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">+28%</text>
+      
+      <!-- Code Evolution row -->
+      <rect x="50" y="480" width="120" height="25" fill="url(#codeEvolutionGradient)" rx="4"/>
+      <text x="110" y="497" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Code Evolution</text>
+      
+      <circle cx="200" cy="492" r="8" fill="#22c55e"/>
+      <text x="200" y="510" text-anchor="middle" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="8">92%</text>
+      
+      <circle cx="320" cy="492" r="8" fill="#facc15"/>
+      <text x="320" y="510" text-anchor="middle" fill="#ca8a04" font-family="Inter, system-ui, sans-serif" font-size="8">68%</text>
+      
+      <circle cx="440" cy="492" r="8" fill="#f87171"/>
+      <text x="440" y="510" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="8">31%</text>
+      
+      <rect x="520" y="485" width="80" height="15" fill="#fef3c7" rx="3"/>
+      <rect x="520" y="485" width="64" fill="#f59e0b" rx="3"/>
+      <text x="610" y="496" fill="#d97706" font-family="Inter, system-ui, sans-serif" font-size="9">80%</text>
+      
+      <text x="680" y="497" text-anchor="middle" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">+32%</text>
+      
+      <!-- Strategic Testing row -->
+      <rect x="50" y="520" width="120" height="25" fill="url(#strategicTestingGradient)" rx="4"/>
+      <text x="110" y="537" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Strategic Testing</text>
+      
+      <circle cx="200" cy="532" r="8" fill="#22c55e"/>
+      <text x="200" y="550" text-anchor="middle" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="8">87%</text>
+      
+      <circle cx="320" cy="532" r="8" fill="#facc15"/>
+      <text x="320" y="550" text-anchor="middle" fill="#ca8a04" font-family="Inter, system-ui, sans-serif" font-size="8">59%</text>
+      
+      <circle cx="440" cy="532" r="8" fill="#f87171"/>
+      <text x="440" y="550" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="8">19%</text>
+      
+      <rect x="520" y="525" width="80" height="15" fill="#faf5ff" rx="3"/>
+      <rect x="520" y="525" width="52" fill="#8b5cf6" rx="3"/>
+      <text x="610" y="536" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="9">65%</text>
+      
+      <text x="680" y="537" text-anchor="middle" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">+38%</text>
+      
+      <!-- Intelligent Review row -->
+      <rect x="50" y="560" width="120" height="25" fill="url(#intelligentReviewGradient)" rx="4"/>
+      <text x="110" y="577" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Intelligent Review</text>
+      
+      <circle cx="200" cy="572" r="8" fill="#22c55e"/>
+      <text x="200" y="590" text-anchor="middle" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="8">85%</text>
+      
+      <circle cx="320" cy="572" r="8" fill="#facc15"/>
+      <text x="320" y="590" text-anchor="middle" fill="#ca8a04" font-family="Inter, system-ui, sans-serif" font-size="8">61%</text>
+      
+      <circle cx="440" cy="572" r="8" fill="#f87171"/>
+      <text x="440" y="590" text-anchor="middle" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="8">25%</text>
+      
+      <rect x="520" y="565" width="80" height="15" fill="#fef2f2" rx="3"/>
+      <rect x="520" y="565" width="48" fill="#ef4444" rx="3"/>
+      <text x="610" y="576" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="9">60%</text>
+      
+      <text x="680" y="577" text-anchor="middle" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">+28%</text>
+    </g>
+    
+    <!-- Skill indicators -->
+    <use href="#skillIndicator" x="740" y="412"/>
+    <use href="#skillIndicator" x="740" y="452"/>
+    <use href="#skillIndicator" x="740" y="492"/>
+    <use href="#skillIndicator" x="740" y="532"/>
+    <use href="#skillIndicator" x="740" y="572"/>
+  </g>
+  
+  <!-- Organizational Capability Assessment (Middle Right) -->
+  <g id="organizationalCapability">
+    <rect x="800" y="320" width="770" height="280" rx="12" fill="#ffffff" stroke="#8b5cf6" stroke-width="2" filter="url(#learningGlow)"/>
+    <rect x="800" y="320" width="770" height="50" fill="url(#capabilityGradient)" rx="12 12 0 0"/>
+    <text x="1185" y="350" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Organizational Capability Assessment
+    </text>
+    
+    <!-- Capability metrics -->
+    <g id="capabilityMetrics">
+      <text x="820" y="390" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Collective Learning Performance:</text>
+      
+      <!-- Team effectiveness -->
+      <rect x="820" y="410" width="200" height="60" rx="8" fill="#f0f9ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="920" y="430" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Team Effectiveness</text>
+      <text x="920" y="450" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">340%</text>
+      <text x="920" y="465" text-anchor="middle" fill="#3b82f6" font-family="Inter, system-ui, sans-serif" font-size="10">improvement</text>
+      
+      <!-- Knowledge retention -->
+      <rect x="1040" y="410" width="200" height="60" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="1140" y="430" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Knowledge Retention</text>
+      <text x="1140" y="450" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">94%</text>
+      <text x="1140" y="465" text-anchor="middle" fill="#22c55e" font-family="Inter, system-ui, sans-serif" font-size="10">success rate</text>
+      
+      <!-- Innovation rate -->
+      <rect x="1260" y="410" width="200" height="60" rx="8" fill="#fefce8" stroke="#f59e0b" stroke-width="1"/>
+      <text x="1360" y="430" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Innovation Rate</text>
+      <text x="1360" y="450" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">8</text>
+      <text x="1360" y="465" text-anchor="middle" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10">per quarter</text>
+      
+      <!-- Organizational maturity indicators -->
+      <text x="820" y="500" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Organizational Learning Maturity:</text>
+      
+      <text x="820" y="520" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10">• Cultural Health Score: 94.3% (Excellent)</text>
+      <text x="820" y="535" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10">• Leadership Development: 75% promoted within 18 months</text>
+      <text x="820" y="550" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10">• Cross-team Collaboration: 50% reduction in integration issues</text>
+      <text x="820" y="565" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10">• Mentorship Network: 95% completion rate, 4.9/5.0 satisfaction</text>
+      <text x="820" y="580" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10">• Transformation Sustainability: 92% long-term success rate</text>
+    </g>
+    
+    <!-- Capability indicators -->
+    <use href="#predictivePulse" x="1480" y="350"/>
+    <use href="#velocityPulse" x="1020" y="440"/>
+    <use href="#knowledgeFlow" x="1240" y="440"/>
+  </g>
+  
+  <!-- Real-Time Learning Dashboard (Bottom) -->
+  <g id="realTimeDashboard">
+    <rect x="30" y="620" width="1540" height="160" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#learningGlow)"/>
+    <text x="800" y="650" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">
+      Real-Time Learning Analytics & Optimization Insights
+    </text>
+    
+    <!-- Live metrics grid -->
+    <g id="liveMetrics">
+      <rect x="60" y="670" width="200" height="60" rx="6" fill="#f0f9ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="160" y="690" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Active Learners</text>
+      <text x="160" y="710" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">247</text>
+      <text x="160" y="725" text-anchor="middle" fill="#3b82f6" font-family="Inter, system-ui, sans-serif" font-size="10">+12% this week</text>
+      
+      <rect x="280" y="670" width="200" height="60" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="380" y="690" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Skill Velocity</text>
+      <text x="380" y="710" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">2.8x</text>
+      <text x="380" y="725" text-anchor="middle" fill="#22c55e" font-family="Inter, system-ui, sans-serif" font-size="10">above baseline</text>
+      
+      <rect x="500" y="670" width="200" height="60" rx="6" fill="#fefce8" stroke="#f59e0b" stroke-width="1"/>
+      <text x="600" y="690" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Knowledge Flow</text>
+      <text x="600" y="710" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">92%</text>
+      <text x="600" y="725" text-anchor="middle" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10">transfer rate</text>
+      
+      <rect x="720" y="670" width="200" height="60" rx="6" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="820" y="690" text-anchor="middle" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Mentorship</text>
+      <text x="820" y="710" text-anchor="middle" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">284</text>
+      <text x="820" y="725" text-anchor="middle" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="10">active pairs</text>
+      
+      <rect x="940" y="670" width="200" height="60" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+      <text x="1040" y="690" text-anchor="middle" fill="#991b1b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Compound ROI</text>
+      <text x="1040" y="710" text-anchor="middle" fill="#991b1b" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">430%</text>
+      <text x="1040" y="725" text-anchor="middle" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="10">vs individual</text>
+      
+      <rect x="1160" y="670" width="200" height="60" rx="6" fill="#f8fafc" stroke="#64748b" stroke-width="1"/>
+      <text x="1260" y="690" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Optimization</text>
+      <text x="1260" y="710" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">91%</text>
+      <text x="1260" y="725" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10">accuracy</text>
+      
+      <rect x="1380" y="670" width="170" height="60" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+      <text x="1465" y="690" text-anchor="middle" fill="#047857" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Live Status</text>
+      <text x="1465" y="710" text-anchor="middle" fill="#047857" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700">OPTIMIZING</text>
+      <text x="1465" y="725" text-anchor="middle" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="10">real-time</text>
+    </g>
+    
+    <!-- Live status indicators -->
+    <use href="#velocityPulse" x="160" y="750"/>
+    <use href="#knowledgeFlow" x="380" y="750"/>
+    <use href="#skillIndicator" x="600" y="750"/>
+    <use href="#predictivePulse" x="820" y="750"/>
+  </g>
+  
+  <!-- Learning Optimization Recommendations (Bottom) -->
+  <g id="optimizationRecommendations">
+    <rect x="30" y="800" width="1540" height="120" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#velocityGlow)"/>
+    <text x="800" y="830" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      AI-Powered Learning Optimization Recommendations
+    </text>
+    
+    <!-- Recommendations grid -->
+    <g id="recommendations">
+      <text x="50" y="855" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Current Priority Actions:</text>
+      
+      <text x="50" y="875" fill="#3b82f6" font-family="Inter, system-ui, sans-serif" font-size="10">🎯 Team Alpha: Focus next sprint on Code Evolution principle (82% probability of 40% velocity gain)</text>
+      <text x="50" y="890" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="10">📚 Sarah Chen: Ready for Advanced tier Strategic Testing module (confidence: 94%)</text>
+      <text x="50" y="905" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10">🤝 Optimal mentorship pairing: Alex Kim → Jamie Rodriguez for Context Mastery acceleration</text>
+      
+      <text x="800" y="875" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="10">⚡ Cross-team knowledge sharing: Deploy Integration Workshop between Teams Beta and Gamma</text>
+      <text x="800" y="890" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="10">🎨 Learning path optimization: Adjust Dynamic Planning sequence for 23% faster progression</text>
+      <text x="800" y="905" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">📈 ROI prediction: Current trajectory suggests 520% improvement by Q4 with recommended adjustments</text>
+    </g>
+  </g>
+  
+  <!-- Performance indicators -->
+  <g id="performanceIndicators">
+    <text x="50" y="980" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Dashboard Performance:</text>
+    <text x="50" y="1000" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">• Real-time updates: 247 active learners, 284 mentorship pairs, 8 innovations per quarter</text>
+    <text x="50" y="1015" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">• Predictive accuracy: 91% optimization recommendations, 83% individual progress forecasting</text>
+    <text x="50" y="1030" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">• Learning acceleration: 65% faster progression, 2.8x velocity improvement, 430% compound ROI</text>
+    
+    <text x="800" y="1000" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">• Knowledge transfer: 92% effective rate, 94% retention, 89% application success</text>
+    <text x="800" y="1015" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">• Organizational capability: 340% team effectiveness, 94.3% cultural health score</text>
+    <text x="800" y="1030" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10">• Long-term impact: 92% sustainability rate, 75% leadership promotion within 18 months</text>
+  </g>
+  
+  <!-- Mobile optimization indicator -->
+  <circle cx="1520" cy="50" r="8" fill="#8b5cf6" opacity="0.8"/>
+  <text x="1535" y="55" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">Mobile Optimized</text>
+  
+  <!-- Accessibility support -->
+  <g id="accessibilitySupport" aria-hidden="true">
+    <rect x="0" y="0" width="1600" height="1100" fill="transparent"/>
+    <!-- Screen reader support for interactive elements -->
+  </g>
+</svg>

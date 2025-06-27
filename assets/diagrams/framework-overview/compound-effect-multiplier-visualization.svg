@@ -1,0 +1,408 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">FO-03: Compound Effect Mathematical Visualization</title>
+  <desc id="desc">Interactive mathematical demonstration showing how individual principle improvements combine to create exponential productivity gains, contrasting additive vs multiplicative effects with real-time calculator functionality.</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive elements -->
+  <defs>
+    <!-- Principle gradients -->
+    <linearGradient id="contextMasteryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    
+    <linearGradient id="dynamicPlanningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+    
+    <linearGradient id="codeEvolutionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    
+    <linearGradient id="strategicTestingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    
+    <linearGradient id="intelligentReviewGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    
+    <!-- Mathematical visualization gradients -->
+    <linearGradient id="additiveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#94a3b8"/>
+      <stop offset="100%" style="stop-color:#64748b"/>
+    </linearGradient>
+    
+    <linearGradient id="compoundGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="50%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    
+    <!-- ROI visualization gradient -->
+    <radialGradient id="roiGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </radialGradient>
+    
+    <!-- Calculator interface gradient -->
+    <linearGradient id="calculatorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+    
+    <!-- Header gradient -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    
+    <!-- Interactive glow effects -->
+    <filter id="calculatorGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="formulaGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="resultGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="growthArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#059669"/>
+    </marker>
+    
+    <marker id="improvementArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+    
+    <marker id="synergyArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#8b5cf6"/>
+    </marker>
+    
+    <!-- Interactive slider template -->
+    <g id="sliderTemplate">
+      <rect width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect width="80" height="8" fill="#3b82f6" rx="4"/>
+      <circle cx="80" cy="4" r="8" fill="#1e40af" stroke="#ffffff" stroke-width="2"/>
+    </g>
+    
+    <!-- Calculation pulse animation -->
+    <g id="calculationPulse">
+      <circle r="6" fill="#fbbf24" opacity="0.8">
+        <animate attributeName="r" values="6;12;6" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Synergy indicator animation -->
+    <g id="synergyIndicator">
+      <circle r="4" fill="#8b5cf6">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Growth curve animation -->
+    <g id="growthPulse">
+      <circle r="5" fill="none" stroke="#059669" stroke-width="2" opacity="0.7">
+        <animate attributeName="r" values="5;15;5" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1400" height="80" fill="url(#headerGradient)"/>
+  <text x="50" y="35" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700">
+    Compound Effect Mathematical Visualization
+  </text>
+  <text x="50" y="60" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="14">
+    Interactive demonstration of exponential productivity gains through principle synergy
+  </text>
+  
+  <!-- Real-time calculation indicator -->
+  <use href="#calculationPulse" x="1320" y="40"/>
+  <text x="1340" y="45" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="12">Live Calculator</text>
+  
+  <!-- Mathematical Formula Comparison (Top Section) -->
+  <g id="formulaComparison">
+    <rect x="30" y="100" width="1340" height="140" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#formulaGlow)"/>
+    <text x="700" y="130" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600">
+      Mathematical Foundation: Additive vs Multiplicative Effects
+    </text>
+    
+    <!-- Additive Formula -->
+    <g id="additiveFormula">
+      <text x="80" y="165" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Traditional Additive Model:</text>
+      <text x="80" y="185" fill="#374151" font-family="JetBrains Mono, monospace" font-size="16">
+        25% + 30% + 35% + 40% + 30% = 160% improvement
+      </text>
+      <rect x="80" y="195" width="400" height="20" fill="url(#additiveGradient)" rx="10"/>
+      <text x="280" y="230" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="12">Linear Growth Pattern</text>
+    </g>
+    
+    <!-- Multiplicative Formula -->
+    <g id="multiplicativeFormula">
+      <text x="720" y="165" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Compound Multiplicative Model:</text>
+      <text x="720" y="185" fill="#374151" font-family="JetBrains Mono, monospace" font-size="16">
+        1.25 × 1.30 × 1.35 × 1.40 × 1.30 = 530% improvement
+      </text>
+      <rect x="720" y="195" width="600" height="20" fill="url(#compoundGradient)" rx="10"/>
+      <text x="1020" y="230" text-anchor="middle" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="12">Exponential Growth Pattern</text>
+    </g>
+    
+    <!-- Synergy bonus indicator -->
+    <use href="#synergyIndicator" x="650" y="175"/>
+    <text x="665" y="180" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">+50% Synergy</text>
+  </g>
+  
+  <!-- Interactive Calculator Panel (Left Side) -->
+  <g id="interactiveCalculator">
+    <rect x="30" y="260" width="450" height="520" rx="12" fill="url(#calculatorGradient)" stroke="#e2e8f0" stroke-width="2" filter="url(#calculatorGlow)"/>
+    <rect x="30" y="260" width="450" height="50" fill="url(#roiGradient)" rx="12 12 0 0"/>
+    <text x="255" y="290" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Personalized Productivity Calculator
+    </text>
+    
+    <!-- Principle Input Sliders -->
+    <g id="principleSliders">
+      <!-- Context Mastery Slider -->
+      <text x="60" y="340" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Context Mastery</text>
+      <rect x="60" y="350" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="60" y="350" width="100" height="8" fill="url(#contextMasteryGradient)" rx="4"/>
+      <circle cx="160" cy="354" r="8" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+      <text x="280" y="358" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">25%</text>
+      
+      <!-- Dynamic Planning Slider -->
+      <text x="60" y="385" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Dynamic Planning</text>
+      <rect x="60" y="395" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="60" y="395" width="112" height="8" fill="url(#dynamicPlanningGradient)" rx="4"/>
+      <circle cx="172" cy="399" r="8" fill="#1e40af" stroke="#ffffff" stroke-width="2"/>
+      <text x="280" y="403" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">28%</text>
+      
+      <!-- Code Evolution Slider -->
+      <text x="60" y="430" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Code Evolution</text>
+      <rect x="60" y="440" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="60" y="440" width="128" height="8" fill="url(#codeEvolutionGradient)" rx="4"/>
+      <circle cx="188" cy="444" r="8" fill="#d97706" stroke="#ffffff" stroke-width="2"/>
+      <text x="280" y="448" fill="#d97706" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">32%</text>
+      
+      <!-- Strategic Testing Slider -->
+      <text x="60" y="475" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Strategic Testing</text>
+      <rect x="60" y="485" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="60" y="485" width="152" height="8" fill="url(#strategicTestingGradient)" rx="4"/>
+      <circle cx="212" cy="489" r="8" fill="#7c3aed" stroke="#ffffff" stroke-width="2"/>
+      <text x="280" y="493" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">38%</text>
+      
+      <!-- Intelligent Review Slider -->
+      <text x="60" y="520" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Intelligent Review</text>
+      <rect x="60" y="530" width="200" height="8" fill="#e5e7eb" rx="4"/>
+      <rect x="60" y="530" width="112" height="8" fill="url(#intelligentReviewGradient)" rx="4"/>
+      <circle cx="172" cy="534" r="8" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+      <text x="280" y="538" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">28%</text>
+    </g>
+    
+    <!-- Team Context Configuration -->
+    <g id="teamContext">
+      <text x="60" y="575" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Team Configuration</text>
+      
+      <text x="60" y="600" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="11">Team Size:</text>
+      <rect x="130" y="590" width="80" height="20" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" rx="4"/>
+      <text x="170" y="603" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12">5 devs</text>
+      
+      <text x="60" y="625" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="11">Industry:</text>
+      <rect x="130" y="615" width="100" height="20" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" rx="4"/>
+      <text x="180" y="628" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12">E-commerce</text>
+      
+      <text x="60" y="650" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="11">Timeline:</text>
+      <rect x="130" y="640" width="80" height="20" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" rx="4"/>
+      <text x="170" y="653" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12">12 weeks</text>
+    </g>
+    
+    <!-- Real-time Calculation Results -->
+    <g id="calculationResults">
+      <rect x="50" y="680" width="410" height="80" rx="8" fill="#ffffff" stroke="#059669" stroke-width="2" filter="url(#resultGlow)"/>
+      <text x="255" y="705" text-anchor="middle" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Live Calculation Results</text>
+      
+      <text x="70" y="725" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Individual Sum:</text>
+      <text x="160" y="725" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">151%</text>
+      
+      <text x="70" y="740" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Compound Effect:</text>
+      <text x="160" y="740" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700">387%</text>
+      
+      <text x="250" y="725" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Synergy Bonus:</text>
+      <text x="340" y="725" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">+50%</text>
+      
+      <text x="250" y="740" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Break-even:</text>
+      <text x="340" y="740" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Week 6</text>
+      
+      <!-- Real-time indicator -->
+      <use href="#calculationPulse" x="420" y="710"/>
+      <text x="435" y="715" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">Real-time</text>
+    </g>
+  </g>
+  
+  <!-- Visual Growth Curves (Right Side) -->
+  <g id="visualGrowthCurves">
+    <rect x="500" y="260" width="870" height="380" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#formulaGlow)"/>
+    <text x="935" y="290" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Productivity Growth Visualization
+    </text>
+    
+    <!-- Chart axes -->
+    <line x1="550" y1="320" x2="550" y2="600" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="550" y1="600" x2="1320" y2="600" stroke="#94a3b8" stroke-width="2"/>
+    
+    <!-- Axis labels -->
+    <text x="520" y="460" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle" transform="rotate(-90 520 460)">Productivity Improvement %</text>
+    <text x="935" y="625" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="12">Implementation Timeline (Weeks)</text>
+    
+    <!-- Y-axis scale -->
+    <text x="540" y="605" text-anchor="end" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">0%</text>
+    <text x="540" y="520" text-anchor="end" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">200%</text>
+    <text x="540" y="440" text-anchor="end" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">400%</text>
+    <text x="540" y="360" text-anchor="end" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">600%</text>
+    <text x="540" y="330" text-anchor="end" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">800%</text>
+    
+    <!-- X-axis scale -->
+    <text x="550" y="615" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">0</text>
+    <text x="742" y="615" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">4</text>
+    <text x="935" y="615" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">8</text>
+    <text x="1127" y="615" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">12</text>
+    <text x="1320" y="615" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">16</text>
+    
+    <!-- Linear Growth Curve (Additive) -->
+    <path d="M 550,600 L 742,520 L 935,440 L 1127,360 L 1320,320" 
+          stroke="url(#additiveGradient)" stroke-width="4" fill="none" stroke-dasharray="5,5"/>
+    <text x="850" y="380" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Linear Additive Growth</text>
+    
+    <!-- Exponential Growth Curve (Compound) -->
+    <path d="M 550,600 Q 650,580 742,480 Q 850,340 935,320 Q 1050,280 1127,260 Q 1200,240 1320,220" 
+          stroke="url(#compoundGradient)" stroke-width="6" fill="none" filter="url(#resultGlow)"/>
+    <text x="850" y="340" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Exponential Compound Growth</text>
+    
+    <!-- Milestone markers -->
+    <circle cx="742" cy="480" r="6" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
+    <text x="742" y="470" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Break-even</text>
+    
+    <circle cx="935" cy="320" r="8" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+    <text x="935" y="310" text-anchor="middle" fill="#059669" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Target ROI</text>
+    
+    <circle cx="1127" cy="260" r="6" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
+    <text x="1127" y="250" text-anchor="middle" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Mastery</text>
+    
+    <!-- Growth pulse indicators -->
+    <use href="#growthPulse" x="742" y="480"/>
+    <use href="#growthPulse" x="935" y="320"/>
+    <use href="#growthPulse" x="1127" y="260"/>
+    
+    <!-- Principle implementation timeline -->
+    <g id="principleTimeline">
+      <rect x="570" y="330" width="60" height="15" fill="url(#contextMasteryGradient)" rx="3"/>
+      <text x="600" y="342" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Context</text>
+      
+      <rect x="650" y="345" width="70" height="15" fill="url(#dynamicPlanningGradient)" rx="3"/>
+      <text x="685" y="357" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Planning</text>
+      
+      <rect x="740" y="360" width="80" height="15" fill="url(#codeEvolutionGradient)" rx="3"/>
+      <text x="780" y="372" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Evolution</text>
+      
+      <rect x="840" y="375" width="70" height="15" fill="url(#strategicTestingGradient)" rx="3"/>
+      <text x="875" y="387" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Testing</text>
+      
+      <rect x="930" y="390" width="60" height="15" fill="url(#intelligentReviewGradient)" rx="3"/>
+      <text x="960" y="402" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600">Review</text>
+    </g>
+  </g>
+  
+  <!-- ROI Business Value Panel (Bottom Section) -->
+  <g id="roiBusinessValue">
+    <rect x="500" y="660" width="870" height="100" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#calculatorGlow)"/>
+    <text x="935" y="685" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Business Value & ROI Projections
+    </text>
+    
+    <!-- ROI metrics grid -->
+    <g id="roiMetrics">
+      <rect x="520" y="700" width="150" height="45" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="595" y="720" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Annual ROI</text>
+      <text x="595" y="735" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">421%</text>
+      
+      <rect x="690" y="700" width="150" height="45" rx="6" fill="#f0f9ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="765" y="720" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Team Value</text>
+      <text x="765" y="735" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">$840K</text>
+      
+      <rect x="860" y="700" width="150" height="45" rx="6" fill="#fefce8" stroke="#f59e0b" stroke-width="1"/>
+      <text x="935" y="720" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Payback Period</text>
+      <text x="935" y="735" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">1.8 months</text>
+      
+      <rect x="1030" y="700" width="150" height="45" rx="6" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="1105" y="720" text-anchor="middle" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Dev Satisfaction</text>
+      <text x="1105" y="735" text-anchor="middle" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">+78%</text>
+      
+      <rect x="1200" y="700" width="150" height="45" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="1275" y="720" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Time to Value</text>
+      <text x="1275" y="735" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">Week 6</text>
+    </g>
+  </g>
+  
+  <!-- Synergy Connection Lines -->
+  <g id="synergyConnections">
+    <line x1="350" y1="354" x2="400" y2="354" stroke="#8b5cf6" stroke-width="2" marker-end="url(#synergyArrow)" opacity="0.6"/>
+    <line x1="350" y1="399" x2="400" y2="399" stroke="#8b5cf6" stroke-width="2" marker-end="url(#synergyArrow)" opacity="0.6"/>
+    <line x1="350" y1="444" x2="400" y2="444" stroke="#8b5cf6" stroke-width="2" marker-end="url(#synergyArrow)" opacity="0.6"/>
+    <line x1="350" y1="489" x2="400" y2="489" stroke="#8b5cf6" stroke-width="2" marker-end="url(#synergyArrow)" opacity="0.6"/>
+    <line x1="350" y1="534" x2="400" y2="534" stroke="#8b5cf6" stroke-width="2" marker-end="url(#synergyArrow)" opacity="0.6"/>
+    
+    <text x="375" y="470" text-anchor="middle" fill="#8b5cf6" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" transform="rotate(90 375 470)">Synergy</text>
+  </g>
+  
+  <!-- Export and Sharing Controls -->
+  <g id="exportControls">
+    <rect x="30" y="800" width="1340" height="50" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="50" y="825" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Export & Share:</text>
+    
+    <rect x="150" y="810" width="80" height="30" rx="6" fill="#3b82f6" stroke="#1e40af" stroke-width="1"/>
+    <text x="190" y="828" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">PDF Report</text>
+    
+    <rect x="250" y="810" width="80" height="30" rx="6" fill="#059669" stroke="#047857" stroke-width="1"/>
+    <text x="290" y="828" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Share Link</text>
+    
+    <rect x="350" y="810" width="100" height="30" rx="6" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+    <text x="400" y="828" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Business Case</text>
+    
+    <!-- Performance indicator -->
+    <text x="1250" y="825" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">Calculation time: &lt;50ms</text>
+  </g>
+  
+  <!-- Mobile optimization indicator -->
+  <circle cx="1320" cy="50" r="8" fill="#8b5cf6" opacity="0.8"/>
+  <text x="1335" y="55" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">Mobile Optimized</text>
+  
+  <!-- Accessibility support -->
+  <g id="accessibilitySupport" aria-hidden="true">
+    <rect x="0" y="0" width="1400" height="900" fill="transparent"/>
+    <!-- Screen reader support for interactive elements -->
+  </g>
+</svg>

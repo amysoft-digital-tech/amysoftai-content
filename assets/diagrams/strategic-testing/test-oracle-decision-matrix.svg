@@ -1,0 +1,613 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients, patterns, and interactive elements -->
+  <defs>
+    <!-- Oracle complexity gradients -->
+    <linearGradient id="simpleOracleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    
+    <linearGradient id="propertyOracleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+    
+    <linearGradient id="aiOracleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6b21a8"/>
+    </linearGradient>
+    
+    <linearGradient id="hybridOracleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    
+    <linearGradient id="contractOracleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#dc2626"/>
+    </linearGradient>
+    
+    <!-- Recommendation engine gradient -->
+    <radialGradient id="recommendationGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </radialGradient>
+    
+    <!-- Complexity assessment gradient -->
+    <linearGradient id="complexityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="25%" style="stop-color:#3b82f6"/>
+      <stop offset="75%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    
+    <!-- Matrix glow effect -->
+    <filter id="matrixGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Oracle selection arrow -->
+    <marker id="oracleArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#22d3ee"/>
+    </marker>
+    
+    <!-- Recommendation arrow -->
+    <marker id="recommendArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#8b5cf6"/>
+    </marker>
+    
+    <!-- Matrix cell template -->
+    <g id="matrixCell">
+      <rect width="140" height="80" rx="8" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="130" cy="10" r="6" fill="#ffffff" opacity="0.8"/>
+    </g>
+    
+    <!-- Complexity indicator -->
+    <g id="complexityIndicator">
+      <circle r="6" fill="#3b82f6">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Recommendation pulse -->
+    <g id="recommendPulse">
+      <circle r="8" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.7">
+        <animate attributeName="r" values="8;20;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="700" y="35" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="700" fill="#1f2937">
+    Test Oracle Decision Matrix
+  </text>
+  
+  <text x="700" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#6b7280">
+    AI-Powered Oracle Selection Framework for Strategic Testing Confidence
+  </text>
+  
+  <!-- Main Decision Matrix -->
+  <g id="decisionMatrix">
+    <rect x="50" y="100" width="700" height="480" rx="15" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#matrixGlow)"/>
+    <text x="400" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1f2937">
+      Oracle Selection Matrix
+    </text>
+    
+    <!-- Y-axis: Validation Requirements -->
+    <text x="30" y="340" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#374151" transform="rotate(-90 30 340)">
+      Validation Requirements
+    </text>
+    
+    <!-- X-axis: Code Complexity -->
+    <text x="400" y="600" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#374151">
+      Code Complexity Level
+    </text>
+    
+    <!-- Complexity Labels -->
+    <text x="125" y="620" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#059669">Simple</text>
+    <text x="265" y="620" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Medium</text>
+    <text x="405" y="620" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#d97706">Complex</text>
+    <text x="545" y="620" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#dc2626">Critical</text>
+    <text x="685" y="620" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#7c3aed">AI-Enhanced</text>
+    
+    <!-- Requirement Labels -->
+    <text x="40" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151" transform="rotate(-90 40 200)">Functional</text>
+    <text x="40" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151" transform="rotate(-90 40 280)">Performance</text>
+    <text x="40" y="360" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151" transform="rotate(-90 40 360)">Security</text>
+    <text x="40" y="440" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151" transform="rotate(-90 40 440)">Integration</text>
+    <text x="40" y="520" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151" transform="rotate(-90 40 520)">Compliance</text>
+    
+    <!-- Matrix Cells -->
+    <!-- Row 1: Functional Testing -->
+    <g>
+      <!-- Simple Functional -->
+      <use href="#matrixCell" x="70" y="160" fill="url(#simpleOracleGradient)"/>
+      <text x="140" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Simple Assertion
+      </text>
+      <text x="140" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dcfce7">
+        Basic equality checks
+      </text>
+      <text x="140" y="215" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dcfce7">
+        90% coverage
+      </text>
+      <text x="140" y="230" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#dcfce7">
+        Time: 2-5 min
+      </text>
+      
+      <!-- Medium Functional -->
+      <use href="#matrixCell" x="210" y="160" fill="url(#propertyOracleGradient)"/>
+      <text x="280" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Property-Based
+      </text>
+      <text x="280" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dbeafe">
+        Invariant validation
+      </text>
+      <text x="280" y="215" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dbeafe">
+        Edge case discovery
+      </text>
+      <text x="280" y="230" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#dbeafe">
+        Time: 10-20 min
+      </text>
+      
+      <!-- Complex Functional -->
+      <use href="#matrixCell" x="350" y="160" fill="url(#hybridOracleGradient)"/>
+      <text x="420" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Behavioral Oracle
+      </text>
+      <text x="420" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fef3c7">
+        State verification
+      </text>
+      <text x="420" y="215" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fef3c7">
+        Workflow validation
+      </text>
+      <text x="420" y="230" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#fef3c7">
+        Time: 30-60 min
+      </text>
+      
+      <!-- Critical Functional -->
+      <use href="#matrixCell" x="490" y="160" fill="url(#contractOracleGradient)"/>
+      <text x="560" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Contract-Based
+      </text>
+      <text x="560" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fecaca">
+        Formal verification
+      </text>
+      <text x="560" y="215" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fecaca">
+        Specification proof
+      </text>
+      <text x="560" y="230" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#fecaca">
+        Time: 2-4 hours
+      </text>
+      
+      <!-- AI-Enhanced Functional -->
+      <use href="#matrixCell" x="630" y="160" fill="url(#aiOracleGradient)"/>
+      <text x="700" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        AI-Generated
+      </text>
+      <text x="700" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#e9d5ff">
+        Autonomous testing
+      </text>
+      <text x="700" y="215" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#e9d5ff">
+        Learning oracles
+      </text>
+      <text x="700" y="230" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#e9d5ff">
+        Time: 5-15 min
+      </text>
+    </g>
+    
+    <!-- Row 2: Performance Testing -->
+    <g>
+      <use href="#matrixCell" x="70" y="240" fill="url(#simpleOracleGradient)"/>
+      <text x="140" y="265" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Threshold Oracle
+      </text>
+      <text x="140" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dcfce7">
+        Response time limits
+      </text>
+      <text x="140" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dcfce7">
+        Memory usage
+      </text>
+      
+      <use href="#matrixCell" x="210" y="240" fill="url(#propertyOracleGradient)"/>
+      <text x="280" y="265" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Benchmark Oracle
+      </text>
+      <text x="280" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dbeafe">
+        Comparative analysis
+      </text>
+      <text x="280" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#dbeafe">
+        Regression detection
+      </text>
+      
+      <use href="#matrixCell" x="350" y="240" fill="url(#hybridOracleGradient)"/>
+      <text x="420" y="265" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Load Profile Oracle
+      </text>
+      <text x="420" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fef3c7">
+        Scalability patterns
+      </text>
+      <text x="420" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fef3c7">
+        Resource modeling
+      </text>
+      
+      <use href="#matrixCell" x="490" y="240" fill="url(#contractOracleGradient)"/>
+      <text x="560" y="265" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        SLA Oracle
+      </text>
+      <text x="560" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fecaca">
+        Service guarantees
+      </text>
+      <text x="560" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#fecaca">
+        Business metrics
+      </text>
+      
+      <use href="#matrixCell" x="630" y="240" fill="url(#aiOracleGradient)"/>
+      <text x="700" y="265" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">
+        Adaptive Oracle
+      </text>
+      <text x="700" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#e9d5ff">
+        Learning patterns
+      </text>
+      <text x="700" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#e9d5ff">
+        Dynamic thresholds
+      </text>
+    </g>
+    
+    <!-- Continue with Security, Integration, and Compliance rows with similar structure -->
+    <!-- Row 3: Security Testing -->
+    <g>
+      <use href="#matrixCell" x="70" y="320" fill="url(#simpleOracleGradient)"/>
+      <text x="140" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Input Validation</text>
+      
+      <use href="#matrixCell" x="210" y="320" fill="url(#propertyOracleGradient)"/>
+      <text x="280" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Cryptographic</text>
+      
+      <use href="#matrixCell" x="350" y="320" fill="url(#hybridOracleGradient)"/>
+      <text x="420" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Penetration Oracle</text>
+      
+      <use href="#matrixCell" x="490" y="320" fill="url(#contractOracleGradient)"/>
+      <text x="560" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Compliance Oracle</text>
+      
+      <use href="#matrixCell" x="630" y="320" fill="url(#aiOracleGradient)"/>
+      <text x="700" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Threat Detection</text>
+    </g>
+    
+    <!-- Row 4: Integration Testing -->
+    <g>
+      <use href="#matrixCell" x="70" y="400" fill="url(#simpleOracleGradient)"/>
+      <text x="140" y="425" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">API Response</text>
+      
+      <use href="#matrixCell" x="210" y="400" fill="url(#propertyOracleGradient)"/>
+      <text x="280" y="425" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Data Flow</text>
+      
+      <use href="#matrixCell" x="350" y="400" fill="url(#hybridOracleGradient)"/>
+      <text x="420" y="425" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Workflow Oracle</text>
+      
+      <use href="#matrixCell" x="490" y="400" fill="url(#contractOracleGradient)"/>
+      <text x="560" y="425" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">System Contract</text>
+      
+      <use href="#matrixCell" x="630" y="400" fill="url(#aiOracleGradient)"/>
+      <text x="700" y="425" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Ecosystem Oracle</text>
+    </g>
+    
+    <!-- Row 5: Compliance Testing -->
+    <g>
+      <use href="#matrixCell" x="70" y="480" fill="url(#simpleOracleGradient)"/>
+      <text x="140" y="505" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Rule Checker</text>
+      
+      <use href="#matrixCell" x="210" y="480" fill="url(#propertyOracleGradient)"/>
+      <text x="280" y="505" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Policy Oracle</text>
+      
+      <use href="#matrixCell" x="350" y="480" fill="url(#hybridOracleGradient)"/>
+      <text x="420" y="505" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Audit Oracle</text>
+      
+      <use href="#matrixCell" x="490" y="480" fill="url(#contractOracleGradient)"/>
+      <text x="560" y="505" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Regulatory Oracle</text>
+      
+      <use href="#matrixCell" x="630" y="480" fill="url(#aiOracleGradient)"/>
+      <text x="700" y="505" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Intelligent Audit</text>
+    </g>
+  </g>
+  
+  <!-- AI Recommendation Engine -->
+  <g id="recommendationEngine">
+    <rect x="780" y="100" width="300" height="280" rx="12" fill="#ffffff" stroke="#22d3ee" stroke-width="3"/>
+    <text x="930" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#0891b2">
+      AI Oracle Recommender
+    </text>
+    
+    <!-- Recommendation Core -->
+    <circle cx="930" cy="180" r="25" fill="url(#recommendationGradient)" stroke="#ffffff" stroke-width="3"/>
+    <text x="930" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">AI</text>
+    <use href="#recommendPulse" x="930" y="180"/>
+    
+    <!-- Current Analysis -->
+    <g id="currentAnalysis">
+      <rect x="800" y="220" width="260" height="60" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+      <text x="930" y="235" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#15803d">
+        Current Code Analysis
+      </text>
+      <text x="810" y="250" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#166534">
+        • Complexity: Medium (Cyclomatic: 8)
+      </text>
+      <text x="810" y="265" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#166534">
+        • Domain: E-commerce API
+      </text>
+      <text x="810" y="275" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#166534">
+        • Requirements: Performance + Security
+      </text>
+    </g>
+    
+    <!-- AI Recommendation -->
+    <g id="aiRecommendation">
+      <rect x="800" y="290" width="260" height="80" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="930" y="305" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#92400e">
+        Recommended Oracle
+      </text>
+      <text x="930" y="325" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#d97706">
+        Benchmark Oracle
+      </text>
+      <text x="810" y="340" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#a16207">
+        ✓ Performance testing optimized
+      </text>
+      <text x="810" y="352" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#a16207">
+        ✓ API response time validation
+      </text>
+      <text x="810" y="364" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#a16207">
+        ✓ 85% confidence match
+      </text>
+      
+      <!-- Confidence indicator -->
+      <rect x="1000" y="300" width="50" height="8" rx="4" fill="#e5e7eb"/>
+      <rect x="1000" y="300" width="42" height="8" rx="4" fill="#10b981"/>
+      <text x="1025" y="320" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#059669">85%</text>
+    </g>
+  </g>
+  
+  <!-- Code Complexity Analyzer -->
+  <g id="complexityAnalyzer">
+    <rect x="780" y="400" width="300" height="180" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="930" y="430" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#374151">
+      Complexity Analysis
+    </text>
+    
+    <!-- Complexity Metrics -->
+    <g id="complexityMetrics">
+      <!-- Cyclomatic Complexity -->
+      <g>
+        <text x="800" y="455" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151">
+          Cyclomatic Complexity:
+        </text>
+        <text x="1040" y="455" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f59e0b">
+          8
+        </text>
+        <rect x="800" y="460" width="200" height="6" rx="3" fill="#e5e7eb"/>
+        <rect x="800" y="460" width="80" height="6" rx="3" fill="url(#complexityGradient)"/>
+      </g>
+      
+      <!-- Nesting Depth -->
+      <g>
+        <text x="800" y="485" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151">
+          Nesting Depth:
+        </text>
+        <text x="1040" y="485" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#3b82f6">
+          4
+        </text>
+        <rect x="800" y="490" width="200" height="6" rx="3" fill="#e5e7eb"/>
+        <rect x="800" y="490" width="60" height="6" rx="3" fill="#3b82f6"/>
+      </g>
+      
+      <!-- Code Coverage -->
+      <g>
+        <text x="800" y="515" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151">
+          Current Coverage:
+        </text>
+        <text x="1040" y="515" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#059669">
+          73%
+        </text>
+        <rect x="800" y="520" width="200" height="6" rx="3" fill="#e5e7eb"/>
+        <rect x="800" y="520" width="146" height="6" rx="3" fill="#10b981"/>
+      </g>
+      
+      <!-- Risk Assessment -->
+      <g>
+        <text x="800" y="545" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#374151">
+          Risk Level:
+        </text>
+        <text x="1040" y="545" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f59e0b">
+          Medium
+        </text>
+        <circle cx="950" cy="540" r="8" fill="#f59e0b" opacity="0.8"/>
+        <use href="#complexityIndicator" x="950" y="540"/>
+      </g>
+    </g>
+    
+    <!-- Analysis Summary -->
+    <g id="analysisSummary">
+      <rect x="800" y="555" width="260" height="15" rx="7" fill="#f0f9ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="930" y="565" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1e40af">
+        Moderate complexity → Property-based oracles recommended
+      </text>
+    </g>
+  </g>
+  
+  <!-- Implementation Preview -->
+  <g id="implementationPreview">
+    <rect x="1100" y="100" width="270" height="480" rx="12" fill="#1f2937" stroke="#4b5563" stroke-width="2"/>
+    <text x="1235" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#f9fafb">
+      Implementation Preview
+    </text>
+    
+    <!-- Code Example -->
+    <g id="codeExample">
+      <text x="1120" y="160" font-family="Fira Code, monospace" font-size="10" fill="#10b981">
+        // Benchmark Oracle Example
+      </text>
+      <text x="1120" y="180" font-family="Fira Code, monospace" font-size="9" fill="#f9fafb">
+        describe('API Performance', () => {
+      </text>
+      <text x="1130" y="195" font-family="Fira Code, monospace" font-size="9" fill="#f9fafb">
+        const benchmark = new
+      </text>
+      <text x="1140" y="210" font-family="Fira Code, monospace" font-size="9" fill="#3b82f6">
+        BenchmarkOracle({
+      </text>
+      <text x="1150" y="225" font-family="Fira Code, monospace" font-size="9" fill="#f59e0b">
+        threshold: 200ms,
+      </text>
+      <text x="1150" y="240" font-family="Fira Code, monospace" font-size="9" fill="#f59e0b">
+        baseline: 'v1.2.3',
+      </text>
+      <text x="1150" y="255" font-family="Fira Code, monospace" font-size="9" fill="#f59e0b">
+        tolerance: 0.1
+      </text>
+      <text x="1140" y="270" font-family="Fira Code, monospace" font-size="9" fill="#3b82f6">
+        });
+      </text>
+      <text x="1130" y="290" font-family="Fira Code, monospace" font-size="9" fill="#f9fafb">
+        
+        it('maintains response time', 
+      </text>
+      <text x="1140" y="305" font-family="Fira Code, monospace" font-size="9" fill="#f9fafb">
+        async () => {
+      </text>
+      <text x="1150" y="320" font-family="Fira Code, monospace" font-size="9" fill="#22c55e">
+        const result = await
+      </text>
+      <text x="1160" y="335" font-family="Fira Code, monospace" font-size="9" fill="#22c55e">
+        api.getUserProfile(userId);
+      </text>
+      <text x="1150" y="355" font-family="Fira Code, monospace" font-size="9" fill="#8b5cf6">
+        benchmark.verify(result);
+      </text>
+      <text x="1140" y="370" font-family="Fira Code, monospace" font-size="9" fill="#f9fafb">
+        });
+      </text>
+      <text x="1120" y="385" font-family="Fira Code, monospace" font-size="9" fill="#f9fafb">
+        });
+      </text>
+    </g>
+    
+    <!-- Implementation Benefits -->
+    <g id="implementationBenefits">
+      <rect x="1120" y="410" width="230" height="150" rx="6" fill="#0f172a" stroke="#374151" stroke-width="1"/>
+      <text x="1235" y="430" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#22d3ee">
+        Oracle Benefits
+      </text>
+      <text x="1130" y="450" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#10b981">
+        ✓ Automated regression detection
+      </text>
+      <text x="1130" y="465" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#10b981">
+        ✓ Historical performance tracking
+      </text>
+      <text x="1130" y="480" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#10b981">
+        ✓ CI/CD integration ready
+      </text>
+      <text x="1130" y="495" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#10b981">
+        ✓ 85% faster oracle setup
+      </text>
+      <text x="1130" y="510" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#10b981">
+        ✓ Real-time performance alerts
+      </text>
+      
+      <text x="1130" y="535" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#f59e0b">
+        Estimated Setup Time: 15 minutes
+      </text>
+      <text x="1130" y="550" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#3b82f6">
+        Confidence Level: 89%
+      </text>
+    </g>
+  </g>
+  
+  <!-- Recommendation Flow -->
+  <g id="recommendationFlow">
+    <path d="M 400 140 Q 500 140 780 190" stroke="#22d3ee" stroke-width="3" marker-end="url(#oracleArrow)" opacity="0.8">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 1080 300 Q 1090 300 1100 300" stroke="#8b5cf6" stroke-width="3" marker-end="url(#recommendArrow)" opacity="0.8">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Performance Indicators -->
+  <g id="performanceIndicators">
+    <rect x="50" y="620" width="1320" height="80" rx="12" fill="#f0f9ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="710" y="645" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e40af">
+      Oracle Selection Performance Metrics
+    </text>
+    
+    <!-- Performance Stats -->
+    <g id="performanceStats">
+      <text x="70" y="670" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#059669">
+        ⚡ Recommendation Speed: &lt;100ms
+      </text>
+      <text x="300" y="670" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#059669">
+        🎯 Selection Accuracy: 89%
+      </text>
+      <text x="530" y="670" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#059669">
+        🚀 Setup Time Reduction: 75%
+      </text>
+      <text x="760" y="670" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#059669">
+        📊 Oracle Coverage: 25 types
+      </text>
+      <text x="980" y="670" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#059669">
+        🔄 Active Recommendations: 1,247
+      </text>
+      
+      <text x="70" y="685" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3b82f6">
+        📈 Confidence Improvement: +45% over manual selection
+      </text>
+      <text x="450" y="685" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3b82f6">
+        💡 Learning Rate: Adapts to team patterns and preferences
+      </text>
+      <text x="850" y="685" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3b82f6">
+        🎯 Success Rate: 92% oracle effectiveness
+      </text>
+    </g>
+  </g>
+  
+  <!-- Interactive Enhancement Styles -->
+  <style>
+    .matrix-cell:hover {
+      filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+      transform: scale(1.05);
+    }
+    
+    .recommendation-engine:hover {
+      filter: drop-shadow(0 6px 12px rgba(34, 211, 238, 0.4));
+    }
+    
+    .complexity-metric:hover {
+      transform: scale(1.1);
+    }
+    
+    .implementation-preview:hover {
+      filter: drop-shadow(0 3px 6px rgba(139, 92, 246, 0.2));
+    }
+    
+    .oracle-flow:hover {
+      stroke-width: 4;
+      opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+      text { font-size: 8px; }
+      .matrix-cell { transform: scale(0.8); }
+      .decision-matrix { width: 95%; }
+    }
+  </style>
+  
+  <!-- Accessibility -->
+  <title>Test Oracle Decision Matrix - AI-Powered Oracle Selection Framework</title>
+  <desc>Interactive decision matrix for selecting appropriate test oracles based on code complexity and validation requirements. Features 5x5 matrix with oracle types from simple assertions to AI-generated oracles, AI recommendation engine with 89% accuracy, complexity analyzer, and implementation preview showing real-time oracle selection with under 100ms response time.</desc>
+</svg>
