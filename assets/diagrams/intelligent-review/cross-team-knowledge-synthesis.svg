@@ -1,0 +1,423 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients, patterns, and knowledge elements -->
+  <defs>
+    <!-- Knowledge flow gradient -->
+    <linearGradient id="knowledgeFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    
+    <!-- Synthesis gradient -->
+    <radialGradient id="synthesisGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="70%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </radialGradient>
+    
+    <!-- Team expertise gradient -->
+    <linearGradient id="expertiseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    
+    <!-- Knowledge glow effect -->
+    <filter id="knowledgeGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Pulse animation -->
+    <animate id="pulseAnimation" attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+    
+    <!-- Knowledge transfer arrow -->
+    <marker id="knowledgeArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#3b82f6" opacity="0.8"/>
+    </marker>
+    
+    <!-- Synthesis arrow -->
+    <marker id="synthesisArrow" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#f59e0b"/>
+    </marker>
+    
+    <!-- Team node template -->
+    <g id="teamNode">
+      <circle r="35" fill="url(#expertiseGradient)" stroke="#ffffff" stroke-width="3"/>
+      <circle r="25" fill="#ffffff" opacity="0.9"/>
+    </g>
+    
+    <!-- Knowledge particle -->
+    <g id="knowledgeParticle">
+      <circle r="3" fill="#3b82f6" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Expertise badge -->
+    <g id="expertiseBadge">
+      <rect x="-15" y="-8" width="30" height="16" rx="8" fill="#3b82f6"/>
+      <text x="0" y="4" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">AI</text>
+    </g>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="#1e293b">
+    Cross-Team Knowledge Synthesis
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="700" y="70" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#64748b">
+    AI-Orchestrated Organizational Learning and Expertise Amplification
+  </text>
+  
+  <!-- Central Synthesis Engine -->
+  <g id="synthesisEngine">
+    <circle cx="700" cy="400" r="60" fill="url(#synthesisGradient)" stroke="#ffffff" stroke-width="4" filter="url(#knowledgeGlow)"/>
+    <circle cx="700" cy="400" r="40" fill="#ffffff" opacity="0.9"/>
+    <text x="700" y="390" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#d97706">
+      AI Synthesis
+    </text>
+    <text x="700" y="405" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#d97706">
+      Engine
+    </text>
+    <text x="700" y="420" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#92400e">
+      Pattern Recognition
+    </text>
+    
+    <!-- Processing indicators -->
+    <g>
+      <circle cx="670" cy="370" r="4" fill="#3b82f6">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="730" cy="370" r="4" fill="#22c55e">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="670" cy="430" r="4" fill="#ef4444">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="730" cy="430" r="4" fill="#8b5cf6">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Team Network Nodes -->
+  <g id="teamNetwork">
+    <!-- Frontend Team -->
+    <g id="frontendTeam">
+      <use href="#teamNode" x="300" y="200"/>
+      <text x="300" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Frontend</text>
+      <text x="300" y="210" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Team</text>
+      <text x="300" y="255" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">React, TypeScript</text>
+      <text x="300" y="270" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">UX Expertise: 85%</text>
+      
+      <!-- Expertise badges -->
+      <use href="#expertiseBadge" x="320" y="180" transform="scale(0.8)"/>
+      <rect x="305" y="172" width="30" height="16" rx="8" fill="#22c55e"/>
+      <text x="320" y="184" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#ffffff">UX</text>
+    </g>
+    
+    <!-- Backend Team -->
+    <g id="backendTeam">
+      <use href="#teamNode" x="1100" y="200"/>
+      <text x="1100" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Backend</text>
+      <text x="1100" y="210" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Team</text>
+      <text x="1100" y="255" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Node.js, Microservices</text>
+      <text x="1100" y="270" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">API Expertise: 92%</text>
+      
+      <!-- Expertise badges -->
+      <use href="#expertiseBadge" x="1120" y="180" transform="scale(0.8)"/>
+      <rect x="1105" y="172" width="30" height="16" rx="8" fill="#ef4444"/>
+      <text x="1120" y="184" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#ffffff">API</text>
+    </g>
+    
+    <!-- DevOps Team -->
+    <g id="devopsTeam">
+      <use href="#teamNode" x="500" y="600"/>
+      <text x="500" y="595" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">DevOps</text>
+      <text x="500" y="610" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Team</text>
+      <text x="500" y="655" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">K8s, CI/CD</text>
+      <text x="500" y="670" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Infra Expertise: 88%</text>
+      
+      <!-- Expertise badges -->
+      <use href="#expertiseBadge" x="520" y="580" transform="scale(0.8)"/>
+      <rect x="505" y="572" width="30" height="16" rx="8" fill="#8b5cf6"/>
+      <text x="520" y="584" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#ffffff">K8s</text>
+    </g>
+    
+    <!-- QA Team -->
+    <g id="qaTeam">
+      <use href="#teamNode" x="900" y="600"/>
+      <text x="900" y="595" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">QA</text>
+      <text x="900" y="610" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Team</text>
+      <text x="900" y="655" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Automation, Testing</text>
+      <text x="900" y="670" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Test Expertise: 90%</text>
+      
+      <!-- Expertise badges -->
+      <use href="#expertiseBadge" x="920" y="580" transform="scale(0.8)"/>
+      <rect x="905" y="572" width="30" height="16" rx="8" fill="#f59e0b"/>
+      <text x="920" y="584" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#ffffff">QA</text>
+    </g>
+    
+    <!-- Security Team -->
+    <g id="securityTeam">
+      <use href="#teamNode" x="200" y="400"/>
+      <text x="200" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Security</text>
+      <text x="200" y="410" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Team</text>
+      <text x="200" y="455" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Penetration, Compliance</text>
+      <text x="200" y="470" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Sec Expertise: 94%</text>
+      
+      <!-- Expertise badges -->
+      <use href="#expertiseBadge" x="220" y="380" transform="scale(0.8)"/>
+      <rect x="205" y="372" width="30" height="16" rx="8" fill="#dc2626"/>
+      <text x="220" y="384" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" fill="#ffffff">SEC</text>
+    </g>
+    
+    <!-- Data Team -->
+    <g id="dataTeam">
+      <use href="#teamNode" x="1200" y="400"/>
+      <text x="1200" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Data</text>
+      <text x="1200" y="410" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Team</text>
+      <text x="1200" y="455" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">ML, Analytics</text>
+      <text x="1200" y="470" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">AI Expertise: 91%</text>
+      
+      <!-- Expertise badges -->
+      <use href="#expertiseBadge" x="1220" y="380" transform="scale(0.8)"/>
+      <rect x="1205" y="372" width="30" height="16" rx="8" fill="#06b6d4"/>
+      <text x="1220" y="384" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="#ffffff">ML</text>
+    </g>
+  </g>
+  
+  <!-- Knowledge Flow Connections -->
+  <g id="knowledgeFlows">
+    <!-- Frontend to Synthesis Engine -->
+    <path d="M 335,220 Q 500,300 640,380" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#knowledgeArrow)">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Backend to Synthesis Engine -->
+    <path d="M 1065,220 Q 900,300 760,380" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#knowledgeArrow)">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- DevOps to Synthesis Engine -->
+    <path d="M 535,580 Q 600,500 640,440" stroke="#8b5cf6" stroke-width="3" fill="none" marker-end="url(#knowledgeArrow)">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2.8s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- QA to Synthesis Engine -->
+    <path d="M 865,580 Q 800,500 760,440" stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#knowledgeArrow)">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3.2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Security to Synthesis Engine -->
+    <path d="M 235,400 Q 400,400 640,400" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#knowledgeArrow)">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2.7s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Data to Synthesis Engine -->
+    <path d="M 1165,400 Q 1000,400 760,400" stroke="#06b6d4" stroke-width="3" fill="none" marker-end="url(#knowledgeArrow)">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3.1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Cross-team knowledge flows (bidirectional) -->
+    <path d="M 335,235 Q 700,280 1065,235" stroke="#6366f1" stroke-width="2" fill="none" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 235,435 Q 350,520 465,580" stroke="#ec4899" stroke-width="2" fill="none" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 535,580 Q 700,650 865,580" stroke="#10b981" stroke-width="2" fill="none" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Knowledge Synthesis Dashboard -->
+  <g id="synthesisDashboard">
+    <rect x="50" y="100" width="300" height="250" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="200" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">
+      Synthesis Metrics
+    </text>
+    
+    <!-- Active Knowledge Transfers -->
+    <g>
+      <rect x="70" y="145" width="260" height="35" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="85" y="160" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e40af">Active Knowledge Transfers</text>
+      <text x="85" y="175" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#2563eb">47</text>
+      <text x="280" y="168" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3b82f6">+23% this week</text>
+    </g>
+    
+    <!-- Cross-Team Collaborations -->
+    <g>
+      <rect x="70" y="185" width="260" height="35" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="85" y="200" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#15803d">Cross-Team Collaborations</text>
+      <text x="85" y="215" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#16a34a">156</text>
+      <text x="280" y="208" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#22c55e">+41% this month</text>
+    </g>
+    
+    <!-- Learning Velocity -->
+    <g>
+      <rect x="70" y="225" width="260" height="35" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="1"/>
+      <text x="85" y="240" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#a16207">Learning Velocity</text>
+      <text x="85" y="255" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#ca8a04">3.2x</text>
+      <text x="280" y="248" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#eab308">Acceleration rate</text>
+    </g>
+    
+    <!-- Knowledge Quality Score -->
+    <g>
+      <rect x="70" y="265" width="260" height="35" rx="6" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="85" y="280" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#7c3aed">Knowledge Quality Score</text>
+      <text x="85" y="295" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#8b5cf6">92%</text>
+      <text x="280" y="288" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#8b5cf6">Validation rate</text>
+    </g>
+    
+    <!-- Synthesis Processing Indicators -->
+    <g>
+      <text x="70" y="325" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">AI Processing Status:</text>
+      <circle cx="90" cy="340" r="4" fill="#22c55e">
+        <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="100" y="345" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#15803d">Pattern Recognition Active</text>
+      
+      <circle cx="250" cy="340" r="4" fill="#3b82f6">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="260" y="345" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#1e40af">Knowledge Distribution</text>
+    </g>
+  </g>
+  
+  <!-- Learning Distribution System -->
+  <g id="learningDistribution">
+    <rect x="1050" y="100" width="300" height="250" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="1200" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">
+      Learning Distribution
+    </text>
+    
+    <!-- Distribution Channels -->
+    <g>
+      <text x="1070" y="155" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Active Distribution Channels:</text>
+      
+      <!-- Automated Insights -->
+      <rect x="1070" y="165" width="260" height="25" rx="4" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="1080" y="180" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#1e40af">Automated Insights</text>
+      <text x="1300" y="180" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#2563eb">89 active</text>
+      
+      <!-- Mentorship Connections -->
+      <rect x="1070" y="195" width="260" height="25" rx="4" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="1080" y="210" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#15803d">Mentorship Connections</text>
+      <text x="1300" y="210" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#16a34a">34 pairs</text>
+      
+      <!-- Knowledge Sessions -->
+      <rect x="1070" y="225" width="260" height="25" rx="4" fill="#fefce8" stroke="#eab308" stroke-width="1"/>
+      <text x="1080" y="240" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a16207">Knowledge Sessions</text>
+      <text x="1300" y="240" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ca8a04">12 weekly</text>
+      
+      <!-- Documentation Updates -->
+      <rect x="1070" y="255" width="260" height="25" rx="4" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="1080" y="270" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7c3aed">Documentation Updates</text>
+      <text x="1300" y="270" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#8b5cf6">247 edits</text>
+    </g>
+    
+    <!-- Impact Metrics -->
+    <g>
+      <text x="1070" y="305" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Organizational Impact:</text>
+      <text x="1070" y="325" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Knowledge coverage: 94% of teams</text>
+      <text x="1070" y="340" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Learning acceleration: 320% improvement</text>
+    </g>
+  </g>
+  
+  <!-- Knowledge Flow Legends -->
+  <g id="flowLegends">
+    <rect x="50" y="750" width="500" height="120" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="300" y="780" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">
+      Knowledge Flow Types
+    </text>
+    
+    <!-- Direct Synthesis Flows -->
+    <line x1="70" y1="800" x2="100" y2="800" stroke="#3b82f6" stroke-width="3" marker-end="url(#knowledgeArrow)"/>
+    <text x="110" y="805" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#3b82f6">Direct Synthesis (to AI engine)</text>
+    
+    <!-- Cross-Team Flows -->
+    <line x1="70" y1="825" x2="100" y2="825" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+    <text x="110" y="830" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#6366f1">Cross-Team Collaboration</text>
+    
+    <!-- Bidirectional Learning -->
+    <line x1="320" y1="800" x2="350" y2="800" stroke="#10b981" stroke-width="2" opacity="0.6"/>
+    <line x1="350" y1="800" x2="320" y2="800" stroke="#10b981" stroke-width="2" opacity="0.6" marker-end="url(#knowledgeArrow)"/>
+    <text x="360" y="805" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#10b981">Bidirectional Learning</text>
+    
+    <!-- Knowledge Distribution -->
+    <line x1="320" y1="825" x2="350" y2="825" stroke="#f59e0b" stroke-width="3" marker-end="url(#synthesisArrow)"/>
+    <text x="360" y="830" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#f59e0b">Knowledge Distribution</text>
+    
+    <!-- Processing Status -->
+    <text x="70" y="855" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Processing Status:</text>
+    <circle cx="200" cy="850" r="4" fill="#22c55e">
+      <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="210" y="855" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#15803d">Active</text>
+    
+    <circle cx="260" cy="850" r="4" fill="#3b82f6">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="270" y="855" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#1e40af">Processing</text>
+    
+    <circle cx="340" cy="850" r="4" fill="#64748b"/>
+    <text x="350" y="855" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">Idle</text>
+  </g>
+  
+  <!-- Organizational Benefits -->
+  <g id="organizationalBenefits">
+    <rect x="850" y="750" width="500" height="120" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="1100" y="780" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">
+      Organizational Benefits
+    </text>
+    
+    <text x="870" y="805" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Knowledge Amplification:</text>
+    <text x="870" y="825" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Individual expertise becomes organizational capability</text>
+    <text x="870" y="840" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• 320% faster problem resolution across teams</text>
+    <text x="870" y="855" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• 94% knowledge coverage reducing silos and bottlenecks</text>
+    
+    <text x="1100" y="820" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Result: 5x organizational learning velocity</text>
+    <text x="1100" y="840" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#3b82f6">with exponential capability growth</text>
+  </g>
+  
+  <!-- Interactive Enhancements -->
+  <style>
+    .team-node:hover {
+      filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+      transform: scale(1.1);
+    }
+    
+    .synthesis-engine:hover {
+      filter: drop-shadow(0 6px 12px rgba(245, 158, 11, 0.4));
+    }
+    
+    .knowledge-flow:hover {
+      stroke-width: 4;
+      opacity: 1;
+    }
+    
+    .dashboard-metric:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+    
+    @media (max-width: 768px) {
+      text { font-size: 10px; }
+      .team-node { transform: scale(0.8); }
+    }
+  </style>
+  
+  <!-- Accessibility -->
+  <title>Cross-Team Knowledge Synthesis - AI-Orchestrated Organizational Learning Network</title>
+  <desc>Interactive visualization of cross-team knowledge synthesis showing how AI orchestrates organizational learning, with teams connected through knowledge flows to a central synthesis engine that facilitates learning acceleration and expertise amplification across organizational boundaries.</desc>
+</svg>
