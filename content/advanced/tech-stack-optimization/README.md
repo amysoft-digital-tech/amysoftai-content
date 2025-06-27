@@ -98,12 +98,12 @@ Nx workspaces provide the foundation for scalable AI-assisted development, but d
     }
   }
 }
-```
+```text
 
 #### AI-Optimized Project Structure
 
 ```bash
-# Optimal Nx workspace structure for AI comprehension
+## Optimal Nx workspace structure for AI comprehension
 workspace/
 ├── apps/
 │   ├── client-app/                 # Main Angular application
@@ -141,7 +141,7 @@ workspace/
     ├── generators/                 # Custom generators
     ├── executors/                  # Custom executors
     └── scripts/                    # Build and deployment scripts
-```
+```text
 
 #### Custom Generators for AI-Assisted Development
 
@@ -166,7 +166,7 @@ function generateAIContextFiles(tree: Tree, options: any) {
   
   // Create AI context files for better Claude Code understanding
   tree.write(`${contextPath}/feature-context.md`, `
-# ${options.name} Feature Context
+## ${options.name} Feature Context
 
 ## Purpose
 ${options.description}
@@ -192,7 +192,7 @@ ${options.dependencies?.join('\n- ') || 'None specified'}
 - Add comprehensive TypeScript types
   `);
 }
-```
+```text
 
 #### Performance Optimization for Large Workspaces
 
@@ -222,7 +222,7 @@ ${options.dependencies?.join('\n- ') || 'None specified'}
     }
   ]
 }
-```
+```text
 
 ### Nx and Claude Code Integration Patterns
 
@@ -230,18 +230,18 @@ ${options.dependencies?.join('\n- ') || 'None specified'}
 
 ```bash
 #!/bin/bash
-# tools/scripts/ai-dev-setup.sh
-# Setup script for AI-enhanced development session
+## tools/scripts/ai-dev-setup.sh
+## Setup script for AI-enhanced development session
 
 echo "🤖 Setting up AI-enhanced development environment..."
 
-# Generate current workspace context for AI tools
+## Generate current workspace context for AI tools
 nx graph --file=ai-context/workspace-graph.json
 nx print-affected --target=build --base=main > ai-context/affected-projects.txt
 
-# Create AI context summary
+## Create AI context summary
 cat > ai-context/current-session.md << EOF
-# Current Development Session Context
+## Current Development Session Context
 
 ## Workspace Overview
 - Total Projects: $(nx show projects | wc -l)
@@ -270,7 +270,7 @@ EOF
 
 echo "✅ AI context generated successfully"
 echo "📁 Context files available in ai-context/"
-```
+```text
 
 #### Automated Code Generation Templates
 
@@ -333,7 +333,7 @@ function classify(str: string): string {
 function camelize(str: string): string {
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
-```
+```text
 
 ## 2. Apollo GraphQL Schema Design and Code Generation
 
@@ -344,8 +344,8 @@ GraphQL's strongly-typed nature makes it exceptionally well-suited for AI-assist
 #### Schema-First Development with AI Enhancement
 
 ```graphql
-# apps/api-server/src/graphql/schema.graphql
-# AI-optimized GraphQL schema with comprehensive documentation
+## apps/api-server/src/graphql/schema.graphql
+## AI-optimized GraphQL schema with comprehensive documentation
 
 """
 User entity representing authenticated users in the system.
@@ -532,7 +532,7 @@ type PageInfo {
 
 """Custom scalar for date/time values"""
 scalar DateTime
-```
+```text
 
 #### Code Generation Configuration
 
@@ -603,7 +603,7 @@ const config: CodegenConfig = {
 };
 
 export default config;
-```
+```text
 
 #### AI-Enhanced Resolver Patterns
 
@@ -802,7 +802,7 @@ export class PostResolver {
     return this.pubSub.asyncIterator('POST_UPDATED');
   }
 }
-```
+```text
 
 ### Apollo Client Configuration for AI Development
 
@@ -961,7 +961,7 @@ export function createApollo(httpLinkHandler: HttpLink): ApolloClientOptions<any
   ]
 })
 export class GraphQLModule {}
-```
+```text
 
 ## 3. TypeScript Configuration and Optimization Patterns
 
@@ -1035,7 +1035,7 @@ TypeScript's type system provides crucial context for AI tools, but configuratio
     "coverage"
   ]
 }
-```
+```text
 
 #### Advanced Type Definitions for AI Understanding
 
@@ -1375,7 +1375,7 @@ export type CreateEntity<T extends BaseEntity> = Omit<T, 'id' | 'createdAt' | 'u
 
 /** Create a type for entity updates (make most fields optional) */
 export type UpdateEntity<T extends BaseEntity> = Partial<Omit<T, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>>;
-```
+```text
 
 #### Type-Safe Service Layer Patterns
 
@@ -1682,7 +1682,7 @@ export abstract class BaseService<T extends BaseEntity> {
     // Override in subclasses for custom behavior
   }
 }
-```
+```text
 
 ## 4. Development Environment Setup and Configuration
 
@@ -1790,15 +1790,15 @@ The development environment setup significantly impacts AI tool effectiveness. P
     "**/coverage/**"
   ]
 }
-```
+```text
 
 #### Development Container Configuration
 
 ```dockerfile
-# .devcontainer/Dockerfile
+## .devcontainer/Dockerfile
 FROM node:20-bullseye
 
-# Install system dependencies
+## Install system dependencies
 RUN apt-get update && apt-get install -y \
   git \
   curl \
@@ -1811,10 +1811,10 @@ RUN apt-get update && apt-get install -y \
   python3-pip \
   && rm -rf /var/lib/apt/lists/*
 
-# Install oh-my-zsh for better terminal experience
+## Install oh-my-zsh for better terminal experience
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
-# Set up user
+## Set up user
 ARG USERNAME=developer
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -1823,7 +1823,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
   && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
   && chown -R $USERNAME:$USERNAME /home/$USERNAME
 
-# Install global npm packages
+## Install global npm packages
 RUN npm install -g \
   @angular/cli@18 \
   @nestjs/cli@10 \
@@ -1836,26 +1836,26 @@ RUN npm install -g \
   jest \
   cypress
 
-# Install AI development tools
+## Install AI development tools
 RUN npm install -g \
   @anthropic/claude-code \
   github-copilot-cli
 
-# Set up workspace
+## Set up workspace
 WORKDIR /workspace
 COPY package*.json ./
 RUN npm ci
 
-# Switch to developer user
+## Switch to developer user
 USER $USERNAME
 
-# Set up git configuration
+## Set up git configuration
 RUN git config --global init.defaultBranch main
 RUN git config --global core.editor "code --wait"
 
-# Set up zsh as default shell
+## Set up zsh as default shell
 ENV SHELL=/bin/zsh
-```
+```text
 
 ```json
 // .devcontainer/devcontainer.json
@@ -1901,7 +1901,7 @@ ENV SHELL=/bin/zsh
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ]
 }
-```
+```text
 
 #### Package.json Scripts for AI Development
 
@@ -1973,14 +1973,14 @@ ENV SHELL=/bin/zsh
     "perf": "nx run client-app:build:production && npx lighthouse http://localhost:4200 --view"
   }
 }
-```
+```text
 
 ## 5. CI/CD Pipeline Integration with AI Workflows
 
 ### GitHub Actions Workflow for AI-Enhanced Development
 
 ```yaml
-# .github/workflows/ai-enhanced-ci.yml
+## .github/workflows/ai-enhanced-ci.yml
 name: AI-Enhanced CI/CD Pipeline
 
 on:
@@ -2368,7 +2368,7 @@ jobs:
       - name: Stop Nx Cloud agents
         run: npx nx-cloud stop-all-agents
         if: always()
-```
+```text
 
 ### Performance Monitoring Integration
 
@@ -2475,7 +2475,7 @@ if (require.main === module) {
 }
 
 module.exports = { checkPerformanceBudget };
-```
+```text
 
 ## 6. Code Quality Tools and Automated Review Integration
 
@@ -2589,7 +2589,7 @@ Modern AI development requires a sophisticated quality assurance framework that 
     }
   ]
 }
-```
+```text
 
 #### Prettier Configuration for Consistent Formatting
 
@@ -2611,7 +2611,7 @@ Modern AI development requires a sophisticated quality assurance framework that 
   "htmlWhitespaceSensitivity": "css",
   "embeddedLanguageFormatting": "auto"
 }
-```
+```text
 
 #### SonarQube Integration for Code Quality
 
@@ -2647,14 +2647,14 @@ export const sonarQubeConfig = {
   'sonar.issue.ignore.multicriteria.e3.ruleKey': 'typescript:S3776',
   'sonar.issue.ignore.multicriteria.e3.resourceKey': '**/*.config.ts'
 };
-```
+```text
 
 ### Automated Code Review with AI Enhancement
 
 #### GitHub Actions Integration
 
 ```yaml
-# .github/workflows/ai-code-review.yml
+## .github/workflows/ai-code-review.yml
 name: AI-Enhanced Code Review
 
 on:
@@ -2745,7 +2745,7 @@ jobs:
               repo: context.repo.repo,
               body: reviewComment
             });
-```
+```text
 
 #### Custom Code Quality Metrics
 
@@ -2979,7 +2979,7 @@ interface CoverageAnalysis {
   testQualityMetrics: TestQualityMetrics;
   recommendations: string[];
 }
-```
+```text
 
 ### Husky and lint-staged Integration
 
@@ -3007,7 +3007,7 @@ interface CoverageAnalysis {
     ]
   }
 }
-```
+```text
 
 ## 7. Performance Monitoring and Optimization Strategies
 
@@ -3246,12 +3246,12 @@ interface AIPerformanceMetrics {
   bundleOptimizationScore: number;
   codeGenerationEfficiency: number;
 }
-```
+```text
 
 #### Lighthouse CI Integration
 
 ```yaml
-# .lighthouserc.yml - Performance budgets for AI applications
+## .lighthouserc.yml - Performance budgets for AI applications
 ci:
   collect:
     url:
@@ -3306,7 +3306,7 @@ ci:
   server:
     port: 9001
     host: '0.0.0.0'
-```
+```text
 
 ## 8. Deployment Optimization for AI-Generated Code
 
@@ -3317,10 +3317,10 @@ Modern AI-enhanced applications require sophisticated deployment strategies that
 #### Optimized Dockerfile for AI Applications
 
 ```dockerfile
-# Multi-stage build optimized for AI-enhanced applications
+## Multi-stage build optimized for AI-enhanced applications
 FROM node:20-alpine AS dependencies
 
-# Install system dependencies for AI tools
+## Install system dependencies for AI tools
 RUN apk add --no-cache \
     python3 \
     make \
@@ -3330,48 +3330,48 @@ RUN apk add --no-cache \
 
 WORKDIR /app
 
-# Copy package files
+## Copy package files
 COPY package*.json ./
 COPY nx.json ./
 COPY tsconfig*.json ./
 
-# Install dependencies with AI tool integration
+## Install dependencies with AI tool integration
 RUN npm ci --only=production && npm cache clean --force
 
-# Build stage
+## Build stage
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy dependencies
+## Copy dependencies
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY --from=dependencies /app/package*.json ./
 
-# Copy source code
+## Copy source code
 COPY . .
 
-# Build applications with AI optimization
+## Build applications with AI optimization
 RUN npm run build:production -- --optimization=true
 
-# Production stage
+## Production stage
 FROM nginx:alpine AS production
 
-# Install security updates
+## Install security updates
 RUN apk update && apk upgrade
 
-# Copy custom nginx configuration
+## Copy custom nginx configuration
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/default.conf /etc/nginx/conf.d/default.conf
 
-# Copy built applications
+## Copy built applications
 COPY --from=builder /app/dist/apps/client-app /usr/share/nginx/html
 COPY --from=builder /app/dist/apps/api-server /app/api
 
-# Add health check
+## Add health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost/health || exit 1
 
-# Security configurations
+## Security configurations
 RUN addgroup -g 1001 -S appgroup && \
     adduser -S appuser -u 1001 -G appgroup
 
@@ -3380,12 +3380,12 @@ USER appuser
 EXPOSE 80 3000
 
 CMD ["nginx", "-g", "daemon off;"]
-```
+```text
 
 #### Kubernetes Deployment Configuration
 
 ```yaml
-# k8s/deployment.yaml - Kubernetes deployment for AI applications
+## k8s/deployment.yaml - Kubernetes deployment for AI applications
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -3509,12 +3509,12 @@ spec:
             name: ai-enhanced-service
             port:
               number: 80
-```
+```text
 
 #### Terraform Infrastructure as Code
 
 ```hcl
-# terraform/main.tf - Infrastructure for AI-enhanced applications
+## terraform/main.tf - Infrastructure for AI-enhanced applications
 terraform {
   required_version = ">= 1.0"
   required_providers {
@@ -3533,7 +3533,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-# EKS Cluster for AI applications
+## EKS Cluster for AI applications
 resource "aws_eks_cluster" "ai_enhanced_cluster" {
   name     = "ai-enhanced-cluster"
   role_arn = aws_iam_role.cluster_role.arn
@@ -3575,7 +3575,7 @@ resource "aws_eks_cluster" "ai_enhanced_cluster" {
   }
 }
 
-# Node group for AI workloads
+## Node group for AI workloads
 resource "aws_eks_node_group" "ai_nodes" {
   cluster_name    = aws_eks_cluster.ai_enhanced_cluster.name
   node_group_name = "ai-enhanced-nodes"
@@ -3611,7 +3611,7 @@ resource "aws_eks_node_group" "ai_nodes" {
   ]
 }
 
-# Application Load Balancer
+## Application Load Balancer
 resource "aws_lb" "ai_enhanced_alb" {
   name               = "ai-enhanced-alb"
   internal           = false
@@ -3634,7 +3634,7 @@ resource "aws_lb" "ai_enhanced_alb" {
   }
 }
 
-# CloudFront distribution for global performance
+## CloudFront distribution for global performance
 resource "aws_cloudfront_distribution" "ai_enhanced_cdn" {
   origin {
     domain_name = aws_lb.ai_enhanced_alb.dns_name
@@ -3715,7 +3715,7 @@ resource "aws_cloudfront_distribution" "ai_enhanced_cdn" {
   }
 }
 
-# Monitoring and observability
+## Monitoring and observability
 resource "aws_cloudwatch_log_group" "ai_enhanced_logs" {
   name              = "/aws/eks/ai-enhanced-cluster/cluster"
   retention_in_days = 30
@@ -3726,7 +3726,7 @@ resource "aws_cloudwatch_log_group" "ai_enhanced_logs" {
   }
 }
 
-# Output important values
+## Output important values
 output "cluster_endpoint" {
   description = "Endpoint for EKS control plane"
   value       = aws_eks_cluster.ai_enhanced_cluster.endpoint
@@ -3741,7 +3741,7 @@ output "cloudfront_distribution_domain_name" {
   description = "Domain name of the CloudFront distribution"
   value       = aws_cloudfront_distribution.ai_enhanced_cdn.domain_name
 }
-```
+```text
 
 ## 9. Complete Framework Configuration Guides
 
@@ -3851,7 +3851,7 @@ output "cloudfront_distribution_domain_name" {
     }
   }
 }
-```
+```text
 
 ### TypeScript Configuration for AI Code Understanding
 
@@ -3905,7 +3905,7 @@ output "cloudfront_distribution_domain_name" {
     }
   }
 }
-```
+```text
 
 ### Enterprise NestJS Configuration
 
@@ -4000,7 +4000,7 @@ bootstrap().catch(err => {
   console.error('❌ Error starting server:', err);
   process.exit(1);
 });
-```
+```text
 
 ## 10. Advanced Performance Optimization Strategies
 
@@ -4083,7 +4083,7 @@ class AIPerformanceMonitor {
     };
   }
 }
-```
+```text
 
 ### Framework-Specific Performance Optimization
 
@@ -4168,7 +4168,7 @@ class NestJSAIOptimization {
     };
   }
 }
-```
+```text
 
 ## 11. Integration Patterns for Popular Frameworks
 
@@ -4242,7 +4242,7 @@ export const AIOptimizedComponent: React.FC<ComponentProps> = memo(({ data }) =>
     </div>
   );
 });
-```
+```text
 
 ### Vue.js 3 + Composition API Integration
 
@@ -4323,7 +4323,7 @@ export function useAIOptimization<T>(
     cleanup
   };
 }
-```
+```text
 
 ## 12. Comprehensive Troubleshooting Guides
 
@@ -4510,14 +4510,14 @@ class AIIntegrationTroubleshooter {
     };
   }
 }
-```
+```text
 
 ## 13. Advanced CI/CD Pipeline Optimization
 
 ### AI-Enhanced CI/CD Configuration
 
 ```yaml
-# .github/workflows/ai-enhanced-ci.yml
+## .github/workflows/ai-enhanced-ci.yml
 name: AI-Enhanced CI/CD Pipeline
 
 on:
@@ -4641,12 +4641,12 @@ jobs:
           curl -X POST "${{ secrets.MONITORING_WEBHOOK }}" \
             -H "Content-Type: application/json" \
             -d '{"deployment": "${{ github.sha }}", "status": "success"}'
-```
+```text
 
 ### Kubernetes Configuration for AI-Enhanced Applications
 
 ```yaml
-# k8s/deployment.yaml
+## k8s/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -4715,7 +4715,7 @@ spec:
     port: 80
     targetPort: 3000
   type: LoadBalancer
-```
+```text
 
 This comprehensive technology stack optimization guide provides enterprise-grade implementation strategies for maximizing AI development productivity. The optimizations deliver measurable improvements in development velocity, code quality, and system performance while maintaining enterprise security and reliability standards.
 

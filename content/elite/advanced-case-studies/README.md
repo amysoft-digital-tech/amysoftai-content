@@ -99,7 +99,7 @@ interface GlobalBankTransformationStrategy {
     performanceOptimization: 'continuous-monitoring-and-improvement'
   }
 }
-```
+```text
 
 #### Phase 2: Core Implementation (Weeks 4-9)
 

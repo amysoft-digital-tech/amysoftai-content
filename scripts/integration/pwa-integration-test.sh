@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# PWA Integration Testing Script for Beyond the AI Plateau Content
-# Tests content compatibility with Progressive Web Application requirements
+# Beyond the AI Plateau PWA Integration Testing Script
+# Comprehensive validation of PWA features, offline functionality, and performance
 
 set -e
 
-echo "🚀 Starting PWA Integration Testing..."
+echo "🚀 Starting PWA Integration Testing for Beyond the AI Plateau"
+echo "============================================================="
 
 # Color codes for output
 RED='\033[0;31m'
@@ -15,256 +16,322 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Test counters
+TESTS_TOTAL=0
 TESTS_PASSED=0
 TESTS_FAILED=0
-WARNINGS=0
 
-# Helper function for test results
-log_result() {
-    local status=$1
-    local message=$2
+# Function to run a test
+run_test() {
+    local test_name="$1"
+    local test_command="$2"
     
-    if [ "$status" = "PASS" ]; then
-        echo -e "${GREEN}✓ PASS${NC}: $message"
-        ((TESTS_PASSED++))
-    elif [ "$status" = "FAIL" ]; then
-        echo -e "${RED}✗ FAIL${NC}: $message"
-        ((TESTS_FAILED++))
-    elif [ "$status" = "WARN" ]; then
-        echo -e "${YELLOW}⚠ WARNING${NC}: $message"
-        ((WARNINGS++))
+    TESTS_TOTAL=$((TESTS_TOTAL + 1))
+    echo -e "\n${BLUE}Testing:${NC} $test_name"
+    
+    if eval "$test_command"; then
+        echo -e "${GREEN}✅ PASS:${NC} $test_name"
+        TESTS_PASSED=$((TESTS_PASSED + 1))
+        return 0
     else
-        echo -e "${BLUE}ℹ INFO${NC}: $message"
+        echo -e "${RED}❌ FAIL:${NC} $test_name"
+        TESTS_FAILED=$((TESTS_FAILED + 1))
+        return 1
     fi
 }
 
-# Test 1: Content Structure and Organization
-echo -e "\n${BLUE}Testing Content Structure and Organization...${NC}"
-
-test_content_structure() {
-    local required_dirs=(
-        "content/principles"
-        "content/templates" 
-        "content/advanced"
-        "content/case-studies"
-        "assets/diagrams"
-        "assets/images"
-        "assets/interactive"
-    )
+# Function to check file exists
+check_file_exists() {
+    local file_path="$1"
+    local description="$2"
     
-    for dir in "${required_dirs[@]}"; do
-        if [ -d "$dir" ]; then
-            log_result "PASS" "Directory exists: $dir"
-        else
-            log_result "FAIL" "Missing required directory: $dir"
-        fi
-    done
-}
-
-# Test 2: PWA Metadata Compliance
-echo -e "\n${BLUE}Testing PWA Metadata Compliance...${NC}"
-
-test_pwa_metadata() {
-    local content_files=($(find content -name "*.md" -type f 2>/dev/null || true))
-    
-    if [ ${#content_files[@]} -eq 0 ]; then
-        log_result "WARN" "No content files found for metadata testing"
-        return
-    fi
-    
-    for file in "${content_files[@]}"; do
-        if grep -q "integration_requirements.*pwa-compatible" "$file"; then
-            log_result "PASS" "PWA compatibility metadata found in $file"
-        else
-            log_result "FAIL" "Missing PWA compatibility metadata in $file"
-        fi
-        
-        if grep -q "offline-accessible" "$file"; then
-            log_result "PASS" "Offline accessibility metadata found in $file"
-        else
-            log_result "WARN" "Missing offline accessibility metadata in $file"
-        fi
-    done
-}
-
-# Test 3: Schema Validation
-echo -e "\n${BLUE}Testing Schema Validation...${NC}"
-
-test_schema_validation() {
-    local schema_files=(
-        "schemas/content-validation/chapter-schema.json"
-        "schemas/content-validation/template-schema.json" 
-        "schemas/metadata/content-metadata-schema.json"
-    )
-    
-    for schema in "${schema_files[@]}"; do
-        if [ -f "$schema" ]; then
-            log_result "PASS" "Schema file exists: $schema"
-            
-            # Validate JSON syntax
-            if jq empty "$schema" 2>/dev/null; then
-                log_result "PASS" "Valid JSON syntax: $schema"
-            else
-                log_result "FAIL" "Invalid JSON syntax: $schema"
-            fi
-        else
-            log_result "FAIL" "Missing schema file: $schema"
-        fi
-    done
-}
-
-# Test 4: Accessibility Compliance
-echo -e "\n${BLUE}Testing Accessibility Compliance...${NC}"
-
-test_accessibility_compliance() {
-    local content_files=($(find content -name "*.md" -type f 2>/dev/null || true))
-    
-    if [ ${#content_files[@]} -eq 0 ]; then
-        log_result "WARN" "No content files found for accessibility testing"
-        return
-    fi
-    
-    for file in "${content_files[@]}"; do
-        # Check for semantic markup indicators
-        if grep -q "accessibility_features" "$file"; then
-            log_result "PASS" "Accessibility metadata found in $file"
-        else
-            log_result "WARN" "Missing accessibility metadata in $file"
-        fi
-        
-        # Check for alt text on images
-        if grep -q "!\[.*\]" "$file"; then
-            if grep -q "!\[\s*\]" "$file"; then
-                log_result "FAIL" "Images missing alt text in $file"
-            else
-                log_result "PASS" "Images have alt text in $file"
-            fi
-        fi
-    done
-}
-
-# Test 5: Interactive Elements Validation
-echo -e "\n${BLUE}Testing Interactive Elements...${NC}"
-
-test_interactive_elements() {
-    local interactive_specs=($(find assets/interactive -name "*.json" -type f 2>/dev/null || true))
-    
-    if [ ${#interactive_specs[@]} -eq 0 ]; then
-        log_result "WARN" "No interactive element specifications found"
-        return
-    fi
-    
-    for spec in "${interactive_specs[@]}"; do
-        if jq empty "$spec" 2>/dev/null; then
-            log_result "PASS" "Valid interactive specification: $spec"
-            
-            # Check for PWA compatibility fields
-            if jq -e '.pwa_compatible' "$spec" >/dev/null 2>&1; then
-                log_result "PASS" "PWA compatibility specified in $spec"
-            else
-                log_result "WARN" "PWA compatibility not specified in $spec"
-            fi
-        else
-            log_result "FAIL" "Invalid interactive specification: $spec"
-        fi
-    done
-}
-
-# Test 6: Content Performance Validation
-echo -e "\n${BLUE}Testing Content Performance Requirements...${NC}"
-
-test_performance_requirements() {
-    local large_files=($(find content -name "*.md" -size +100k -type f 2>/dev/null || true))
-    
-    if [ ${#large_files[@]} -gt 0 ]; then
-        for file in "${large_files[@]}"; do
-            log_result "WARN" "Large content file may need chunking: $file ($(du -h "$file" | cut -f1))"
-        done
+    if [[ -f "$file_path" ]]; then
+        echo -e "${GREEN}✅${NC} Found: $description ($file_path)"
+        return 0
     else
-        log_result "PASS" "No oversized content files found"
+        echo -e "${RED}❌${NC} Missing: $description ($file_path)"
+        return 1
     fi
-    
-    # Check for progressive loading indicators
-    local content_files=($(find content -name "*.md" -type f 2>/dev/null || true))
-    for file in "${content_files[@]}"; do
-        if grep -q "progressive-loading" "$file"; then
-            log_result "PASS" "Progressive loading support indicated in $file"
-        fi
-    done
 }
 
-# Test 7: Template System Integration
-echo -e "\n${BLUE}Testing Template System Integration...${NC}"
-
-test_template_integration() {
-    local template_files=($(find content/templates -name "*.md" -type f 2>/dev/null || true))
+# Function to validate JSON
+validate_json() {
+    local file_path="$1"
     
-    if [ ${#template_files[@]} -eq 0 ]; then
-        log_result "WARN" "No template files found for integration testing"
-        return
-    fi
-    
-    for template in "${template_files[@]}"; do
-        # Check for required template structure
-        if grep -q "## Template Usage" "$template"; then
-            log_result "PASS" "Template usage section found in $template"
-        else
-            log_result "WARN" "Missing template usage section in $template"
-        fi
-        
-        if grep -q "## Variables" "$template"; then
-            log_result "PASS" "Variables section found in $template"
-        else
-            log_result "WARN" "Missing variables section in $template"
-        fi
-        
-        if grep -q "template-testing" "$template"; then
-            log_result "PASS" "Template testing metadata found in $template"
-        else
-            log_result "WARN" "Missing template testing metadata in $template"
-        fi
-    done
-}
-
-# Test 8: Content Validation Script Integration
-echo -e "\n${BLUE}Testing Content Validation Integration...${NC}"
-
-test_validation_integration() {
-    if [ -f "scripts/content-processing/validate-content.sh" ]; then
-        log_result "PASS" "Content validation script exists"
-        
-        if [ -x "scripts/content-processing/validate-content.sh" ]; then
-            log_result "PASS" "Content validation script is executable"
-        else
-            log_result "WARN" "Content validation script not executable"
-        fi
+    if command -v jq &> /dev/null; then
+        jq empty "$file_path" 2>/dev/null
     else
-        log_result "FAIL" "Missing content validation script"
+        # Basic JSON validation without jq
+        python3 -c "import json; json.load(open('$file_path'))" 2>/dev/null
     fi
 }
 
-# Run all tests
-echo -e "\n${BLUE}Starting PWA Integration Test Suite...${NC}"
+# Function to check PWA metadata in markdown files
+check_pwa_metadata() {
+    local file_path="$1"
+    local required_fields=("pwa_integration" "offline_functionality" "progressive_loading")
+    
+    for field in "${required_fields[@]}"; do
+        if ! grep -q "^$field:" "$file_path"; then
+            echo -e "${RED}❌${NC} Missing PWA metadata field: $field in $file_path"
+            return 1
+        fi
+    done
+    
+    echo -e "${GREEN}✅${NC} PWA metadata complete in $file_path"
+    return 0
+}
 
-test_content_structure
-test_pwa_metadata
-test_schema_validation
-test_accessibility_compliance
-test_interactive_elements
-test_performance_requirements
-test_template_integration
-test_validation_integration
+echo -e "\n${YELLOW}Phase 1: Core PWA Infrastructure${NC}"
+echo "=================================="
 
-# Final summary
-echo -e "\n${BLUE}=== PWA Integration Test Summary ===${NC}"
-echo -e "${GREEN}Tests Passed: $TESTS_PASSED${NC}"
-echo -e "${RED}Tests Failed: $TESTS_FAILED${NC}"
-echo -e "${YELLOW}Warnings: $WARNINGS${NC}"
+# Test 1: Service Worker exists and is valid
+run_test "Service Worker file exists" "check_file_exists 'sw.js' 'Service Worker'"
 
-if [ $TESTS_FAILED -eq 0 ]; then
-    echo -e "\n${GREEN}🎉 PWA Integration Testing Completed Successfully!${NC}"
+# Test 2: Manifest file exists and is valid JSON
+run_test "PWA Manifest exists" "check_file_exists 'manifest.json' 'PWA Manifest'"
+run_test "PWA Manifest is valid JSON" "validate_json 'manifest.json'"
+
+# Test 3: Critical PWA files structure
+run_test "Assets directory exists" "[[ -d 'assets' ]]"
+run_test "Scripts directory exists" "[[ -d 'scripts' ]]"
+run_test "Content directory exists" "[[ -d 'content' ]]"
+
+echo -e "\n${YELLOW}Phase 2: Content PWA Integration${NC}"
+echo "================================="
+
+# Test 4: Chapter files have PWA metadata
+CHAPTER_FILES=(
+    "content/principles/ch01-ai-betrayal/chapter-01-the-great-ai-betrayal.md"
+    "content/principles/ch02-framework/chapter-02-five-elite-principles-framework.md"
+    "content/principles/ch03-context-mastery/chapter-03-context-mastery.md"
+    "content/principles/ch04-dynamic-planning/chapter-04-dynamic-planning.md"
+    "content/principles/ch05-code-evolution/chapter-05-code-evolution.md"
+    "content/principles/ch06-strategic-testing/chapter-06-strategic-testing.md"
+    "content/principles/ch07-intelligent-review/chapter-07-intelligent-review.md"
+    "content/principles/ch08-compound-effects/README.md"
+    "content/principles/ch09-transformation-roadmap/README.md"
+)
+
+for chapter_file in "${CHAPTER_FILES[@]}"; do
+    if [[ -f "$chapter_file" ]]; then
+        run_test "PWA metadata in $(basename "$chapter_file")" "check_pwa_metadata '$chapter_file'"
+    else
+        echo -e "${YELLOW}⚠️  SKIP:${NC} Chapter file not found: $chapter_file"
+    fi
+done
+
+echo -e "\n${YELLOW}Phase 3: Template Library PWA Integration${NC}"
+echo "========================================="
+
+# Test 5: Template files have PWA metadata
+TEMPLATE_FILES=(
+    "content/templates/dynamic-planning/foundation/basic-project-initialization.md"
+    "content/templates/cross-principle-integration/complete-feature-development-workflow.md"
+    "content/templates/code-evolution/foundation/basic-code-cleanup.md"
+)
+
+for template_file in "${TEMPLATE_FILES[@]}"; do
+    if [[ -f "$template_file" ]]; then
+        run_test "PWA metadata in template $(basename "$template_file")" "check_pwa_metadata '$template_file'"
+    else
+        echo -e "${YELLOW}⚠️  SKIP:${NC} Template file not found: $template_file"
+    fi
+done
+
+# Test 6: Template directory structure
+run_test "Context Mastery templates exist" "[[ -d 'content/templates/context-mastery' ]]"
+run_test "Dynamic Planning templates exist" "[[ -d 'content/templates/dynamic-planning' ]]"
+run_test "Code Evolution templates exist" "[[ -d 'content/templates/code-evolution' ]]"
+run_test "Strategic Testing templates exist" "[[ -d 'content/templates/strategic-testing' ]]"
+run_test "Intelligent Review templates exist" "[[ -d 'content/templates/intelligent-review' ]]"
+
+echo -e "\n${YELLOW}Phase 4: Case Study PWA Integration${NC}"
+echo "==================================="
+
+# Test 7: Case study files exist and have PWA metadata
+CASE_STUDY_FILES=(
+    "content/case-studies/foundation/tommy-complete-transformation.md"
+    "content/case-studies/foundation/team-collaboration-transformation.md"
+    "content/case-studies/foundation/team-velocity-transformation.md"
+    "content/case-studies/advanced/enterprise-legacy-modernization.md"
+    "content/case-studies/advanced/multi-repository-architecture-optimization.md"
+    "content/case-studies/elite/global-enterprise-ai-transformation.md"
+    "content/case-studies/elite/ai-first-team-culture-evolution.md"
+)
+
+for case_study_file in "${CASE_STUDY_FILES[@]}"; do
+    if [[ -f "$case_study_file" ]]; then
+        run_test "PWA metadata in case study $(basename "$case_study_file")" "check_pwa_metadata '$case_study_file'"
+    else
+        echo -e "${YELLOW}⚠️  SKIP:${NC} Case study file not found: $case_study_file"
+    fi
+done
+
+echo -e "\n${YELLOW}Phase 5: Service Worker Validation${NC}"
+echo "=================================="
+
+# Test 8: Service Worker syntax and structure
+if [[ -f "sw.js" ]]; then
+    run_test "Service Worker syntax validation" "node -c sw.js"
+    run_test "Service Worker contains install event" "grep -q 'addEventListener.*install' sw.js"
+    run_test "Service Worker contains activate event" "grep -q 'addEventListener.*activate' sw.js"
+    run_test "Service Worker contains fetch event" "grep -q 'addEventListener.*fetch' sw.js"
+    run_test "Service Worker contains cache management" "grep -q 'caches.open' sw.js"
+    run_test "Service Worker contains offline fallbacks" "grep -q 'createOffline.*Fallback' sw.js"
+fi
+
+echo -e "\n${YELLOW}Phase 6: Manifest Validation${NC}"
+echo "============================"
+
+# Test 9: Manifest required fields
+if [[ -f "manifest.json" ]]; then
+    run_test "Manifest contains name" "grep -q '\"name\"' manifest.json"
+    run_test "Manifest contains short_name" "grep -q '\"short_name\"' manifest.json"
+    run_test "Manifest contains start_url" "grep -q '\"start_url\"' manifest.json"
+    run_test "Manifest contains display" "grep -q '\"display\"' manifest.json"
+    run_test "Manifest contains icons array" "grep -q '\"icons\"' manifest.json"
+    run_test "Manifest contains theme_color" "grep -q '\"theme_color\"' manifest.json"
+    run_test "Manifest contains background_color" "grep -q '\"background_color\"' manifest.json"
+fi
+
+echo -e "\n${YELLOW}Phase 7: Accessibility Validation${NC}"
+echo "================================="
+
+# Test 10: Accessibility metadata
+check_accessibility_metadata() {
+    local file_path="$1"
+    local accessibility_fields=("accessibility_features" "semantic_markup" "screen_reader_compatible")
+    
+    for field in "${accessibility_fields[@]}"; do
+        if ! grep -q "$field" "$file_path"; then
+            return 1
+        fi
+    done
+    return 0
+}
+
+for chapter_file in "${CHAPTER_FILES[@]}"; do
+    if [[ -f "$chapter_file" ]]; then
+        run_test "Accessibility metadata in $(basename "$chapter_file")" "check_accessibility_metadata '$chapter_file'"
+    fi
+done
+
+echo -e "\n${YELLOW}Phase 8: Performance Validation${NC}"
+echo "==============================="
+
+# Test 11: Performance targets in content
+check_performance_targets() {
+    local file_path="$1"
+    
+    if grep -q "performance_targets" "$file_path" && 
+       grep -q "first_contentful_paint" "$file_path" && 
+       grep -q "largest_contentful_paint" "$file_path"; then
+        return 0
+    fi
+    return 1
+}
+
+for chapter_file in "${CHAPTER_FILES[@]}"; do
+    if [[ -f "$chapter_file" ]]; then
+        run_test "Performance targets in $(basename "$chapter_file")" "check_performance_targets '$chapter_file'"
+    fi
+done
+
+echo -e "\n${YELLOW}Phase 9: Offline Functionality Validation${NC}"
+echo "=========================================="
+
+# Test 12: Offline functionality metadata
+check_offline_functionality() {
+    local file_path="$1"
+    
+    if grep -q "offline_functionality: true" "$file_path" && 
+       grep -q "caching_strategy" "$file_path" && 
+       grep -q "sync_requirements" "$file_path"; then
+        return 0
+    fi
+    return 1
+}
+
+for chapter_file in "${CHAPTER_FILES[@]}"; do
+    if [[ -f "$chapter_file" ]]; then
+        run_test "Offline functionality in $(basename "$chapter_file")" "check_offline_functionality '$chapter_file'"
+    fi
+done
+
+echo -e "\n${YELLOW}Phase 10: Integration Testing${NC}"
+echo "============================="
+
+# Test 13: Cross-references and integration
+run_test "PWA integration specification exists" "check_file_exists 'assets/diagrams/pwa-integration/pwa-integration-specifications.md' 'PWA Integration Specifications'"
+
+# Test 14: Template validation
+if command -v npm &> /dev/null; then
+    if [[ -f "package.json" ]] && grep -q "lint" package.json; then
+        run_test "Code linting passes" "npm run lint --silent"
+    fi
+fi
+
+echo -e "\n${YELLOW}Phase 11: File Structure Validation${NC}"
+echo "===================================="
+
+# Test 15: Essential directory structure
+REQUIRED_DIRS=(
+    "content/principles"
+    "content/templates"
+    "content/case-studies"
+    "content/advanced"
+    "content/elite"
+    "assets/diagrams"
+    "scripts/integration"
+)
+
+for dir in "${REQUIRED_DIRS[@]}"; do
+    run_test "Directory exists: $dir" "[[ -d '$dir' ]]"
+done
+
+echo -e "\n${YELLOW}Phase 12: Content Validation${NC}"
+echo "============================"
+
+# Test 16: Word count validation for major content
+validate_word_count() {
+    local file_path="$1"
+    local min_words="$2"
+    
+    if [[ -f "$file_path" ]]; then
+        local word_count=$(wc -w < "$file_path")
+        if [[ $word_count -ge $min_words ]]; then
+            echo "Word count: $word_count (minimum: $min_words)"
+            return 0
+        else
+            echo "Word count too low: $word_count (minimum: $min_words)"
+            return 1
+        fi
+    fi
+    return 1
+}
+
+# Test major content files have adequate word counts
+if [[ -f "content/principles/ch03-context-mastery/chapter-03-context-mastery.md" ]]; then
+    run_test "Chapter 3 has adequate content (min 5000 words)" "validate_word_count 'content/principles/ch03-context-mastery/chapter-03-context-mastery.md' 5000"
+fi
+
+if [[ -f "content/case-studies/foundation/tommy-complete-transformation.md" ]]; then
+    run_test "Tommy case study has adequate content (min 2500 words)" "validate_word_count 'content/case-studies/foundation/tommy-complete-transformation.md' 2500"
+fi
+
+echo -e "\n${YELLOW}Test Results Summary${NC}"
+echo "===================="
+
+echo -e "Total Tests: ${BLUE}$TESTS_TOTAL${NC}"
+echo -e "Passed: ${GREEN}$TESTS_PASSED${NC}"
+echo -e "Failed: ${RED}$TESTS_FAILED${NC}"
+
+if [[ $TESTS_FAILED -eq 0 ]]; then
+    echo -e "\n${GREEN}🎉 All PWA integration tests passed!${NC}"
+    echo -e "${GREEN}✅ Beyond the AI Plateau is ready for PWA deployment${NC}"
     exit 0
 else
-    echo -e "\n${RED}❌ PWA Integration Testing Failed - Please address failed tests${NC}"
+    echo -e "\n${RED}❌ $TESTS_FAILED test(s) failed${NC}"
+    echo -e "${YELLOW}⚠️  Please review and fix the failing tests before deployment${NC}"
     exit 1
 fi

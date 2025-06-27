@@ -74,7 +74,7 @@ interface EliteTransformationFramework {
     optimization: 'continuous-performance-tuning'
   }
 }
-```
+```text
 
 ### Elite Transformation Principles
 
@@ -104,7 +104,7 @@ Organizations have unique contexts, constraints, and opportunities. Elite transf
 
 **Elite Assessment Template**:
 ```markdown
-# Elite Transformation Readiness Assessment
+## Elite Transformation Readiness Assessment
 
 ## Leadership Dimension (Weight: 30%)
 - [ ] Executive champion identified and committed
@@ -135,7 +135,7 @@ Organizations have unique contexts, constraints, and opportunities. Elite transf
 - [ ] Integration points with AI tools identified
 
 Readiness Score: ___/100 (Minimum 75 required for elite transformation)
-```
+```text
 
 #### Week 2: Transformation Strategy Design
 

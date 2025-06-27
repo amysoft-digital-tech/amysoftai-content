@@ -1,0 +1,208 @@
+{
+  "name": "Beyond the AI Plateau: Elite Development Principles",
+  "short_name": "AI Plateau Guide",
+  "description": "Transform your AI development from frustrating to phenomenal with five elite principles",
+  "version": "1.0.0",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1f2937",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  
+  "categories": [
+    "education",
+    "productivity",
+    "developer-tools",
+    "reference"
+  ],
+  
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Home screen showing chapter overview and progress tracking"
+    },
+    {
+      "src": "/assets/screenshots/mobile-template.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Template library with offline access and copy functionality"
+    }
+  ],
+  
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-96x96.png",
+      "sizes": "96x96", 
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/maskable-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png", 
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Template Library",
+      "short_name": "Templates",
+      "description": "Access 110+ AI development templates offline",
+      "url": "/templates",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-templates.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Progress Tracker", 
+      "short_name": "Progress",
+      "description": "Track your AI development transformation journey",
+      "url": "/progress",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-progress.png",
+          "sizes": "96x96", 
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Case Studies",
+      "short_name": "Cases",
+      "description": "Real transformation results and implementation guides",
+      "url": "/case-studies",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-cases.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Assessment Tool",
+      "short_name": "Assessment", 
+      "description": "Evaluate your AI development maturity",
+      "url": "/assessment",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-assessment.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "protocol_handlers": [
+    {
+      "protocol": "web+aiplateau",
+      "url": "/template?id=%s"
+    }
+  ],
+  
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  
+  "prefer_related_applications": false,
+  
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  
+  "capture_links": "existing-client-navigate",
+  
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  
+  "handle_links": "preferred",
+  
+  "file_handlers": [
+    {
+      "action": "/import-template",
+      "accept": {
+        "text/markdown": [".md"],
+        "text/plain": [".txt"]
+      },
+      "icons": [
+        {
+          "src": "/assets/icons/file-handler.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ]
+}

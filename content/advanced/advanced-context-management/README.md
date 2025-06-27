@@ -47,7 +47,7 @@ The foundation of advanced context management lies in creating repository-specif
 #### Core Framework Structure
 
 ```markdown
-# Repository Context Framework
+## Repository Context Framework
 
 ## Project Architecture Overview
 - **Technology Stack**: [Angular 18+, NestJS 10+, TypeScript 5.0+, Nx 19+]
@@ -99,7 +99,7 @@ export class ContextController {
     return levelMap[taskType] || [ContextLevel.SYSTEM];
   }
 }
-```
+```text
 
 ### Dynamic Context Scoping
 
@@ -128,7 +128,7 @@ During architectural changes, focus context on:
 - Migration patterns and compatibility requirements
 - Cross-module dependencies and impacts
 - Performance and scalability considerations
-```
+```text
 
 ## Cross-Session Memory Optimization
 
@@ -173,7 +173,7 @@ class ContextMemoryManager {
     };
   }
 }
-```
+```text
 
 #### Knowledge Graph Construction
 
@@ -199,7 +199,7 @@ Build cumulative understanding across sessions:
 - Document decision rationales and trade-offs
 - Maintain glossary of domain-specific terminology
 - Record best practices discovered through experience
-```
+```text
 
 ### Context Compression Techniques
 
@@ -231,7 +231,7 @@ class ContextCompressor {
     };
   }
 }
-```
+```text
 
 ## Context Pollution Prevention
 
@@ -291,7 +291,7 @@ class PollutionDetector {
     return sources;
   }
 }
-```
+```text
 
 #### Automated Context Cleanup
 
@@ -329,7 +329,7 @@ class ContextRotationManager {
     };
   }
 }
-```
+```text
 
 ## Large Codebase Context Management
 
@@ -371,7 +371,7 @@ Managing context for codebases with 100K+ lines requires sophisticated hierarchi
   - Immediate dependencies and collaborators
   - Recent changes and ongoing work
   - Specific technical challenges
-```
+```text
 
 #### Dynamic Context Loading
 
@@ -424,7 +424,7 @@ class LargeCodebaseContextManager {
     return plans;
   }
 }
-```
+```text
 
 ### Intelligent Context Segmentation
 
@@ -475,7 +475,7 @@ class DependencyBasedSegmenter {
     return clusters;
   }
 }
-```
+```text
 
 ## Team Collaboration Context Sharing
 
@@ -525,7 +525,7 @@ class TeamContextRepository {
     };
   }
 }
-```
+```text
 
 #### Context Collaboration Patterns
 
@@ -572,7 +572,7 @@ class ContextHandoffManager {
     };
   }
 }
-```
+```text
 
 ## Advanced Prompt Engineering for Complex Contexts
 
@@ -623,7 +623,7 @@ ${systemContext.constraints.join('\n- ')}
     `.trim();
   }
 }
-```
+```text
 
 ### Context Compression for Prompts
 
@@ -671,7 +671,7 @@ class ContextRelevanceScorer {
     };
   }
 }
-```
+```text
 
 ### Dynamic Prompt Adaptation
 
@@ -718,7 +718,7 @@ class AdaptivePromptEngine {
     };
   }
 }
-```
+```text
 
 ## Context Version Control and Evolution
 
@@ -787,7 +787,7 @@ class ContextVersionControl {
     return branchId;
   }
 }
-```
+```text
 
 ## Performance Optimization for Large Context Workloads
 
@@ -839,7 +839,7 @@ class ContextCacheManager {
     toRemove.forEach(({ key }) => this.cache.delete(key));
   }
 }
-```
+```text
 
 ## Implementation Templates
 
@@ -847,16 +847,16 @@ class ContextCacheManager {
 
 ```bash
 #!/bin/bash
-# Advanced Context Management Setup Script
+## Advanced Context Management Setup Script
 
 echo "Setting up Advanced Context Management for repository..."
 
-# Create context management structure
+## Create context management structure
 mkdir -p .context/{templates,sessions,shared,cache}
 mkdir -p .context/strategies/{repository,cross-session,pollution-prevention}
 mkdir -p .context/team/{shared-contexts,handoffs,collaboration}
 
-# Initialize context configuration
+## Initialize context configuration
 cat > .context/config.json << EOF
 {
   "contextStrategy": "advanced",
@@ -869,10 +869,10 @@ cat > .context/config.json << EOF
 }
 EOF
 
-# Create context management scripts
+## Create context management scripts
 cat > .context/manage-context.sh << 'EOF'
 #!/bin/bash
-# Context management utility script
+## Context management utility script
 
 case "$1" in
   "start-session")
@@ -904,7 +904,7 @@ echo "✅ Advanced Context Management setup complete!"
 echo "📁 Context structure created in .context/"
 echo "🔧 Management scripts installed"
 echo "📖 See documentation for usage patterns"
-```
+```text
 
 ## Quick Wins: 30-Minute Advanced Context Setup
 
@@ -918,11 +918,11 @@ echo "📖 See documentation for usage patterns"
 ```bash
 mkdir -p .context/{active,archive,templates}
 touch .context/CLAUDE.md
-```
+```text
 
 2. **Basic Context Controller**:
 ```markdown
-# .context/CLAUDE.md
+## .context/CLAUDE.md
 
 ## Current Development Context
 - **Active Feature**: [Current feature being developed]
@@ -938,29 +938,29 @@ touch .context/CLAUDE.md
 - When switching between major features
 - After more than 2 hours of development
 - When context feels "stale" or irrelevant
-```
+```text
 
 #### Step 2: Pollution Prevention (10 minutes)
 
 1. **Context Health Check**:
 ```bash
-# Add to daily workflow
+## Add to daily workflow
 alias context-health="echo 'Context items older than 24h:'; find .context/active -name '*.md' -mtime +1"
-```
+```text
 
 2. **Auto-cleanup Script**:
 ```bash
 #!/bin/bash
-# Daily context cleanup
+## Daily context cleanup
 find .context/active -name '*.md' -mtime +1 -exec mv {} .context/archive/ \;
 echo "Moved stale context to archive"
-```
+```text
 
 #### Step 3: Team Sharing Setup (10 minutes)
 
 1. **Shared Context Template**:
 ```markdown
-# Shared Context: [Feature/Task Name]
+## Shared Context: [Feature/Task Name]
 **Shared By**: [Your Name]
 **Date**: [Current Date]  
 **Scope**: [What this context covers]
@@ -974,7 +974,7 @@ echo "Moved stale context to archive"
 - **Prerequisites**: [What to know before using this context]
 - **Usage**: [How to apply this context effectively]
 - **Duration**: [How long this context remains relevant]
-```
+```text
 
 **Expected Results After 30 Minutes**:
 - 40% reduction in context setup time
@@ -1121,7 +1121,7 @@ class EnterpriseContextManager {
     };
   }
 }
-```
+```text
 
 ## Multi-Repository Context Coordination Systems
 
@@ -1209,7 +1209,7 @@ class MultiRepositoryContextCoordinator {
     };
   }
 }
-```
+```text
 
 ## Enterprise Knowledge Management Integration
 
@@ -1279,7 +1279,7 @@ class EnterpriseContextGovernance {
     };
   }
 }
-```
+```text
 
 ### Automated Validation Systems
 
@@ -1347,7 +1347,7 @@ class ContextValidationFramework {
     };
   }
 }
-```
+```text
 
 ## Team Collaboration Patterns and Knowledge Federation
 
@@ -1475,7 +1475,7 @@ class TeamCollaborationFramework {
     };
   }
 }
-```
+```text
 
 ## Quality Assurance and Enterprise Success Metrics
 
@@ -1603,7 +1603,7 @@ class EnterpriseContextSuccessFramework {
     };
   }
 }
-```
+```text
 
 ## Implementation Roadmap for Enterprise Deployment
 
@@ -1736,7 +1736,7 @@ class EnterpriseImplementationRoadmap {
     };
   }
 }
-```
+```text
 
 This comprehensive Advanced Context Management framework provides the enterprise-grade context management foundation required for large-scale AI-enhanced development operations. The strategies and systems outlined enable organizations to scale AI development productivity across teams while maintaining quality, security, and compliance standards.
 
