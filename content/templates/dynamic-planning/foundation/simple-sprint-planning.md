@@ -1,6 +1,8 @@
 ---
 title: "Simple Sprint Planning Template"
 description: "Foundational template for AI-assisted sprint planning perfect for teams new to agile or AI-enhanced development"
+type: "template"
+tier: "foundation"
 template_category: "dynamic-planning"
 skill_level: "foundational"
 estimated_time_savings: "1-2 hours per sprint"

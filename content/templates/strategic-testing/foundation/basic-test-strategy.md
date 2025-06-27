@@ -1,6 +1,8 @@
 ---
 title: "Basic Test Strategy Template"
 description: "Foundational template for creating simple but effective testing strategies using AI assistance"
+type: "template"
+tier: "foundation"
 template_category: "strategic-testing"
 skill_level: "foundational"
 estimated_time_savings: "2-3 hours"

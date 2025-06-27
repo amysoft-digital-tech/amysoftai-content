@@ -1,6 +1,8 @@
 ---
 title: "Basic Code Review Checklist Template"
 description: "Foundational template for AI-assisted code reviews that catch common issues and improve code quality"
+type: "template"
+tier: "foundation"
 template_category: "intelligent-review"
 skill_level: "foundational"
 estimated_time_savings: "30-45 minutes per review"
