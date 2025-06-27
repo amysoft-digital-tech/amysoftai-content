@@ -77,7 +77,7 @@ interface OrganizationalCultureProfile {
     metricsUtilization: 'data-driven' | 'informed' | 'intuitive'
   }
 }
-```
+```text
 
 **Technical Assessment Framework**
 Technical infrastructure assessment identifies integration complexity, toolchain compatibility, and development environment readiness for AI-enhanced development practices.
@@ -114,7 +114,7 @@ Startups offer unique opportunities for AI-first development adoption due to cul
 
 **Startup-Specific Customizations**:
 ```markdown
-# Startup AI-First Development Framework
+## Startup AI-First Development Framework
 
 ## Context Mastery for Startups
 - Lightweight Claude.md frameworks that evolve with product development
@@ -133,7 +133,7 @@ Startups offer unique opportunities for AI-first development adoption due to cul
 - Architecture evolution that supports scaling from prototype to production
 - Refactoring strategies that balance speed with sustainability
 - Quality gates that prevent technical debt accumulation while maintaining velocity
-```
+```text
 
 #### Scale-Up Framework: Growth and Consistency Balance
 
@@ -202,7 +202,7 @@ interface FinancialServicesContextFramework {
     incidentResponse: 'regulatory-notification-protocols'
   }
 }
-```
+```text
 
 **Financial Services Context Templates**:
 - **Regulatory Documentation Generation**: AI-assisted generation of regulatory documentation that meets compliance standards
@@ -313,7 +313,7 @@ interface EnterpriseIntegrationFramework {
     businessMetrics: 'enterprise-analytics-integration'
   }
 }
-```
+```text
 
 **Enterprise Integration Implementation**:
 - **API Gateway Integration**: Comprehensive integration with enterprise API gateways and service mesh architectures
@@ -397,7 +397,7 @@ interface TemplateCustomizationFramework {
     qualityAssurance: 'template-quality-validation'
   }
 }
-```
+```text
 
 #### Context Mastery Template Customization
 
@@ -408,7 +408,7 @@ Context mastery templates require customization for organizational technical sta
 
 **Financial Services Context Template**:
 ```markdown
-# Financial Services Repository Analysis Template
+## Financial Services Repository Analysis Template
 
 ## Regulatory Context Assessment
 - [ ] Identify regulatory requirements applicable to this repository
@@ -427,11 +427,11 @@ Context mastery templates require customization for organizational technical sta
 - [ ] Assess integration dependencies and failure scenarios
 - [ ] Document disaster recovery and backup requirements
 - [ ] Identify performance and scalability considerations
-```
+```text
 
 **Healthcare Context Template**:
 ```markdown
-# Healthcare System Context Analysis Template
+## Healthcare System Context Analysis Template
 
 ## Clinical Safety Assessment
 - [ ] Identify patient safety implications of system changes
@@ -450,7 +450,7 @@ Context mastery templates require customization for organizational technical sta
 - [ ] Document clinical workflow integration and user experience requirements
 - [ ] Evaluate clinical decision support system integration requirements
 - [ ] Identify clinical training and change management requirements
-```
+```text
 
 #### Dynamic Planning Template Customization
 

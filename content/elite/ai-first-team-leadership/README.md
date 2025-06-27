@@ -77,7 +77,7 @@ interface DistributedSpecialistFramework {
     organizationalLearning: 'expertise-knowledge-accumulation'
   }
 }
-```
+```text
 
 **Leadership Implementation for Distributed Specialists**:
 - **Expert Development Coaching**: Intensive coaching that develops domain experts into AI-enhanced technical leaders
@@ -115,7 +115,7 @@ interface OrchestratedVirtuosoFramework {
     organizationalLearning: 'systemic-knowledge-integration'
   }
 }
-```
+```text
 
 **Leadership Implementation for Orchestrated Virtuosos**:
 - **Integration Leadership Development**: Coaching that builds capability to manage complex technical and business integration
@@ -147,7 +147,7 @@ Many elite organizations achieve optimal results through sophisticated hybrid ap
 
 **Hybrid Implementation Strategies**:
 ```markdown
-# Hybrid Team Architecture Framework
+## Hybrid Team Architecture Framework
 
 ## Project-Based Architecture Selection
 - Deep technical innovation projects → Distributed Specialist teams
@@ -166,7 +166,7 @@ Many elite organizations achieve optimal results through sophisticated hybrid ap
 - Optimize team composition based on project requirements
 - Develop leadership capabilities for both approaches
 - Build organizational capability for architecture flexibility
-```
+```text
 
 ### Team Performance Optimization Systems
 
@@ -231,7 +231,7 @@ interface ProductivityMultiplierFramework {
     culturalIntegration: 'ai-practice-cultural-embedding'
   }
 }
-```
+```text
 
 #### Quality Enhancement Tracking Systems
 
@@ -313,7 +313,7 @@ interface LearningOrganizationFramework {
     adaptiveCapacity: 'environmental-change-responsiveness'
   }
 }
-```
+```text
 
 **Learning Culture Implementation Strategies**:
 - **Knowledge Capture Systems**: Systematic approaches for capturing and organizing learning from AI-enhanced development experiences
@@ -420,7 +420,7 @@ interface StrategicAILeadershipFramework {
     partnershipDevelopment: 'ai-ecosystem-partnership-strategy'
   }
 }
-```
+```text
 
 **Executive Coaching Implementation**:
 - **Strategic Thinking Development**: Coaching that builds capability for long-term AI strategy development and execution
@@ -527,7 +527,7 @@ interface EnterpriseScalingFramework {
     sustainability: 'long-term-capability-development-measurement'
   }
 }
-```
+```text
 
 #### Governance Framework Development
 
