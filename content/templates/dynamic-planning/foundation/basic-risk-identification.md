@@ -1,6 +1,8 @@
 ---
 title: "Basic Risk Identification Template"
 description: "Foundational template for identifying and planning around common development project risks using AI assistance"
+type: "template"
+tier: "foundation"
 template_category: "dynamic-planning"
 skill_level: "foundational"
 estimated_time_savings: "30-45 minutes"
