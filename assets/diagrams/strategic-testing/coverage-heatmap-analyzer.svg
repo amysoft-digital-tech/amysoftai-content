@@ -1,0 +1,488 @@
+<svg viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ST-13: Strategic Testing Coverage Heatmap Analyzer</title>
+  <desc id="desc">Interactive testing dashboard that analyzes coverage data across entire codebase, highlights critical gaps, provides risk-based testing priorities, and tracks testing effectiveness over time with drill-down capabilities.</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive elements -->
+  <defs>
+    <!-- Coverage level gradients -->
+    <linearGradient id="criticalCoverageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#991b1b"/>
+    </linearGradient>
+    
+    <linearGradient id="highRiskCoverageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ea580c"/>
+      <stop offset="100%" style="stop-color:#c2410c"/>
+    </linearGradient>
+    
+    <linearGradient id="mediumCoverageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ca8a04"/>
+      <stop offset="100%" style="stop-color:#a16207"/>
+    </linearGradient>
+    
+    <linearGradient id="goodCoverageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a"/>
+      <stop offset="100%" style="stop-color:#15803d"/>
+    </linearGradient>
+    
+    <linearGradient id="excellentCoverageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#166534"/>
+      <stop offset="100%" style="stop-color:#14532d"/>
+    </linearGradient>
+    
+    <!-- Analytics gradient -->
+    <radialGradient id="analyticsGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </radialGradient>
+    
+    <!-- Header gradient -->
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    
+    <!-- Recommendation gradient -->
+    <linearGradient id="recommendationGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    
+    <!-- Interactive glow effect -->
+    <filter id="heatmapGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drill-down indicator -->
+    <filter id="drillIndicator">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Coverage trend arrow -->
+    <marker id="trendArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#16a34a"/>
+    </marker>
+    
+    <!-- Risk indicator -->
+    <marker id="riskIndicator" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#dc2626"/>
+    </marker>
+    
+    <!-- Accessibility patterns for color-blind users -->
+    <pattern id="criticalPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#dc2626"/>
+      <path d="M0,4 L4,0" stroke="white" stroke-width="1"/>
+    </pattern>
+    
+    <pattern id="highRiskPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#ea580c"/>
+      <circle cx="2" cy="2" r="1" fill="white"/>
+    </pattern>
+    
+    <!-- Interactive hover indicator -->
+    <g id="hoverIndicator">
+      <circle r="4" fill="#3b82f6" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Real-time update pulse -->
+    <g id="updatePulse">
+      <circle r="6" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.7">
+        <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1000" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1600" height="60" fill="url(#headerGradient)"/>
+  <text x="30" y="25" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700">
+    Strategic Testing Coverage Heatmap Analyzer
+  </text>
+  <text x="30" y="45" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="12">
+    Interactive coverage analysis with risk-based prioritization and strategic testing recommendations
+  </text>
+  
+  <!-- Real-time indicator -->
+  <use href="#updatePulse" x="1520" y="30"/>
+  <text x="1540" y="35" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11">LIVE DATA</text>
+  
+  <!-- Coverage Legend & Risk Matrix (Left Panel) -->
+  <g id="coverageLegend">
+    <rect x="20" y="80" width="280" height="520" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="20" y="80" width="280" height="35" fill="#475569" rx="12 12 0 0"/>
+    <text x="160" y="102" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+      Coverage Risk Matrix
+    </text>
+    
+    <!-- Coverage levels -->
+    <g id="coverageLevels">
+      <text x="40" y="135" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Coverage Levels:</text>
+      
+      <!-- Critical (0-20%) -->
+      <rect x="40" y="145" width="20" height="15" fill="url(#criticalCoverageGradient)" rx="3"/>
+      <text x="70" y="157" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Critical (0-20%)</text>
+      <text x="40" y="170" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">Immediate attention required</text>
+      
+      <!-- High Risk (21-50%) -->
+      <rect x="40" y="180" width="20" height="15" fill="url(#highRiskCoverageGradient)" rx="3"/>
+      <text x="70" y="192" fill="#ea580c" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">High Risk (21-50%)</text>
+      <text x="40" y="205" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">Priority testing needed</text>
+      
+      <!-- Medium (51-70%) -->
+      <rect x="40" y="215" width="20" height="15" fill="url(#mediumCoverageGradient)" rx="3"/>
+      <text x="70" y="227" fill="#ca8a04" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Medium (51-70%)</text>
+      <text x="40" y="240" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">Improvement opportunity</text>
+      
+      <!-- Good (71-90%) -->
+      <rect x="40" y="250" width="20" height="15" fill="url(#goodCoverageGradient)" rx="3"/>
+      <text x="70" y="262" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Good (71-90%)</text>
+      <text x="40" y="275" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">Well covered</text>
+      
+      <!-- Excellent (91-100%) -->
+      <rect x="40" y="285" width="20" height="15" fill="url(#excellentCoverageGradient)" rx="3"/>
+      <text x="70" y="297" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Excellent (91-100%)</text>
+      <text x="40" y="310" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">Exemplary coverage</text>
+    </g>
+    
+    <!-- Critical path indicators -->
+    <g id="criticalPathIndicators">
+      <text x="40" y="340" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Business Criticality:</text>
+      
+      <circle cx="50" cy="355" r="6" fill="#dc2626"/>
+      <text x="65" y="360" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">Revenue Critical</text>
+      
+      <circle cx="50" cy="375" r="6" fill="#ea580c"/>
+      <text x="65" y="380" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">Customer Impact</text>
+      
+      <circle cx="50" cy="395" r="6" fill="#ca8a04"/>
+      <text x="65" y="400" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">Operational</text>
+      
+      <circle cx="50" cy="415" r="6" fill="#16a34a"/>
+      <text x="65" y="420" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">Support</text>
+    </g>
+    
+    <!-- Testing complexity assessment -->
+    <g id="complexityAssessment">
+      <text x="40" y="450" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Testing Complexity:</text>
+      
+      <text x="40" y="470" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">High: Legacy systems, integrations</text>
+      <text x="40" y="485" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">Medium: Business logic, APIs</text>
+      <text x="40" y="500" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">Low: Utilities, static content</text>
+      
+      <text x="40" y="525" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Current Project: E-commerce Platform</text>
+      <text x="40" y="540" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">Files: 2,847 | Components: 456</text>
+      <text x="40" y="555" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">Lines: 847K | Test Files: 1,203</text>
+    </g>
+  </g>
+  
+  <!-- Main Heatmap Display (Central) -->
+  <g id="mainHeatmap">
+    <rect x="320" y="80" width="880" height="520" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#heatmapGlow)"/>
+    <rect x="320" y="80" width="880" height="35" fill="#1e293b" rx="12 12 0 0"/>
+    <text x="760" y="102" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+      Codebase Coverage Heatmap - Real-time View
+    </text>
+    
+    <!-- File/module structure as nested rectangles -->
+    <g id="codebaseStructure">
+      <!-- Authentication Module (Critical - Low Coverage) -->
+      <rect x="340" y="130" width="120" height="80" fill="url(#criticalCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6" filter="url(#drillIndicator)"/>
+      <text x="400" y="155" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Authentication</text>
+      <text x="400" y="170" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">18% Coverage</text>
+      <text x="400" y="185" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">2.3K lines</text>
+      <text x="400" y="200" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">CRITICAL RISK</text>
+      <use href="#hoverIndicator" x="450" y="140"/>
+      
+      <!-- Payment Processing (Critical - Medium Coverage) -->
+      <rect x="480" y="130" width="140" height="90" fill="url(#mediumCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6" filter="url(#drillIndicator)"/>
+      <text x="550" y="155" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Payment Processing</text>
+      <text x="550" y="170" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">67% Coverage</text>
+      <text x="550" y="185" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">4.1K lines</text>
+      <text x="550" y="200" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">HIGH BUSINESS IMPACT</text>
+      <use href="#hoverIndicator" x="610" y="140"/>
+      
+      <!-- User Interface (Good Coverage) -->
+      <rect x="640" y="130" width="160" height="70" fill="url(#goodCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="720" y="155" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">User Interface</text>
+      <text x="720" y="170" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">84% Coverage</text>
+      <text x="720" y="185" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">8.7K lines</text>
+      
+      <!-- API Layer (High Risk) -->
+      <rect x="340" y="230" width="130" height="75" fill="url(#highRiskCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6" filter="url(#drillIndicator)"/>
+      <text x="405" y="255" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">API Layer</text>
+      <text x="405" y="270" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">43% Coverage</text>
+      <text x="405" y="285" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">3.2K lines</text>
+      <text x="405" y="295" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8">HIGH CHANGE FREQ</text>
+      
+      <!-- Database Layer (Medium Coverage) -->
+      <rect x="490" y="240" width="110" height="85" fill="url(#mediumCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="545" y="265" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Database</text>
+      <text x="545" y="280" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">58% Coverage</text>
+      <text x="545" y="295" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">1.8K lines</text>
+      <text x="545" y="310" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">Medium Priority</text>
+      
+      <!-- Utilities (Excellent Coverage) -->
+      <rect x="620" y="220" width="180" height="60" fill="url(#excellentCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="710" y="245" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Utilities & Helpers</text>
+      <text x="710" y="260" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">96% Coverage</text>
+      <text x="710" y="270" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">1.2K lines</text>
+      
+      <!-- Integration Services (High Risk) -->
+      <rect x="340" y="320" width="150" height="70" fill="url(#highRiskCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6" filter="url(#drillIndicator)"/>
+      <text x="415" y="345" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Integration Services</text>
+      <text x="415" y="360" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">39% Coverage</text>
+      <text x="415" y="375" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">2.9K lines</text>
+      
+      <!-- Business Logic (Good Coverage) -->
+      <rect x="510" y="340" width="140" height="80" fill="url(#goodCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="580" y="365" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Business Logic</text>
+      <text x="580" y="380" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">78% Coverage</text>
+      <text x="580" y="395" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">5.4K lines</text>
+      <text x="580" y="410" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">Core Business Value</text>
+      
+      <!-- Reporting (Medium Coverage) -->
+      <rect x="670" y="300" width="120" height="90" fill="url(#mediumCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="730" y="325" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Reporting</text>
+      <text x="730" y="340" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">63% Coverage</text>
+      <text x="730" y="355" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">3.1K lines</text>
+      <text x="730" y="370" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">Analytics Critical</text>
+      
+      <!-- Configuration (Excellent Coverage) -->
+      <rect x="340" y="410" width="100" height="50" fill="url(#excellentCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="390" y="430" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Config</text>
+      <text x="390" y="445" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">94% Coverage</text>
+      <text x="390" y="455" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="8">521 lines</text>
+      
+      <!-- Security (Critical - Low Coverage) -->
+      <rect x="460" y="440" width="130" height="65" fill="url(#criticalCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6" filter="url(#drillIndicator)"/>
+      <text x="525" y="465" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Security Layer</text>
+      <text x="525" y="480" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">22% Coverage</text>
+      <text x="525" y="495" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">1.9K lines</text>
+      <use href="#hoverIndicator" x="580" y="450"/>
+      
+      <!-- Monitoring (Good Coverage) -->
+      <rect x="610" y="420" width="110" height="70" fill="url(#goodCoverageGradient)" stroke="#ffffff" stroke-width="2" rx="6"/>
+      <text x="665" y="445" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Monitoring</text>
+      <text x="665" y="460" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="10">81% Coverage</text>
+      <text x="665" y="475" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="9">1.4K lines</text>
+    </g>
+    
+    <!-- Interactive drill-down indicators -->
+    <text x="340" y="525" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10">
+      💡 Click modules to drill down to file/function level
+    </text>
+    
+    <!-- Coverage summary -->
+    <rect x="340" y="540" width="440" height="50" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="8"/>
+    <text x="360" y="558" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Overall Coverage: 67.3%</text>
+    <text x="360" y="575" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10">Critical Gaps: 3 modules | High Priority: 2 modules | Target: 85%</text>
+  </g>
+  
+  <!-- Coverage Analytics (Right Panel) -->
+  <g id="coverageAnalytics">
+    <rect x="1220" y="80" width="360" height="520" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="1220" y="80" width="360" height="35" fill="url(#analyticsGradient)" rx="12 12 0 0"/>
+    <text x="1400" y="102" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">
+      Coverage Analytics
+    </text>
+    
+    <!-- Overall coverage with trend -->
+    <g id="overallCoverage">
+      <text x="1240" y="135" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Overall Coverage</text>
+      
+      <!-- Large coverage percentage -->
+      <text x="1400" y="165" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700">67.3%</text>
+      
+      <!-- Trend arrow -->
+      <line x1="1450" y1="145" x2="1480" y2="135" stroke="#16a34a" stroke-width="3" marker-end="url(#trendArrow)"/>
+      <text x="1490" y="140" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">+4.2%</text>
+      <text x="1490" y="155" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="9">this month</text>
+    </g>
+    
+    <!-- Coverage distribution chart -->
+    <g id="coverageDistribution">
+      <text x="1240" y="190" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Coverage Distribution</text>
+      
+      <!-- Donut chart representation -->
+      <circle cx="1300" cy="230" r="30" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+      <circle cx="1300" cy="230" r="30" fill="none" stroke="#dc2626" stroke-width="8" 
+              stroke-dasharray="18.84" stroke-dashoffset="18.84" transform="rotate(-90 1300 230)"/>
+      <circle cx="1300" cy="230" r="30" fill="none" stroke="#ea580c" stroke-width="8" 
+              stroke-dasharray="31.4" stroke-dashoffset="50.24" transform="rotate(-90 1300 230)"/>
+      <circle cx="1300" cy="230" r="30" fill="none" stroke="#ca8a04" stroke-width="8" 
+              stroke-dasharray="37.68" stroke-dashoffset="81.64" transform="rotate(-90 1300 230)"/>
+      <circle cx="1300" cy="230" r="30" fill="none" stroke="#16a34a" stroke-width="8" 
+              stroke-dasharray="100.48" stroke-dashoffset="119.32" transform="rotate(-90 1300 230)"/>
+      
+      <!-- Distribution legend -->
+      <rect x="1350" y="205" width="12" height="8" fill="#dc2626"/>
+      <text x="1370" y="213" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="9">Critical: 10%</text>
+      
+      <rect x="1350" y="220" width="12" height="8" fill="#ea580c"/>
+      <text x="1370" y="228" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="9">High Risk: 17%</text>
+      
+      <rect x="1350" y="235" width="12" height="8" fill="#ca8a04"/>
+      <text x="1370" y="243" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="9">Medium: 20%</text>
+      
+      <rect x="1350" y="250" width="12" height="8" fill="#16a34a"/>
+      <text x="1370" y="258" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="9">Good+: 53%</text>
+    </g>
+    
+    <!-- High-risk modules list -->
+    <g id="highRiskModules">
+      <text x="1240" y="285" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">High-Risk Modules</text>
+      
+      <!-- Risk module entries -->
+      <rect x="1240" y="295" width="320" height="25" fill="#fef2f2" stroke="#fecaca" stroke-width="1" rx="4"/>
+      <circle cx="1250" cy="307" r="4" fill="#dc2626"/>
+      <text x="1260" y="310" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Authentication (18%)</text>
+      <text x="1480" y="310" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="9">Critical</text>
+      
+      <rect x="1240" y="325" width="320" height="25" fill="#fef2f2" stroke="#fecaca" stroke-width="1" rx="4"/>
+      <circle cx="1250" cy="337" r="4" fill="#dc2626"/>
+      <text x="1260" y="340" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Security Layer (22%)</text>
+      <text x="1480" y="340" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="9">Critical</text>
+      
+      <rect x="1240" y="355" width="320" height="25" fill="#fff7ed" stroke="#fed7aa" stroke-width="1" rx="4"/>
+      <circle cx="1250" cy="367" r="4" fill="#ea580c"/>
+      <text x="1260" y="370" fill="#ea580c" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Integration Services (39%)</text>
+      <text x="1480" y="370" fill="#ea580c" font-family="Inter, system-ui, sans-serif" font-size="9">High</text>
+      
+      <rect x="1240" y="385" width="320" height="25" fill="#fff7ed" stroke="#fed7aa" stroke-width="1" rx="4"/>
+      <circle cx="1250" cy="397" r="4" fill="#ea580c"/>
+      <text x="1260" y="400" fill="#ea580c" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">API Layer (43%)</text>
+      <text x="1480" y="400" fill="#ea580c" font-family="Inter, system-ui, sans-serif" font-size="9">High</text>
+    </g>
+    
+    <!-- Testing effort analysis -->
+    <g id="testingEffortAnalysis">
+      <text x="1240" y="435" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">ROI Analysis</text>
+      
+      <text x="1240" y="455" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="10">• Authentication: +51% coverage = 85% risk reduction</text>
+      <text x="1240" y="470" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="10">• Security: +48% coverage = 90% compliance boost</text>
+      <text x="1240" y="485" fill="#16a34a" font-family="Inter, system-ui, sans-serif" font-size="10">• Integration: +26% coverage = 60% stability gain</text>
+      
+      <text x="1240" y="505" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Estimated Effort: 18 engineer-days</text>
+      <text x="1240" y="520" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600">Expected ROI: 340% (defect prevention value)</text>
+    </g>
+    
+    <!-- Historical trend -->
+    <g id="historicalTrend">
+      <text x="1240" y="550" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">6-Month Trend</text>
+      
+      <!-- Trend line -->
+      <polyline points="1240,570 1300,565 1360,560 1420,550 1480,540 1540,530" 
+                fill="none" stroke="#16a34a" stroke-width="2"/>
+      
+      <!-- Data points -->
+      <circle cx="1240" cy="570" r="3" fill="#64748b"/>
+      <circle cx="1300" cy="565" r="3" fill="#ea580c"/>
+      <circle cx="1360" cy="560" r="3" fill="#ca8a04"/>
+      <circle cx="1420" cy="550" r="3" fill="#16a34a"/>
+      <circle cx="1480" cy="540" r="3" fill="#16a34a"/>
+      <circle cx="1540" cy="530" r="3" fill="#166534"/>
+      
+      <!-- Labels -->
+      <text x="1240" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Jan</text>
+      <text x="1300" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Mar</text>
+      <text x="1360" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">May</text>
+      <text x="1420" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Jul</text>
+      <text x="1480" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Sep</text>
+      <text x="1540" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Nov</text>
+    </g>
+  </g>
+  
+  <!-- Strategic Testing Recommendations (Bottom) -->
+  <g id="strategicRecommendations">
+    <rect x="20" y="620" width="1560" height="360" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="20" y="620" width="1560" height="35" fill="url(#recommendationGradient)" rx="12 12 0 0"/>
+    <text x="800" y="645" text-anchor="middle" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600">
+      Strategic Testing Recommendations & Action Plan
+    </text>
+    
+    <!-- Priority recommendations -->
+    <g id="priorityRecommendations">
+      <text x="40" y="680" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Priority 1: Critical Security & Authentication</text>
+      
+      <!-- Critical actions -->
+      <rect x="40" y="690" width="740" height="80" fill="#fef2f2" stroke="#fecaca" stroke-width="1" rx="8"/>
+      <text x="60" y="710" fill="#dc2626" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Immediate Actions (Week 1-2):</text>
+      <text x="60" y="725" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Authentication Module: Increase from 18% to 85% coverage (Critical business risk)</text>
+      <text x="60" y="740" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Security Layer: Comprehensive edge case testing, penetration test scenarios</text>
+      <text x="60" y="755" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Resource Allocation: 2 senior engineers, AI-assisted test generation, 8 eng-days</text>
+      
+      <!-- ROI projection -->
+      <rect x="800" y="690" width="360" height="80" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" rx="8"/>
+      <text x="820" y="710" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Expected ROI:</text>
+      <text x="820" y="725" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• 90% reduction in security vulnerabilities</text>
+      <text x="820" y="740" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• 85% improvement in authentication reliability</text>
+      <text x="820" y="755" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• $280K annual value (defect prevention + compliance)</text>
+      
+      <!-- Framework integration -->
+      <rect x="1180" y="690" width="380" height="80" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1" rx="8"/>
+      <text x="1200" y="710" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Framework Integration:</text>
+      <text x="1200" y="725" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Jest for unit testing with AI edge case generation</text>
+      <text x="1200" y="740" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Cypress E2E for authentication flows</text>
+      <text x="1200" y="755" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• AI-powered security testing harness</text>
+    </g>
+    
+    <!-- Medium priority recommendations -->
+    <g id="mediumPriorityRecommendations">
+      <text x="40" y="795" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Priority 2: Integration & API Optimization</text>
+      
+      <rect x="40" y="805" width="740" height="60" fill="#fff7ed" stroke="#fed7aa" stroke-width="1" rx="8"/>
+      <text x="60" y="825" fill="#ea580c" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Medium-Term Actions (Week 3-4):</text>
+      <text x="60" y="840" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Integration Services: Target 75% coverage with contract testing and service virtualization</text>
+      <text x="60" y="855" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• API Layer: Comprehensive endpoint testing, schema validation, rate limiting scenarios</text>
+      
+      <rect x="800" y="805" width="360" height="60" fill="#fefce8" stroke="#fde047" stroke-width="1" rx="8"/>
+      <text x="820" y="825" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Automated Test Generation:</text>
+      <text x="820" y="840" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• AI-powered API test creation from OpenAPI specs</text>
+      <text x="820" y="855" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Contract testing with consumer-driven scenarios</text>
+      
+      <rect x="1180" y="805" width="380" height="60" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1" rx="8"/>
+      <text x="1200" y="825" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Performance Testing Integration:</text>
+      <text x="1200" y="840" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Load testing scenarios for critical API endpoints</text>
+      <text x="1200" y="855" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Integration performance benchmarking</text>
+    </g>
+    
+    <!-- Monitoring and optimization -->
+    <g id="monitoringOptimization">
+      <text x="40" y="890" fill="#7c3aed" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">Continuous Optimization & Monitoring</text>
+      
+      <rect x="40" y="900" width="500" height="60" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="8"/>
+      <text x="60" y="920" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Real-time Coverage Monitoring:</text>
+      <text x="60" y="935" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• CI/CD integration with coverage gate validation</text>
+      <text x="60" y="950" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Automated alerts for coverage regressions</text>
+      
+      <rect x="560" y="900" width="500" height="60" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="8"/>
+      <text x="580" y="920" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Team Collaboration:</text>
+      <text x="580" y="935" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Coverage goals and team accountability</text>
+      <text x="580" y="950" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Knowledge sharing on testing best practices</text>
+      
+      <rect x="1080" y="900" width="480" height="60" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="8"/>
+      <text x="1100" y="920" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600">Success Metrics:</text>
+      <text x="1100" y="935" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• Target: 85% overall coverage with 95%+ critical path coverage</text>
+      <text x="1100" y="950" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">• 60% reduction in production defects, 340% testing ROI</text>
+    </g>
+  </g>
+  
+  <!-- Mobile optimization indicator -->
+  <circle cx="1550" cy="70" r="6" fill="#8b5cf6" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="1570" y="75" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10">Mobile Ready</text>
+</svg>
