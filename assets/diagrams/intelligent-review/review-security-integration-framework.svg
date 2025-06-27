@@ -1,0 +1,411 @@
+<svg viewBox="0 0 1400 850" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients, patterns, and security elements -->
+  <defs>
+    <!-- Security gradient -->
+    <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="25%" style="stop-color:#ea580c"/>
+      <stop offset="50%" style="stop-color:#ca8a04"/>
+      <stop offset="75%" style="stop-color:#16a34a"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    
+    <!-- Threat detection gradient -->
+    <radialGradient id="threatGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="70%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#eab308"/>
+    </radialGradient>
+    
+    <!-- Shield pattern -->
+    <pattern id="shieldPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#f8fafc"/>
+      <circle cx="10" cy="10" r="3" fill="#3b82f6" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Security glow effect -->
+    <filter id="securityGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Shield icon -->
+    <g id="securityShield">
+      <path d="M0,-12 L-8,-8 L-8,4 Q-8,8 0,12 Q8,8 8,4 L8,-8 Z" fill="#22c55e" stroke="#16a34a" stroke-width="1"/>
+      <path d="M-4,-4 L0,2 L6,-6" stroke="#ffffff" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Threat icon -->
+    <g id="threatIcon">
+      <polygon points="0,-8 -7,6 7,6" fill="#ef4444"/>
+      <text x="0" y="2" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#ffffff">!</text>
+    </g>
+    
+    <!-- Compliance badge -->
+    <g id="complianceBadge">
+      <circle r="10" fill="#3b82f6"/>
+      <text x="0" y="4" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="#ffffff">✓</text>
+    </g>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="850" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="#1e293b">
+    Review Security Integration Framework
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="700" y="70" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#64748b">
+    AI-Enhanced Security Assessment in Intelligent Code Review
+  </text>
+  
+  <!-- Security Integration Architecture (Left Panel) -->
+  <g id="securityArchitecture">
+    <rect x="50" y="100" width="600" height="400" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="350" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b">
+      Security Integration Architecture
+    </text>
+    
+    <!-- Layer 1: Automated Security Scanning -->
+    <g>
+      <rect x="70" y="150" width="560" height="70" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <text x="90" y="170" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626">
+        Layer 1: Automated Security Scanning
+      </text>
+      <text x="90" y="190" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#7f1d1d">
+        • OWASP Top 10 Detection • Dependency Vulnerability Scanning • Configuration Security
+      </text>
+      <text x="90" y="205" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#7f1d1d">
+        • SQL Injection Analysis • XSS Prevention • Authentication Validation
+      </text>
+      <use href="#threatIcon" x="600" y="185" transform="scale(0.8)"/>
+      <text x="550" y="175" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#dc2626">5-10 sec</text>
+    </g>
+    
+    <!-- Layer 2: Contextual Security Analysis -->
+    <g>
+      <rect x="70" y="230" width="560" height="70" rx="8" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+      <text x="90" y="250" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#d97706">
+        Layer 2: Contextual Security Analysis
+      </text>
+      <text x="90" y="270" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#92400e">
+        • Business Logic Security • Architectural Consistency • Data Flow Analysis
+      </text>
+      <text x="90" y="285" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#92400e">
+        • Access Control Validation • Encryption Implementation • Threat Modeling
+      </text>
+      <use href="#complianceBadge" x="600" y="265" transform="scale(0.8)"/>
+      <text x="550" y="255" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#d97706">10-15 sec</text>
+    </g>
+    
+    <!-- Layer 3: Risk-Adjusted Review Routing -->
+    <g>
+      <rect x="70" y="310" width="560" height="70" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <text x="90" y="330" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#16a34a">
+        Layer 3: Risk-Adjusted Review Routing
+      </text>
+      <text x="90" y="350" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#15803d">
+        • Expert Security Reviewer Assignment • High-Risk Change Escalation
+      </text>
+      <text x="90" y="365" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#15803d">
+        • Compliance Specialist Consultation • Security Architecture Review
+      </text>
+      <use href="#securityShield" x="600" y="345" transform="scale(0.8)"/>
+      <text x="550" y="335" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#16a34a">5-10 sec</text>
+    </g>
+    
+    <!-- Security Workflow Arrows -->
+    <g stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+      <path d="M 350,220 L 350,230"/>
+      <path d="M 350,300 L 350,310"/>
+    </g>
+  </g>
+  
+  <!-- Threat Detection Engine (Top Right) -->
+  <g id="threatDetection">
+    <rect x="700" y="100" width="400" height="200" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="900" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b">
+      Threat Detection Engine
+    </text>
+    
+    <!-- Real-time Scanning Indicators -->
+    <g>
+      <circle cx="750" cy="160" r="25" fill="url(#threatGradient)" opacity="0.8"/>
+      <text x="750" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">SCAN</text>
+      <text x="750" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#ef4444">Critical: 2</text>
+      
+      <circle cx="850" cy="160" r="25" fill="#f59e0b" opacity="0.8"/>
+      <text x="850" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">RISK</text>
+      <text x="850" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#f59e0b">High: 5</text>
+      
+      <circle cx="950" cy="160" r="25" fill="#22c55e" opacity="0.8"/>
+      <text x="950" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#ffffff">SAFE</text>
+      <text x="950" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#22c55e">Clean: 847</text>
+    </g>
+    
+    <!-- Security Patterns -->
+    <g>
+      <text x="720" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Security Pattern Recognition:</text>
+      <text x="720" y="245" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Injection Attack Vectors</text>
+      <text x="720" y="260" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Insecure Deserialization</text>
+      <text x="720" y="275" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Broken Authentication</text>
+      
+      <text x="900" y="245" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• CSRF Vulnerabilities</text>
+      <text x="900" y="260" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Security Misconfigurations</text>
+      <text x="900" y="275" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Sensitive Data Exposure</text>
+    </g>
+  </g>
+  
+  <!-- Compliance Framework (Middle Right) -->
+  <g id="complianceFramework">
+    <rect x="700" y="320" width="400" height="180" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="900" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b">
+      Compliance Framework
+    </text>
+    
+    <!-- Compliance Standards -->
+    <g>
+      <!-- OWASP -->
+      <rect x="720" y="365" width="80" height="40" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="760" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#1e40af">OWASP</text>
+      <text x="760" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#3b82f6">98%</text>
+      
+      <!-- SOC2 -->
+      <rect x="810" y="365" width="80" height="40" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+      <text x="850" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#15803d">SOC2</text>
+      <text x="850" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#22c55e">95%</text>
+      
+      <!-- HIPAA -->
+      <rect x="900" y="365" width="80" height="40" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+      <text x="940" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#92400e">HIPAA</text>
+      <text x="940" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#f59e0b">92%</text>
+      
+      <!-- PCI DSS -->
+      <rect x="1000" y="365" width="80" height="40" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+      <text x="1040" y="380" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#dc2626">PCI DSS</text>
+      <text x="1040" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ef4444">89%</text>
+    </g>
+    
+    <!-- Automated Compliance Checks -->
+    <g>
+      <text x="720" y="430" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Automated Compliance Validation:</text>
+      <text x="720" y="450" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Data Privacy Controls</text>
+      <text x="720" y="465" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Access Control Verification</text>
+      <text x="720" y="480" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Audit Trail Requirements</text>
+      
+      <text x="900" y="450" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Encryption Standards</text>
+      <text x="900" y="465" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Incident Response</text>
+      <text x="900" y="480" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Risk Assessments</text>
+    </g>
+  </g>
+  
+  <!-- Risk Assessment Dashboard (Bottom Right) -->
+  <g id="riskAssessment">
+    <rect x="1120" y="100" width="250" height="400" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="1245" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b">
+      Risk Assessment
+    </text>
+    
+    <!-- Risk Matrix -->
+    <g>
+      <text x="1140" y="155" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Security Risk Matrix</text>
+      
+      <!-- Critical Risk -->
+      <rect x="1140" y="165" width="200" height="25" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <circle cx="1155" cy="177" r="6" fill="#dc2626"/>
+      <text x="1170" y="182" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#dc2626">Critical (2)</text>
+      <text x="1300" y="182" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#dc2626">Immediate</text>
+      
+      <!-- High Risk -->
+      <rect x="1140" y="195" width="200" height="25" fill="#fffbeb" stroke="#fed7aa" stroke-width="1"/>
+      <circle cx="1155" cy="207" r="6" fill="#ea580c"/>
+      <text x="1170" y="212" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ea580c">High (5)</text>
+      <text x="1300" y="212" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ea580c">24 hours</text>
+      
+      <!-- Medium Risk -->
+      <rect x="1140" y="225" width="200" height="25" fill="#fefce8" stroke="#fde047" stroke-width="1"/>
+      <circle cx="1155" cy="237" r="6" fill="#ca8a04"/>
+      <text x="1170" y="242" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ca8a04">Medium (12)</text>
+      <text x="1300" y="242" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ca8a04">1 week</text>
+      
+      <!-- Low Risk -->
+      <rect x="1140" y="255" width="200" height="25" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <circle cx="1155" cy="267" r="6" fill="#16a34a"/>
+      <text x="1170" y="272" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#16a34a">Low (23)</text>
+      <text x="1300" y="272" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#16a34a">Next sprint</text>
+    </g>
+    
+    <!-- Threat Intelligence -->
+    <g>
+      <text x="1140" y="310" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Threat Intelligence</text>
+      
+      <text x="1140" y="330" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• CVE Database Integration</text>
+      <text x="1140" y="345" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• CVSS Scoring Analysis</text>
+      <text x="1140" y="360" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Attack Pattern Recognition</text>
+      <text x="1140" y="375" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Zero-Day Monitoring</text>
+      <text x="1140" y="390" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Threat Landscape Updates</text>
+    </g>
+    
+    <!-- Security Metrics -->
+    <g>
+      <text x="1140" y="425" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b">Security Metrics</text>
+      
+      <text x="1140" y="445" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#22c55e">Detection Accuracy: 95.2%</text>
+      <text x="1140" y="460" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#3b82f6">False Positives: 2.1%</text>
+      <text x="1140" y="475" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f59e0b">Remediation Time: 4.2h</text>
+    </g>
+  </g>
+  
+  <!-- Security Review Workflow (Bottom Panel) -->
+  <g id="securityWorkflow">
+    <rect x="50" y="520" width="1050" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="575" y="550" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b">
+      Integrated Security Review Workflow
+    </text>
+    
+    <!-- Workflow Steps -->
+    <g>
+      <!-- Step 1: Code Submission -->
+      <g>
+        <rect x="80" y="570" width="120" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="140" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#1e293b">Code Submission</text>
+        <text x="140" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Developer pushes</text>
+        <text x="140" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">code changes</text>
+      </g>
+      
+      <!-- Step 2: Automated Security Scan -->
+      <g>
+        <rect x="230" y="570" width="120" height="60" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+        <text x="290" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#dc2626">Security Scan</text>
+        <text x="290" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626">Automated</text>
+        <text x="290" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626">vulnerability check</text>
+      </g>
+      
+      <!-- Step 3: Risk Assessment -->
+      <g>
+        <rect x="380" y="570" width="120" height="60" rx="8" fill="#fffbeb" stroke="#fed7aa" stroke-width="1"/>
+        <text x="440" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ea580c">Risk Assessment</text>
+        <text x="440" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ea580c">CVSS scoring and</text>
+        <text x="440" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ea580c">threat analysis</text>
+      </g>
+      
+      <!-- Step 4: Expert Routing -->
+      <g>
+        <rect x="530" y="570" width="120" height="60" rx="8" fill="#fefce8" stroke="#fde047" stroke-width="1"/>
+        <text x="590" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#ca8a04">Expert Routing</text>
+        <text x="590" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ca8a04">Security specialist</text>
+        <text x="590" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ca8a04">assignment</text>
+      </g>
+      
+      <!-- Step 5: Security Review -->
+      <g>
+        <rect x="680" y="570" width="120" height="60" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+        <text x="740" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#16a34a">Security Review</text>
+        <text x="740" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#16a34a">Expert validation</text>
+        <text x="740" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#16a34a">and approval</text>
+      </g>
+      
+      <!-- Step 6: Deployment -->
+      <g>
+        <rect x="830" y="570" width="120" height="60" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+        <text x="890" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#2563eb">Secure Deploy</text>
+        <text x="890" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#2563eb">Production release</text>
+        <text x="890" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#2563eb">with monitoring</text>
+      </g>
+      
+      <!-- Step 7: Continuous Monitoring -->
+      <g>
+        <rect x="980" y="570" width="120" height="60" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
+        <text x="1040" y="590" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#7c3aed">Monitoring</text>
+        <text x="1040" y="605" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7c3aed">Runtime security</text>
+        <text x="1040" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7c3aed">validation</text>
+      </g>
+    </g>
+    
+    <!-- Workflow Arrows -->
+    <g stroke="#64748b" stroke-width="2" fill="none">
+      <path d="M 200,600 L 230,600"/>
+      <path d="M 350,600 L 380,600"/>
+      <path d="M 500,600 L 530,600"/>
+      <path d="M 650,600 L 680,600"/>
+      <path d="M 800,600 L 830,600"/>
+      <path d="M 950,600 L 980,600"/>
+    </g>
+  </g>
+  
+  <!-- Security Performance Metrics -->
+  <g id="performanceMetrics">
+    <rect x="50" y="690" width="500" height="120" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="300" y="720" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">
+      Security Performance Impact
+    </text>
+    
+    <text x="70" y="745" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#22c55e">✓ 90% reduction in security vulnerabilities</text>
+    <text x="70" y="765" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#22c55e">✓ 75% faster security review cycles</text>
+    <text x="70" y="785" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#22c55e">✓ 95% automated compliance validation</text>
+    
+    <text x="320" y="745" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#3b82f6">✓ 24/7 threat monitoring coverage</text>
+    <text x="320" y="765" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#3b82f6">✓ Real-time security intelligence</text>
+    <text x="320" y="785" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#3b82f6">✓ Zero-trust architecture validation</text>
+  </g>
+  
+  <!-- Integration Benefits -->
+  <g id="integrationBenefits">
+    <rect x="570" y="690" width="530" height="120" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="835" y="720" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">
+      Intelligent Review Security Benefits
+    </text>
+    
+    <text x="590" y="745" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#1e293b">• <tspan font-weight="600" fill="#2563eb">Proactive Security</tspan>: Threats detected before deployment</text>
+    <text x="590" y="765" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#1e293b">• <tspan font-weight="600" fill="#2563eb">Learning Acceleration</tspan>: Security expertise shared across team</text>
+    <text x="590" y="785" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#1e293b">• <tspan font-weight="600" fill="#2563eb">Compliance Automation</tspan>: Regulatory requirements automatically enforced</text>
+    <text x="590" y="800" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Result: 400% improvement in security posture with 60% less effort</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Interactive Enhancements -->
+  <style>
+    .security-layer:hover {
+      filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.2));
+      transform: scale(1.02);
+    }
+    
+    .threat-indicator:hover {
+      animation: pulse 1s infinite;
+    }
+    
+    .compliance-badge:hover {
+      transform: scale(1.1);
+    }
+    
+    .workflow-step:hover {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+    
+    @media (max-width: 768px) {
+      text { font-size: 10px; }
+      .workflow-step { transform: scale(0.8); }
+    }
+  </style>
+  
+  <!-- Accessibility -->
+  <title>Review Security Integration Framework - Intelligent Review with AI-Enhanced Security Assessment</title>
+  <desc>Comprehensive framework showing how intelligent review integrates automated security scanning, threat detection, compliance validation, and risk assessment to create a proactive security posture in code review processes.</desc>
+</svg>
