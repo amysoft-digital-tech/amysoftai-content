@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cm02-title cm02-desc">
+  <title id="cm02-title">Repository Analysis Workflow - Systematic Context Building Process</title>
+  <desc id="cm02-desc">Five-step sequential workflow for comprehensive repository analysis including Initial Assessment, Architecture Discovery, Dependency Mapping, Pattern Recognition, and Context Synthesis with interactive guidance, completion tracking, and quality gates</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Workflow gradient themes -->
+    <linearGradient id="workflowPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Step-specific gradients -->
+    <linearGradient id="assessmentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="discoveryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="mappingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="recognitionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="synthesisGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Progress indicators -->
+    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="workflowGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#1E40AF" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="stepGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10B981" flood-opacity="0.4"/>
+    </filter>
+    
+    <filter id="activeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#F59E0B" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="completedGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#10B981" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="workflowArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#1E40AF" />
+    </marker>
+    
+    <marker id="progressArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10B981" />
+    </marker>
+    
+    <marker id="qualityArrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#F59E0B" />
+    </marker>
+    
+    <!-- Workflow patterns -->
+    <pattern id="assessmentPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#F0FDF4"/>
+      <circle cx="10" cy="10" r="4" fill="#10B981" opacity="0.3"/>
+      <path d="M6 10 L9 13 L14 8" stroke="#10B981" stroke-width="2" fill="none" opacity="0.6"/>
+    </pattern>
+    
+    <pattern id="discoveryPattern" patternUnits="userSpaceOnUse" width="22" height="22">
+      <rect width="22" height="22" fill="#EFF6FF"/>
+      <rect x="4" y="4" width="14" height="14" rx="2" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+      <circle cx="8" cy="8" r="1" fill="#3B82F6" opacity="0.6"/>
+      <circle cx="14" cy="8" r="1" fill="#3B82F6" opacity="0.6"/>
+      <circle cx="11" cy="14" r="1" fill="#3B82F6" opacity="0.6"/>
+    </pattern>
+    
+    <pattern id="mappingPattern" patternUnits="userSpaceOnUse" width="24" height="24">
+      <rect width="24" height="24" fill="#F3E8FF"/>
+      <circle cx="8" cy="8" r="3" fill="#8B5CF6" opacity="0.4"/>
+      <circle cx="16" cy="8" r="3" fill="#8B5CF6" opacity="0.4"/>
+      <circle cx="12" cy="16" r="3" fill="#8B5CF6" opacity="0.4"/>
+      <path d="M8 11 L16 11 M10 8 L14 16 M14 8 L10 16" stroke="#8B5CF6" stroke-width="1" opacity="0.3"/>
+    </pattern>
+    
+    <pattern id="recognitionPattern" patternUnits="userSpaceOnUse" width="18" height="18">
+      <rect width="18" height="18" fill="#FEF3C7"/>
+      <rect x="4" y="4" width="10" height="10" rx="2" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+      <circle cx="9" cy="9" r="2" fill="#F59E0B" opacity="0.6"/>
+      <path d="M7 7 L11 11 M11 7 L7 11" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+    </pattern>
+    
+    <pattern id="synthesisPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#FEF2F2"/>
+      <polygon points="10,4 16,8 10,12 4,8" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.4"/>
+      <circle cx="10" cy="8" r="6" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.3"/>
+      <path d="M10 5 L10 11 M7 8 L13 8" stroke="#EF4444" stroke-width="1" opacity="0.5"/>
+    </pattern>
+    
+    <!-- Quality gate patterns -->
+    <pattern id="qualityGatePattern" patternUnits="userSpaceOnUse" width="16" height="16">
+      <rect width="16" height="16" fill="#FEF3C7"/>
+      <circle cx="8" cy="8" r="4" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6"/>
+      <path d="M5 8 L7 10 L11 6" stroke="#F59E0B" stroke-width="2" fill="none"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1200" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1600" height="80" fill="url(#workflowPrimaryGradient)" />
+  <text x="60" y="35" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="white">
+    Repository Analysis Workflow
+  </text>
+  <text x="60" y="55" font-family="Inter, sans-serif" font-size="16" fill="#DBEAFE">
+    CM-02: Systematic Context Building Process - Sequential Analysis & Synthesis
+  </text>
+  
+  <!-- Workflow Icon -->
+  <g id="workflow-icon" transform="translate(1480, 20)">
+    <circle cx="25" cy="25" r="20" fill="white" opacity="0.2"/>
+    <rect x="15" y="15" width="20" height="20" rx="3" fill="white" opacity="0.8"/>
+    <path d="M18 22 L22 26 L32 16" stroke="#1E40AF" stroke-width="2" fill="none"/>
+    <circle cx="25" cy="10" r="2" fill="#10B981"/>
+  </g>
+  
+  <!-- Progress Dashboard -->
+  <g id="progress-dashboard" transform="translate(60, 120)">
+    <rect x="0" y="0" width="1480" height="120" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="0" y="0" width="1480" height="40" rx="12" fill="url(#workflowPrimaryGradient)"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      Workflow Progress Dashboard
+    </text>
+    <text x="20" y="65" font-family="Inter, sans-serif" font-size="14" fill="#6B7280">
+      Overall Completion: 67% (3 of 5 steps completed)
+    </text>
+    <text x="20" y="85" font-family="Inter, sans-serif" font-size="14" fill="#6B7280">
+      Current Step: Pattern Recognition • Estimated Remaining: 2.5 hours • Quality Score: 92%
+    </text>
+    
+    <!-- Progress bar -->
+    <rect x="400" y="55" width="1060" height="8" rx="4" fill="#F3F4F6"/>
+    <rect x="400" y="55" width="710" height="8" rx="4" fill="url(#progressGradient)"/>
+    <circle cx="1110" cy="59" r="6" fill="#F59E0B" filter="url(#activeGlow)"/>
+    
+    <!-- Progress indicators -->
+    <g id="step-indicators" transform="translate(400, 75)">
+      <circle cx="0" cy="10" r="8" fill="#10B981" filter="url(#completedGlow)"/>
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">1</text>
+      <text x="0" y="35" font-family="Inter, sans-serif" font-size="12" fill="#10B981" text-anchor="middle">Done</text>
+      
+      <circle cx="265" cy="10" r="8" fill="#3B82F6" filter="url(#completedGlow)"/>
+      <text x="265" y="15" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">2</text>
+      <text x="265" y="35" font-family="Inter, sans-serif" font-size="12" fill="#3B82F6" text-anchor="middle">Done</text>
+      
+      <circle cx="530" cy="10" r="8" fill="#8B5CF6" filter="url(#completedGlow)"/>
+      <text x="530" y="15" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">3</text>
+      <text x="530" y="35" font-family="Inter, sans-serif" font-size="12" fill="#8B5CF6" text-anchor="middle">Done</text>
+      
+      <circle cx="795" cy="10" r="8" fill="#F59E0B" filter="url(#activeGlow)"/>
+      <text x="795" y="15" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">4</text>
+      <text x="795" y="35" font-family="Inter, sans-serif" font-size="12" fill="#F59E0B" text-anchor="middle">Active</text>
+      
+      <circle cx="1060" cy="10" r="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+      <text x="1060" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">5</text>
+      <text x="1060" y="35" font-family="Inter, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">Pending</text>
+    </g>
+  </g>
+  
+  <!-- Main Workflow Steps -->
+  <g id="workflow-steps" transform="translate(60, 280)">
+    
+    <!-- Step 1: Initial Assessment -->
+    <g id="step-1-assessment" class="workflow-step completed">
+      <rect x="0" y="0" width="280" height="160" rx="12" fill="white" stroke="#10B981" stroke-width="2" filter="url(#completedGlow)"/>
+      <rect x="0" y="0" width="280" height="40" rx="12" fill="url(#assessmentGradient)"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+        1. Initial Assessment
+      </text>
+      <circle cx="250" cy="20" r="12" fill="white" opacity="0.3"/>
+      <path d="M245 20 L248 23 L255 16" stroke="white" stroke-width="2" fill="none"/>
+      
+      <rect x="10" y="50" width="260" height="100" fill="url(#assessmentPattern)" opacity="0.3"/>
+      
+      <text x="20" y="70" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Repository structure scan
+      </text>
+      <text x="20" y="90" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Technology stack identification
+      </text>
+      <text x="20" y="110" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Codebase size analysis
+      </text>
+      <text x="20" y="130" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Initial complexity scoring
+      </text>
+      
+      <!-- Completion indicator -->
+      <rect x="200" y="110" width="60" height="20" rx="10" fill="#10B981"/>
+      <text x="230" y="123" font-family="Inter, sans-serif" font-size="12" fill="white" text-anchor="middle">100%</text>
+      
+      <!-- Quality gate -->
+      <rect x="10" y="140" width="260" height="15" fill="url(#qualityGatePattern)" opacity="0.4"/>
+      <text x="20" y="151" font-family="Inter, sans-serif" font-size="10" fill="#F59E0B">
+        Quality Gate: Structure validated ✓ Stack identified ✓ Complexity assessed ✓
+      </text>
+    </g>
+    
+    <!-- Connection arrow 1-2 -->
+    <path d="M290 80 L310 80" stroke="#10B981" stroke-width="3" marker-end="url(#progressArrow)" opacity="0.8"/>
+    
+    <!-- Step 2: Architecture Discovery -->
+    <g id="step-2-discovery" class="workflow-step completed" transform="translate(320, 0)">
+      <rect x="0" y="0" width="280" height="160" rx="12" fill="white" stroke="#3B82F6" stroke-width="2" filter="url(#completedGlow)"/>
+      <rect x="0" y="0" width="280" height="40" rx="12" fill="url(#discoveryGradient)"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+        2. Architecture Discovery
+      </text>
+      <circle cx="250" cy="20" r="12" fill="white" opacity="0.3"/>
+      <path d="M245 20 L248 23 L255 16" stroke="white" stroke-width="2" fill="none"/>
+      
+      <rect x="10" y="50" width="260" height="100" fill="url(#discoveryPattern)" opacity="0.3"/>
+      
+      <text x="20" y="70" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Component relationship mapping
+      </text>
+      <text x="20" y="90" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Module boundary identification
+      </text>
+      <text x="20" y="110" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • API surface exploration
+      </text>
+      <text x="20" y="130" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Design pattern analysis
+      </text>
+      
+      <!-- Completion indicator -->
+      <rect x="200" y="110" width="60" height="20" rx="10" fill="#3B82F6"/>
+      <text x="230" y="123" font-family="Inter, sans-serif" font-size="12" fill="white" text-anchor="middle">100%</text>
+      
+      <!-- Quality gate -->
+      <rect x="10" y="140" width="260" height="15" fill="url(#qualityGatePattern)" opacity="0.4"/>
+      <text x="20" y="151" font-family="Inter, sans-serif" font-size="10" fill="#F59E0B">
+        Quality Gate: Components mapped ✓ Boundaries clear ✓ Patterns identified ✓
+      </text>
+    </g>
+    
+    <!-- Connection arrow 2-3 -->
+    <path d="M610 80 L630 80" stroke="#3B82F6" stroke-width="3" marker-end="url(#progressArrow)" opacity="0.8"/>
+    
+    <!-- Step 3: Dependency Mapping -->
+    <g id="step-3-mapping" class="workflow-step completed" transform="translate(640, 0)">
+      <rect x="0" y="0" width="280" height="160" rx="12" fill="white" stroke="#8B5CF6" stroke-width="2" filter="url(#completedGlow)"/>
+      <rect x="0" y="0" width="280" height="40" rx="12" fill="url(#mappingGradient)"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+        3. Dependency Mapping
+      </text>
+      <circle cx="250" cy="20" r="12" fill="white" opacity="0.3"/>
+      <path d="M245 20 L248 23 L255 16" stroke="white" stroke-width="2" fill="none"/>
+      
+      <rect x="10" y="50" width="260" height="100" fill="url(#mappingPattern)" opacity="0.3"/>
+      
+      <text x="20" y="70" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • External dependency analysis
+      </text>
+      <text x="20" y="90" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Internal coupling assessment
+      </text>
+      <text x="20" y="110" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Circular dependency detection
+      </text>
+      <text x="20" y="130" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Version compatibility matrix
+      </text>
+      
+      <!-- Completion indicator -->
+      <rect x="200" y="110" width="60" height="20" rx="10" fill="#8B5CF6"/>
+      <text x="230" y="123" font-family="Inter, sans-serif" font-size="12" fill="white" text-anchor="middle">100%</text>
+      
+      <!-- Quality gate -->
+      <rect x="10" y="140" width="260" height="15" fill="url(#qualityGatePattern)" opacity="0.4"/>
+      <text x="20" y="151" font-family="Inter, sans-serif" font-size="10" fill="#F59E0B">
+        Quality Gate: Dependencies mapped ✓ Conflicts identified ✓ Versions verified ✓
+      </text>
+    </g>
+    
+    <!-- Connection arrow 3-4 -->
+    <path d="M930 80 L950 80" stroke="#8B5CF6" stroke-width="3" marker-end="url(#progressArrow)" opacity="0.8"/>
+    
+    <!-- Step 4: Pattern Recognition (Active) -->
+    <g id="step-4-recognition" class="workflow-step active" transform="translate(960, 0)">
+      <rect x="0" y="0" width="280" height="160" rx="12" fill="white" stroke="#F59E0B" stroke-width="3" filter="url(#activeGlow)"/>
+      <rect x="0" y="0" width="280" height="40" rx="12" fill="url(#recognitionGradient)"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+        4. Pattern Recognition
+      </text>
+      <circle cx="250" cy="20" r="12" fill="white" opacity="0.3"/>
+      <circle cx="250" cy="20" r="8" fill="#F59E0B">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <rect x="10" y="50" width="260" height="100" fill="url(#recognitionPattern)" opacity="0.5"/>
+      
+      <text x="20" y="70" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Code convention analysis
+      </text>
+      <text x="20" y="90" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Architectural pattern detection
+      </text>
+      <text x="20" y="110" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Testing strategy identification
+      </text>
+      <text x="20" y="130" font-family="Inter, sans-serif" font-size="14" fill="#374151">
+        • Performance bottleneck spots
+      </text>
+      
+      <!-- Progress indicator -->
+      <rect x="200" y="110" width="60" height="20" rx="10" fill="#F59E0B"/>
+      <text x="230" y="123" font-family="Inter, sans-serif" font-size="12" fill="white" text-anchor="middle">75%</text>
+      
+      <!-- Active quality gate -->
+      <rect x="10" y="140" width="260" height="15" fill="url(#qualityGatePattern)" opacity="0.6"/>
+      <text x="20" y="151" font-family="Inter, sans-serif" font-size="10" fill="#F59E0B">
+        Quality Gate: Patterns 75% identified • Testing strategy pending
+      </text>
+    </g>
+    
+    <!-- Connection arrow 4-5 -->
+    <path d="M1250 80 L1270 80" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#qualityArrow)" opacity="0.5"/>
+    
+    <!-- Step 5: Context Synthesis (Pending) -->
+    <g id="step-5-synthesis" class="workflow-step pending" transform="translate(1280, 0)">
+      <rect x="0" y="0" width="280" height="160" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" opacity="0.6"/>
+      <rect x="0" y="0" width="280" height="40" rx="12" fill="#9CA3AF"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+        5. Context Synthesis
+      </text>
+      <circle cx="250" cy="20" r="12" fill="white" opacity="0.3"/>
+      <circle cx="250" cy="20" r="6" fill="#6B7280"/>
+      
+      <rect x="10" y="50" width="260" height="100" fill="url(#synthesisPattern)" opacity="0.2"/>
+      
+      <text x="20" y="70" font-family="Inter, sans-serif" font-size="14" fill="#9CA3AF">
+        • Comprehensive context generation
+      </text>
+      <text x="20" y="90" font-family="Inter, sans-serif" font-size="14" fill="#9CA3AF">
+        • AI prompt optimization
+      </text>
+      <text x="20" y="110" font-family="Inter, sans-serif" font-size="14" fill="#9CA3AF">
+        • Context validation testing
+      </text>
+      <text x="20" y="130" font-family="Inter, sans-serif" font-size="14" fill="#9CA3AF">
+        • Knowledge transfer preparation
+      </text>
+      
+      <!-- Pending indicator -->
+      <rect x="200" y="110" width="60" height="20" rx="10" fill="#E5E7EB"/>
+      <text x="230" y="123" font-family="Inter, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">0%</text>
+      
+      <!-- Pending quality gate -->
+      <rect x="10" y="140" width="260" height="15" fill="#F3F4F6"/>
+      <text x="20" y="151" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        Quality Gate: Awaiting step 4 completion
+      </text>
+    </g>
+  </g>
+  
+  <!-- Interactive Guidance Panel -->
+  <g id="guidance-panel" transform="translate(60, 480)">
+    <rect x="0" y="0" width="740" height="280" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="0" y="0" width="740" height="40" rx="12" fill="#F59E0B"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      Active Step Guidance: Pattern Recognition
+    </text>
+    
+    <g id="guidance-content" transform="translate(20, 60)">
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1F2937">
+        Current Task: Architectural Pattern Detection
+      </text>
+      <text x="0" y="45" font-family="Inter, sans-serif" font-size="14" fill="#4B5563">
+        Analyze the codebase to identify common architectural patterns and design conventions.
+      </text>
+      
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#1F2937">
+        Next Actions:
+      </text>
+      <text x="20" y="95" font-family="Inter, sans-serif" font-size="14" fill="#4B5563">
+        • Review service layer implementation patterns
+      </text>
+      <text x="20" y="115" font-family="Inter, sans-serif" font-size="14" fill="#4B5563">
+        • Identify testing strategy conventions (unit, integration, e2e)
+      </text>
+      <text x="20" y="135" font-family="Inter, sans-serif" font-size="14" fill="#4B5563">
+        • Document performance optimization patterns
+      </text>
+      <text x="20" y="155" font-family="Inter, sans-serif" font-size="14" fill="#4B5563">
+        • Analyze error handling approaches
+      </text>
+      
+      <rect x="0" y="175" width="700" height="40" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+      <text x="20" y="198" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#D97706">
+        Pro Tip: Focus on testing patterns first - they reveal the most about code quality expectations
+      </text>
+      
+      <!-- Action buttons -->
+      <rect x="500" y="175" width="100" height="40" rx="6" fill="#F59E0B" class="interactive-button" style="cursor: pointer;">
+        <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="550" y="198" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">
+        Continue
+      </text>
+      
+      <rect x="610" y="175" width="90" height="40" rx="6" fill="white" stroke="#D1D5DB" stroke-width="1" class="interactive-button" style="cursor: pointer;">
+      </rect>
+      <text x="655" y="198" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#374151" text-anchor="middle">
+        Skip Step
+      </text>
+    </g>
+  </g>
+  
+  <!-- Quality Metrics Panel -->
+  <g id="quality-panel" transform="translate(820, 480)">
+    <rect x="0" y="0" width="720" height="280" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="0" y="0" width="720" height="40" rx="12" fill="#10B981"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      Quality Metrics & Validation
+    </text>
+    
+    <g id="metrics-grid" transform="translate(20, 60)">
+      <!-- Completeness Score -->
+      <rect x="0" y="0" width="200" height="80" rx="8" fill="#F0FDF4" stroke="#10B981" stroke-width="1"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#10B981">
+        Completeness
+      </text>
+      <text x="20" y="45" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#10B981">
+        92%
+      </text>
+      <text x="20" y="65" font-family="Inter, sans-serif" font-size="12" fill="#059669">
+        Excellent coverage
+      </text>
+      
+      <!-- Accuracy Score -->
+      <rect x="220" y="0" width="200" height="80" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+      <text x="240" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#3B82F6">
+        Accuracy
+      </text>
+      <text x="240" y="45" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#3B82F6">
+        88%
+      </text>
+      <text x="240" y="65" font-family="Inter, sans-serif" font-size="12" fill="#1D4ED8">
+        High precision
+      </text>
+      
+      <!-- Depth Score -->
+      <rect x="440" y="0" width="200" height="80" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+      <text x="460" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#F59E0B">
+        Depth Analysis
+      </text>
+      <text x="460" y="45" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#F59E0B">
+        75%
+      </text>
+      <text x="460" y="65" font-family="Inter, sans-serif" font-size="12" fill="#D97706">
+        In progress
+      </text>
+      
+      <!-- Overall Quality -->
+      <rect x="0" y="100" width="680" height="60" rx="8" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="1"/>
+      <text x="20" y="125" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1F2937">
+        Overall Quality Score
+      </text>
+      <rect x="200" y="115" width="460" height="20" rx="10" fill="#E5E7EB"/>
+      <rect x="200" y="115" width="368" height="20" rx="10" fill="url(#progressGradient)"/>
+      <text x="390" y="149" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#10B981">
+        85% - Excellent Progress
+      </text>
+      
+      <!-- Validation Status -->
+      <rect x="0" y="180" width="680" height="40" rx="8" fill="#F0FDF4" stroke="#10B981" stroke-width="1"/>
+      <circle cx="30" cy="200" r="8" fill="#10B981"/>
+      <path d="M26 200 L29 203 L34 198" stroke="white" stroke-width="2" fill="none"/>
+      <text x="50" y="205" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#10B981">
+        Validation Status: All quality gates passed for completed steps
+      </text>
+    </g>
+  </g>
+  
+  <!-- Context Output Preview -->
+  <g id="output-preview" transform="translate(60, 800)">
+    <rect x="0" y="0" width="1480" height="160" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="0" y="0" width="1480" height="40" rx="12" fill="#6B7280"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      Generated Context Preview (75% Complete)
+    </text>
+    
+    <g id="preview-content" transform="translate(20, 60)">
+      <rect x="0" y="0" width="1440" height="80" fill="#F9FAFB" rx="6"/>
+      <text x="20" y="25" font-family="JetBrains Mono, monospace" font-size="12" fill="#374151">
+        # Repository Context Analysis
+      </text>
+      <text x="20" y="45" font-family="JetBrains Mono, monospace" font-size="12" fill="#374151">
+        ## Architecture: Angular 18+ with NestJS backend, Nx workspace structure
+      </text>
+      <text x="20" y="65" font-family="JetBrains Mono, monospace" font-size="12" fill="#6B7280">
+        ## Dependencies: 127 external packages, 3 circular dependencies identified...
+      </text>
+      
+      <!-- Progress indicator -->
+      <rect x="1300" y="10" width="120" height="60" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+      <text x="1360" y="30" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#F59E0B" text-anchor="middle">
+        75% Complete
+      </text>
+      <text x="1360" y="50" font-family="Inter, sans-serif" font-size="12" fill="#D97706" text-anchor="middle">
+        Ready for Step 5
+      </text>
+    </g>
+  </g>
+  
+  <!-- Offline Support Indicator -->
+  <g id="offline-indicator" transform="translate(1450, 1020)">
+    <rect x="0" y="0" width="120" height="30" rx="15" fill="#10B981" opacity="0.8"/>
+    <circle cx="20" cy="15" r="6" fill="white"/>
+    <text x="35" y="19" font-family="Inter, sans-serif" font-size="12" fill="white">
+      Offline Ready
+    </text>
+  </g>
+  
+  <!-- Mobile Responsive Detection -->
+  <style>
+    @media (max-width: 768px) {
+      #workflow-steps {
+        transform: translate(30, 280) scale(0.7);
+      }
+      #guidance-panel, #quality-panel {
+        transform: translate(30, 420) scale(0.8);
+      }
+      #output-preview {
+        transform: translate(30, 700) scale(0.9);
+      }
+    }
+    
+    .workflow-step {
+      transition: all 0.3s ease;
+    }
+    
+    .workflow-step:hover {
+      transform: scale(1.02);
+    }
+    
+    .interactive-button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    
+    .completed {
+      opacity: 0.9;
+    }
+    
+    .active {
+      animation: activeStep 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes activeStep {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.01); }
+    }
+    
+    .pending {
+      opacity: 0.6;
+    }
+  </style>
+  
+  <!-- Interactive JavaScript for workflow management -->
+  <script type="text/javascript">
+    <![CDATA[
+    // Workflow state management
+    const workflowState = {
+      currentStep: 4,
+      stepProgress: [100, 100, 100, 75, 0],
+      overallProgress: 67,
+      qualityScores: { completeness: 92, accuracy: 88, depth: 75 }
+    };
+    
+    // Step navigation functionality
+    function navigateToStep(stepNumber) {
+      if (stepNumber <= workflowState.currentStep + 1) {
+        workflowState.currentStep = stepNumber;
+        updateStepDisplay();
+        updateGuidancePanel();
+      }
+    }
+    
+    // Progress tracking
+    function updateStepProgress(stepNumber, progress) {
+      workflowState.stepProgress[stepNumber - 1] = progress;
+      calculateOverallProgress();
+      updateProgressDisplay();
+    }
+    
+    function calculateOverallProgress() {
+      const totalProgress = workflowState.stepProgress.reduce((sum, progress) => sum + progress, 0);
+      workflowState.overallProgress = Math.round(totalProgress / 5);
+    }
+    
+    // Quality gate validation
+    function validateQualityGate(stepNumber) {
+      const step = workflowState.stepProgress[stepNumber - 1];
+      const qualityThreshold = 80;
+      
+      if (step >= qualityThreshold) {
+        return { passed: true, message: "Quality gate passed" };
+      } else {
+        return { passed: false, message: "Quality threshold not met" };
+      }
+    }
+    
+    // Offline support functionality
+    function enableOfflineMode() {
+      localStorage.setItem('workflowState', JSON.stringify(workflowState));
+      localStorage.setItem('offlineMode', 'true');
+    }
+    
+    function loadOfflineState() {
+      const savedState = localStorage.getItem('workflowState');
+      if (savedState) {
+        Object.assign(workflowState, JSON.parse(savedState));
+        updateAllDisplays();
+      }
+    }
+    
+    // Mobile responsive adjustments
+    function handleMobileLayout() {
+      const isMobile = window.innerWidth <= 768;
+      const workflowSteps = document.getElementById('workflow-steps');
+      const guidancePanel = document.getElementById('guidance-panel');
+      const qualityPanel = document.getElementById('quality-panel');
+      
+      if (isMobile) {
+        workflowSteps.setAttribute('transform', 'translate(30, 280) scale(0.7)');
+        guidancePanel.setAttribute('transform', 'translate(30, 420) scale(0.8)');
+        qualityPanel.setAttribute('transform', 'translate(30, 580) scale(0.8)');
+      }
+    }
+    
+    // Real-time metrics simulation
+    function simulateRealTimeMetrics() {
+      setInterval(() => {
+        if (workflowState.currentStep === 4 && workflowState.stepProgress[3] < 100) {
+          workflowState.stepProgress[3] = Math.min(100, workflowState.stepProgress[3] + 1);
+          calculateOverallProgress();
+          updateProgressDisplay();
+        }
+      }, 5000);
+    }
+    
+    // Accessibility enhancements
+    function addAccessibilitySupport() {
+      document.addEventListener('keydown', (event) => {
+        switch(event.key) {
+          case 'ArrowRight':
+            if (workflowState.currentStep < 5) {
+              navigateToStep(workflowState.currentStep + 1);
+            }
+            break;
+          case 'ArrowLeft':
+            if (workflowState.currentStep > 1) {
+              navigateToStep(workflowState.currentStep - 1);
+            }
+            break;
+          case 'Enter':
+            if (event.target.classList.contains('interactive-button')) {
+              event.target.click();
+            }
+            break;
+        }
+      });
+    }
+    
+    // Initialize workflow system
+    function initializeWorkflow() {
+      loadOfflineState();
+      handleMobileLayout();
+      simulateRealTimeMetrics();
+      addAccessibilitySupport();
+      
+      // Enable offline mode by default
+      enableOfflineMode();
+      
+      // Update displays
+      updateAllDisplays();
+    }
+    
+    function updateAllDisplays() {
+      updateStepDisplay();
+      updateProgressDisplay();
+      updateGuidancePanel();
+    }
+    
+    function updateStepDisplay() {
+      // Implementation for updating step visual states
+      console.log('Updating step display for step:', workflowState.currentStep);
+    }
+    
+    function updateProgressDisplay() {
+      // Implementation for updating progress bars and indicators
+      console.log('Updating progress display:', workflowState.overallProgress + '%');
+    }
+    
+    function updateGuidancePanel() {
+      // Implementation for updating guidance content
+      console.log('Updating guidance panel for step:', workflowState.currentStep);
+    }
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', initializeWorkflow);
+    window.addEventListener('resize', handleMobileLayout);
+    ]]>
+  </script>
+</svg>
