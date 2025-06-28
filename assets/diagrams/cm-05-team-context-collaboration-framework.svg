@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1800" height="1400" viewBox="0 0 1800 1400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cm05-title cm05-desc">
+  <title id="cm05-title">Team Context Collaboration Framework - Multi-User Context Building System</title>
+  <desc id="cm05-desc">Comprehensive team collaboration system for building, maintaining, and optimizing shared context across projects with real-time collaboration, role-based permissions, conflict resolution, version control integration, and collaborative analytics</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Collaboration gradient themes -->
+    <linearGradient id="collaborationPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Role-based gradients -->
+    <linearGradient id="adminGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="maintainerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="contributorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="reviewerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="viewerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Real-time activity gradients -->
+    <linearGradient id="activeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="editingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="conflictGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="collaborationGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#667EEA" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="realTimeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10B981" flood-opacity="0.4"/>
+    </filter>
+    
+    <filter id="conflictGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#EF4444" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="versionGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#3B82F6" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="collaborationArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#667EEA" />
+    </marker>
+    
+    <marker id="realTimeArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10B981" />
+    </marker>
+    
+    <marker id="conflictArrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#EF4444" />
+    </marker>
+    
+    <!-- Collaboration patterns -->
+    <pattern id="teamworkPattern" patternUnits="userSpaceOnUse" width="24" height="24">
+      <rect width="24" height="24" fill="#F0F9FF"/>
+      <circle cx="8" cy="8" r="3" fill="#3B82F6" opacity="0.4"/>
+      <circle cx="16" cy="8" r="3" fill="#10B981" opacity="0.4"/>
+      <circle cx="12" cy="16" r="3" fill="#8B5CF6" opacity="0.4"/>
+      <path d="M8 11 L16 11 M10 8 L14 16 M14 8 L10 16" stroke="#667EEA" stroke-width="1" opacity="0.3"/>
+    </pattern>
+    
+    <pattern id="conflictPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#FEF2F2"/>
+      <path d="M6 6 L14 14 M14 6 L6 14" stroke="#EF4444" stroke-width="2" opacity="0.6"/>
+      <circle cx="10" cy="10" r="4" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.4"/>
+    </pattern>
+    
+    <pattern id="versionPattern" patternUnits="userSpaceOnUse" width="18" height="18">
+      <rect width="18" height="18" fill="#F0F9FF"/>
+      <rect x="3" y="3" width="12" height="12" rx="2" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.4"/>
+      <circle cx="6" cy="6" r="1" fill="#3B82F6" opacity="0.6"/>
+      <circle cx="12" cy="6" r="1" fill="#3B82F6" opacity="0.6"/>
+      <circle cx="9" cy="12" r="1" fill="#3B82F6" opacity="0.6"/>
+    </pattern>
+    
+    <!-- User avatar patterns -->
+    <pattern id="userAvatar1" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#EF4444"/>
+      <circle cx="20" cy="15" r="8" fill="white" opacity="0.9"/>
+      <circle cx="20" cy="30" r="12" fill="white" opacity="0.9"/>
+    </pattern>
+    
+    <pattern id="userAvatar2" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#10B981"/>
+      <circle cx="20" cy="15" r="8" fill="white" opacity="0.9"/>
+      <circle cx="20" cy="30" r="12" fill="white" opacity="0.9"/>
+    </pattern>
+    
+    <pattern id="userAvatar3" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#3B82F6"/>
+      <circle cx="20" cy="15" r="8" fill="white" opacity="0.9"/>
+      <circle cx="20" cy="30" r="12" fill="white" opacity="0.9"/>
+    </pattern>
+    
+    <pattern id="userAvatar4" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#F59E0B"/>
+      <circle cx="20" cy="15" r="8" fill="white" opacity="0.9"/>
+      <circle cx="20" cy="30" r="12" fill="white" opacity="0.9"/>
+    </pattern>
+    
+    <pattern id="userAvatar5" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="#8B5CF6"/>
+      <circle cx="20" cy="15" r="8" fill="white" opacity="0.9"/>
+      <circle cx="20" cy="30" r="12" fill="white" opacity="0.9"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1800" height="1400" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1800" height="100" fill="url(#collaborationPrimaryGradient)" />
+  <text x="60" y="45" font-family="Inter, sans-serif" font-size="36" font-weight="700" fill="white">
+    Team Context Collaboration Framework
+  </text>
+  <text x="60" y="75" font-family="Inter, sans-serif" font-size="20" fill="#E2E8F0">
+    Multi-User Context Building System - Real-Time Collaboration, Role Management & Conflict Resolution
+  </text>
+  
+  <!-- Collaboration Icon -->
+  <g id="collaboration-icon" transform="translate(1680, 30)">
+    <circle cx="35" cy="35" r="30" fill="white" opacity="0.2"/>
+    <circle cx="25" cy="25" r="8" fill="white" opacity="0.8"/>
+    <circle cx="45" cy="25" r="8" fill="white" opacity="0.8"/>
+    <circle cx="25" cy="45" r="8" fill="white" opacity="0.8"/>
+    <circle cx="45" cy="45" r="8" fill="white" opacity="0.8"/>
+    <path d="M33 25 L37 25 M25 33 L25 37 M45 33 L45 37 M33 45 L37 45" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Real-Time Collaboration Dashboard -->
+  <g id="collaboration-dashboard" transform="translate(50, 120)">
+    <rect x="0" y="0" width="1700" height="140" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="1700" height="50" rx="12" fill="url(#collaborationPrimaryGradient)"/>
+    <text x="25" y="35" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="white">
+      🔄 Real-Time Collaboration Dashboard
+    </text>
+    
+    <!-- Active collaboration metrics -->
+    <g transform="translate(25, 65)">
+      <!-- Active users -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="180" height="60" rx="8" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#166534">Active Users</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#10B981">7</text>
+        <text x="60" y="40" font-family="Inter, sans-serif" font-size="12" fill="#059669">online now</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#059669">↗ +2 vs yesterday</text>
+      </g>
+      
+      <!-- Concurrent edits -->
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="180" height="60" rx="8" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#92400E">Concurrent Edits</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#F59E0B">3</text>
+        <text x="50" y="40" font-family="Inter, sans-serif" font-size="12" fill="#D97706">in progress</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#D97706">2 conflicts resolved</text>
+      </g>
+      
+      <!-- Changes today -->
+      <g transform="translate(400, 0)">
+        <rect x="0" y="0" width="180" height="60" rx="8" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#1E40AF">Changes Today</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#3B82F6">47</text>
+        <text x="60" y="40" font-family="Inter, sans-serif" font-size="12" fill="#1D4ED8">commits</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">Last: 3 minutes ago</text>
+      </g>
+      
+      <!-- Team coverage -->
+      <g transform="translate(600, 0)">
+        <rect x="0" y="0" width="180" height="60" rx="8" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#6B21A8">Team Coverage</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#8B5CF6">94%</text>
+        <text x="60" y="40" font-family="Inter, sans-serif" font-size="12" fill="#7C3AED">complete</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#7C3AED">All sections covered</text>
+      </g>
+      
+      <!-- Sync status -->
+      <g transform="translate(800, 0)">
+        <rect x="0" y="0" width="180" height="60" rx="8" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#166534">Sync Status</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#10B981">✓ Synchronized</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#059669">Last sync: 30s ago</text>
+      </g>
+      
+      <!-- Quality score -->
+      <g transform="translate(1000, 0)">
+        <rect x="0" y="0" width="180" height="60" rx="8" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#1E40AF">Quality Score</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#3B82F6">87</text>
+        <text x="60" y="40" font-family="Inter, sans-serif" font-size="12" fill="#1D4ED8">/100</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">↗ +3 this week</text>
+      </g>
+      
+      <!-- Emergency actions -->
+      <g transform="translate(1200, 0)">
+        <rect x="0" y="0" width="120" height="30" rx="6" fill="#EF4444" cursor="pointer"/>
+        <text x="60" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">🚨 Force Sync</text>
+        
+        <rect x="140" y="0" width="120" height="30" rx="6" fill="#10B981" cursor="pointer"/>
+        <text x="200" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">📊 Analytics</text>
+        
+        <rect x="280" y="0" width="120" height="30" rx="6" fill="#3B82F6" cursor="pointer"/>
+        <text x="340" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">⚙️ Settings</text>
+        
+        <rect x="0" y="35" width="400" height="25" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">🎯 Goal: Complete Architecture Context by Friday</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Team Roles & Permissions Matrix -->
+  <g id="roles-matrix" transform="translate(50, 280)">
+    <rect x="0" y="0" width="850" height="450" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="850" height="45" rx="12" fill="url(#collaborationPrimaryGradient)"/>
+    <text x="20" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      👥 Team Roles & Permissions Matrix
+    </text>
+    
+    <!-- Role definitions -->
+    <g transform="translate(20, 60)">
+      <!-- Admin Role -->
+      <g id="admin-role" class="role-item">
+        <rect x="0" y="0" width="810" height="70" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="url(#adminGradient)" opacity="0.1"/>
+        <rect x="15" y="15" width="90" height="20" rx="4" fill="url(#adminGradient)"/>
+        <text x="25" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">👑 Admin</text>
+        
+        <!-- Admin user info -->
+        <g transform="translate(140, 10)">
+          <circle cx="25" cy="25" r="20" fill="url(#userAvatar1)"/>
+          <text x="55" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#374151">Sarah Chen</text>
+          <text x="55" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Lead Architect • Online</text>
+        </g>
+        
+        <!-- Admin permissions -->
+        <g transform="translate(300, 15)">
+          <rect x="0" y="0" width="490" height="40" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+          <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">Full Access Permissions</text>
+          <text x="15" y="32" font-family="Inter, sans-serif" font-size="10" fill="#991B1B">✓ Create/Edit/Delete ✓ Role Management ✓ System Config ✓ Conflict Resolution ✓ Emergency Actions</text>
+        </g>
+      </g>
+      
+      <!-- Maintainer Role -->
+      <g id="maintainer-role" class="role-item" transform="translate(0, 80)">
+        <rect x="0" y="0" width="810" height="70" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="url(#maintainerGradient)" opacity="0.1"/>
+        <rect x="15" y="15" width="90" height="20" rx="4" fill="url(#maintainerGradient)"/>
+        <text x="25" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">🔧 Maintainer</text>
+        
+        <!-- Maintainer users -->
+        <g transform="translate(140, 10)">
+          <circle cx="15" cy="25" r="15" fill="url(#userAvatar2)"/>
+          <circle cx="40" cy="25" r="15" fill="url(#userAvatar3)"/>
+          <text x="65" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#374151">Alex Kim, Mike Rodriguez</text>
+          <text x="65" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Senior Developers • 2 Online</text>
+        </g>
+        
+        <!-- Maintainer permissions -->
+        <g transform="translate(300, 15)">
+          <rect x="0" y="0" width="490" height="40" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+          <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Content Management Permissions</text>
+          <text x="15" y="32" font-family="Inter, sans-serif" font-size="10" fill="#92400E">✓ Create/Edit Content ✓ Review Changes ✓ Merge Conflicts ✓ Quality Control ❌ System Config</text>
+        </g>
+      </g>
+      
+      <!-- Contributor Role -->
+      <g id="contributor-role" class="role-item" transform="translate(0, 160)">
+        <rect x="0" y="0" width="810" height="70" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="url(#contributorGradient)" opacity="0.1"/>
+        <rect x="15" y="15" width="90" height="20" rx="4" fill="url(#contributorGradient)"/>
+        <text x="25" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">✏️ Contributor</text>
+        
+        <!-- Contributor users -->
+        <g transform="translate(140, 10)">
+          <circle cx="12" cy="25" r="12" fill="url(#userAvatar4)"/>
+          <circle cx="32" cy="25" r="12" fill="url(#userAvatar5)"/>
+          <circle cx="52" cy="25" r="12" fill="url(#userAvatar1)"/>
+          <text x="75" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#374151">Emma Taylor + 2 others</text>
+          <text x="75" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Developers • 3 Online</text>
+        </g>
+        
+        <!-- Contributor permissions -->
+        <g transform="translate(300, 15)">
+          <rect x="0" y="0" width="490" height="40" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+          <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Content Creation Permissions</text>
+          <text x="15" y="32" font-family="Inter, sans-serif" font-size="10" fill="#166534">✓ Create Content ✓ Edit Own Content ✓ Suggest Changes ❌ Direct Merge ❌ Delete Others</text>
+        </g>
+      </g>
+      
+      <!-- Reviewer Role -->
+      <g id="reviewer-role" class="role-item" transform="translate(0, 240)">
+        <rect x="0" y="0" width="810" height="70" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="url(#reviewerGradient)" opacity="0.1"/>
+        <rect x="15" y="15" width="90" height="20" rx="4" fill="url(#reviewerGradient)"/>
+        <text x="25" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">🔍 Reviewer</text>
+        
+        <!-- Reviewer user -->
+        <g transform="translate(140, 10)">
+          <circle cx="25" cy="25" r="20" fill="url(#userAvatar3)"/>
+          <text x="55" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#374151">David Park</text>
+          <text x="55" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">Tech Lead • Online</text>
+        </g>
+        
+        <!-- Reviewer permissions -->
+        <g transform="translate(300, 15)">
+          <rect x="0" y="0" width="490" height="40" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+          <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1E40AF">Review & Approval Permissions</text>
+          <text x="15" y="32" font-family="Inter, sans-serif" font-size="10" fill="#1E40AF">✓ Review Changes ✓ Approve/Reject ✓ Quality Assessment ❌ Direct Edit ❌ User Management</text>
+        </g>
+      </g>
+      
+      <!-- Viewer Role -->
+      <g id="viewer-role" class="role-item" transform="translate(0, 320)">
+        <rect x="0" y="0" width="810" height="70" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="url(#viewerGradient)" opacity="0.1"/>
+        <rect x="15" y="15" width="90" height="20" rx="4" fill="url(#viewerGradient)"/>
+        <text x="25" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">👁️ Viewer</text>
+        
+        <!-- Viewer users -->
+        <g transform="translate(140, 10)">
+          <circle cx="10" cy="25" r="10" fill="url(#userAvatar2)"/>
+          <circle cx="25" cy="25" r="10" fill="url(#userAvatar4)"/>
+          <circle cx="40" cy="25" r="10" fill="url(#userAvatar5)"/>
+          <text x="60" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#374151">Junior Devs + Interns</text>
+          <text x="60" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">5 Users • 2 Online</text>
+        </g>
+        
+        <!-- Viewer permissions -->
+        <g transform="translate(300, 15)">
+          <rect x="0" y="0" width="490" height="40" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+          <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Read-Only Permissions</text>
+          <text x="15" y="32" font-family="Inter, sans-serif" font-size="10" fill="#6B21A8">✓ Read Content ✓ View History ✓ Comment ❌ Edit ❌ Create ❌ Delete</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Real-Time Activity Feed -->
+  <g id="activity-feed" transform="translate(920, 280)">
+    <rect x="0" y="0" width="830" height="450" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="830" height="45" rx="12" fill="url(#realTimeGlow)"/>
+    <text x="20" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#10B981">
+      ⚡ Real-Time Activity Feed
+    </text>
+    
+    <!-- Activity items -->
+    <g transform="translate(20, 60)">
+      <!-- Current editing activity -->
+      <g id="current-activity" class="activity-item">
+        <rect x="0" y="0" width="790" height="50" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <circle cx="25" cy="25" r="15" fill="url(#userAvatar2)"/>
+        <text x="50" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#166534">Alex Kim is currently editing</text>
+        <text x="50" y="35" font-family="Inter, sans-serif" font-size="11" fill="#059669">"Architecture Overview > Component Dependencies" • Real-time</text>
+        <circle cx="750" cy="25" r="8" fill="#10B981"/>
+        <text x="720" y="30" font-family="Inter, sans-serif" font-size="10" fill="#059669">LIVE</text>
+      </g>
+      
+      <!-- Recent change -->
+      <g id="recent-change-1" class="activity-item" transform="translate(0, 60)">
+        <rect x="0" y="0" width="790" height="50" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <circle cx="25" cy="25" r="15" fill="url(#userAvatar4)"/>
+        <text x="50" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#374151">Emma Taylor updated</text>
+        <text x="50" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">"API Documentation > Authentication Flow" • 3 minutes ago</text>
+        <rect x="650" y="10" width="120" height="30" rx="4" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="710" y="30" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8" text-anchor="middle">View Changes</text>
+      </g>
+      
+      <!-- Conflict resolution -->
+      <g id="conflict-resolution" class="activity-item" transform="translate(0, 120)">
+        <rect x="0" y="0" width="790" height="50" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+        <circle cx="25" cy="25" r="15" fill="url(#userAvatar1)"/>
+        <text x="50" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#991B1B">Sarah Chen resolved conflict</text>
+        <text x="50" y="35" font-family="Inter, sans-serif" font-size="11" fill="#DC2626">"Testing Guidelines" between Mike Rodriguez & David Park • 7 minutes ago</text>
+        <rect x="650" y="10" width="120" height="30" rx="4" fill="#FEF2F2" stroke="#EF4444"/>
+        <text x="710" y="30" font-family="Inter, sans-serif" font-size="10" fill="#DC2626" text-anchor="middle">Resolution Log</text>
+      </g>
+      
+      <!-- Review completion -->
+      <g id="review-completion" class="activity-item" transform="translate(0, 180)">
+        <rect x="0" y="0" width="790" height="50" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <circle cx="25" cy="25" r="15" fill="url(#userAvatar3)"/>
+        <text x="50" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#1E40AF">David Park approved</text>
+        <text x="50" y="35" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">"Deployment Procedures v2.1" with quality score 94/100 • 12 minutes ago</text>
+        <rect x="650" y="10" width="120" height="30" rx="4" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="710" y="30" font-family="Inter, sans-serif" font-size="10" fill="#059669" text-anchor="middle">Approved ✓</text>
+      </g>
+      
+      <!-- New contribution -->
+      <g id="new-contribution" class="activity-item" transform="translate(0, 240)">
+        <rect x="0" y="0" width="790" height="50" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <circle cx="25" cy="25" r="15" fill="url(#userAvatar5)"/>
+        <text x="50" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#92400E">Riley Johnson created</text>
+        <text x="50" y="35" font-family="Inter, sans-serif" font-size="11" fill="#D97706">"Error Handling Best Practices" • Pending review • 18 minutes ago</text>
+        <rect x="650" y="10" width="120" height="30" rx="4" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="710" y="30" font-family="Inter, sans-serif" font-size="10" fill="#D97706" text-anchor="middle">Review Needed</text>
+      </g>
+      
+      <!-- Version control sync -->
+      <g id="version-sync" class="activity-item" transform="translate(0, 300)">
+        <rect x="0" y="0" width="790" height="50" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <circle cx="25" cy="25" r="15" fill="#8B5CF6"/>
+        <text x="30" y="30" font-family="Inter, sans-serif" font-size="12" fill="white" text-anchor="middle">🔄</text>
+        <text x="50" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#6B21A8">System auto-synced</text>
+        <text x="50" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7C3AED">15 changes merged from main branch • 25 minutes ago</text>
+        <rect x="650" y="10" width="120" height="30" rx="4" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="710" y="30" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED" text-anchor="middle">Sync Complete</text>
+      </g>
+      
+      <!-- User joined -->
+      <g id="user-joined" class="activity-item" transform="translate(0, 360)">
+        <rect x="0" y="0" width="790" height="40" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <circle cx="25" cy="20" r="12" fill="url(#userAvatar2)"/>
+        <text x="45" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">Alex Kim joined session</text>
+        <text x="45" y="30" font-family="Inter, sans-serif" font-size="10" fill="#64748B">Started collaborative editing • 35 minutes ago</text>
+        <circle cx="750" cy="20" r="5" fill="#10B981"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Conflict Resolution System -->
+  <g id="conflict-resolution" transform="translate(50, 750)">
+    <rect x="0" y="0" width="850" height="300" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="850" height="45" rx="12" fill="url(#conflictGradient)"/>
+    <text x="20" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      ⚔️ Conflict Resolution System
+    </text>
+    
+    <!-- Active conflict example -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="810" height="220" rx="8" fill="#FEF2F2" stroke="#EF4444"/>
+      <text x="20" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#991B1B">Active Conflict: Testing Guidelines Section</text>
+      
+      <!-- Conflict participants -->
+      <g transform="translate(20, 40)">
+        <rect x="0" y="0" width="385" height="160" rx="6" fill="white" stroke="#EF4444"/>
+        <rect x="0" y="0" width="385" height="30" rx="6" fill="#FEF2F2"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">Version A - Mike Rodriguez</text>
+        
+        <text x="15" y="45" font-family="Inter, sans-serif" font-size="11" fill="#374151">Testing Strategy:</text>
+        <text x="15" y="60" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Unit tests for all public methods</text>
+        <text x="15" y="75" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Integration tests for API endpoints</text>
+        <text x="15" y="90" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• E2E tests for critical user journeys</text>
+        <text x="15" y="105" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Performance tests for database queries</text>
+        
+        <text x="15" y="125" font-family="Inter, sans-serif" font-size="11" fill="#991B1B">Last edited: 15 minutes ago</text>
+        <rect x="15" y="135" width="80" height="20" rx="4" fill="#EF4444"/>
+        <text x="55" y="148" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">Accept This</text>
+        
+        <rect x="405" y="0" width="385" height="160" rx="6" fill="white" stroke="#F59E0B"/>
+        <rect x="405" y="0" width="385" height="30" rx="6" fill="#FEF3C7"/>
+        <text x="420" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Version B - David Park</text>
+        
+        <text x="420" y="45" font-family="Inter, sans-serif" font-size="11" fill="#374151">Testing Strategy:</text>
+        <text x="420" y="60" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Comprehensive unit test coverage (>90%)</text>
+        <text x="420" y="75" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Contract testing for microservices</text>
+        <text x="420" y="90" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Automated visual regression tests</text>
+        <text x="420" y="105" font-family="Inter, sans-serif" font-size="10" fill="#64748B">• Load testing for scalability validation</text>
+        
+        <text x="420" y="125" font-family="Inter, sans-serif" font-size="11" fill="#92400E">Last edited: 8 minutes ago</text>
+        <rect x="420" y="135" width="80" height="20" rx="4" fill="#F59E0B"/>
+        <text x="460" y="148" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">Accept This</text>
+      </g>
+      
+      <!-- Resolution actions -->
+      <g transform="translate(20, 210)">
+        <rect x="0" y="0" width="180" height="35" rx="6" fill="#10B981" cursor="pointer"/>
+        <text x="90" y="23" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">🤝 Merge Both</text>
+        
+        <rect x="200" y="0" width="180" height="35" rx="6" fill="#3B82F6" cursor="pointer"/>
+        <text x="290" y="23" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">✏️ Create New</text>
+        
+        <rect x="400" y="0" width="180" height="35" rx="6" fill="#8B5CF6" cursor="pointer"/>
+        <text x="490" y="23" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">👑 Admin Resolve</text>
+        
+        <rect x="600" y="0" width="180" height="35" rx="6" fill="#6B7280" cursor="pointer"/>
+        <text x="690" y="23" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">⏳ Discuss Later</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Version Control Integration -->
+  <g id="version-control" transform="translate(920, 750)">
+    <rect x="0" y="0" width="830" height="300" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="830" height="45" rx="12" fill="url(#versionGlow)"/>
+    <text x="20" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#3B82F6">
+      🔄 Version Control Integration
+    </text>
+    
+    <!-- Version history -->
+    <g transform="translate(20, 60)">
+      <!-- Current version -->
+      <g id="current-version" class="version-item">
+        <rect x="0" y="0" width="790" height="40" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <circle cx="20" cy="20" r="8" fill="#10B981"/>
+        <text x="40" y="18" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#166534">v2.4.1 (Current)</text>
+        <text x="40" y="30" font-family="Inter, sans-serif" font-size="10" fill="#059669">15 contributors • 47 changes • Quality: 87/100 • 2 hours ago</text>
+        <rect x="650" y="10" width="120" height="20" rx="4" fill="#10B981"/>
+        <text x="710" y="23" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">Latest Stable</text>
+      </g>
+      
+      <!-- Previous versions -->
+      <g id="prev-version-1" class="version-item" transform="translate(0, 50)">
+        <rect x="0" y="0" width="790" height="35" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <circle cx="20" cy="17.5" r="6" fill="#CBD5E1"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">v2.4.0</text>
+        <text x="40" y="27" font-family="Inter, sans-serif" font-size="10" fill="#64748B">Major feature update • Architecture refactoring • 1 day ago</text>
+        <rect x="650" y="7.5" width="120" height="20" rx="4" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="710" y="20" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8" text-anchor="middle">View Diff</text>
+      </g>
+      
+      <g id="prev-version-2" class="version-item" transform="translate(0, 95)">
+        <rect x="0" y="0" width="790" height="35" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <circle cx="20" cy="17.5" r="6" fill="#CBD5E1"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">v2.3.2</text>
+        <text x="40" y="27" font-family="Inter, sans-serif" font-size="10" fill="#64748B">Bug fixes and improvements • 3 days ago</text>
+        <rect x="650" y="7.5" width="120" height="20" rx="4" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="710" y="20" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8" text-anchor="middle">View Diff</text>
+      </g>
+      
+      <g id="prev-version-3" class="version-item" transform="translate(0, 140)">
+        <rect x="0" y="0" width="790" height="35" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <circle cx="20" cy="17.5" r="6" fill="#CBD5E1"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">v2.3.1</text>
+        <text x="40" y="27" font-family="Inter, sans-serif" font-size="10" fill="#64748B">Context quality improvements • 5 days ago</text>
+        <rect x="650" y="7.5" width="120" height="20" rx="4" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="710" y="20" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8" text-anchor="middle">View Diff</text>
+      </g>
+      
+      <!-- Branch management -->
+      <g transform="translate(0, 185)">
+        <rect x="0" y="0" width="790" height="40" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="20" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Branch Status</text>
+        <text x="20" y="30" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">📍 main (protected) • 🔄 feature/api-docs (3 ahead) • 🎯 hotfix/security (ready to merge)</text>
+        
+        <rect x="650" y="10" width="60" height="20" rx="4" fill="#10B981"/>
+        <text x="680" y="23" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">Merge</text>
+        
+        <rect x="720" y="10" width="60" height="20" rx="4" fill="#3B82F6"/>
+        <text x="750" y="23" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">Create</text>
+      </g>
+      
+      <!-- Sync controls -->
+      <g transform="translate(0, 235)">
+        <rect x="0" y="0" width="390" height="35" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="20" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Auto-Sync: Enabled</text>
+        <text x="20" y="30" font-family="Inter, sans-serif" font-size="10" fill="#059669">Last sync: 30 seconds ago • Next: 30 seconds</text>
+        
+        <rect x="400" y="0" width="390" height="35" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="420" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Backup Status: Protected</text>
+        <text x="420" y="30" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Last backup: 1 hour ago • 15 versions stored</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Collaboration Analytics Panel -->
+  <g id="analytics-panel" transform="translate(50, 1070)">
+    <rect x="0" y="0" width="850" height="250" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="850" height="45" rx="12" fill="url(#collaborationPrimaryGradient)"/>
+    <text x="20" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      📊 Collaboration Analytics
+    </text>
+    
+    <!-- Analytics metrics -->
+    <g transform="translate(20, 60)">
+      <!-- Team productivity -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="180" height="70" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Team Productivity</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#10B981">142%</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="10" fill="#059669">vs individual work</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="10" fill="#059669">↗ +18% this month</text>
+      </g>
+      
+      <!-- Knowledge sharing -->
+      <g transform="translate(200, 0)">
+        <rect x="0" y="0" width="180" height="70" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1E40AF">Knowledge Sharing</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#3B82F6">89%</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">coverage rate</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">All team members active</text>
+      </g>
+      
+      <!-- Conflict rate -->
+      <g transform="translate(400, 0)">
+        <rect x="0" y="0" width="180" height="70" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Conflict Rate</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#F59E0B">2.3%</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="10" fill="#D97706">of total edits</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="10" fill="#D97706">↘ -0.7% improvement</text>
+      </g>
+      
+      <!-- Resolution time -->
+      <g transform="translate(600, 0)">
+        <rect x="0" y="0" width="180" height="70" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Avg Resolution</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#8B5CF6">8.4</text>
+        <text x="60" y="40" font-family="Inter, sans-serif" font-size="12" fill="#7C3AED">min</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">conflict resolution</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">↘ -2.1 min faster</text>
+      </g>
+      
+      <!-- Activity timeline -->
+      <g transform="translate(0, 85)">
+        <rect x="0" y="0" width="790" height="90" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">Weekly Activity Pattern</text>
+        
+        <!-- Activity bars -->
+        <g transform="translate(15, 30)">
+          <text x="0" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Mon</text>
+          <rect x="5" y="20" width="8" height="35" fill="#10B981"/>
+          
+          <text x="25" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Tue</text>
+          <rect x="30" y="15" width="8" height="40" fill="#10B981"/>
+          
+          <text x="50" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Wed</text>
+          <rect x="55" y="10" width="8" height="45" fill="#10B981"/>
+          
+          <text x="75" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Thu</text>
+          <rect x="80" y="8" width="8" height="47" fill="#10B981"/>
+          
+          <text x="100" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Fri</text>
+          <rect x="105" y="12" width="8" height="43" fill="#10B981"/>
+          
+          <text x="125" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Sat</text>
+          <rect x="130" y="35" width="8" height="20" fill="#8B5CF6"/>
+          
+          <text x="150" y="15" font-family="Inter, sans-serif" font-size="9" fill="#64748B">Sun</text>
+          <rect x="155" y="40" width="8" height="15" fill="#8B5CF6"/>
+          
+          <text x="180" y="30" font-family="Inter, sans-serif" font-size="10" fill="#374151">Peak collaboration: Wednesday-Thursday</text>
+          <text x="180" y="45" font-family="Inter, sans-serif" font-size="10" fill="#64748B">Most productive hours: 10AM-12PM, 2PM-4PM</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Offline Sync & Mobile Support -->
+  <g id="offline-mobile" transform="translate(920, 1070)">
+    <rect x="0" y="0" width="830" height="250" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="830" height="45" rx="12" fill="url(#collaborationPrimaryGradient)"/>
+    <text x="20" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      📱 Offline Sync & Mobile Support
+    </text>
+    
+    <!-- Offline capabilities -->
+    <g transform="translate(20, 60)">
+      <!-- Offline status -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="390" height="80" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#166534">Offline Capability Status</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="11" fill="#059669">✓ Local editing enabled</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#059669">✓ Change queue: 3 pending uploads</text>
+        <text x="15" y="70" font-family="Inter, sans-serif" font-size="11" fill="#059669">✓ Auto-sync when online</text>
+      </g>
+      
+      <!-- Mobile optimization -->
+      <g transform="translate(410, 0)">
+        <rect x="0" y="0" width="390" height="80" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#1E40AF">Mobile Optimization</text>
+        <text x="15" y="40" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">📱 Touch-friendly interface</text>
+        <text x="15" y="55" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">📝 Gesture-based editing</text>
+        <text x="15" y="70" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">🔄 Background sync</text>
+      </g>
+      
+      <!-- Sync queue management -->
+      <g transform="translate(0, 90)">
+        <rect x="0" y="0" width="790" height="90" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">Pending Sync Queue (3 items)</text>
+        
+        <g transform="translate(15, 30)">
+          <rect x="0" y="0" width="760" height="15" rx="3" fill="#FEF3C7" stroke="#F59E0B"/>
+          <text x="8" y="12" font-family="Inter, sans-serif" font-size="10" fill="#92400E">1. "API Guidelines update" by Emma Taylor • 2.3KB • Offline edit</text>
+          
+          <rect x="0" y="20" width="760" height="15" rx="3" fill="#FEF3C7" stroke="#F59E0B"/>
+          <text x="8" y="32" font-family="Inter, sans-serif" font-size="10" fill="#92400E">2. "Error handling examples" by Riley Johnson • 1.8KB • Mobile edit</text>
+          
+          <rect x="0" y="40" width="760" height="15" rx="3" fill="#FEF3C7" stroke="#F59E0B"/>
+          <text x="8" y="52" font-family="Inter, sans-serif" font-size="10" fill="#92400E">3. "Deployment checklist revision" by Alex Kim • 0.9KB • Offline comment</text>
+        </g>
+        
+        <rect x="650" y="20" width="120" height="25" rx="4" fill="#10B981" cursor="pointer"/>
+        <text x="710" y="37" font-family="Inter, sans-serif" font-size="11" fill="white" text-anchor="middle">🔄 Sync All Now</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Interactive JavaScript for collaboration functionality -->
+  <script type="text/javascript">
+    <![CDATA[
+    // Team Context Collaboration Framework Interactive Functionality
+    class TeamCollaborationFramework {
+      constructor() {
+        this.activeUsers = 7;
+        this.concurrentEdits = 3;
+        this.changesToday = 47;
+        this.teamCoverage = 94;
+        this.qualityScore = 87;
+        this.syncStatus = 'synchronized';
+        this.lastSync = new Date(Date.now() - 30000); // 30 seconds ago
+        
+        this.roles = {
+          admin: { users: ['Sarah Chen'], permissions: ['full_access', 'role_management', 'system_config'] },
+          maintainer: { users: ['Alex Kim', 'Mike Rodriguez'], permissions: ['content_management', 'review', 'merge'] },
+          contributor: { users: ['Emma Taylor', 'Riley Johnson', 'Jordan Smith'], permissions: ['create_content', 'edit_own'] },
+          reviewer: { users: ['David Park'], permissions: ['review', 'approve_reject', 'quality_assessment'] },
+          viewer: { users: ['Junior Devs', 'Interns'], permissions: ['read_only', 'comment'] }
+        };
+        
+        this.conflictResolution = {
+          active: true,
+          participants: ['Mike Rodriguez', 'David Park'],
+          section: 'Testing Guidelines',
+          timeStarted: new Date(Date.now() - 15 * 60 * 1000), // 15 minutes ago
+          resolutionOptions: ['merge_both', 'create_new', 'admin_resolve', 'discuss_later']
+        };
+        
+        this.versionControl = {
+          currentVersion: 'v2.4.1',
+          branches: ['main', 'feature/api-docs', 'hotfix/security'],
+          autoSync: true,
+          backupStatus: 'protected',
+          lastBackup: new Date(Date.now() - 60 * 60 * 1000) // 1 hour ago
+        };
+        
+        this.analytics = {
+          productivity: 142, // percentage vs individual work
+          knowledgeSharing: 89, // coverage rate
+          conflictRate: 2.3, // percentage of total edits
+          avgResolutionTime: 8.4 // minutes
+        };
+        
+        this.offlineQueue = [
+          { user: 'Emma Taylor', content: 'API Guidelines update', size: '2.3KB', type: 'offline_edit' },
+          { user: 'Riley Johnson', content: 'Error handling examples', size: '1.8KB', type: 'mobile_edit' },
+          { user: 'Alex Kim', content: 'Deployment checklist revision', size: '0.9KB', type: 'offline_comment' }
+        ];
+        
+        this.initializeEventListeners();
+        this.startRealTimeUpdates();
+        this.setupCollaborationFeatures();
+      }
+      
+      initializeEventListeners() {
+        this.setupRoleInteractions();
+        this.setupActivityFeed();
+        this.setupConflictResolution();
+        this.setupVersionControl();
+        this.setupAnalytics();
+        this.setupOfflineSync();
+      }
+      
+      setupRoleInteractions() {
+        // Role item interactions
+        const roleItems = document.querySelectorAll('.role-item');
+        roleItems.forEach((item, index) => {
+          item.addEventListener('mouseenter', () => this.highlightRole(index));
+          item.addEventListener('mouseleave', () => this.unhighlightRole(index));
+          item.addEventListener('click', () => this.showRoleDetails(index));
+        });
+        
+        // Permission management
+        const roleNames = ['admin', 'maintainer', 'contributor', 'reviewer', 'viewer'];
+        roleNames.forEach((role, index) => {
+          const roleElement = document.querySelector(`#${role}-role`);
+          if (roleElement) {
+            roleElement.addEventListener('dblclick', () => this.editRolePermissions(role, index));
+          }
+        });
+      }
+      
+      setupActivityFeed() {
+        // Activity item interactions
+        const activityItems = document.querySelectorAll('.activity-item');
+        activityItems.forEach((item, index) => {
+          item.addEventListener('click', () => this.showActivityDetails(index));
+          item.addEventListener('mouseenter', () => this.highlightActivity(item));
+          item.addEventListener('mouseleave', () => this.unhighlightActivity(item));
+        });
+        
+        // Real-time activity updates
+        this.startActivityFeedUpdates();
+      }
+      
+      setupConflictResolution() {
+        // Conflict resolution buttons
+        const resolutionButtons = document.querySelectorAll('#conflict-resolution rect[cursor="pointer"]');
+        resolutionButtons.forEach((button, index) => {
+          button.addEventListener('click', () => this.handleConflictResolution(index));
+          button.addEventListener('mouseenter', () => this.highlightResolutionOption(button));
+          button.addEventListener('mouseleave', () => this.unhighlightResolutionOption(button));
+        });
+        
+        // Version acceptance buttons
+        const acceptButtons = document.querySelectorAll('#conflict-resolution rect[fill="#EF4444"], rect[fill="#F59E0B"]');
+        acceptButtons.forEach((button, index) => {
+          button.addEventListener('click', () => this.acceptVersion(index % 2)); // 0 for Version A, 1 for Version B
+        });
+      }
+      
+      setupVersionControl() {
+        // Version control interactions
+        const versionItems = document.querySelectorAll('.version-item');
+        versionItems.forEach((item, index) => {
+          item.addEventListener('click', () => this.showVersionDetails(index));
+          item.addEventListener('mouseenter', () => this.highlightVersion(item));
+          item.addEventListener('mouseleave', () => this.unhighlightVersion(item));
+        });
+        
+        // Branch management
+        const branchActions = document.querySelectorAll('#version-control rect[cursor="pointer"]');
+        branchActions.forEach((button, index) => {
+          button.addEventListener('click', () => this.handleBranchAction(index));
+        });
+      }
+      
+      setupAnalytics() {
+        // Analytics interactions
+        const analyticsMetrics = document.querySelectorAll('#analytics-panel rect[fill*="#F0"]');
+        analyticsMetrics.forEach((metric, index) => {
+          metric.addEventListener('click', () => this.drillDownAnalytics(index));
+          metric.addEventListener('mouseenter', () => this.showAnalyticsTooltip(metric, index));
+          metric.addEventListener('mouseleave', () => this.hideAnalyticsTooltip());
+        });
+      }
+      
+      setupOfflineSync() {
+        // Offline sync controls
+        const syncButton = document.querySelector('#offline-mobile rect[cursor="pointer"]');
+        if (syncButton) {
+          syncButton.addEventListener('click', () => this.syncOfflineChanges());
+        }
+        
+        // Queue management
+        const queueItems = document.querySelectorAll('#offline-mobile rect[fill="#FEF3C7"]');
+        queueItems.forEach((item, index) => {
+          item.addEventListener('click', () => this.showQueueItemDetails(index));
+        });
+      }
+      
+      startRealTimeUpdates() {
+        // Update collaboration metrics every 30 seconds
+        setInterval(() => {
+          this.updateCollaborationMetrics();
+          this.updateActivityFeed();
+          this.checkConflictStatus();
+          this.updateSyncStatus();
+        }, 30000);
+        
+        // Update real-time indicators every 5 seconds
+        setInterval(() => {
+          this.updateRealTimeIndicators();
+        }, 5000);
+      }
+      
+      setupCollaborationFeatures() {
+        // Real-time editing simulation
+        this.setupRealTimeEditing();
+        
+        // Notification system
+        this.setupNotifications();
+        
+        // Collaboration events
+        this.setupCollaborationEvents();
+      }
+      
+      // Role management methods
+      highlightRole(roleIndex) {
+        const roles = ['admin', 'maintainer', 'contributor', 'reviewer', 'viewer'];
+        const role = document.querySelector(`#${roles[roleIndex]}-role`);
+        if (role) {
+          role.style.filter = 'url(#collaborationGlow)';
+          role.style.transform = 'translateX(5px)';
+        }
+      }
+      
+      unhighlightRole(roleIndex) {
+        const roles = ['admin', 'maintainer', 'contributor', 'reviewer', 'viewer'];
+        const role = document.querySelector(`#${roles[roleIndex]}-role`);
+        if (role) {
+          role.style.filter = 'none';
+          role.style.transform = 'translateX(0)';
+        }
+      }
+      
+      showRoleDetails(roleIndex) {
+        const roles = ['Admin', 'Maintainer', 'Contributor', 'Reviewer', 'Viewer'];
+        const roleData = Object.values(this.roles)[roleIndex];
+        this.displayRoleModal(roles[roleIndex], roleData);
+      }
+      
+      editRolePermissions(roleName, index) {
+        console.log(`Editing permissions for ${roleName}:`, this.roles[roleName]);
+        this.showPermissionEditor(roleName, this.roles[roleName]);
+      }
+      
+      // Activity feed methods
+      highlightActivity(item) {
+        item.style.filter = 'url(#realTimeGlow)';
+        item.style.transform = 'scale(1.02)';
+      }
+      
+      unhighlightActivity(item) {
+        item.style.filter = 'none';
+        item.style.transform = 'scale(1)';
+      }
+      
+      showActivityDetails(activityIndex) {
+        const activities = [
+          'Real-time editing by Alex Kim',
+          'Content update by Emma Taylor', 
+          'Conflict resolution by Sarah Chen',
+          'Review approval by David Park',
+          'New content by Riley Johnson',
+          'System auto-sync',
+          'User session join by Alex Kim'
+        ];
+        this.displayActivityModal(activities[activityIndex], activityIndex);
+      }
+      
+      startActivityFeedUpdates() {
+        // Simulate new activity every 2 minutes
+        setInterval(() => {
+          this.addNewActivity();
+        }, 120000);
+      }
+      
+      // Conflict resolution methods
+      handleConflictResolution(optionIndex) {
+        const options = ['merge_both', 'create_new', 'admin_resolve', 'discuss_later'];
+        const selectedOption = options[optionIndex];
+        
+        console.log(`Handling conflict resolution with option: ${selectedOption}`);
+        this.executeConflictResolution(selectedOption);
+      }
+      
+      highlightResolutionOption(button) {
+        button.style.filter = 'url(#conflictGlow)';
+        button.style.transform = 'scale(1.05)';
+      }
+      
+      unhighlightResolutionOption(button) {
+        button.style.filter = 'none';
+        button.style.transform = 'scale(1)';
+      }
+      
+      acceptVersion(versionIndex) {
+        const versions = ['Version A (Mike Rodriguez)', 'Version B (David Park)'];
+        console.log(`Accepting ${versions[versionIndex]}`);
+        this.resolveConflictWithVersion(versionIndex);
+      }
+      
+      executeConflictResolution(option) {
+        switch (option) {
+          case 'merge_both':
+            this.mergeBothVersions();
+            break;
+          case 'create_new':
+            this.createNewVersion();
+            break;
+          case 'admin_resolve':
+            this.adminResolveConflict();
+            break;
+          case 'discuss_later':
+            this.postponeConflict();
+            break;
+        }
+      }
+      
+      // Version control methods
+      highlightVersion(item) {
+        item.style.filter = 'url(#versionGlow)';
+        item.style.strokeWidth = '2';
+      }
+      
+      unhighlightVersion(item) {
+        item.style.filter = 'none';
+        item.style.strokeWidth = '1';
+      }
+      
+      showVersionDetails(versionIndex) {
+        const versions = ['v2.4.1 (Current)', 'v2.4.0', 'v2.3.2', 'v2.3.1'];
+        this.displayVersionModal(versions[versionIndex], versionIndex);
+      }
+      
+      handleBranchAction(actionIndex) {
+        const actions = ['merge', 'create'];
+        console.log(`Executing branch action: ${actions[actionIndex % actions.length]}`);
+        
+        if (actionIndex % 2 === 0) {
+          this.mergeBranch();
+        } else {
+          this.createBranch();
+        }
+      }
+      
+      // Analytics methods
+      drillDownAnalytics(metricIndex) {
+        const metrics = ['Team Productivity', 'Knowledge Sharing', 'Conflict Rate', 'Resolution Time'];
+        this.showAnalyticsDetails(metrics[metricIndex], metricIndex);
+      }
+      
+      showAnalyticsTooltip(metric, index) {
+        const tooltips = [
+          'Team productivity: 142% vs individual work (+18% this month)',
+          'Knowledge sharing: 89% coverage rate (all team members active)',
+          'Conflict rate: 2.3% of total edits (-0.7% improvement)',
+          'Average resolution: 8.4 minutes (-2.1 min faster)'
+        ];
+        this.displayTooltip(metric, tooltips[index]);
+      }
+      
+      hideAnalyticsTooltip() {
+        const tooltip = document.querySelector('.analytics-tooltip');
+        if (tooltip) tooltip.remove();
+      }
+      
+      // Offline sync methods
+      syncOfflineChanges() {
+        console.log('Syncing offline changes:', this.offlineQueue);
+        this.processOfflineQueue();
+      }
+      
+      showQueueItemDetails(itemIndex) {
+        const item = this.offlineQueue[itemIndex];
+        this.displayQueueModal(item, itemIndex);
+      }
+      
+      processOfflineQueue() {
+        // Simulate sync process
+        this.offlineQueue.forEach((item, index) => {
+          setTimeout(() => {
+            console.log(`Syncing: ${item.content} by ${item.user}`);
+            this.completeQueueItem(index);
+          }, (index + 1) * 1000);
+        });
+        
+        // Clear queue after sync
+        setTimeout(() => {
+          this.offlineQueue = [];
+          this.updateOfflineDisplay();
+        }, this.offlineQueue.length * 1000 + 500);
+      }
+      
+      // Real-time collaboration methods
+      setupRealTimeEditing() {
+        // Simulate real-time editing cursors and highlights
+        setInterval(() => {
+          this.updateEditingIndicators();
+        }, 2000);
+      }
+      
+      setupNotifications() {
+        // Collaboration notifications
+        this.notifications = [];
+        
+        setInterval(() => {
+          this.checkForNotifications();
+        }, 10000);
+      }
+      
+      setupCollaborationEvents() {
+        // WebSocket simulation for real-time events
+        this.collaborationEvents = [
+          'user_joined', 'user_left', 'content_edited', 'conflict_detected',
+          'conflict_resolved', 'version_created', 'review_completed'
+        ];
+        
+        setInterval(() => {
+          this.simulateCollaborationEvent();
+        }, 45000);
+      }
+      
+      // Update methods
+      updateCollaborationMetrics() {
+        // Simulate metric changes
+        this.activeUsers = Math.max(5, this.activeUsers + (Math.random() > 0.5 ? 1 : -1));
+        this.concurrentEdits = Math.max(0, Math.min(5, this.concurrentEdits + (Math.random() > 0.6 ? 1 : -1)));
+        this.changesToday += Math.floor(Math.random() * 3);
+        this.teamCoverage = Math.min(100, this.teamCoverage + (Math.random() - 0.5));
+        this.qualityScore = Math.max(80, Math.min(95, this.qualityScore + (Math.random() - 0.5) * 2));
+        
+        this.updateMetricDisplays();
+      }
+      
+      updateActivityFeed() {
+        // Add new activity items
+        if (Math.random() < 0.3) { // 30% chance
+          this.addNewActivity();
+        }
+      }
+      
+      checkConflictStatus() {
+        // Check for new conflicts
+        if (Math.random() < 0.1 && !this.conflictResolution.active) { // 10% chance
+          this.createNewConflict();
+        }
+      }
+      
+      updateSyncStatus() {
+        this.lastSync = new Date();
+        this.updateSyncDisplay();
+      }
+      
+      updateRealTimeIndicators() {
+        // Update live indicators
+        this.updateLiveUserCount();
+        this.updateEditingStatus();
+        this.updateSyncIndicators();
+      }
+      
+      updateEditingIndicators() {
+        // Show real-time editing cursors
+        const currentActivity = document.querySelector('#current-activity');
+        if (currentActivity) {
+          const live = currentActivity.querySelector('circle[fill="#10B981"]');
+          if (live) {
+            live.style.animation = 'pulse 1s infinite';
+          }
+        }
+      }
+      
+      // Utility methods
+      addNewActivity() {
+        const activities = [
+          'User started editing section',
+          'Content review completed',
+          'New comment added',
+          'Conflict auto-resolved',
+          'Version synchronized'
+        ];
+        
+        const newActivity = activities[Math.floor(Math.random() * activities.length)];
+        console.log('New activity:', newActivity);
+        this.addActivityToFeed(newActivity);
+      }
+      
+      createNewConflict() {
+        this.conflictResolution.active = true;
+        this.conflictResolution.timeStarted = new Date();
+        console.log('New conflict detected:', this.conflictResolution);
+        this.showConflictNotification();
+      }
+      
+      mergeBothVersions() {
+        console.log('Merging both versions of', this.conflictResolution.section);
+        this.resolveConflict('merged');
+      }
+      
+      createNewVersion() {
+        console.log('Creating new version for', this.conflictResolution.section);
+        this.resolveConflict('new_version');
+      }
+      
+      adminResolveConflict() {
+        console.log('Admin resolving conflict for', this.conflictResolution.section);
+        this.resolveConflict('admin_resolved');
+      }
+      
+      postponeConflict() {
+        console.log('Postponing conflict discussion for', this.conflictResolution.section);
+        this.resolveConflict('postponed');
+      }
+      
+      resolveConflict(method) {
+        this.conflictResolution.active = false;
+        this.conflictResolution.resolvedBy = method;
+        this.conflictResolution.resolvedAt = new Date();
+        
+        this.addActivityToFeed(`Conflict resolved: ${method}`);
+        this.updateConflictDisplay();
+      }
+      
+      resolveConflictWithVersion(versionIndex) {
+        const versions = ['A', 'B'];
+        console.log(`Resolving conflict by accepting Version ${versions[versionIndex]}`);
+        this.resolveConflict(`version_${versions[versionIndex]}`);
+      }
+      
+      mergeBranch() {
+        console.log('Merging branch:', this.versionControl.branches[1]);
+        this.addActivityToFeed('Branch merged successfully');
+      }
+      
+      createBranch() {
+        const newBranchName = `feature/new-${Date.now()}`;
+        this.versionControl.branches.push(newBranchName);
+        console.log('Created new branch:', newBranchName);
+        this.addActivityToFeed(`New branch created: ${newBranchName}`);
+      }
+      
+      simulateCollaborationEvent() {
+        const eventType = this.collaborationEvents[Math.floor(Math.random() * this.collaborationEvents.length)];
+        console.log('Collaboration event:', eventType);
+        this.handleCollaborationEvent(eventType);
+      }
+      
+      handleCollaborationEvent(eventType) {
+        switch (eventType) {
+          case 'user_joined':
+            this.activeUsers++;
+            this.addActivityToFeed('User joined collaboration session');
+            break;
+          case 'user_left':
+            this.activeUsers = Math.max(1, this.activeUsers - 1);
+            this.addActivityToFeed('User left collaboration session');
+            break;
+          case 'content_edited':
+            this.changesToday++;
+            this.addActivityToFeed('Content updated');
+            break;
+          case 'conflict_detected':
+            if (!this.conflictResolution.active) {
+              this.createNewConflict();
+            }
+            break;
+          case 'conflict_resolved':
+            if (this.conflictResolution.active) {
+              this.resolveConflict('auto_resolved');
+            }
+            break;
+          case 'version_created':
+            this.addActivityToFeed('New version created');
+            break;
+          case 'review_completed':
+            this.addActivityToFeed('Content review completed');
+            break;
+        }
+        
+        this.updateMetricDisplays();
+      }
+      
+      checkForNotifications() {
+        // Check for collaboration notifications
+        if (this.conflictResolution.active) {
+          this.showConflictNotification();
+        }
+        
+        if (this.offlineQueue.length > 0) {
+          this.showSyncNotification();
+        }
+      }
+      
+      completeQueueItem(index) {
+        console.log(`Completed sync for item ${index}`);
+        this.addActivityToFeed(`Synced: ${this.offlineQueue[index].content}`);
+      }
+      
+      // Display update methods
+      updateMetricDisplays() {
+        console.log('Updating collaboration metrics:', {
+          activeUsers: this.activeUsers,
+          concurrentEdits: this.concurrentEdits,
+          changesToday: this.changesToday,
+          teamCoverage: this.teamCoverage,
+          qualityScore: this.qualityScore
+        });
+      }
+      
+      updateSyncDisplay() {
+        console.log('Sync status updated:', this.syncStatus, this.lastSync);
+      }
+      
+      updateLiveUserCount() {
+        // Update live user indicators
+        console.log('Live users:', this.activeUsers);
+      }
+      
+      updateEditingStatus() {
+        // Update real-time editing status
+        console.log('Concurrent edits:', this.concurrentEdits);
+      }
+      
+      updateSyncIndicators() {
+        // Update sync status indicators
+        console.log('Sync indicators updated');
+      }
+      
+      updateConflictDisplay() {
+        console.log('Conflict display updated:', this.conflictResolution);
+      }
+      
+      updateOfflineDisplay() {
+        console.log('Offline queue display updated:', this.offlineQueue);
+      }
+      
+      // Modal and notification methods
+      displayRoleModal(roleName, roleData) {
+        console.log(`Showing role details for ${roleName}:`, roleData);
+        // In a real implementation, this would show a modal dialog
+      }
+      
+      showPermissionEditor(roleName, roleData) {
+        console.log(`Opening permission editor for ${roleName}:`, roleData);
+        // In a real implementation, this would show a permission editor modal
+      }
+      
+      displayActivityModal(activityName, index) {
+        console.log(`Showing activity details for ${activityName}:`, index);
+      }
+      
+      displayVersionModal(versionName, index) {
+        console.log(`Showing version details for ${versionName}:`, index);
+      }
+      
+      showAnalyticsDetails(metricName, index) {
+        console.log(`Showing analytics details for ${metricName}:`, index);
+      }
+      
+      displayQueueModal(item, index) {
+        console.log(`Showing queue item details:`, item, index);
+      }
+      
+      displayTooltip(element, content) {
+        const tooltip = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        tooltip.setAttribute('class', 'analytics-tooltip');
+        console.log('Showing tooltip:', content);
+      }
+      
+      addActivityToFeed(activity) {
+        console.log('Adding to activity feed:', activity);
+        // In a real implementation, this would add the activity to the feed
+      }
+      
+      showConflictNotification() {
+        console.log('Showing conflict notification');
+        // In a real implementation, this would show a notification
+      }
+      
+      showSyncNotification() {
+        console.log('Showing sync notification for', this.offlineQueue.length, 'items');
+        // In a real implementation, this would show a notification
+      }
+    }
+    
+    // Initialize the collaboration framework when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        new TeamCollaborationFramework();
+      });
+    } else {
+      new TeamCollaborationFramework();
+    }
+    ]]>
+  </script>
+  
+  <!-- CSS for responsive design and accessibility -->
+  <style>
+    <![CDATA[
+    .role-item {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .role-item:hover {
+      filter: url(#collaborationGlow);
+    }
+    
+    .activity-item {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .activity-item:hover {
+      filter: url(#realTimeGlow);
+      transform: scale(1.02);
+    }
+    
+    .version-item {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .version-item:hover {
+      filter: url(#versionGlow);
+    }
+    
+    rect[cursor="pointer"] {
+      transition: all 0.2s ease;
+    }
+    
+    rect[cursor="pointer"]:hover {
+      transform: scale(1.05);
+      filter: url(#collaborationGlow);
+    }
+    
+    @media (max-width: 768px) {
+      /* Mobile responsive adjustments */
+      text {
+        font-size: 10px;
+      }
+      
+      .role-item rect,
+      .activity-item rect,
+      .version-item rect {
+        height: auto;
+        min-height: 50px;
+      }
+      
+      #collaboration-dashboard,
+      #roles-matrix,
+      #activity-feed,
+      #conflict-resolution,
+      #version-control,
+      #analytics-panel,
+      #offline-mobile {
+        width: 100%;
+        height: auto;
+      }
+      
+      /* Stack panels vertically on mobile */
+      #activity-feed {
+        transform: translate(50px, 750px);
+      }
+      
+      #conflict-resolution {
+        transform: translate(50px, 1220px);
+      }
+      
+      #version-control {
+        transform: translate(50px, 1540px);
+      }
+      
+      #analytics-panel {
+        transform: translate(50px, 1860px);
+      }
+      
+      #offline-mobile {
+        transform: translate(50px, 2130px);
+      }
+    }
+    
+    /* Accessibility enhancements */
+    circle:focus,
+    rect:focus {
+      outline: 2px solid #667EEA;
+      outline-offset: 2px;
+    }
+    
+    .analytics-tooltip {
+      filter: url(#collaborationGlow);
+    }
+    
+    /* Animation for real-time updates */
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    
+    .real-time-update {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Collaboration animations */
+    @keyframes collaboration {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+    
+    .collaboration-active {
+      animation: collaboration 3s infinite;
+    }
+    
+    /* Conflict resolution animations */
+    @keyframes conflict {
+      0% { border-color: #EF4444; }
+      50% { border-color: #F59E0B; }
+      100% { border-color: #EF4444; }
+    }
+    
+    .conflict-active {
+      animation: conflict 2s infinite;
+    }
+    
+    /* Version control indicators */
+    @keyframes sync {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .sync-active {
+      animation: sync 2s linear infinite;
+    }
+    ]]>
+  </style>
+</svg>
