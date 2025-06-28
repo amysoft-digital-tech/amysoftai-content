@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cm06-title cm06-desc">
+  <title id="cm06-title">Context Quality Assessment Matrix - Multi-Dimensional Quality Scoring System</title>
+  <desc id="cm06-desc">Comprehensive quality assessment matrix evaluating context across 5 dimensions (Completeness, Accuracy, Relevance, Optimization, Usability) with automated scoring algorithms, improvement recommendations, and trend tracking analytics</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Quality scoring gradient themes -->
+    <linearGradient id="qualityPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Quality dimension gradients -->
+    <linearGradient id="completenessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accuracyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="relevanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="optimizationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="usabilityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Score level gradients -->
+    <linearGradient id="excellentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="goodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="averageGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="poorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="qualityGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#667EEA" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="excellentGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10B981" flood-opacity="0.4"/>
+    </filter>
+    
+    <filter id="warningGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="alertGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#EF4444" flood-opacity="0.6"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="qualityArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#667EEA" />
+    </marker>
+    
+    <marker id="improvementArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10B981" />
+    </marker>
+    
+    <!-- Quality patterns -->
+    <pattern id="excellentPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#F0FDF4"/>
+      <circle cx="10" cy="10" r="4" fill="#10B981" opacity="0.4"/>
+      <path d="M6 10 L9 13 L14 8" stroke="#10B981" stroke-width="2" fill="none" opacity="0.6"/>
+    </pattern>
+    
+    <pattern id="improvementPattern" patternUnits="userSpaceOnUse" width="18" height="18">
+      <rect width="18" height="18" fill="#FEF3C7"/>
+      <circle cx="9" cy="9" r="3" fill="#F59E0B" opacity="0.5"/>
+      <path d="M9 6 L9 12 M6 9 L12 9" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
+    </pattern>
+    
+    <pattern id="alertPattern" patternUnits="userSpaceOnUse" width="16" height="16">
+      <rect width="16" height="16" fill="#FEF2F2"/>
+      <polygon points="8,2 6,12 10,12" fill="#EF4444" opacity="0.6"/>
+      <circle cx="8" cy="14" r="1" fill="#EF4444" opacity="0.8"/>
+    </pattern>
+    
+    <!-- Scoring scale patterns -->
+    <linearGradient id="scoreScale" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1200" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1600" height="90" fill="url(#qualityPrimaryGradient)" />
+  <text x="60" y="40" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="white">
+    Context Quality Assessment Matrix
+  </text>
+  <text x="60" y="65" font-family="Inter, sans-serif" font-size="18" fill="#E2E8F0">
+    Multi-Dimensional Quality Scoring System - Automated Assessment & Improvement Recommendations
+  </text>
+  
+  <!-- Quality Assessment Icon -->
+  <g id="quality-icon" transform="translate(1480, 25)">
+    <circle cx="25" cy="25" r="22" fill="white" opacity="0.2"/>
+    <rect x="15" y="15" width="20" height="20" rx="4" fill="white" opacity="0.8"/>
+    <rect x="18" y="18" width="14" height="14" rx="2" fill="none" stroke="#667EEA" stroke-width="2"/>
+    <circle cx="25" cy="25" r="3" fill="#667EEA"/>
+    <path d="M22 22 L28 28 M28 22 L22 28" stroke="#667EEA" stroke-width="1"/>
+  </g>
+  
+  <!-- Overall Quality Score Dashboard -->
+  <g id="quality-dashboard" transform="translate(50, 110)">
+    <rect x="0" y="0" width="1500" height="120" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="1500" height="45" rx="12" fill="url(#qualityPrimaryGradient)"/>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      📊 Overall Context Quality Dashboard
+    </text>
+    
+    <!-- Overall quality score -->
+    <g transform="translate(25, 55)">
+      <!-- Overall score circle -->
+      <circle cx="50" cy="30" r="25" fill="none" stroke="#E2E8F0" stroke-width="5"/>
+      <circle cx="50" cy="30" r="25" fill="none" stroke="url(#scoreScale)" stroke-width="5" 
+              stroke-dasharray="125" stroke-dashoffset="31.25" transform="rotate(-90 50 30)"/>
+      <text x="50" y="35" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#667EEA" text-anchor="middle">85</text>
+      <text x="50" y="48" font-family="Inter, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Overall Score</text>
+      
+      <!-- Quality grade -->
+      <rect x="100" y="15" width="100" height="30" rx="6" fill="#10B981" opacity="0.1"/>
+      <text x="150" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#059669" text-anchor="middle">Grade: B+</text>
+      <text x="150" y="42" font-family="Inter, sans-serif" font-size="11" fill="#059669" text-anchor="middle">Good Quality</text>
+      
+      <!-- Quick stats -->
+      <g transform="translate(220, 0)">
+        <!-- Dimensions above threshold -->
+        <rect x="0" y="0" width="140" height="60" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Excellent Dimensions</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#10B981">3/5</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="10" fill="#059669">Completeness, Accuracy, Relevance</text>
+        
+        <!-- Improvement needed -->
+        <rect x="160" y="0" width="140" height="60" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="175" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Needs Improvement</text>
+        <text x="175" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#F59E0B">2/5</text>
+        <text x="175" y="50" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Optimization, Usability</text>
+        
+        <!-- Last assessment -->
+        <rect x="320" y="0" width="140" height="60" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="335" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1E40AF">Last Assessment</text>
+        <text x="335" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#3B82F6">2 hours ago</text>
+        <text x="335" y="50" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">Auto-scan: Enabled</text>
+        
+        <!-- Trend indicator -->
+        <rect x="480" y="0" width="140" height="60" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="495" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Quality Trend</text>
+        <text x="495" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#8B5CF6">↗ +7 pts</text>
+        <text x="495" y="50" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">vs. last month</text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(1050, 15)">
+        <rect x="0" y="0" width="120" height="30" rx="6" fill="#10B981" cursor="pointer"/>
+        <text x="60" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">📈 Generate Report</text>
+        
+        <rect x="140" y="0" width="120" height="30" rx="6" fill="#3B82F6" cursor="pointer"/>
+        <text x="200" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">🔄 Re-assess Now</text>
+        
+        <rect x="280" y="0" width="120" height="30" rx="6" fill="#8B5CF6" cursor="pointer"/>
+        <text x="340" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">⚙️ Configure</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 5 Quality Dimensions Matrix -->
+  <g id="quality-matrix" transform="translate(50, 250)">
+    
+    <!-- Matrix Header -->
+    <rect x="0" y="0" width="1500" height="40" rx="8" fill="url(#qualityPrimaryGradient)" opacity="0.1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#667EEA">
+      Quality Assessment Matrix - 5 Core Dimensions
+    </text>
+    
+    <!-- Dimension 1: Completeness -->
+    <g id="completeness-dimension" class="quality-dimension">
+      <rect x="0" y="50" width="1500" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="0" y="50" width="200" height="120" rx="8" fill="url(#completenessGradient)" opacity="0.1"/>
+      <rect x="20" y="70" width="160" height="25" rx="4" fill="url(#completenessGradient)"/>
+      <text x="30" y="88" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        🏗️ Completeness (92/100)
+      </text>
+      
+      <!-- Completeness metrics -->
+      <g transform="translate(220, 70)">
+        <!-- Coverage metrics -->
+        <rect x="0" y="0" width="240" height="80" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Coverage Analysis</text>
+        
+        <!-- Architecture coverage -->
+        <g transform="translate(15, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="95" height="8" rx="4" fill="#10B981"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#059669">Architecture: 95%</text>
+        </g>
+        
+        <!-- API docs coverage -->
+        <g transform="translate(125, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="88" height="8" rx="4" fill="#10B981"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#059669">API Docs: 88%</text>
+        </g>
+        
+        <!-- Code examples -->
+        <g transform="translate(15, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="92" height="8" rx="4" fill="#10B981"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#059669">Examples: 92%</text>
+        </g>
+        
+        <!-- Workflow docs -->
+        <g transform="translate(125, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="89" height="8" rx="4" fill="#10B981"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#059669">Workflows: 89%</text>
+        </g>
+      </g>
+      
+      <!-- Completeness score -->
+      <g transform="translate(480, 70)">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#10B981" stroke-width="4" 
+                stroke-dasharray="188" stroke-dashoffset="15" transform="rotate(-90 40 40)"/>
+        <text x="40" y="45" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#10B981" text-anchor="middle">92</text>
+        <text x="40" y="58" font-family="Inter, sans-serif" font-size="10" fill="#059669" text-anchor="middle">Excellent</text>
+      </g>
+      
+      <!-- Completeness recommendations -->
+      <g transform="translate(580, 70)">
+        <rect x="0" y="0" width="400" height="80" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">Improvement Recommendations</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Add deployment procedures documentation (+3 pts)</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Include troubleshooting guides for common issues (+2 pts)</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Document integration testing scenarios (+3 pts)</text>
+      </g>
+      
+      <!-- Automated assessment -->
+      <g transform="translate(1000, 70)">
+        <rect x="0" y="0" width="180" height="80" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Auto-Assessment</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#059669">✓ Architecture docs: Complete</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#059669">✓ API coverage: Excellent</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#D97706">⚠ Deployment docs: Missing</text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(1200, 70)">
+        <rect x="0" y="0" width="80" height="25" rx="4" fill="#10B981" cursor="pointer"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📋 Details</text>
+        
+        <rect x="0" y="30" width="80" height="25" rx="4" fill="#3B82F6" cursor="pointer"/>
+        <text x="40" y="46" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🔧 Improve</text>
+        
+        <rect x="90" y="0" width="80" height="55" rx="4" fill="#8B5CF6" cursor="pointer"/>
+        <text x="130" y="30" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📊 Trend</text>
+      </g>
+    </g>
+    
+    <!-- Dimension 2: Accuracy -->
+    <g id="accuracy-dimension" class="quality-dimension">
+      <rect x="0" y="180" width="1500" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="0" y="180" width="200" height="120" rx="8" fill="url(#accuracyGradient)" opacity="0.1"/>
+      <rect x="20" y="200" width="160" height="25" rx="4" fill="url(#accuracyGradient)"/>
+      <text x="30" y="218" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        🎯 Accuracy (88/100)
+      </text>
+      
+      <!-- Accuracy metrics -->
+      <g transform="translate(220, 200)">
+        <rect x="0" y="0" width="240" height="80" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1E40AF">Accuracy Validation</text>
+        
+        <!-- Code accuracy -->
+        <g transform="translate(15, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="91" height="8" rx="4" fill="#3B82F6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">Code Examples: 91%</text>
+        </g>
+        
+        <!-- Technical specs -->
+        <g transform="translate(125, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="85" height="8" rx="4" fill="#3B82F6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">Tech Specs: 85%</text>
+        </g>
+        
+        <!-- Version compatibility -->
+        <g transform="translate(15, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="88" height="8" rx="4" fill="#3B82F6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">Versions: 88%</text>
+        </g>
+        
+        <!-- Configuration accuracy -->
+        <g transform="translate(125, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="87" height="8" rx="4" fill="#3B82F6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">Config: 87%</text>
+        </g>
+      </g>
+      
+      <!-- Accuracy score -->
+      <g transform="translate(480, 200)">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#3B82F6" stroke-width="4" 
+                stroke-dasharray="188" stroke-dashoffset="23" transform="rotate(-90 40 40)"/>
+        <text x="40" y="45" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#3B82F6" text-anchor="middle">88</text>
+        <text x="40" y="58" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8" text-anchor="middle">Good</text>
+      </g>
+      
+      <!-- Accuracy recommendations -->
+      <g transform="translate(580, 200)">
+        <rect x="0" y="0" width="400" height="80" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">Improvement Recommendations</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Update Angular version references to 18+ (+4 pts)</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Verify NestJS configuration examples (+3 pts)</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Test all provided code snippets (+5 pts)</text>
+      </g>
+      
+      <!-- Automated validation -->
+      <g transform="translate(1000, 200)">
+        <rect x="0" y="0" width="180" height="80" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1E40AF">Auto-Validation</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">✓ Syntax check: Passed</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#1D4ED8">✓ Link validation: OK</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#F59E0B">⚠ Dependencies: Outdated</text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(1200, 200)">
+        <rect x="0" y="0" width="80" height="25" rx="4" fill="#3B82F6" cursor="pointer"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📋 Details</text>
+        
+        <rect x="0" y="30" width="80" height="25" rx="4" fill="#F59E0B" cursor="pointer"/>
+        <text x="40" y="46" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🔧 Fix</text>
+        
+        <rect x="90" y="0" width="80" height="55" rx="4" fill="#8B5CF6" cursor="pointer"/>
+        <text x="130" y="30" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📊 Trend</text>
+      </g>
+    </g>
+    
+    <!-- Dimension 3: Relevance -->
+    <g id="relevance-dimension" class="quality-dimension">
+      <rect x="0" y="310" width="1500" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="0" y="310" width="200" height="120" rx="8" fill="url(#relevanceGradient)" opacity="0.1"/>
+      <rect x="20" y="330" width="160" height="25" rx="4" fill="url(#relevanceGradient)"/>
+      <text x="30" y="348" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        🎖️ Relevance (91/100)
+      </text>
+      
+      <!-- Relevance metrics -->
+      <g transform="translate(220, 330)">
+        <rect x="0" y="0" width="240" height="80" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Relevance Analysis</text>
+        
+        <!-- Current usage -->
+        <g transform="translate(15, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="94" height="8" rx="4" fill="#8B5CF6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">Current Use: 94%</text>
+        </g>
+        
+        <!-- Project alignment -->
+        <g transform="translate(125, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="89" height="8" rx="4" fill="#8B5CF6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">Alignment: 89%</text>
+        </g>
+        
+        <!-- Team needs -->
+        <g transform="translate(15, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="92" height="8" rx="4" fill="#8B5CF6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">Team Needs: 92%</text>
+        </g>
+        
+        <!-- Future roadmap -->
+        <g transform="translate(125, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="87" height="8" rx="4" fill="#8B5CF6"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">Roadmap: 87%</text>
+        </g>
+      </g>
+      
+      <!-- Relevance score -->
+      <g transform="translate(480, 330)">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#8B5CF6" stroke-width="4" 
+                stroke-dasharray="188" stroke-dashoffset="17" transform="rotate(-90 40 40)"/>
+        <text x="40" y="45" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#8B5CF6" text-anchor="middle">91</text>
+        <text x="40" y="58" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED" text-anchor="middle">Excellent</text>
+      </g>
+      
+      <!-- Relevance recommendations -->
+      <g transform="translate(580, 330)">
+        <rect x="0" y="0" width="400" height="80" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#374151">Improvement Recommendations</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Update context for Q4 roadmap changes (+3 pts)</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Add mobile-first development practices (+2 pts)</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#64748B">• Include performance optimization guidelines (+4 pts)</text>
+      </g>
+      
+      <!-- Relevance tracking -->
+      <g transform="translate(1000, 330)">
+        <rect x="0" y="0" width="180" height="80" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Usage Tracking</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7C3AED">✓ Active references: 847</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#7C3AED">✓ Recent access: 156/week</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#059669">↗ Usage trend: +12%</text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(1200, 330)">
+        <rect x="0" y="0" width="80" height="25" rx="4" fill="#8B5CF6" cursor="pointer"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📋 Details</text>
+        
+        <rect x="0" y="30" width="80" height="25" rx="4" fill="#10B981" cursor="pointer"/>
+        <text x="40" y="46" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🔧 Enhance</text>
+        
+        <rect x="90" y="0" width="80" height="55" rx="4" fill="#F59E0B" cursor="pointer"/>
+        <text x="130" y="30" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📊 Usage</text>
+      </g>
+    </g>
+    
+    <!-- Dimension 4: Optimization -->
+    <g id="optimization-dimension" class="quality-dimension">
+      <rect x="0" y="440" width="1500" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="0" y="440" width="200" height="120" rx="8" fill="url(#optimizationGradient)" opacity="0.1"/>
+      <rect x="20" y="460" width="160" height="25" rx="4" fill="url(#optimizationGradient)"/>
+      <text x="30" y="478" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        ⚡ Optimization (74/100)
+      </text>
+      
+      <!-- Optimization metrics -->
+      <g transform="translate(220, 460)">
+        <rect x="0" y="0" width="240" height="80" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Performance Analysis</text>
+        
+        <!-- Load performance -->
+        <g transform="translate(15, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="72" height="8" rx="4" fill="#F59E0B"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Load Time: 72%</text>
+        </g>
+        
+        <!-- Search optimization -->
+        <g transform="translate(125, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="68" height="8" rx="4" fill="#F59E0B"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Search: 68%</text>
+        </g>
+        
+        <!-- Navigation efficiency -->
+        <g transform="translate(15, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="78" height="8" rx="4" fill="#F59E0B"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Navigation: 78%</text>
+        </g>
+        
+        <!-- Content organization -->
+        <g transform="translate(125, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="76" height="8" rx="4" fill="#F59E0B"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Organization: 76%</text>
+        </g>
+      </g>
+      
+      <!-- Optimization score -->
+      <g transform="translate(480, 460)">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#F59E0B" stroke-width="4" 
+                stroke-dasharray="188" stroke-dashoffset="49" transform="rotate(-90 40 40)"/>
+        <text x="40" y="45" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#F59E0B" text-anchor="middle">74</text>
+        <text x="40" y="58" font-family="Inter, sans-serif" font-size="10" fill="#D97706" text-anchor="middle">Needs Work</text>
+      </g>
+      
+      <!-- Optimization recommendations -->
+      <g transform="translate(580, 460)">
+        <rect x="0" y="0" width="400" height="80" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">High Priority Improvements</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#92400E">• Implement search indexing for faster discovery (+8 pts)</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#92400E">• Add quick reference sections for common tasks (+6 pts)</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#92400E">• Optimize content structure with better categorization (+10 pts)</text>
+      </g>
+      
+      <!-- Performance alerts -->
+      <g transform="translate(1000, 460)">
+        <rect x="0" y="0" width="180" height="80" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">Performance Alerts</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#DC2626">⚠ Slow search queries (>2s)</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#DC2626">⚠ Deep navigation required</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#DC2626">❌ Missing quick access menu</text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(1200, 460)">
+        <rect x="0" y="0" width="80" height="25" rx="4" fill="#F59E0B" cursor="pointer"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🔍 Analyze</text>
+        
+        <rect x="0" y="30" width="80" height="25" rx="4" fill="#EF4444" cursor="pointer"/>
+        <text x="40" y="46" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🚀 Optimize</text>
+        
+        <rect x="90" y="0" width="80" height="55" rx="4" fill="#8B5CF6" cursor="pointer"/>
+        <text x="130" y="30" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">📊 Metrics</text>
+      </g>
+    </g>
+    
+    <!-- Dimension 5: Usability -->
+    <g id="usability-dimension" class="quality-dimension">
+      <rect x="0" y="570" width="1500" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+      <rect x="0" y="570" width="200" height="120" rx="8" fill="url(#usabilityGradient)" opacity="0.1"/>
+      <rect x="20" y="590" width="160" height="25" rx="4" fill="url(#usabilityGradient)"/>
+      <text x="30" y="608" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        👥 Usability (69/100)
+      </text>
+      
+      <!-- Usability metrics -->
+      <g transform="translate(220, 590)">
+        <rect x="0" y="0" width="240" height="80" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">User Experience Analysis</text>
+        
+        <!-- Readability -->
+        <g transform="translate(15, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="71" height="8" rx="4" fill="#EF4444"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#DC2626">Readability: 71%</text>
+        </g>
+        
+        <!-- Navigation clarity -->
+        <g transform="translate(125, 25)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="65" height="8" rx="4" fill="#EF4444"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#DC2626">Navigation: 65%</text>
+        </g>
+        
+        <!-- User feedback -->
+        <g transform="translate(15, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="73" height="8" rx="4" fill="#EF4444"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#DC2626">Feedback: 73%</text>
+        </g>
+        
+        <!-- Accessibility -->
+        <g transform="translate(125, 45)">
+          <rect x="0" y="0" width="100" height="8" rx="4" fill="#E2E8F0"/>
+          <rect x="0" y="0" width="67" height="8" rx="4" fill="#EF4444"/>
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="10" fill="#DC2626">A11y: 67%</text>
+        </g>
+      </g>
+      
+      <!-- Usability score -->
+      <g transform="translate(480, 590)">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#E2E8F0" stroke-width="4"/>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="#EF4444" stroke-width="4" 
+                stroke-dasharray="188" stroke-dashoffset="58" transform="rotate(-90 40 40)"/>
+        <text x="40" y="45" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#EF4444" text-anchor="middle">69</text>
+        <text x="40" y="58" font-family="Inter, sans-serif" font-size="10" fill="#DC2626" text-anchor="middle">Poor</text>
+      </g>
+      
+      <!-- Usability recommendations -->
+      <g transform="translate(580, 590)">
+        <rect x="0" y="0" width="400" height="80" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">Critical Improvements Needed</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#991B1B">• Simplify complex technical explanations (+12 pts)</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#991B1B">• Add visual aids and diagrams for clarity (+15 pts)</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#991B1B">• Implement user feedback collection system (+10 pts)</text>
+      </g>
+      
+      <!-- User feedback -->
+      <g transform="translate(1000, 590)">
+        <rect x="0" y="0" width="180" height="80" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+        <text x="15" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">User Feedback</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="11" fill="#DC2626">❌ "Too complex for beginners"</text>
+        <text x="15" y="50" font-family="Inter, sans-serif" font-size="11" fill="#DC2626">❌ "Hard to find specific info"</text>
+        <text x="15" y="65" font-family="Inter, sans-serif" font-size="11" fill="#F59E0B">⚠ "Needs more examples"</text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(1200, 590)">
+        <rect x="0" y="0" width="80" height="25" rx="4" fill="#EF4444" cursor="pointer"/>
+        <text x="40" y="16" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🔍 Research</text>
+        
+        <rect x="0" y="30" width="80" height="25" rx="4" fill="#DC2626" cursor="pointer"/>
+        <text x="40" y="46" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">🎨 Redesign</text>
+        
+        <rect x="90" y="0" width="80" height="55" rx="4" fill="#8B5CF6" cursor="pointer"/>
+        <text x="130" y="30" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white" text-anchor="middle">👥 Users</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Trend Tracking Panel -->
+  <g id="trend-tracking" transform="translate(50, 960)">
+    <rect x="0" y="0" width="750" height="180" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="750" height="40" rx="12" fill="url(#qualityPrimaryGradient)"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+      📈 Quality Evolution Trend Tracking
+    </text>
+    
+    <!-- Trend visualization -->
+    <g transform="translate(20, 55)">
+      <!-- Time axis -->
+      <line x1="40" y1="100" x2="700" y2="100" stroke="#CBD5E1" stroke-width="1"/>
+      
+      <!-- Time labels -->
+      <g font-family="Inter, sans-serif" font-size="10" fill="#64748B">
+        <text x="40" y="115" text-anchor="middle">Jan</text>
+        <text x="150" y="115" text-anchor="middle">Mar</text>
+        <text x="260" y="115" text-anchor="middle">May</text>
+        <text x="370" y="115" text-anchor="middle">Jul</text>
+        <text x="480" y="115" text-anchor="middle">Sep</text>
+        <text x="590" y="115" text-anchor="middle">Nov</text>
+        <text x="700" y="115" text-anchor="middle">Now</text>
+      </g>
+      
+      <!-- Quality dimension trend lines -->
+      <!-- Completeness trend -->
+      <path d="M40 70 Q150 65 260 60 Q370 55 480 50 Q590 45 700 40" stroke="#10B981" stroke-width="3" fill="none"/>
+      <circle cx="700" cy="40" r="4" fill="#10B981"/>
+      <text x="705" y="38" font-family="Inter, sans-serif" font-size="10" fill="#10B981">Completeness: 92</text>
+      
+      <!-- Accuracy trend -->
+      <path d="M40 75 Q150 70 260 68 Q370 65 480 62 Q590 60 700 58" stroke="#3B82F6" stroke-width="3" fill="none"/>
+      <circle cx="700" cy="58" r="4" fill="#3B82F6"/>
+      <text x="705" y="56" font-family="Inter, sans-serif" font-size="10" fill="#3B82F6">Accuracy: 88</text>
+      
+      <!-- Relevance trend -->
+      <path d="M40 80 Q150 75 260 70 Q370 65 480 60 Q590 55 700 50" stroke="#8B5CF6" stroke-width="3" fill="none"/>
+      <circle cx="700" cy="50" r="4" fill="#8B5CF6"/>
+      <text x="705" y="48" font-family="Inter, sans-serif" font-size="10" fill="#8B5CF6">Relevance: 91</text>
+      
+      <!-- Optimization trend -->
+      <path d="M40 90 Q150 88 260 85 Q370 83 480 80 Q590 78 700 75" stroke="#F59E0B" stroke-width="3" fill="none"/>
+      <circle cx="700" cy="75" r="4" fill="#F59E0B"/>
+      <text x="705" y="73" font-family="Inter, sans-serif" font-size="10" fill="#F59E0B">Optimization: 74</text>
+      
+      <!-- Usability trend -->
+      <path d="M40 95 Q150 93 260 90 Q370 88 480 85 Q590 83 700 80" stroke="#EF4444" stroke-width="3" fill="none"/>
+      <circle cx="700" cy="80" r="4" fill="#EF4444"/>
+      <text x="705" y="78" font-family="Inter, sans-serif" font-size="10" fill="#EF4444">Usability: 69</text>
+      
+      <!-- Scale markers -->
+      <g font-family="Inter, sans-serif" font-size="9" fill="#9CA3AF">
+        <text x="35" y="25" text-anchor="end">100</text>
+        <text x="35" y="50" text-anchor="end">80</text>
+        <text x="35" y="75" text-anchor="end">60</text>
+        <text x="35" y="100" text-anchor="end">40</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Export & Configuration Panel -->
+  <g id="export-panel" transform="translate(820, 960)">
+    <rect x="0" y="0" width="730" height="180" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="730" height="40" rx="12" fill="url(#qualityPrimaryGradient)"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="white">
+      📊 Export & Configuration Center
+    </text>
+    
+    <!-- Export options -->
+    <g transform="translate(20, 55)">
+      <!-- Report generation -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="220" height="50" rx="6" fill="#F0FDF4" stroke="#10B981"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#166534">Generate Quality Report</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="10" fill="#059669">PDF, Excel, JSON formats</text>
+        <rect x="170" y="15" width="40" height="20" rx="4" fill="#10B981" cursor="pointer"/>
+        <text x="190" y="28" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">📄 Export</text>
+      </g>
+      
+      <!-- Assessment configuration -->
+      <g transform="translate(240, 0)">
+        <rect x="0" y="0" width="220" height="50" rx="6" fill="#F0F9FF" stroke="#3B82F6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1E40AF">Configure Assessment</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="10" fill="#1D4ED8">Scoring weights & thresholds</text>
+        <rect x="170" y="15" width="40" height="20" rx="4" fill="#3B82F6" cursor="pointer"/>
+        <text x="190" y="28" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">⚙️ Setup</text>
+      </g>
+      
+      <!-- Automation settings -->
+      <g transform="translate(480, 0)">
+        <rect x="0" y="0" width="220" height="50" rx="6" fill="#F3E8FF" stroke="#8B5CF6"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#6B21A8">Automation Settings</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">Schedule & notifications</text>
+        <rect x="170" y="15" width="40" height="20" rx="4" fill="#8B5CF6" cursor="pointer"/>
+        <text x="190" y="28" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">🤖 Auto</text>
+      </g>
+      
+      <!-- Quality alerts configuration -->
+      <g transform="translate(0, 65)">
+        <rect x="0" y="0" width="330" height="50" rx="6" fill="#FEF3C7" stroke="#F59E0B"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#92400E">Quality Alert Thresholds</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="10" fill="#D97706">Critical: <70 | Warning: <80 | Good: ≥80</text>
+        <rect x="270" y="15" width="50" height="20" rx="4" fill="#F59E0B" cursor="pointer"/>
+        <text x="295" y="28" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">🚨 Config</text>
+      </g>
+      
+      <!-- Integration options -->
+      <g transform="translate(350, 65)">
+        <rect x="0" y="0" width="350" height="50" rx="6" fill="#FEF2F2" stroke="#EF4444"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#991B1B">CI/CD Integration</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="10" fill="#DC2626">GitHub Actions, Jenkins, Azure DevOps</text>
+        <rect x="290" y="15" width="50" height="20" rx="4" fill="#EF4444" cursor="pointer"/>
+        <text x="315" y="28" font-family="Inter, sans-serif" font-size="10" fill="white" text-anchor="middle">🔗 Connect</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Interactive JavaScript for matrix functionality -->
+  <script type="text/javascript">
+    <![CDATA[
+    // Context Quality Assessment Matrix Interactive Functionality
+    class ContextQualityMatrix {
+      constructor() {
+        this.dimensions = {
+          completeness: 92,
+          accuracy: 88,
+          relevance: 91,
+          optimization: 74,
+          usability: 69
+        };
+        this.overallScore = 85;
+        this.lastAssessment = new Date(Date.now() - 2 * 60 * 60 * 1000); // 2 hours ago
+        this.autoScanEnabled = true;
+        this.trendData = this.initializeTrendData();
+        
+        this.initializeEventListeners();
+        this.startRealTimeUpdates();
+      }
+      
+      initializeEventListeners() {
+        this.setupDimensionInteractions();
+        this.setupActionButtons();
+        this.setupExportFunctions();
+        this.setupConfigurationPanels();
+      }
+      
+      setupDimensionInteractions() {
+        // Quality dimension interactions
+        const dimensions = document.querySelectorAll('.quality-dimension');
+        dimensions.forEach((dimension, index) => {
+          dimension.addEventListener('mouseenter', () => this.highlightDimension(index));
+          dimension.addEventListener('mouseleave', () => this.unhighlightDimension(index));
+          dimension.addEventListener('click', () => this.selectDimension(index));
+        });
+        
+        // Score circle interactions
+        const scoreCircles = document.querySelectorAll('.quality-dimension circle[stroke*="#"]');
+        scoreCircles.forEach((circle, index) => {
+          circle.addEventListener('click', () => this.showScoreDetails(index));
+          circle.addEventListener('mouseenter', () => this.highlightScore(circle));
+          circle.addEventListener('mouseleave', () => this.unhighlightScore(circle));
+        });
+      }
+      
+      setupActionButtons() {
+        // Dimension action buttons
+        const actionButtons = document.querySelectorAll('#quality-matrix rect[cursor="pointer"]');
+        actionButtons.forEach((button, index) => {
+          button.addEventListener('click', () => this.handleDimensionAction(index));
+          button.addEventListener('mouseenter', () => this.highlightButton(button));
+          button.addEventListener('mouseleave', () => this.unhighlightButton(button));
+        });
+        
+        // Dashboard action buttons
+        const dashboardButtons = document.querySelectorAll('#quality-dashboard rect[cursor="pointer"]');
+        dashboardButtons.forEach((button, index) => {
+          button.addEventListener('click', () => this.handleDashboardAction(index));
+        });
+      }
+      
+      setupExportFunctions() {
+        // Export panel interactions
+        const exportButtons = document.querySelectorAll('#export-panel rect[cursor="pointer"]');
+        exportButtons.forEach((button, index) => {
+          button.addEventListener('click', () => this.handleExportAction(index));
+          button.addEventListener('mouseenter', () => this.showExportTooltip(button, index));
+          button.addEventListener('mouseleave', () => this.hideExportTooltip());
+        });
+      }
+      
+      setupConfigurationPanels() {
+        // Configuration interactions
+        const configPanels = document.querySelectorAll('#export-panel g[transform*="translate"]');
+        configPanels.forEach((panel, index) => {
+          panel.addEventListener('click', () => this.openConfigurationDialog(index));
+        });
+      }
+      
+      highlightDimension(dimensionIndex) {
+        const dimensions = ['completeness', 'accuracy', 'relevance', 'optimization', 'usability'];
+        const dimension = document.querySelector(`#${dimensions[dimensionIndex]}-dimension`);
+        if (dimension) {
+          dimension.style.filter = 'url(#qualityGlow)';
+          dimension.style.transform = 'translateX(5px)';
+        }
+      }
+      
+      unhighlightDimension(dimensionIndex) {
+        const dimensions = ['completeness', 'accuracy', 'relevance', 'optimization', 'usability'];
+        const dimension = document.querySelector(`#${dimensions[dimensionIndex]}-dimension`);
+        if (dimension) {
+          dimension.style.filter = 'none';
+          dimension.style.transform = 'translateX(0)';
+        }
+      }
+      
+      selectDimension(dimensionIndex) {
+        const dimensions = ['Completeness', 'Accuracy', 'Relevance', 'Optimization', 'Usability'];
+        this.showDimensionDetails(dimensions[dimensionIndex], dimensionIndex);
+      }
+      
+      showScoreDetails(dimensionIndex) {
+        const scores = [92, 88, 91, 74, 69];
+        const details = this.getDimensionScoreDetails(dimensionIndex, scores[dimensionIndex]);
+        this.displayModal(details);
+      }
+      
+      highlightScore(circle) {
+        circle.style.filter = 'url(#excellentGlow)';
+        circle.style.strokeWidth = '6';
+      }
+      
+      unhighlightScore(circle) {
+        circle.style.filter = 'none';
+        circle.style.strokeWidth = '4';
+      }
+      
+      handleDimensionAction(actionIndex) {
+        const actions = ['details', 'improve', 'trend', 'fix', 'enhance', 'usage', 'analyze', 'optimize', 'metrics', 'research', 'redesign', 'users'];
+        this.executeDimensionAction(actions[actionIndex % actions.length], actionIndex);
+      }
+      
+      handleDashboardAction(actionIndex) {
+        const dashboardActions = ['generateReport', 'reassess', 'configure'];
+        switch (actionIndex) {
+          case 0:
+            this.generateQualityReport();
+            break;
+          case 1:
+            this.reassessQuality();
+            break;
+          case 2:
+            this.openConfiguration();
+            break;
+        }
+      }
+      
+      handleExportAction(actionIndex) {
+        const exportActions = ['export', 'setup', 'auto', 'config', 'connect'];
+        this.executeExportAction(exportActions[actionIndex % exportActions.length], actionIndex);
+      }
+      
+      highlightButton(button) {
+        button.style.filter = 'url(#warningGlow)';
+        button.style.transform = 'scale(1.05)';
+      }
+      
+      unhighlightButton(button) {
+        button.style.filter = 'none';
+        button.style.transform = 'scale(1)';
+      }
+      
+      showExportTooltip(button, index) {
+        const tooltips = [
+          'Generate comprehensive quality assessment report',
+          'Configure assessment parameters and scoring weights',
+          'Set up automated quality monitoring and alerts',
+          'Configure quality alert thresholds and notifications',
+          'Connect to CI/CD pipeline for automated assessments'
+        ];
+        this.displayTooltip(button, tooltips[index % tooltips.length]);
+      }
+      
+      hideExportTooltip() {
+        const tooltip = document.querySelector('.export-tooltip');
+        if (tooltip) tooltip.remove();
+      }
+      
+      openConfigurationDialog(configIndex) {
+        const configs = ['Report Generation', 'Assessment Configuration', 'Automation Settings', 'Quality Alerts', 'CI/CD Integration'];
+        this.showConfigurationModal(configs[configIndex], configIndex);
+      }
+      
+      startRealTimeUpdates() {
+        setInterval(() => {
+          this.updateRealTimeScores();
+          this.checkQualityAlerts();
+          this.updateTrendData();
+        }, 60000); // Update every minute
+      }
+      
+      updateRealTimeScores() {
+        // Simulate real-time score updates
+        Object.keys(this.dimensions).forEach(dimension => {
+          const variance = (Math.random() - 0.5) * 2; // ±1 point variance
+          this.dimensions[dimension] = Math.max(0, Math.min(100, this.dimensions[dimension] + variance));
+        });
+        
+        this.calculateOverallScore();
+        this.updateScoreDisplays();
+      }
+      
+      calculateOverallScore() {
+        const weights = { completeness: 0.25, accuracy: 0.25, relevance: 0.2, optimization: 0.15, usability: 0.15 };
+        this.overallScore = Object.keys(this.dimensions).reduce((total, dimension) => {
+          return total + (this.dimensions[dimension] * weights[dimension]);
+        }, 0);
+      }
+      
+      checkQualityAlerts() {
+        Object.keys(this.dimensions).forEach(dimension => {
+          if (this.dimensions[dimension] < 70) {
+            this.triggerQualityAlert(dimension, 'critical');
+          } else if (this.dimensions[dimension] < 80) {
+            this.triggerQualityAlert(dimension, 'warning');
+          }
+        });
+      }
+      
+      updateTrendData() {
+        // Add current scores to trend data
+        const now = new Date();
+        this.trendData.push({
+          timestamp: now,
+          scores: { ...this.dimensions },
+          overall: this.overallScore
+        });
+        
+        // Keep only last 6 months of data
+        const sixMonthsAgo = new Date(now.getTime() - 6 * 30 * 24 * 60 * 60 * 1000);
+        this.trendData = this.trendData.filter(data => data.timestamp >= sixMonthsAgo);
+      }
+      
+      initializeTrendData() {
+        // Initialize with sample trend data
+        const data = [];
+        const now = new Date();
+        
+        for (let i = 6; i >= 0; i--) {
+          const date = new Date(now.getTime() - i * 30 * 24 * 60 * 60 * 1000);
+          data.push({
+            timestamp: date,
+            scores: {
+              completeness: 75 + Math.random() * 17,
+              accuracy: 70 + Math.random() * 18,
+              relevance: 78 + Math.random() * 13,
+              optimization: 60 + Math.random() * 14,
+              usability: 55 + Math.random() * 14
+            },
+            overall: 70 + Math.random() * 15
+          });
+        }
+        
+        return data;
+      }
+      
+      // Action execution methods
+      generateQualityReport() {
+        const reportData = {
+          timestamp: new Date(),
+          overallScore: this.overallScore,
+          dimensions: this.dimensions,
+          recommendations: this.generateRecommendations(),
+          trendAnalysis: this.analyzeTrends()
+        };
+        
+        console.log('Generating quality report:', reportData);
+        this.downloadReport(reportData);
+      }
+      
+      reassessQuality() {
+        console.log('Starting quality reassessment...');
+        this.lastAssessment = new Date();
+        
+        // Simulate assessment process
+        setTimeout(() => {
+          this.updateRealTimeScores();
+          console.log('Quality reassessment completed');
+        }, 3000);
+      }
+      
+      openConfiguration() {
+        console.log('Opening configuration panel');
+        this.showConfigurationModal('Assessment Configuration', 0);
+      }
+      
+      executeDimensionAction(action, index) {
+        console.log(`Executing ${action} for dimension index ${index}`);
+        
+        switch (action) {
+          case 'details':
+            this.showDimensionDetails(action, index);
+            break;
+          case 'improve':
+          case 'fix':
+          case 'enhance':
+          case 'optimize':
+          case 'redesign':
+            this.startImprovementProcess(action, index);
+            break;
+          case 'trend':
+          case 'usage':
+          case 'metrics':
+            this.showAnalytics(action, index);
+            break;
+          default:
+            console.log(`Unknown action: ${action}`);
+        }
+      }
+      
+      executeExportAction(action, index) {
+        console.log(`Executing export action: ${action}`);
+        
+        switch (action) {
+          case 'export':
+            this.generateQualityReport();
+            break;
+          case 'setup':
+            this.openConfiguration();
+            break;
+          case 'auto':
+            this.configureAutomation();
+            break;
+          case 'config':
+            this.configureAlerts();
+            break;
+          case 'connect':
+            this.setupCICDIntegration();
+            break;
+        }
+      }
+      
+      // Utility methods
+      updateScoreDisplays() {
+        // Update score displays in real-time
+        console.log('Updating score displays:', this.dimensions);
+      }
+      
+      triggerQualityAlert(dimension, severity) {
+        console.log(`Quality alert: ${dimension} dimension has ${severity} issues`);
+      }
+      
+      generateRecommendations() {
+        return Object.keys(this.dimensions).map(dimension => {
+          const score = this.dimensions[dimension];
+          return {
+            dimension,
+            score,
+            recommendations: this.getDimensionRecommendations(dimension, score)
+          };
+        });
+      }
+      
+      analyzeTrends() {
+        return this.trendData.map(data => ({
+          month: data.timestamp.toLocaleDateString('en-US', { month: 'short' }),
+          overall: data.overall,
+          dimensions: data.scores
+        }));
+      }
+      
+      getDimensionRecommendations(dimension, score) {
+        const recommendations = {
+          completeness: ['Add deployment procedures', 'Include troubleshooting guides', 'Document integration testing'],
+          accuracy: ['Update Angular version references', 'Verify NestJS configurations', 'Test code snippets'],
+          relevance: ['Update for Q4 roadmap', 'Add mobile-first practices', 'Include performance optimization'],
+          optimization: ['Implement search indexing', 'Add quick reference sections', 'Optimize content structure'],
+          usability: ['Simplify technical explanations', 'Add visual aids and diagrams', 'Implement feedback collection']
+        };
+        
+        return recommendations[dimension] || [];
+      }
+      
+      getDimensionScoreDetails(index, score) {
+        const dimensions = ['Completeness', 'Accuracy', 'Relevance', 'Optimization', 'Usability'];
+        return {
+          title: `${dimensions[index]} Quality Assessment`,
+          score: score,
+          grade: this.getGrade(score),
+          details: `Detailed analysis of ${dimensions[index].toLowerCase()} metrics and improvement opportunities.`
+        };
+      }
+      
+      getGrade(score) {
+        if (score >= 90) return 'A';
+        if (score >= 80) return 'B';
+        if (score >= 70) return 'C';
+        if (score >= 60) return 'D';
+        return 'F';
+      }
+      
+      // Modal and dialog utilities
+      displayModal(content) {
+        console.log('Displaying modal:', content);
+        // In a real implementation, this would show a modal dialog
+      }
+      
+      displayTooltip(element, content) {
+        const tooltip = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        tooltip.setAttribute('class', 'export-tooltip');
+        console.log('Showing tooltip:', content);
+      }
+      
+      showDimensionDetails(dimension, index) {
+        console.log(`Showing details for ${dimension}:`, index);
+      }
+      
+      showConfigurationModal(title, index) {
+        console.log(`Opening configuration: ${title}`, index);
+      }
+      
+      showAnalytics(type, index) {
+        console.log(`Showing ${type} analytics for dimension:`, index);
+      }
+      
+      startImprovementProcess(action, index) {
+        console.log(`Starting ${action} process for dimension:`, index);
+      }
+      
+      downloadReport(data) {
+        console.log('Downloading report:', data);
+        // In a real implementation, this would generate and download the report
+      }
+      
+      configureAutomation() {
+        console.log('Configuring automation settings');
+      }
+      
+      configureAlerts() {
+        console.log('Configuring quality alerts');
+      }
+      
+      setupCICDIntegration() {
+        console.log('Setting up CI/CD integration');
+      }
+    }
+    
+    // Initialize the matrix when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        new ContextQualityMatrix();
+      });
+    } else {
+      new ContextQualityMatrix();
+    }
+    ]]>
+  </script>
+  
+  <!-- CSS for responsive design and accessibility -->
+  <style>
+    <![CDATA[
+    .quality-dimension {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .quality-dimension:hover {
+      filter: url(#qualityGlow);
+    }
+    
+    .quality-dimension circle {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .quality-dimension rect[cursor="pointer"] {
+      transition: all 0.2s ease;
+    }
+    
+    .quality-dimension rect[cursor="pointer"]:hover {
+      transform: scale(1.05);
+      filter: url(#warningGlow);
+    }
+    
+    #quality-dashboard rect[cursor="pointer"],
+    #export-panel rect[cursor="pointer"] {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    #quality-dashboard rect[cursor="pointer"]:hover,
+    #export-panel rect[cursor="pointer"]:hover {
+      transform: scale(1.05);
+      filter: url(#excellentGlow);
+    }
+    
+    @media (max-width: 768px) {
+      /* Mobile responsive adjustments */
+      text {
+        font-size: 9px;
+      }
+      
+      .quality-dimension rect {
+        height: 100px;
+      }
+      
+      #quality-dashboard,
+      #quality-matrix,
+      #trend-tracking,
+      #export-panel {
+        width: 100%;
+        height: auto;
+      }
+      
+      /* Stack panels vertically on mobile */
+      #trend-tracking {
+        transform: translate(50px, 1060px);
+      }
+      
+      #export-panel {
+        transform: translate(50px, 1260px);
+      }
+    }
+    
+    /* Accessibility enhancements */
+    circle:focus,
+    rect:focus {
+      outline: 2px solid #667EEA;
+      outline-offset: 2px;
+    }
+    
+    .export-tooltip {
+      filter: url(#qualityGlow);
+    }
+    
+    /* Animation for real-time updates */
+    @keyframes qualityPulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+    
+    .real-time-update {
+      animation: qualityPulse 2s infinite;
+    }
+    
+    /* Score circle animations */
+    @keyframes scoreUpdate {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: var(--target-offset); }
+    }
+    
+    .score-update {
+      animation: scoreUpdate 1s ease-in-out;
+    }
+    ]]>
+  </style>
+</svg>
