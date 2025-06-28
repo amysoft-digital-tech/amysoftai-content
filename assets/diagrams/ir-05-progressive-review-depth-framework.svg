@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ir05-title ir05-desc">
-  <title id="ir05-title">Progressive Review Depth Framework - Intelligent Review Orchestration</title>
-  <desc id="ir05-desc">Multi-layered visualization showing progressive review depth levels from surface scanning to deep architectural analysis with AI and human intervention points</desc>
+<svg width="1500" height="1100" viewBox="0 0 1500 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ir05-title ir05-desc">
+  <title id="ir05-title">Progressive Review Depth Framework - Intelligent Review Control System</title>
+  <desc id="ir05-desc">Multi-layered visualization showing progressive review depth levels from surface scanning to deep architectural analysis, with AI and human intervention points, escalation triggers, and resource optimization</desc>
   
   <!-- Definitions for gradients, patterns, and interactive states -->
   <defs>
-    <!-- Depth layer gradients -->
-    <radialGradient id="surfaceLayer" cx="50%" cy="50%" r="80%">
-      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:0.9" />
-      <stop offset="70%" style="stop-color:#2196F3;stop-opacity:0.7" />
-      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:0.5" />
+    <!-- Progressive depth gradient themes -->
+    <linearGradient id="depthPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Depth Level Gradients -->
+    <radialGradient id="surfaceGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <radialGradient id="structuralGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <radialGradient id="logicalGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <radialGradient id="semanticGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <radialGradient id="architecturalGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:0.8" />
     </radialGradient>
     
     <radialGradient id="structuralLayer" cx="50%" cy="50%" r="80%">
@@ -86,7 +111,25 @@
   </defs>
   
   <!-- Background -->
-  <rect width="1200" height="800" fill="#FAFAFA" />
+  <rect width="1500" height="1100" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1500" height="90" fill="url(#depthPrimaryGradient)" />
+  <text x="60" y="40" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="white">
+    Progressive Review Depth Framework
+  </text>
+  <text x="60" y="65" font-family="Inter, sans-serif" font-size="18" fill="#E2E8F0">
+    Intelligent Review Control System - Adaptive Depth Analysis & Resource Optimization
+  </text>
+  
+  <!-- Progressive Depth Icon -->
+  <g id="depth-icon" transform="translate(1380, 25)">
+    <circle cx="25" cy="25" r="22" fill="white" opacity="0.2"/>
+    <circle cx="25" cy="25" r="18" fill="white" opacity="0.4"/>
+    <circle cx="25" cy="25" r="14" fill="white" opacity="0.6"/>
+    <circle cx="25" cy="25" r="10" fill="white" opacity="0.8"/>
+    <circle cx="25" cy="25" r="6" fill="white"/>
+  </g>
   
   <!-- Title Section -->
   <text x="600" y="35" text-anchor="middle" class="title" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1A1A1A">
