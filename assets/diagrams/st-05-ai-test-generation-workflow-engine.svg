@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1500" height="1200" viewBox="0 0 1500 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="st05-title st05-desc">
+  <title id="st05-title">AI Test Generation Workflow Engine - Strategic Testing Automation</title>
+  <desc id="st05-desc">Sophisticated workflow visualization showing the complete process of AI-generated test creation, from code analysis through test generation, validation, and continuous refinement with feedback loops and quality gates</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Workflow gradient themes -->
+    <linearGradient id="workflowPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Stage Gradients -->
+    <linearGradient id="analysisGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="generationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="validationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="qualityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="feedbackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="workflowGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#6366F1" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="qualityGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#F59E0B" flood-opacity="0.4"/>
+    </filter>
+    
+    <filter id="feedbackGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#EF4444" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="workflowArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#6366F1" />
+    </marker>
+    
+    <marker id="qualityArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#F59E0B" />
+    </marker>
+    
+    <marker id="feedbackArrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#EF4444" />
+    </marker>
+    
+    <!-- Workflow patterns -->
+    <pattern id="aiPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#F0F9FF"/>
+      <circle cx="10" cy="10" r="4" fill="#3B82F6" opacity="0.4"/>
+      <path d="M6 6 L14 14 M14 6 L6 14" stroke="#3B82F6" stroke-width="1" opacity="0.3"/>
+    </pattern>
+    
+    <pattern id="qualityPattern" patternUnits="userSpaceOnUse" width="18" height="18">
+      <rect width="18" height="18" fill="#FEF3C7"/>
+      <rect x="4" y="4" width="10" height="10" rx="2" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+      <circle cx="9" cy="9" r="2" fill="#F59E0B" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1500" height="1200" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1500" height="90" fill="url(#workflowPrimaryGradient)" />
+  <text x="60" y="40" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="white">
+    AI Test Generation Workflow Engine
+  </text>
+  <text x="60" y="65" font-family="Inter, sans-serif" font-size="18" fill="#E0E7FF">
+    Strategic Testing Automation - Comprehensive AI-Driven Test Creation & Validation Pipeline
+  </text>
+  
+  <!-- Workflow Engine Icon -->
+  <g id="workflow-icon" transform="translate(1380, 25)">
+    <circle cx="25" cy="25" r="22" fill="white" opacity="0.2"/>
+    <rect x="15" y="15" width="20" height="20" rx="4" fill="white" opacity="0.8"/>
+    <circle cx="20" cy="20" r="2" fill="#6366F1"/>
+    <circle cx="30" cy="20" r="2" fill="#6366F1"/>
+    <circle cx="20" cy="30" r="2" fill="#6366F1"/>
+    <circle cx="30" cy="30" r="2" fill="#6366F1"/>
+    <path d="M22 20 L28 20 M20 22 L20 28 M30 22 L30 28" stroke="#6366F1" stroke-width="1"/>
+  </g>
+  
+  <!-- Workflow Control Dashboard -->
+  <g id="workflow-dashboard" transform="translate(50, 110)">
+    <rect x="0" y="0" width="1400" height="100" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="1400" height="40" rx="12" fill="url(#workflowPrimaryGradient)"/>
+    <text x="25" y="28" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      🚀 Workflow Engine Control Center
+    </text>
+    
+    <!-- Current workflow status -->
+    <g transform="translate(25, 50)">
+      <text x="0" y="18" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">Current Workflow:</text>
+      <text x="0" y="32" font-family="Inter, sans-serif" font-size="12" fill="#6366F1">Authentication Service Test Generation</text>
+      <text x="0" y="44" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Progress: Stage 4 of 8 (Quality Gate Validation)</text>
+      
+      <!-- Progress bar -->
+      <g transform="translate(350, 15)">
+        <rect x="0" y="0" width="300" height="8" rx="4" fill="#E5E7EB"/>
+        <rect x="0" y="0" width="150" height="8" rx="4" fill="#6366F1"/>
+        <text x="310" y="7" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">50%</text>
+      </g>
+      
+      <!-- Workflow metrics -->
+      <g transform="translate(700, 5)">
+        <text x="0" y="12" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#374151">Tests Generated: 247</text>
+        <text x="0" y="24" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#374151">Quality Score: 94%</text>
+        <text x="0" y="36" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#374151">Coverage: 89%</text>
+      </g>
+      
+      <!-- Real-time status -->
+      <g transform="translate(900, 5)">
+        <circle cx="8" cy="8" r="4" fill="#10B981" class="pulse-indicator"/>
+        <text x="18" y="12" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">Active Generation</text>
+        <text x="18" y="24" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">AI Confidence: 92%</text>
+        <text x="18" y="36" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">ETA: 3.2 minutes</text>
+      </g>
+      
+      <!-- Control buttons -->
+      <g transform="translate(1100, 5)">
+        <rect x="0" y="0" width="80" height="25" rx="4" fill="#10B981" class="control-btn" data-action="continue">
+          <title>Continue workflow</title>
+        </rect>
+        <text x="40" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">Continue</text>
+        
+        <rect x="90" y="0" width="80" height="25" rx="4" fill="#F59E0B" class="control-btn" data-action="pause">
+          <title>Pause workflow</title>
+        </rect>
+        <text x="130" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">Pause</text>
+        
+        <rect x="180" y="0" width="80" height="25" rx="4" fill="#EF4444" class="control-btn" data-action="abort">
+          <title>Abort workflow</title>
+        </rect>
+        <text x="220" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">Abort</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Main Workflow Pipeline (8 Stages) -->
+  <g id="workflow-pipeline" transform="translate(100, 250)">
+    
+    <!-- Workflow pipeline background -->
+    <rect x="0" y="0" width="1300" height="700" rx="16" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="1300" height="50" rx="16" fill="url(#aiPattern)"/>
+    <text x="25" y="32" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#1D4ED8">
+      🔄 8-Stage AI Test Generation Pipeline
+    </text>
+    
+    <!-- Stage 1: Code Analysis -->
+    <g class="workflow-stage completed" data-stage="1" transform="translate(50, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="url(#analysisGradient)" stroke="#059669" stroke-width="3" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">
+        Stage 1
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#D1FAE5">
+        Code Analysis
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D1FAE5">
+        AST parsing, complexity
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D1FAE5">
+        analysis, dependency
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D1FAE5">
+        mapping
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#ECFDF5">
+        ✓ COMPLETED
+      </text>
+      
+      <!-- Stage details popup -->
+      <g class="stage-details" transform="translate(-30, 110)">
+        <rect x="0" y="0" width="200" height="70" rx="6" fill="white" stroke="#10B981" stroke-width="1" opacity="0.95"/>
+        <text x="10" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#059669">Analysis Results:</text>
+        <text x="10" y="28" font-family="Inter, sans-serif" font-size="9" fill="#059669">• 47 functions identified</text>
+        <text x="10" y="40" font-family="Inter, sans-serif" font-size="9" fill="#059669">• Complexity score: 6.2/10</text>
+        <text x="10" y="52" font-family="Inter, sans-serif" font-size="9" fill="#059669">• 23 dependencies mapped</text>
+        <text x="10" y="64" font-family="Inter, sans-serif" font-size="9" fill="#059669">• Test surface: 89% coverage</text>
+      </g>
+    </g>
+    
+    <!-- Stage 2: Context Extraction -->
+    <g class="workflow-stage completed" data-stage="2" transform="translate(220, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="url(#analysisGradient)" stroke="#059669" stroke-width="3" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">
+        Stage 2
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#D1FAE5">
+        Context Extraction
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D1FAE5">
+        Business logic, domain
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D1FAE5">
+        rules, integration
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D1FAE5">
+        patterns
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#ECFDF5">
+        ✓ COMPLETED
+      </text>
+    </g>
+    
+    <!-- Stage 3: Test Strategy Planning -->
+    <g class="workflow-stage completed" data-stage="3" transform="translate(390, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="url(#generationGradient)" stroke="#1D4ED8" stroke-width="3" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">
+        Stage 3
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#DBEAFE">
+        Strategy Planning
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#DBEAFE">
+        Test pyramid, priority
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#DBEAFE">
+        matrix, coverage
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#DBEAFE">
+        targets
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EFF6FF">
+        ✓ COMPLETED
+      </text>
+    </g>
+    
+    <!-- Stage 4: AI Test Generation (Current) -->
+    <g class="workflow-stage current" data-stage="4" transform="translate(560, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="url(#generationGradient)" stroke="#3B82F6" stroke-width="5" 
+            class="interactive-element stage-node current-stage" filter="url(#workflowGlow)"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">
+        Stage 4
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#DBEAFE">
+        AI Test Generation
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#DBEAFE">
+        Template matching,
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#DBEAFE">
+        scenario creation,
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#DBEAFE">
+        code synthesis
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EFF6FF">
+        ⏳ IN PROGRESS
+      </text>
+      
+      <!-- Current activity indicator -->
+      <g class="activity-indicator" transform="translate(150, 20)">
+        <circle cx="0" cy="0" r="8" fill="#F59E0B" class="pulse-indicator"/>
+        <text x="15" y="5" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#F59E0B">
+          Generating...
+        </text>
+      </g>
+      
+      <!-- Progress details -->
+      <g class="stage-progress" transform="translate(-30, 110)">
+        <rect x="0" y="0" width="200" height="80" rx="6" fill="white" stroke="#3B82F6" stroke-width="2" opacity="0.95"/>
+        <text x="10" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1D4ED8">Generation Progress:</text>
+        <text x="10" y="28" font-family="Inter, sans-serif" font-size="9" fill="#1D4ED8">• Unit tests: 142/180 (79%)</text>
+        <text x="10" y="40" font-family="Inter, sans-serif" font-size="9" fill="#1D4ED8">• Integration: 67/85 (79%)</text>
+        <text x="10" y="52" font-family="Inter, sans-serif" font-size="9" fill="#1D4ED8">• Edge cases: 38/62 (61%)</text>
+        <text x="10" y="64" font-family="Inter, sans-serif" font-size="9" fill="#1D4ED8">• AI confidence: 92%</text>
+        <text x="10" y="76" font-family="Inter, sans-serif" font-size="9" fill="#1D4ED8">• ETA: 3.2 minutes</text>
+      </g>
+    </g>
+    
+    <!-- Quality Gate 1 -->
+    <g class="quality-gate" data-gate="1" transform="translate(730, 100)">
+      <rect x="0" y="0" width="60" height="60" rx="30" fill="url(#qualityGradient)" stroke="#D97706" stroke-width="3" 
+            class="interactive-element quality-node" filter="url(#qualityGlow)"/>
+      <text x="30" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="white">
+        QG1
+      </text>
+      <text x="30" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#FEF3C7">
+        Quality
+      </text>
+      <text x="30" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#FEF3C7">
+        Gate
+      </text>
+      
+      <!-- Gate criteria -->
+      <g transform="translate(-40, 70)">
+        <rect x="0" y="0" width="140" height="50" rx="4" fill="white" stroke="#F59E0B" stroke-width="1" opacity="0.9"/>
+        <text x="8" y="12" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#D97706">Quality Criteria:</text>
+        <text x="8" y="24" font-family="Inter, sans-serif" font-size="8" fill="#D97706">• Coverage > 85%</text>
+        <text x="8" y="34" font-family="Inter, sans-serif" font-size="8" fill="#D97706">• Syntax validation</text>
+        <text x="8" y="44" font-family="Inter, sans-serif" font-size="8" fill="#D97706">• Pattern compliance</text>
+      </g>
+    </g>
+    
+    <!-- Stage 5: Validation & Refinement -->
+    <g class="workflow-stage pending" data-stage="5" transform="translate(820, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6B7280">
+        Stage 5
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9CA3AF">
+        Validation
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        Execution testing,
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        result verification,
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        refinement loops
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F3F4F6">
+        ⏸️ PENDING
+      </text>
+    </g>
+    
+    <!-- Stage 6: Performance Testing -->
+    <g class="workflow-stage pending" data-stage="6" transform="translate(990, 80)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6B7280">
+        Stage 6
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9CA3AF">
+        Performance
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        Load testing, stress
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        analysis, bottleneck
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        identification
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F3F4F6">
+        ⏸️ PENDING
+      </text>
+    </g>
+    
+    <!-- Quality Gate 2 -->
+    <g class="quality-gate" data-gate="2" transform="translate(1160, 100)">
+      <rect x="0" y="0" width="60" height="60" rx="30" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" 
+            class="interactive-element quality-node"/>
+      <text x="30" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#6B7280">
+        QG2
+      </text>
+      <text x="30" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#9CA3AF">
+        Quality
+      </text>
+      <text x="30" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#9CA3AF">
+        Gate
+      </text>
+    </g>
+    
+    <!-- Stage 7: Integration Testing -->
+    <g class="workflow-stage pending" data-stage="7" transform="translate(50, 220)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6B7280">
+        Stage 7
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9CA3AF">
+        Integration
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        Cross-service testing,
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        API validation,
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        contract testing
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F3F4F6">
+        ⏸️ PENDING
+      </text>
+    </g>
+    
+    <!-- Stage 8: Continuous Feedback -->
+    <g class="workflow-stage pending" data-stage="8" transform="translate(220, 220)">
+      <rect x="0" y="0" width="140" height="100" rx="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" 
+            class="interactive-element stage-node"/>
+      <text x="70" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6B7280">
+        Stage 8
+      </text>
+      <text x="70" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9CA3AF">
+        Feedback Loop
+      </text>
+      <text x="70" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        Results analysis,
+      </text>
+      <text x="70" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        pattern learning,
+      </text>
+      <text x="70" y="79" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9CA3AF">
+        improvement cycle
+      </text>
+      <text x="70" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#F3F4F6">
+        ⏸️ PENDING
+      </text>
+    </g>
+    
+    <!-- Workflow Flow Arrows -->
+    <g class="workflow-flows">
+      <!-- Stage 1 to 2 -->
+      <path d="M 190 130 L 220 130" stroke="#10B981" stroke-width="3" 
+            marker-end="url(#workflowArrow)" class="flow-arrow completed"/>
+      
+      <!-- Stage 2 to 3 -->
+      <path d="M 360 130 L 390 130" stroke="#10B981" stroke-width="3" 
+            marker-end="url(#workflowArrow)" class="flow-arrow completed"/>
+      
+      <!-- Stage 3 to 4 -->
+      <path d="M 530 130 L 560 130" stroke="#3B82F6" stroke-width="3" 
+            marker-end="url(#workflowArrow)" class="flow-arrow active"/>
+      
+      <!-- Stage 4 to QG1 -->
+      <path d="M 700 130 L 730 130" stroke="#F59E0B" stroke-width="3" 
+            marker-end="url(#qualityArrow)" class="flow-arrow quality-check"/>
+      
+      <!-- QG1 to Stage 5 -->
+      <path d="M 790 130 L 820 130" stroke="#9CA3AF" stroke-width="2" 
+            marker-end="url(#workflowArrow)" class="flow-arrow pending"/>
+      
+      <!-- Stage 5 to 6 -->
+      <path d="M 960 130 L 990 130" stroke="#9CA3AF" stroke-width="2" 
+            marker-end="url(#workflowArrow)" class="flow-arrow pending"/>
+      
+      <!-- Stage 6 to QG2 -->
+      <path d="M 1130 130 L 1160 130" stroke="#9CA3AF" stroke-width="2" 
+            marker-end="url(#qualityArrow)" class="flow-arrow pending"/>
+      
+      <!-- QG2 to Stage 7 (down and around) -->
+      <path d="M 1190 160 Q 1200 200 1180 220 Q 1100 260 200 260 Q 150 260 120 240" stroke="#9CA3AF" stroke-width="2" 
+            marker-end="url(#workflowArrow)" class="flow-arrow pending"/>
+      
+      <!-- Stage 7 to 8 -->
+      <path d="M 190 270 L 220 270" stroke="#9CA3AF" stroke-width="2" 
+            marker-end="url(#workflowArrow)" class="flow-arrow pending"/>
+    </g>
+    
+    <!-- Feedback Loops -->
+    <g class="feedback-loops">
+      <!-- Quality Gate 1 feedback to Stage 4 -->
+      <path d="M 730 140 Q 700 160 680 150 Q 650 140 630 150" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3"
+            marker-end="url(#feedbackArrow)" class="feedback-arrow" opacity="0.7"/>
+      <text x="680" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#EF4444">
+        Quality Feedback
+      </text>
+      
+      <!-- Stage 8 feedback to Stage 1 (learning loop) -->
+      <path d="M 220 220 Q 50 180 30 130 Q 30 80 50 80" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3"
+            marker-end="url(#feedbackArrow)" class="feedback-arrow learning-loop" opacity="0.7"/>
+      <text x="30" y="150" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#EF4444" transform="rotate(-90, 30, 150)">
+        Learning Loop
+      </text>
+    </g>
+  </g>
+  
+  <!-- AI Engine Status Panel -->
+  <g id="ai-engine-status" transform="translate(50, 970)">
+    <rect x="0" y="0" width="700" height="180" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="700" height="45" rx="12" fill="url(#generationGradient)"/>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      🤖 AI Generation Engine Status & Configuration
+    </text>
+    
+    <!-- AI engine metrics -->
+    <g transform="translate(25, 60)">
+      <!-- Model performance -->
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1D4ED8">Engine Performance</text>
+      
+      <!-- Performance metrics -->
+      <g class="ai-metrics">
+        <g transform="translate(0, 30)">
+          <rect x="0" y="0" width="200" height="25" rx="4" fill="#F0F9FF" stroke="#3B82F6" stroke-width="1"/>
+          <text x="10" y="16" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#1D4ED8">
+            Generation Speed: 47 tests/min
+          </text>
+        </g>
+        
+        <g transform="translate(210, 30)">
+          <rect x="0" y="0" width="200" height="25" rx="4" fill="#F0FDF4" stroke="#10B981" stroke-width="1"/>
+          <text x="10" y="16" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">
+            Quality Score: 94% (Excellent)
+          </text>
+        </g>
+        
+        <g transform="translate(420, 30)">
+          <rect x="0" y="0" width="200" height="25" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+          <text x="10" y="16" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#D97706">
+            AI Confidence: 92% (High)
+          </text>
+        </g>
+      </g>
+      
+      <!-- Current model info -->
+      <g transform="translate(0, 70)">
+        <text x="0" y="15" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#374151">Active Model Configuration:</text>
+        <text x="0" y="30" font-family="Inter, sans-serif" font-size="11" fill="#6B7280">Model: Claude-3.5-Sonnet | Template Library: v2.4.1 | Knowledge Base: Updated</text>
+        <text x="0" y="45" font-family="Inter, sans-serif" font-size="11" fill="#6B7280">Specialization: Authentication Services, API Testing, Edge Case Generation</text>
+        <text x="0" y="60" font-family="Inter, sans-serif" font-size="11" fill="#6B7280">Last Training: 2024-12-15 | Success Rate: 96.3% | Avg Generation Time: 1.3s/test</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Real-time Monitoring -->
+  <g id="monitoring-panel" transform="translate(770, 970)">
+    <rect x="0" y="0" width="680" height="180" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="680" height="45" rx="12" fill="url(#qualityPattern)"/>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#D97706">
+      📊 Real-Time Monitoring & Quality Gates
+    </text>
+    
+    <!-- Live monitoring data -->
+    <g transform="translate(25, 60)">
+      <!-- Current test generation -->
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#D97706">Live Generation Monitor</text>
+      
+      <!-- Real-time stats -->
+      <g class="live-stats">
+        <g transform="translate(0, 30)">
+          <circle cx="8" cy="8" r="4" fill="#10B981" class="pulse-indicator"/>
+          <text x="18" y="12" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">
+            Currently generating: UserService.authenticate() tests
+          </text>
+        </g>
+        
+        <g transform="translate(0, 50)">
+          <circle cx="8" cy="8" r="4" fill="#F59E0B" class="pulse-indicator"/>
+          <text x="18" y="12" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#D97706">
+            Queue: 12 functions pending, 3 in progress, ETA: 8.4 minutes
+          </text>
+        </g>
+        
+        <g transform="translate(0, 70)">
+          <circle cx="8" cy="8" r="4" fill="#3B82F6" class="pulse-indicator"/>
+          <text x="18" y="12" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#1D4ED8">
+            Quality Gate 1: 89% pass rate, 3 retries, 2 manual reviews required
+          </text>
+        </g>
+        
+        <g transform="translate(0, 90)">
+          <rect x="0" y="0" width="300" height="8" rx="4" fill="#E5E7EB"/>
+          <rect x="0" y="0" width="210" height="8" rx="4" fill="#10B981"/>
+          <text x="310" y="7" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Overall Progress: 70%</text>
+        </g>
+        
+        <!-- Quick actions -->
+        <g transform="translate(400, 30)">
+          <rect x="0" y="0" width="100" height="25" rx="4" fill="#3B82F6" class="monitor-btn" data-action="view-details">
+            <title>View detailed progress</title>
+          </rect>
+          <text x="50" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">
+            View Details
+          </text>
+          
+          <rect x="110" y="0" width="100" height="25" rx="4" fill="#F59E0B" class="monitor-btn" data-action="quality-report">
+            <title>Generate quality report</title>
+          </rect>
+          <text x="160" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">
+            Quality Report
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Mobile Quick Controls -->
+  <g id="mobile-controls" transform="translate(50, 1170)" class="mobile-responsive">
+    <rect x="0" y="0" width="1400" height="50" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="20" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">📱 Quick Controls</text>
+    
+    <!-- Mobile action buttons -->
+    <g transform="translate(20, 25)">
+      <rect x="0" y="0" width="100" height="20" rx="4" fill="#10B981" class="mobile-btn" data-action="continue-workflow">
+        <title>Continue workflow</title>
+      </rect>
+      <text x="50" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">
+        Continue
+      </text>
+      
+      <rect x="110" y="0" width="100" height="20" rx="4" fill="#3B82F6" class="mobile-btn" data-action="view-progress">
+        <title>View progress details</title>
+      </rect>
+      <text x="160" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">
+        Progress
+      </text>
+      
+      <rect x="220" y="0" width="100" height="20" rx="4" fill="#F59E0B" class="mobile-btn" data-action="quality-check">
+        <title>Check quality gates</title>
+      </rect>
+      <text x="270" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">
+        Quality
+      </text>
+      
+      <rect x="330" y="0" width="100" height="20" rx="4" fill="#8B5CF6" class="mobile-btn" data-action="configure-ai">
+        <title>Configure AI engine</title>
+      </rect>
+      <text x="380" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">
+        Configure
+      </text>
+    </g>
+  </g>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .interactive-element {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .interactive-element:hover {
+      transform: scale(1.02);
+      filter: url(#workflowGlow);
+    }
+    
+    .stage-node:hover {
+      stroke-width: 5;
+    }
+    
+    .quality-node:hover {
+      transform: scale(1.1);
+      filter: url(#qualityGlow);
+    }
+    
+    .current-stage {
+      animation: currentPulse 2s ease-in-out infinite;
+    }
+    
+    .control-btn, .monitor-btn, .mobile-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .control-btn:hover, .monitor-btn:hover, .mobile-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+    
+    .pulse-indicator {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .flow-arrow.active {
+      animation: flowPulse 2s ease-in-out infinite;
+    }
+    
+    .feedback-arrow {
+      animation: feedbackFlow 3s ease-in-out infinite;
+    }
+    
+    .learning-loop {
+      animation: learningPulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes currentPulse {
+      0%, 100% { stroke-width: 5; }
+      50% { stroke-width: 7; }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+    
+    @keyframes flowPulse {
+      0%, 100% { stroke-opacity: 1; }
+      50% { stroke-opacity: 0.5; }
+    }
+    
+    @keyframes feedbackFlow {
+      0%, 100% { stroke-dashoffset: 0; }
+      50% { stroke-dashoffset: 16; }
+    }
+    
+    @keyframes learningPulse {
+      0%, 100% { stroke-opacity: 0.7; }
+      50% { stroke-opacity: 1; }
+    }
+    
+    /* Mobile responsive design */
+    @media (max-width: 768px) {
+      .mobile-responsive {
+        display: block;
+      }
+      
+      #workflow-pipeline {
+        transform: scale(0.6) translate(0, 100px);
+      }
+      
+      .stage-details, .stage-progress {
+        display: none;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-responsive {
+        display: block;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for Workflow Engine Interactions -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      const workflowStages = document.querySelectorAll('.workflow-stage');
+      const qualityGates = document.querySelectorAll('.quality-gate');
+      const controlBtns = document.querySelectorAll('.control-btn, .monitor-btn, .mobile-btn');
+      
+      let workflowState = {
+        currentStage: 4,
+        stagesComplete: [1, 2, 3],
+        qualityGatesPassed: [],
+        testsGenerated: 247,
+        qualityScore: 94,
+        coverage: 89,
+        aiConfidence: 92
+      };
+      
+      // Workflow stage interactions
+      workflowStages.forEach(stage => {
+        stage.addEventListener('click', function() {
+          const stageNum = parseInt(this.getAttribute('data-stage'));
+          showStageDetails(stageNum);
+          
+          if (typeof window.exploreWorkflowStage === 'function') {
+            window.exploreWorkflowStage(stageNum);
+          }
+        });
+        
+        stage.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // Quality gate interactions
+      qualityGates.forEach(gate => {
+        gate.addEventListener('click', function() {
+          const gateNum = parseInt(this.getAttribute('data-gate'));
+          showQualityGateDetails(gateNum);
+          
+          if (typeof window.exploreQualityGate === 'function') {
+            window.exploreQualityGate(gateNum);
+          }
+        });
+      });
+      
+      // Control button handlers
+      controlBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const action = this.getAttribute('data-action');
+          handleWorkflowAction(action);
+        });
+      });
+      
+      function showStageDetails(stageNum) {
+        const stageDetails = {
+          1: { name: 'Code Analysis', status: 'completed', progress: 100 },
+          2: { name: 'Context Extraction', status: 'completed', progress: 100 },
+          3: { name: 'Strategy Planning', status: 'completed', progress: 100 },
+          4: { name: 'AI Test Generation', status: 'current', progress: 79 },
+          5: { name: 'Validation & Refinement', status: 'pending', progress: 0 },
+          6: { name: 'Performance Testing', status: 'pending', progress: 0 },
+          7: { name: 'Integration Testing', status: 'pending', progress: 0 },
+          8: { name: 'Continuous Feedback', status: 'pending', progress: 0 }
+        };
+        
+        if (typeof window.showStageDetails === 'function') {
+          window.showStageDetails(stageDetails[stageNum]);
+        } else {
+          console.log(`Stage ${stageNum}: ${stageDetails[stageNum].name} - ${stageDetails[stageNum].status}`);
+        }
+      }
+      
+      function showQualityGateDetails(gateNum) {
+        const gateDetails = {
+          1: { criteria: ['Coverage > 85%', 'Syntax validation', 'Pattern compliance'], status: 'pending' },
+          2: { criteria: ['Performance benchmarks', 'Integration tests', 'Final validation'], status: 'pending' }
+        };
+        
+        if (typeof window.showQualityGateDetails === 'function') {
+          window.showQualityGateDetails(gateDetails[gateNum]);
+        } else {
+          console.log(`Quality Gate ${gateNum}: ${gateDetails[gateNum].criteria.join(', ')}`);
+        }
+      }
+      
+      function handleWorkflowAction(action) {
+        const actions = {
+          'continue': () => continueWorkflow(),
+          'pause': () => pauseWorkflow(),
+          'abort': () => abortWorkflow(),
+          'view-details': () => viewProgressDetails(),
+          'quality-report': () => generateQualityReport(),
+          'continue-workflow': () => continueWorkflow(),
+          'view-progress': () => viewProgressDetails(),
+          'quality-check': () => checkQualityGates(),
+          'configure-ai': () => configureAIEngine()
+        };
+        
+        if (actions[action]) {
+          actions[action]();
+        }
+        
+        if (typeof window.handleWorkflowAction === 'function') {
+          window.handleWorkflowAction(action);
+        }
+      }
+      
+      function continueWorkflow() {
+        if (typeof window.continueWorkflow === 'function') {
+          window.continueWorkflow();
+        } else {
+          alert('Continuing AI test generation workflow...');
+          updateWorkflowProgress();
+        }
+      }
+      
+      function pauseWorkflow() {
+        if (typeof window.pauseWorkflow === 'function') {
+          window.pauseWorkflow();
+        } else {
+          alert('Workflow paused. You can resume at any time.');
+        }
+      }
+      
+      function abortWorkflow() {
+        if (typeof window.abortWorkflow === 'function') {
+          window.abortWorkflow();
+        } else {
+          if (confirm('Are you sure you want to abort the current workflow?')) {
+            alert('Workflow aborted. Progress has been saved.');
+          }
+        }
+      }
+      
+      function viewProgressDetails() {
+        if (typeof window.viewProgressDetails === 'function') {
+          window.viewProgressDetails();
+        } else {
+          alert(`Progress: Stage ${workflowState.currentStage}/8, ${workflowState.testsGenerated} tests generated, ${workflowState.qualityScore}% quality score`);
+        }
+      }
+      
+      function generateQualityReport() {
+        if (typeof window.generateQualityReport === 'function') {
+          window.generateQualityReport();
+        } else {
+          alert('Quality Report: 94% overall score, 89% coverage, 92% AI confidence');
+        }
+      }
+      
+      function checkQualityGates() {
+        if (typeof window.checkQualityGates === 'function') {
+          window.checkQualityGates();
+        } else {
+          alert('Quality Gate 1: Pending validation. Requirements: Coverage >85%, Syntax validation, Pattern compliance');
+        }
+      }
+      
+      function configureAIEngine() {
+        if (typeof window.configureAIEngine === 'function') {
+          window.configureAIEngine();
+        } else {
+          alert('AI Engine Configuration: Model: Claude-3.5-Sonnet, Template Library: v2.4.1, Success Rate: 96.3%');
+        }
+      }
+      
+      function updateWorkflowProgress() {
+        // Simulate progress updates
+        workflowState.testsGenerated += 5;
+        workflowState.coverage = Math.min(95, workflowState.coverage + 1);
+        
+        if (typeof window.updateWorkflowState === 'function') {
+          window.updateWorkflowState(workflowState);
+        }
+      }
+      
+      // Real-time updates
+      function updateRealTimeMetrics() {
+        if (typeof window.updateRealTimeMetrics === 'function') {
+          window.updateRealTimeMetrics();
+        }
+      }
+      
+      function checkQualityGateStatus() {
+        if (typeof window.checkQualityGateStatus === 'function') {
+          window.checkQualityGateStatus();
+        }
+      }
+      
+      // Initialize workflow system
+      if (typeof window.initializeWorkflowEngine === 'function') {
+        window.initializeWorkflowEngine();
+      }
+      
+      // Keyboard navigation for accessibility
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+          // Navigate to next stage
+          if (workflowState.currentStage < 8) {
+            showStageDetails(workflowState.currentStage + 1);
+          }
+        } else if (e.key === 'ArrowLeft') {
+          // Navigate to previous stage
+          if (workflowState.currentStage > 1) {
+            showStageDetails(workflowState.currentStage - 1);
+          }
+        }
+      });
+      
+      // Periodic updates for real-time monitoring
+      setInterval(updateRealTimeMetrics, 5000); // Update every 5 seconds
+      setInterval(checkQualityGateStatus, 15000); // Check quality gates every 15 seconds
+    });
+    ]]>
+  </script>
+</svg>
