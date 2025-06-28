@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1300" height="850" viewBox="0 0 1300 850" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ce02-title ce02-desc">
+  <title id="ce02-title">AI-Enhanced Code Review System - Intelligent Review Orchestrator</title>
+  <desc id="ce02-desc">Advanced code review platform combining AI analysis with human expertise for optimized review efficiency, quality assurance, and knowledge transfer</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- AI enhancement gradients -->
+    <linearGradient id="aiPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976D2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2196F3;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#64B5F6;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="humanExpertiseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#66BB6A;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#81C784;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="qualityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFB74D;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#FFCC02;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="knowledgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#BA68C8;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#CE93D8;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Status indicators -->
+    <radialGradient id="successGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="warningGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E65100;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="errorGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F44336;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C62828;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="aiGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#2196F3" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="humanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#4CAF50" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="qualityGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#FF9800" flood-opacity="0.6"/>
+    </filter>
+    
+    <!-- Code patterns -->
+    <pattern id="codePattern" patternUnits="userSpaceOnUse" width="40" height="20">
+      <rect width="40" height="20" fill="#F5F5F5"/>
+      <rect x="2" y="2" width="36" height="2" fill="#1976D2" opacity="0.3"/>
+      <rect x="2" y="6" width="24" height="2" fill="#4CAF50" opacity="0.3"/>
+      <rect x="2" y="10" width="30" height="2" fill="#FF9800" opacity="0.3"/>
+      <rect x="2" y="14" width="18" height="2" fill="#9C27B0" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Arrow markers -->
+    <marker id="flowArrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1300" height="850" fill="#FAFAFA" />
+  
+  <!-- Title Section -->
+  <text x="650" y="35" text-anchor="middle" class="title" font-family="Inter, sans-serif" font-size="26" font-weight="700" fill="#1A1A1A">
+    AI-Enhanced Code Review System
+  </text>
+  <text x="650" y="55" text-anchor="middle" class="subtitle" font-family="Inter, sans-serif" font-size="14" fill="#666">
+    Intelligent Review Orchestrator with Human-AI Collaboration
+  </text>
+  
+  <!-- System Overview Panel -->
+  <g class="system-overview">
+    <rect x="50" y="80" width="300" height="120" rx="8" fill="url(#aiPrimaryGradient)" stroke="#1976D2" stroke-width="2"/>
+    <text x="200" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">
+      🤖 System Overview
+    </text>
+    
+    <!-- Performance Metrics -->
+    <text x="70" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E3F2FD">Review Time Reduction:</text>
+    <text x="70" y="145" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">35%</text>
+    
+    <text x="160" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E3F2FD">Quality Detection:</text>
+    <text x="160" y="145" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">90%+</text>
+    
+    <text x="250" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E3F2FD">Knowledge Transfer:</text>
+    <text x="250" y="145" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">+50%</text>
+    
+    <!-- Active Reviews -->
+    <text x="70" y="170" font-family="Inter, sans-serif" font-size="11" fill="#BBDEFB">Active Reviews: 12 | Queue: 3 | Completed Today: 18</text>
+    <text x="70" y="185" font-family="Inter, sans-serif" font-size="11" fill="#BBDEFB">Avg Review Time: 23 min | Quality Score: 94% | Team Velocity: +42%</text>
+  </g>
+  
+  <!-- AI Analysis Engine -->
+  <g class="ai-engine">
+    <rect x="380" y="80" width="280" height="120" rx="8" fill="url(#aiPrimaryGradient)" stroke="#0D47A1" stroke-width="2" 
+          class="interactive-element" tabindex="0" role="button" aria-describedby="ai-engine-desc">
+    </rect>
+    <text x="520" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">
+      🧠 AI Analysis Engine
+    </text>
+    
+    <!-- AI Capabilities -->
+    <g class="ai-capabilities">
+      <circle cx="410" cy="130" r="8" fill="#4CAF50" class="status-indicator">
+        <title>Code Quality Analysis - Active</title>
+      </circle>
+      <text x="425" y="135" font-family="Inter, sans-serif" font-size="11" fill="#E3F2FD">Code Quality Analysis</text>
+      
+      <circle cx="410" cy="150" r="8" fill="#4CAF50" class="status-indicator">
+        <title>Security Scanning - Active</title>
+      </circle>
+      <text x="425" y="155" font-family="Inter, sans-serif" font-size="11" fill="#E3F2FD">Security Vulnerability Scan</text>
+      
+      <circle cx="410" cy="170" r="8" fill="#FF9800" class="status-indicator">
+        <title>Performance Analysis - Processing</title>
+      </circle>
+      <text x="425" y="175" font-family="Inter, sans-serif" font-size="11" fill="#E3F2FD">Performance Impact Analysis</text>
+      
+      <circle cx="520" cy="130" r="8" fill="#4CAF50" class="status-indicator">
+        <title>Pattern Recognition - Active</title>
+      </circle>
+      <text x="535" y="135" font-family="Inter, sans-serif" font-size="11" fill="#E3F2FD">Pattern Recognition</text>
+      
+      <circle cx="520" cy="150" r="8" fill="#4CAF50" class="status-indicator">
+        <title>Context Generation - Active</title>
+      </circle>
+      <text x="535" y="155" font-family="Inter, sans-serif" font-size="11" fill="#E3F2FD">Context Generation</text>
+      
+      <circle cx="520" cy="170" r="8" fill="#2196F3" class="status-indicator">
+        <title>Smart Routing - Ready</title>
+      </circle>
+      <text x="535" y="175" font-family="Inter, sans-serif" font-size="11" fill="#E3F2FD">Smart Reviewer Routing</text>
+    </g>
+    
+    <!-- AI Confidence -->
+    <text x="590" y="135" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#E3F2FD">AI Confidence:</text>
+    <rect x="590" y="140" width="50" height="8" fill="#FFFFFF" opacity="0.3" rx="4"/>
+    <rect x="590" y="140" width="42" height="8" fill="#FFFFFF" rx="4"/>
+    <text x="590" y="160" font-family="Inter, sans-serif" font-size="10" fill="#BBDEFB">84% accuracy</text>
+    
+    <text x="590" y="180" font-family="Inter, sans-serif" font-size="10" fill="#BBDEFB">Processing: 847ms avg</text>
+  </g>
+  
+  <!-- Human Expertise Panel -->
+  <g class="human-expertise">
+    <rect x="690" y="80" width="280" height="120" rx="8" fill="url(#humanExpertiseGradient)" stroke="#2E7D32" stroke-width="2" 
+          class="interactive-element" tabindex="0" role="button" aria-describedby="human-expertise-desc">
+    </rect>
+    <text x="830" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">
+      👥 Human Expertise
+    </text>
+    
+    <!-- Reviewer Pool -->
+    <g class="reviewer-pool">
+      <circle cx="720" cy="130" r="12" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2">
+        <title>Senior Developer - Available</title>
+      </circle>
+      <text x="720" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#2E7D32">SD</text>
+      
+      <circle cx="750" cy="130" r="12" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2">
+        <title>Tech Lead - Available</title>
+      </circle>
+      <text x="750" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#2E7D32">TL</text>
+      
+      <circle cx="780" cy="130" r="12" fill="#FFE0B2" stroke="#FF9800" stroke-width="2">
+        <title>Security Expert - Busy</title>
+      </circle>
+      <text x="780" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#E65100">SE</text>
+      
+      <circle cx="810" cy="130" r="12" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2">
+        <title>Domain Expert - Available</title>
+      </circle>
+      <text x="810" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#2E7D32">DE</text>
+      
+      <circle cx="840" cy="130" r="12" fill="#FFCDD2" stroke="#F44336" stroke-width="2">
+        <title>Architect - Unavailable</title>
+      </circle>
+      <text x="840" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#C62828">AR</text>
+    </g>
+    
+    <!-- Expertise Matching -->
+    <text x="710" y="160" font-family="Inter, sans-serif" font-size="11" fill="#E8F5E8">Smart Routing:</text>
+    <text x="710" y="175" font-family="Inter, sans-serif" font-size="10" fill="#C8E6C9">• Security → Security Expert (when available)</text>
+    <text x="710" y="188" font-family="Inter, sans-serif" font-size="10" fill="#C8E6C9">• Performance → Senior Dev + Domain Expert</text>
+  </g>
+  
+  <!-- Knowledge Extraction System -->
+  <g class="knowledge-system">
+    <rect x="1000" y="80" width="250" height="120" rx="8" fill="url(#knowledgeGradient)" stroke="#7B1FA2" stroke-width="2" 
+          class="interactive-element" tabindex="0" role="button" aria-describedby="knowledge-desc">
+    </rect>
+    <text x="1125" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">
+      📚 Knowledge Extraction
+    </text>
+    
+    <!-- Knowledge Metrics -->
+    <text x="1020" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#F3E5F5">Patterns Identified:</text>
+    <text x="1020" y="145" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">247</text>
+    
+    <text x="1140" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#F3E5F5">Best Practices:</text>
+    <text x="1140" y="145" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">89</text>
+    
+    <text x="1020" y="170" font-family="Inter, sans-serif" font-size="10" fill="#E1BEE7">Auto-captured insights: 156 this week</text>
+    <text x="1020" y="185" font-family="Inter, sans-serif" font-size="10" fill="#E1BEE7">Team knowledge score: 92% (+12% vs last month)</text>
+  </g>
+  
+  <!-- Code Review Workflow -->
+  <g class="review-workflow">
+    <rect x="50" y="230" width="1200" height="180" rx="8" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+    <text x="650" y="255" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#1976D2">
+      🔄 Intelligent Review Workflow
+    </text>
+    
+    <!-- Step 1: Code Submission -->
+    <g class="workflow-step" data-step="submission">
+      <rect x="80" y="280" width="140" height="100" rx="6" fill="url(#codePattern)" stroke="#1976D2" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="submission-desc">
+      </rect>
+      <text x="150" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1976D2">
+        1. Code Submission
+      </text>
+      <text x="90" y="325" font-family="Inter, sans-serif" font-size="10" fill="#424242">• PR Created</text>
+      <text x="90" y="340" font-family="Inter, sans-serif" font-size="10" fill="#424242">• CI/CD Triggered</text>
+      <text x="90" y="355" font-family="Inter, sans-serif" font-size="10" fill="#424242">• Initial Scan</text>
+      <text x="90" y="370" font-family="Inter, sans-serif" font-size="10" fill="#424242">• Context Extracted</text>
+      
+      <circle cx="200" cy="330" r="8" fill="url(#successGradient)" class="status-dot">
+        <title>Submission complete</title>
+      </circle>
+    </g>
+    
+    <!-- Step 2: AI Analysis -->
+    <g class="workflow-step" data-step="ai-analysis">
+      <rect x="250" y="280" width="140" height="100" rx="6" fill="url(#aiPrimaryGradient)" stroke="#0D47A1" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="ai-analysis-desc">
+      </rect>
+      <text x="320" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+        2. AI Analysis
+      </text>
+      <text x="260" y="325" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">• Quality Check</text>
+      <text x="260" y="340" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">• Security Scan</text>
+      <text x="260" y="355" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">• Performance Analysis</text>
+      <text x="260" y="370" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">• Pattern Recognition</text>
+      
+      <circle cx="370" cy="330" r="8" fill="url(#warningGradient)" class="status-dot processing">
+        <title>Analysis in progress</title>
+      </circle>
+    </g>
+    
+    <!-- Step 3: Smart Routing -->
+    <g class="workflow-step" data-step="routing">
+      <rect x="420" y="280" width="140" height="100" rx="6" fill="url(#humanExpertiseGradient)" stroke="#2E7D32" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="routing-desc">
+      </rect>
+      <text x="490" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+        3. Smart Routing
+      </text>
+      <text x="430" y="325" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Expertise Matching</text>
+      <text x="430" y="340" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Workload Balancing</text>
+      <text x="430" y="355" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Priority Assignment</text>
+      <text x="430" y="370" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Context Generation</text>
+      
+      <circle cx="540" cy="330" r="8" fill="url(#successGradient)" class="status-dot">
+        <title>Routing complete</title>
+      </circle>
+    </g>
+    
+    <!-- Step 4: Human Review -->
+    <g class="workflow-step" data-step="human-review">
+      <rect x="590" y="280" width="140" height="100" rx="6" fill="url(#qualityGradient)" stroke="#E65100" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="human-review-desc">
+      </rect>
+      <text x="660" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+        4. Human Review
+      </text>
+      <text x="600" y="325" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Code Examination</text>
+      <text x="600" y="340" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• AI Guidance</text>
+      <text x="600" y="355" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Collaborative Notes</text>
+      <text x="600" y="370" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Decision Making</text>
+      
+      <circle cx="710" cy="330" r="8" fill="url(#warningGradient)" class="status-dot">
+        <title>Review in progress</title>
+      </circle>
+    </g>
+    
+    <!-- Step 5: Knowledge Capture -->
+    <g class="workflow-step" data-step="knowledge-capture">
+      <rect x="760" y="280" width="140" height="100" rx="6" fill="url(#knowledgeGradient)" stroke="#7B1FA2" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="knowledge-capture-desc">
+      </rect>
+      <text x="830" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+        5. Knowledge Capture
+      </text>
+      <text x="770" y="325" font-family="Inter, sans-serif" font-size="10" fill="#F3E5F5">• Pattern Extraction</text>
+      <text x="770" y="340" font-family="Inter, sans-serif" font-size="10" fill="#F3E5F5">• Best Practice ID</text>
+      <text x="770" y="355" font-family="Inter, sans-serif" font-size="10" fill="#F3E5F5">• Learning Points</text>
+      <text x="770" y="370" font-family="Inter, sans-serif" font-size="10" fill="#F3E5F5">• Team Sharing</text>
+      
+      <circle cx="880" cy="330" r="8" fill="url(#successGradient)" class="status-dot">
+        <title>Knowledge captured</title>
+      </circle>
+    </g>
+    
+    <!-- Step 6: Quality Gate -->
+    <g class="workflow-step" data-step="quality-gate">
+      <rect x="930" y="280" width="140" height="100" rx="6" fill="url(#qualityGradient)" stroke="#E65100" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="quality-gate-desc">
+      </rect>
+      <text x="1000" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+        6. Quality Gate
+      </text>
+      <text x="940" y="325" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Final Validation</text>
+      <text x="940" y="340" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Compliance Check</text>
+      <text x="940" y="355" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Merge Decision</text>
+      <text x="940" y="370" font-family="Inter, sans-serif" font-size="10" fill="#FFF3E0">• Feedback Loop</text>
+      
+      <circle cx="1050" cy="330" r="8" fill="url(#successGradient)" class="status-dot">
+        <title>Quality gate passed</title>
+      </circle>
+    </g>
+    
+    <!-- Step 7: Deployment -->
+    <g class="workflow-step" data-step="deployment">
+      <rect x="1100" y="280" width="120" height="100" rx="6" fill="url(#successGradient)" stroke="#2E7D32" stroke-width="2" 
+            class="interactive-element workflow-card" tabindex="0" role="button" aria-describedby="deployment-desc">
+      </rect>
+      <text x="1160" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+        7. Deploy
+      </text>
+      <text x="1110" y="325" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Auto-merge</text>
+      <text x="1110" y="340" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• CI/CD Pipeline</text>
+      <text x="1110" y="355" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Monitoring</text>
+      <text x="1110" y="370" font-family="Inter, sans-serif" font-size="10" fill="#E8F5E8">• Success Tracking</text>
+      
+      <circle cx="1200" cy="330" r="8" fill="url(#successGradient)" class="status-dot">
+        <title>Deployment successful</title>
+      </circle>
+    </g>
+    
+    <!-- Workflow Arrows -->
+    <g class="workflow-arrows">
+      <line x1="220" y1="330" x2="250" y2="330" stroke="#666" stroke-width="2" marker-end="url(#flowArrow)"/>
+      <line x1="390" y1="330" x2="420" y2="330" stroke="#666" stroke-width="2" marker-end="url(#flowArrow)"/>
+      <line x1="560" y1="330" x2="590" y2="330" stroke="#666" stroke-width="2" marker-end="url(#flowArrow)"/>
+      <line x1="730" y1="330" x2="760" y2="330" stroke="#666" stroke-width="2" marker-end="url(#flowArrow)"/>
+      <line x1="900" y1="330" x2="930" y2="330" stroke="#666" stroke-width="2" marker-end="url(#flowArrow)"/>
+      <line x1="1070" y1="330" x2="1100" y2="330" stroke="#666" stroke-width="2" marker-end="url(#flowArrow)"/>
+    </g>
+  </g>
+  
+  <!-- Real-time Dashboard -->
+  <g class="realtime-dashboard">
+    <rect x="50" y="440" width="600" height="180" rx="8" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+    <text x="350" y="465" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      📊 Real-time Review Dashboard
+    </text>
+    
+    <!-- Active Reviews -->
+    <g class="active-reviews">
+      <text x="70" y="490" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#424242">Active Reviews</text>
+      
+      <!-- Review Item 1 -->
+      <rect x="70" y="500" width="160" height="35" rx="4" fill="#E3F2FD" stroke="#1976D2" stroke-width="1"/>
+      <text x="80" y="515" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0D47A1">feat/user-auth-system</text>
+      <text x="80" y="528" font-family="Inter, sans-serif" font-size="9" fill="#1565C0">👤 Sarah K. → 🤖 AI Analysis</text>
+      <circle cx="220" cy="517" r="4" fill="url(#warningGradient)">
+        <title>In progress</title>
+      </circle>
+      
+      <!-- Review Item 2 -->
+      <rect x="240" y="500" width="160" height="35" rx="4" fill="#E8F5E8" stroke="#4CAF50" stroke-width="1"/>
+      <text x="250" y="515" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#2E7D32">fix/performance-bottleneck</text>
+      <text x="250" y="528" font-family="Inter, sans-serif" font-size="9" fill="#388E3C">👤 Mike R. → 👥 Tech Lead</text>
+      <circle cx="390" cy="517" r="4" fill="url(#successGradient)">
+        <title>Approved</title>
+      </circle>
+      
+      <!-- Review Item 3 -->
+      <rect x="410" y="500" width="160" height="35" rx="4" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+      <text x="420" y="515" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#E65100">refactor/api-endpoints</text>
+      <text x="420" y="528" font-family="Inter, sans-serif" font-size="9" fill="#F57C00">👤 David L. → 🔍 Security Expert</text>
+      <circle cx="560" cy="517" r="4" fill="url(#warningGradient)">
+        <title>Security review needed</title>
+      </circle>
+      
+      <!-- Queue -->
+      <text x="70" y="555" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#424242">Queue (3 pending)</text>
+      
+      <rect x="70" y="565" width="150" height="25" rx="4" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+      <text x="80" y="580" font-family="Inter, sans-serif" font-size="10" fill="#666">chore/dependency-updates</text>
+      
+      <rect x="230" y="565" width="150" height="25" rx="4" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+      <text x="240" y="580" font-family="Inter, sans-serif" font-size="10" fill="#666">docs/api-documentation</text>
+      
+      <rect x="390" y="565" width="150" height="25" rx="4" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+      <text x="400" y="580" font-family="Inter, sans-serif" font-size="10" fill="#666">test/integration-coverage</text>
+    </g>
+    
+    <!-- Performance Metrics -->
+    <g class="performance-metrics">
+      <text x="70" y="610" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#424242">Today's Performance</text>
+      <text x="250" y="610" font-family="Inter, sans-serif" font-size="11" fill="#4CAF50">↗ +35% faster reviews</text>
+      <text x="400" y="610" font-family="Inter, sans-serif" font-size="11" fill="#4CAF50">↗ +42% team velocity</text>
+    </g>
+  </g>
+  
+  <!-- Collaboration Tools -->
+  <g class="collaboration-tools">
+    <rect x="680" y="440" width="570" height="180" rx="8" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+    <text x="965" y="465" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      🤝 Enhanced Collaboration Tools
+    </text>
+    
+    <!-- AI Assistance Panel -->
+    <g class="ai-assistance">
+      <rect x="700" y="480" width="260" height="70" rx="6" fill="url(#aiPrimaryGradient)" stroke="#1976D2" stroke-width="1"/>
+      <text x="830" y="500" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">
+        🤖 AI Review Assistant
+      </text>
+      <text x="710" y="520" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">
+        "This change impacts authentication flow. Consider:"
+      </text>
+      <text x="710" y="535" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">
+        • Session timeout handling • Rate limiting • Error logging
+      </text>
+      
+      <rect x="900" y="490" width="50" height="20" rx="4" fill="#4CAF50" stroke="#2E7D32" stroke-width="1" 
+            class="interactive-element ai-accept-btn" tabindex="0" role="button">
+      </rect>
+      <text x="925" y="503" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">Accept</text>
+      
+      <rect x="900" y="515" width="50" height="20" rx="4" fill="#FF9800" stroke="#E65100" stroke-width="1" 
+            class="interactive-element ai-modify-btn" tabindex="0" role="button">
+      </rect>
+      <text x="925" y="528" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">Modify</text>
+    </g>
+    
+    <!-- Knowledge Sharing -->
+    <g class="knowledge-sharing">
+      <rect x="980" y="480" width="260" height="70" rx="6" fill="url(#knowledgeGradient)" stroke="#7B1FA2" stroke-width="1"/>
+      <text x="1110" y="500" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">
+        📚 Knowledge Sharing
+      </text>
+      <text x="990" y="520" font-family="Inter, sans-serif" font-size="10" fill="#F3E5F5">
+        Pattern detected: Similar to UserService refactor
+      </text>
+      <text x="990" y="535" font-family="Inter, sans-serif" font-size="10" fill="#F3E5F5">
+        📖 View related examples | 💡 Apply best practices
+      </text>
+    </g>
+    
+    <!-- Review Analytics -->
+    <g class="review-analytics">
+      <text x="700" y="575" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#424242">Review Analytics</text>
+      
+      <text x="700" y="595" font-family="Inter, sans-serif" font-size="10" fill="#666">Avg Review Time:</text>
+      <text x="800" y="595" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4CAF50">23 min (-35%)</text>
+      
+      <text x="860" y="595" font-family="Inter, sans-serif" font-size="10" fill="#666">Quality Score:</text>
+      <text x="940" y="595" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4CAF50">94% (+8%)</text>
+      
+      <text x="980" y="595" font-family="Inter, sans-serif" font-size="10" fill="#666">Team Satisfaction:</text>
+      <text x="1080" y="595" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4CAF50">4.7/5 ⭐</text>
+      
+      <text x="1140" y="595" font-family="Inter, sans-serif" font-size="10" fill="#666">Knowledge Transfer:</text>
+      <text x="1140" y="608" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4CAF50">+50% effectiveness</text>
+    </g>
+  </g>
+  
+  <!-- Integration & Settings -->
+  <g class="integration-settings">
+    <rect x="50" y="650" width="1200" height="120" rx="8" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="1"/>
+    <text x="650" y="675" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      ⚙️ System Integration & Configuration
+    </text>
+    
+    <!-- Tool Integrations -->
+    <g class="tool-integrations">
+      <text x="70" y="700" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#424242">Connected Tools:</text>
+      
+      <rect x="70" y="710" width="80" height="30" rx="4" fill="#E3F2FD" stroke="#1976D2" stroke-width="1"/>
+      <text x="110" y="730" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#0D47A1">GitHub</text>
+      
+      <rect x="160" y="710" width="80" height="30" rx="4" fill="#E8F5E8" stroke="#4CAF50" stroke-width="1"/>
+      <text x="200" y="730" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2E7D32">GitLab</text>
+      
+      <rect x="250" y="710" width="80" height="30" rx="4" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+      <text x="290" y="730" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#E65100">Bitbucket</text>
+      
+      <rect x="340" y="710" width="80" height="30" rx="4" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1"/>
+      <text x="380" y="730" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#7B1FA2">Jira</text>
+      
+      <rect x="430" y="710" width="80" height="30" rx="4" fill="#FFEBEE" stroke="#F44336" stroke-width="1"/>
+      <text x="470" y="730" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#C62828">Slack</text>
+    </g>
+    
+    <!-- AI Configuration -->
+    <g class="ai-configuration">
+      <text x="550" y="700" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#424242">AI Configuration:</text>
+      
+      <text x="550" y="720" font-family="Inter, sans-serif" font-size="10" fill="#666">Confidence Threshold:</text>
+      <rect x="550" y="725" width="80" height="8" fill="#E0E0E0" rx="4"/>
+      <rect x="550" y="725" width="64" height="8" fill="#4CAF50" rx="4"/>
+      <text x="640" y="732" font-family="Inter, sans-serif" font-size="9" fill="#666">80%</text>
+      
+      <text x="680" y="720" font-family="Inter, sans-serif" font-size="10" fill="#666">Auto-route:</text>
+      <circle cx="735" cy="728" r="6" fill="#4CAF50" class="toggle-switch">
+        <title>Auto-routing enabled</title>
+      </circle>
+      <text x="750" y="732" font-family="Inter, sans-serif" font-size="9" fill="#4CAF50">ON</text>
+    </g>
+    
+    <!-- Performance Settings -->
+    <g class="performance-settings">
+      <text x="800" y="700" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#424242">Performance:</text>
+      
+      <text x="800" y="720" font-family="Inter, sans-serif" font-size="10" fill="#666">Max Parallel Reviews:</text>
+      <text x="920" y="720" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1976D2">8</text>
+      
+      <text x="800" y="735" font-family="Inter, sans-serif" font-size="10" fill="#666">Analysis Timeout:</text>
+      <text x="920" y="735" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1976D2">30s</text>
+    </g>
+    
+    <!-- System Status -->
+    <g class="system-status">
+      <text x="980" y="700" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#424242">System Status:</text>
+      
+      <circle cx="980" cy="720" r="4" fill="url(#successGradient)"/>
+      <text x="990" y="724" font-family="Inter, sans-serif" font-size="10" fill="#2E7D32">All systems operational</text>
+      
+      <text x="980" y="740" font-family="Inter, sans-serif" font-size="10" fill="#666">Uptime: 99.8% | Processed: 1,247 reviews</text>
+    </g>
+  </g>
+  
+  <!-- Hidden descriptions for accessibility -->
+  <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+    <div id="ai-engine-desc">AI Analysis Engine with code quality analysis, security scanning, performance analysis, pattern recognition, context generation, and smart reviewer routing</div>
+    <div id="human-expertise-desc">Human Expertise panel showing reviewer pool with availability status and expertise matching for optimal review assignments</div>
+    <div id="knowledge-desc">Knowledge Extraction system capturing patterns, best practices, and team insights for continuous learning and improvement</div>
+    <div id="submission-desc">Code submission step with PR creation, CI/CD trigger, initial scan, and context extraction</div>
+    <div id="ai-analysis-desc">AI analysis phase with quality checks, security scanning, performance analysis, and pattern recognition</div>
+    <div id="routing-desc">Smart routing system with expertise matching, workload balancing, priority assignment, and context generation</div>
+    <div id="human-review-desc">Human review phase with code examination, AI guidance, collaborative notes, and decision making</div>
+    <div id="knowledge-capture-desc">Knowledge capture step with pattern extraction, best practice identification, learning points, and team sharing</div>
+    <div id="quality-gate-desc">Quality gate validation with final checks, compliance verification, merge decisions, and feedback loops</div>
+    <div id="deployment-desc">Deployment phase with auto-merge, CI/CD pipeline, monitoring, and success tracking</div>
+  </div>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .interactive-element {
+      cursor: pointer;
+      transition: filter 0.3s ease, transform 0.2s ease;
+    }
+    
+    .interactive-element:hover, .interactive-element:focus {
+      filter: url(#aiGlow);
+      outline: none;
+    }
+    
+    .workflow-card:hover, .workflow-card:focus {
+      transform: translateY(-3px);
+      filter: url(#qualityGlow);
+      outline: 2px solid #1976D2;
+      outline-offset: 2px;
+    }
+    
+    .ai-accept-btn:hover, .ai-accept-btn:focus,
+    .ai-modify-btn:hover, .ai-modify-btn:focus {
+      transform: scale(1.05);
+      filter: url(#humanGlow);
+    }
+    
+    .status-indicator {
+      animation: pulse 2s infinite;
+    }
+    
+    .status-dot.processing {
+      animation: spin 2s linear infinite;
+    }
+    
+    .toggle-switch:hover {
+      transform: scale(1.2);
+      filter: url(#aiGlow);
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 1300px) {
+      svg {
+        width: 100%;
+        height: auto;
+      }
+      
+      .workflow-step {
+        width: 80%;
+        margin-bottom: 10px;
+      }
+      
+      text {
+        font-size: 9px;
+      }
+      
+      .title {
+        font-size: 20px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .system-overview,
+      .ai-engine,
+      .human-expertise,
+      .knowledge-system {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      .review-workflow,
+      .realtime-dashboard,
+      .collaboration-tools,
+      .integration-settings {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+      }
+      
+      .workflow-step {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 5px;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for advanced interactions -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      // Interactive elements
+      const workflowSteps = document.querySelectorAll('.workflow-step');
+      const statusIndicators = document.querySelectorAll('.status-indicator');
+      const aiButtons = document.querySelectorAll('.ai-accept-btn, .ai-modify-btn');
+      const toggleSwitches = document.querySelectorAll('.toggle-switch');
+      
+      // Workflow step interaction
+      workflowSteps.forEach(step => {
+        step.addEventListener('click', function() {
+          const stepType = this.getAttribute('data-step');
+          showStepDetails(stepType);
+          
+          if (typeof window.showWorkflowStep === 'function') {
+            window.showWorkflowStep(stepType);
+          }
+        });
+        
+        step.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // AI assistance interaction
+      aiButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const action = this.classList.contains('ai-accept-btn') ? 'accept' : 'modify';
+          handleAIRecommendation(action);
+          
+          if (typeof window.handleAIAssistance === 'function') {
+            window.handleAIAssistance(action);
+          }
+        });
+      });
+      
+      // System component interaction
+      const systemPanels = document.querySelectorAll('.ai-engine, .human-expertise, .knowledge-system');
+      systemPanels.forEach(panel => {
+        panel.addEventListener('click', function() {
+          const panelType = this.classList[0];
+          showSystemDetails(panelType);
+          
+          if (typeof window.showSystemPanel === 'function') {
+            window.showSystemPanel(panelType);
+          }
+        });
+      });
+      
+      // Configuration controls
+      toggleSwitches.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          toggleSetting(this);
+          
+          if (typeof window.updateSystemSettings === 'function') {
+            window.updateSystemSettings();
+          }
+        });
+      });
+      
+      // Helper functions
+      function showStepDetails(stepType) {
+        if (typeof window.showStepDetails === 'function') {
+          window.showStepDetails(stepType);
+        } else {
+          console.log(`Showing details for step: ${stepType}`);
+        }
+      }
+      
+      function handleAIRecommendation(action) {
+        if (typeof window.handleAIRecommendation === 'function') {
+          window.handleAIRecommendation(action);
+        } else {
+          console.log(`AI recommendation ${action}ed`);
+        }
+      }
+      
+      function showSystemDetails(panelType) {
+        if (typeof window.showSystemDetails === 'function') {
+          window.showSystemDetails(panelType);
+        } else {
+          console.log(`Showing ${panelType} details`);
+        }
+      }
+      
+      function toggleSetting(element) {
+        const isOn = element.getAttribute('fill') === 'url(#successGradient)';
+        element.setAttribute('fill', isOn ? '#E0E0E0' : 'url(#successGradient)');
+        
+        const nextText = element.nextElementSibling;
+        if (nextText) {
+          nextText.textContent = isOn ? 'OFF' : 'ON';
+          nextText.setAttribute('fill', isOn ? '#666' : '#4CAF50');
+        }
+      }
+      
+      // Real-time updates
+      function updateDashboard() {
+        if (typeof window.updateReviewDashboard === 'function') {
+          window.updateReviewDashboard();
+        }
+      }
+      
+      function updateMetrics() {
+        if (typeof window.updatePerformanceMetrics === 'function') {
+          window.updatePerformanceMetrics();
+        }
+      }
+      
+      // Initialize system
+      if (typeof window.initializeReviewSystem === 'function') {
+        window.initializeReviewSystem();
+      }
+      
+      // Periodic updates
+      setInterval(updateDashboard, 30000); // Update every 30 seconds
+      setInterval(updateMetrics, 60000); // Update metrics every minute
+    });
+    ]]>
+  </script>
+</svg>
