@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cm02-title cm02-desc">
+  <title id="cm02-title">Context Architecture Framework - Hierarchical Context Layers</title>
+  <desc id="cm02-desc">Interactive diagram showing five layered architecture levels for building comprehensive AI context: Project Overview, Technical Stack, Business Logic, Integration Points, and AI Optimization layers</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Layer gradients -->
+    <linearGradient id="projectGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="technicalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="businessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE0B2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="integrationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E1BEE7;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFECB3;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive hover effects -->
+    <filter id="hoverGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#1976D2" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Connection line pattern -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#FAFAFA" />
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#1A1A1A">
+    Context Architecture Framework
+  </text>
+  <text x="400" y="50" text-anchor="middle" class="subtitle" font-family="Inter, sans-serif" font-size="14" fill="#666">
+    5-Layer Hierarchical Context Building System
+  </text>
+  
+  <!-- Layer 1: AI Optimization (Top) -->
+  <g class="layer-group" data-layer="ai-optimization">
+    <rect x="50" y="80" width="700" height="80" rx="8" ry="8" 
+          fill="url(#aiGradient)" stroke="#FFB300" stroke-width="2"
+          class="layer-rect interactive-element"
+          tabindex="0" role="button" aria-describedby="ai-desc">
+    </rect>
+    <text x="70" y="105" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FF8F00">
+      Layer 5: AI Optimization
+    </text>
+    <text x="70" y="125" font-family="Inter, sans-serif" font-size="12" fill="#E65100">
+      • Claude Code prompt optimization • Context compression strategies
+    </text>
+    <text x="70" y="140" font-family="Inter, sans-serif" font-size="12" fill="#E65100">
+      • Token efficiency patterns • AI workflow enhancement
+    </text>
+    
+    <!-- Expansion indicator -->
+    <circle cx="720" cy="120" r="12" fill="#FFB300" stroke="#FF8F00" stroke-width="2" class="expand-btn" 
+            tabindex="0" role="button" aria-label="Expand AI Optimization layer details">
+      <title>Click to explore AI Optimization details</title>
+    </circle>
+    <text x="720" y="125" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#FF8F00">+</text>
+  </g>
+  
+  <!-- Connection arrows -->
+  <line x1="400" y1="160" x2="400" y2="180" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Layer 2: Integration Points -->
+  <g class="layer-group" data-layer="integration">
+    <rect x="50" y="180" width="700" height="80" rx="8" ry="8" 
+          fill="url(#integrationGradient)" stroke="#7B1FA2" stroke-width="2"
+          class="layer-rect interactive-element"
+          tabindex="0" role="button" aria-describedby="integration-desc">
+    </rect>
+    <text x="70" y="205" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#4A148C">
+      Layer 4: Integration Points
+    </text>
+    <text x="70" y="225" font-family="Inter, sans-serif" font-size="12" fill="#6A1B9A">
+      • API connections • Third-party dependencies • Service relationships
+    </text>
+    <text x="70" y="240" font-family="Inter, sans-serif" font-size="12" fill="#6A1B9A">
+      • Data flow patterns • Security boundaries • Performance considerations
+    </text>
+    
+    <circle cx="720" cy="220" r="12" fill="#7B1FA2" stroke="#4A148C" stroke-width="2" class="expand-btn"
+            tabindex="0" role="button" aria-label="Expand Integration Points layer details">
+      <title>Click to explore Integration Points details</title>
+    </circle>
+    <text x="720" y="225" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#4A148C">+</text>
+  </g>
+  
+  <line x1="400" y1="260" x2="400" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Layer 3: Business Logic -->
+  <g class="layer-group" data-layer="business">
+    <rect x="50" y="280" width="700" height="80" rx="8" ry="8" 
+          fill="url(#businessGradient)" stroke="#FF9800" stroke-width="2"
+          class="layer-rect interactive-element"
+          tabindex="0" role="button" aria-describedby="business-desc">
+    </rect>
+    <text x="70" y="305" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#E65100">
+      Layer 3: Business Logic
+    </text>
+    <text x="70" y="325" font-family="Inter, sans-serif" font-size="12" fill="#F57C00">
+      • Domain models • Business rules • Workflow processes
+    </text>
+    <text x="70" y="340" font-family="Inter, sans-serif" font-size="12" fill="#F57C00">
+      • User journeys • Feature requirements • Compliance constraints
+    </text>
+    
+    <circle cx="720" cy="320" r="12" fill="#FF9800" stroke="#E65100" stroke-width="2" class="expand-btn"
+            tabindex="0" role="button" aria-label="Expand Business Logic layer details">
+      <title>Click to explore Business Logic details</title>
+    </circle>
+    <text x="720" y="325" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#E65100">+</text>
+  </g>
+  
+  <line x1="400" y1="360" x2="400" y2="380" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Layer 4: Technical Stack -->
+  <g class="layer-group" data-layer="technical">
+    <rect x="50" y="380" width="700" height="80" rx="8" ry="8" 
+          fill="url(#technicalGradient)" stroke="#4CAF50" stroke-width="2"
+          class="layer-rect interactive-element"
+          tabindex="0" role="button" aria-describedby="technical-desc">
+    </rect>
+    <text x="70" y="405" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#2E7D32">
+      Layer 2: Technical Stack
+    </text>
+    <text x="70" y="425" font-family="Inter, sans-serif" font-size="12" fill="#388E3C">
+      • Frameworks • Languages • Dependencies • Architecture patterns
+    </text>
+    <text x="70" y="440" font-family="Inter, sans-serif" font-size="12" fill="#388E3C">
+      • Database schemas • Build tools • Deployment configurations
+    </text>
+    
+    <circle cx="720" cy="420" r="12" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" class="expand-btn"
+            tabindex="0" role="button" aria-label="Expand Technical Stack layer details">
+      <title>Click to explore Technical Stack details</title>
+    </circle>
+    <text x="720" y="425" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#2E7D32">+</text>
+  </g>
+  
+  <line x1="400" y1="460" x2="400" y2="480" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Layer 5: Project Overview (Base) -->
+  <g class="layer-group" data-layer="project">
+    <rect x="50" y="480" width="700" height="80" rx="8" ry="8" 
+          fill="url(#projectGradient)" stroke="#2196F3" stroke-width="2"
+          class="layer-rect interactive-element"
+          tabindex="0" role="button" aria-describedby="project-desc">
+    </rect>
+    <text x="70" y="505" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0D47A1">
+      Layer 1: Project Overview
+    </text>
+    <text x="70" y="525" font-family="Inter, sans-serif" font-size="12" fill="#1565C0">
+      • Project purpose • Goals • Stakeholders • Timeline • Success criteria
+    </text>
+    <text x="70" y="540" font-family="Inter, sans-serif" font-size="12" fill="#1565C0">
+      • Team structure • Communication patterns • Development methodology
+    </text>
+    
+    <circle cx="720" cy="520" r="12" fill="#2196F3" stroke="#0D47A1" stroke-width="2" class="expand-btn"
+            tabindex="0" role="button" aria-label="Expand Project Overview layer details">
+      <title>Click to explore Project Overview details</title>
+    </circle>
+    <text x="720" y="525" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#0D47A1">+</text>
+  </g>
+  
+  <!-- Interactive guidance panel (initially hidden) -->
+  <g id="guidance-panel" class="guidance-panel" style="opacity:0;">
+    <rect x="20" y="570" width="760" height="25" rx="4" fill="#F5F5F5" stroke="#DDD" stroke-width="1"/>
+    <text x="30" y="587" font-family="Inter, sans-serif" font-size="12" fill="#666">
+      💡 Click any layer to explore detailed context building templates and validation tools
+    </text>
+  </g>
+  
+  <!-- Hidden layer detail descriptions for screen readers -->
+  <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+    <div id="project-desc">
+      Foundation layer providing project context including purpose, goals, stakeholders, timeline, success criteria, team structure, and development methodology
+    </div>
+    <div id="technical-desc">
+      Technical infrastructure layer covering frameworks, languages, dependencies, architecture patterns, database schemas, build tools, and deployment configurations
+    </div>
+    <div id="business-desc">
+      Business logic layer encompassing domain models, business rules, workflow processes, user journeys, feature requirements, and compliance constraints
+    </div>
+    <div id="integration-desc">
+      Integration layer defining API connections, third-party dependencies, service relationships, data flow patterns, security boundaries, and performance considerations
+    </div>
+    <div id="ai-desc">
+      AI optimization layer focusing on Claude Code prompt optimization, context compression strategies, token efficiency patterns, and AI workflow enhancement
+    </div>
+  </div>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .layer-rect {
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
+    
+    .layer-rect:hover, .layer-rect:focus {
+      filter: url(#hoverGlow);
+      outline: none;
+    }
+    
+    .expand-btn {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .expand-btn:hover, .expand-btn:focus {
+      transform: scale(1.1);
+      outline: 2px solid #1976D2;
+      outline-offset: 2px;
+    }
+    
+    .layer-group:hover .guidance-panel {
+      opacity: 1 !important;
+      transition: opacity 0.3s ease;
+    }
+    
+    .interactive-element:focus {
+      outline: 3px solid #1976D2;
+      outline-offset: 2px;
+    }
+    
+    /* Responsive design for mobile */
+    @media (max-width: 768px) {
+      .layer-rect {
+        width: 90%;
+        x: 5%;
+      }
+      
+      text {
+        font-size: 10px;
+      }
+      
+      .title {
+        font-size: 16px;
+      }
+      
+      .subtitle {
+        font-size: 12px;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for interactivity (embedded for PWA compatibility) -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      const layers = document.querySelectorAll('.layer-group');
+      const guidancePanel = document.getElementById('guidance-panel');
+      
+      // Show guidance on any layer interaction
+      layers.forEach(layer => {
+        layer.addEventListener('mouseenter', () => {
+          guidancePanel.style.opacity = '1';
+        });
+        
+        layer.addEventListener('mouseleave', () => {
+          guidancePanel.style.opacity = '0';
+        });
+        
+        // Handle click events for layer exploration
+        layer.addEventListener('click', function() {
+          const layerType = this.getAttribute('data-layer');
+          // Trigger PWA navigation or modal for detailed layer content
+          if (typeof window.showLayerDetails === 'function') {
+            window.showLayerDetails(layerType);
+          } else {
+            // Fallback for standalone SVG viewing
+            console.log(`Exploring ${layerType} layer details`);
+          }
+        });
+        
+        // Keyboard navigation support
+        layer.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // Expand button functionality
+      const expandBtns = document.querySelectorAll('.expand-btn');
+      expandBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const layerGroup = this.closest('.layer-group');
+          const layerType = layerGroup.getAttribute('data-layer');
+          
+          // Toggle expand state
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          
+          // Update visual state
+          const plusText = this.querySelector('text');
+          plusText.textContent = isExpanded ? '+' : '−';
+          
+          // Trigger detailed view
+          if (typeof window.toggleLayerDetails === 'function') {
+            window.toggleLayerDetails(layerType, !isExpanded);
+          }
+        });
+      });
+    });
+    ]]>
+  </script>
+</svg>
