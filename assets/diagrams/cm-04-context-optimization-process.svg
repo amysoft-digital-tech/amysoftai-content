@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="950" viewBox="0 0 1400 950" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cm04-title cm04-desc">
+  <title id="cm04-title">Context Optimization Decision Tree - Strategic Context Management</title>
+  <desc id="cm04-desc">Interactive decision tree for optimizing context based on project type, team size, complexity level, and AI tool integration requirements with personalized recommendations</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Decision tree gradients -->
+    <linearGradient id="decisionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="optimizationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="strategyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E65100;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="recommendationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Project type gradients -->
+    <radialGradient id="startupGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.7" />
+    </radialGradient>
+    
+    <radialGradient id="enterpriseGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:0.7" />
+    </radialGradient>
+    
+    <radialGradient id="teamGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0.7" />
+    </radialGradient>
+    
+    <radialGradient id="complexityGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.7" />
+    </radialGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="decisionGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#667EEA" flood-opacity="0.8"/>
+    </filter>
+    
+    <filter id="optimizationGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#4CAF50" flood-opacity="0.7"/>
+    </filter>
+    
+    <filter id="strategyGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FF9800" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="recommendationGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#9C27B0" flood-opacity="0.8"/>
+    </filter>
+    
+    <!-- Decision tree patterns -->
+    <pattern id="decisionPattern" patternUnits="userSpaceOnUse" width="30" height="30">
+      <rect width="30" height="30" fill="#F8F9FA"/>
+      <circle cx="8" cy="8" r="2" fill="#667EEA" opacity="0.6"/>
+      <circle cx="22" cy="8" r="2" fill="#4CAF50" opacity="0.5"/>
+      <circle cx="8" cy="22" r="2" fill="#FF9800" opacity="0.7"/>
+      <circle cx="22" cy="22" r="2" fill="#9C27B0" opacity="0.4"/>
+    </pattern>
+    
+    <!-- Arrow markers -->
+    <marker id="decisionArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#667EEA" />
+    </marker>
+    
+    <marker id="optimizationArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4CAF50" />
+    </marker>
+    
+    <marker id="strategyArrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#FF9800" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="950" fill="#FAFAFA" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1400" height="70" fill="url(#decisionGradient)" />
+  <text x="50" y="30" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="white">
+    Context Optimization Decision Tree
+  </text>
+  <text x="50" y="50" font-family="Inter, sans-serif" font-size="14" fill="#E8F4FD">
+    Strategic Context Management - Personalized Optimization Framework
+  </text>
+  
+  <!-- Decision Tree Icon -->
+  <g id="tree-icon" transform="translate(1320, 15)">
+    <circle cx="20" cy="20" r="15" fill="#4CAF50" opacity="0.8"/>
+    <circle cx="10" cy="30" r="8" fill="#FF9800" opacity="0.7"/>
+    <circle cx="30" cy="30" r="8" fill="#9C27B0" opacity="0.6"/>
+    <circle cx="5" cy="40" r="5" fill="#2196F3" opacity="0.5"/>
+    <circle cx="35" cy="40" r="5" fill="#F44336" opacity="0.4"/>
+  </g>
+  
+  <!-- Start Node -->
+  <g class="start-node" data-node="start">
+    <rect x="620" y="100" width="160" height="80" rx="40" fill="url(#decisionGradient)" filter="url(#decisionGlow)" class="interactive"/>
+    <text x="700" y="125" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+      🚀 Start Here
+    </text>
+    <text x="700" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#E8F4FD">
+      Context Optimization
+    </text>
+    <text x="700" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#E8F4FD">
+      Assessment
+    </text>
+  </g>
+  
+  <!-- Project Type Decision -->
+  <g class="decision-node" data-node="project-type">
+    <rect x="580" y="220" width="240" height="100" rx="12" fill="url(#startupGradient)" stroke="#10B981" stroke-width="2" class="interactive"/>
+    <text x="700" y="245" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#065F46">
+      💼 Project Type?
+    </text>
+    <text x="700" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#047857">
+      Select your project category
+    </text>
+    
+    <!-- Project type options -->
+    <g class="option startup" data-option="startup">
+      <rect x="590" y="280" width="65" height="30" rx="4" fill="#10B981" opacity="0.8" class="interactive"/>
+      <text x="622" y="299" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">Startup</text>
+    </g>
+    <g class="option enterprise" data-option="enterprise">
+      <rect x="665" y="280" width="70" height="30" rx="4" fill="#3B82F6" opacity="0.8" class="interactive"/>
+      <text x="700" y="299" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">Enterprise</text>
+    </g>
+    <g class="option consulting" data-option="consulting">
+      <rect x="745" y="280" width="65" height="30" rx="4" fill="#8B5CF6" opacity="0.8" class="interactive"/>
+      <text x="777" y="299" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">Consulting</text>
+    </g>
+  </g>
+  
+  <!-- Team Size Decision -->
+  <g class="decision-node" data-node="team-size">
+    <rect x="180" y="380" width="220" height="100" rx="12" fill="url(#teamGradient)" stroke="#8B5CF6" stroke-width="2" class="interactive"/>
+    <text x="290" y="405" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#581C87">
+      👥 Team Size?
+    </text>
+    <text x="290" y="425" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6B21A8">
+      How many developers?
+    </text>
+    
+    <!-- Team size options -->
+    <g class="option solo" data-option="solo">
+      <rect x="190" y="445" width="45" height="25" rx="4" fill="#8B5CF6" opacity="0.8" class="interactive"/>
+      <text x="212" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">1-2</text>
+    </g>
+    <g class="option small" data-option="small">
+      <rect x="245" y="445" width="45" height="25" rx="4" fill="#7C3AED" opacity="0.8" class="interactive"/>
+      <text x="267" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">3-8</text>
+    </g>
+    <g class="option medium" data-option="medium">
+      <rect x="300" y="445" width="45" height="25" rx="4" fill="#6D28D9" opacity="0.8" class="interactive"/>
+      <text x="322" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">9-20</text>
+    </g>
+    <g class="option large" data-option="large">
+      <rect x="355" y="445" width="35" height="25" rx="4" fill="#5B21B6" opacity="0.8" class="interactive"/>
+      <text x="372" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">20+</text>
+    </g>
+  </g>
+  
+  <!-- Complexity Level Decision -->
+  <g class="decision-node" data-node="complexity">
+    <rect x="580" y="380" width="240" height="100" rx="12" fill="url(#complexityGradient)" stroke="#F59E0B" stroke-width="2" class="interactive"/>
+    <text x="700" y="405" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#92400E">
+      ⚙️ Complexity Level?
+    </text>
+    <text x="700" y="425" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#B45309">
+      Project complexity assessment
+    </text>
+    
+    <!-- Complexity options -->
+    <g class="option simple" data-option="simple">
+      <rect x="590" y="445" width="50" height="25" rx="4" fill="#10B981" opacity="0.8" class="interactive"/>
+      <text x="615" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Simple</text>
+    </g>
+    <g class="option moderate" data-option="moderate">
+      <rect x="650" y="445" width="55" height="25" rx="4" fill="#F59E0B" opacity="0.8" class="interactive"/>
+      <text x="677" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Moderate</text>
+    </g>
+    <g class="option complex" data-option="complex">
+      <rect x="715" y="445" width="50" height="25" rx="4" fill="#EF4444" opacity="0.8" class="interactive"/>
+      <text x="740" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Complex</text>
+    </g>
+    <g class="option enterprise-scale" data-option="enterprise">
+      <rect x="775" y="445" width="35" height="25" rx="4" fill="#7C2D12" opacity="0.8" class="interactive"/>
+      <text x="792" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Epic</text>
+    </g>
+  </g>
+  
+  <!-- AI Tool Integration Decision -->
+  <g class="decision-node" data-node="ai-tools">
+    <rect x="980" y="380" width="220" height="100" rx="12" fill="url(#enterpriseGradient)" stroke="#3B82F6" stroke-width="2" class="interactive"/>
+    <text x="1090" y="405" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1E3A8A">
+      🤖 AI Tools?
+    </text>
+    <text x="1090" y="425" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1E40AF">
+      Current AI integration level
+    </text>
+    
+    <!-- AI tool options -->
+    <g class="option none" data-option="none">
+      <rect x="990" y="445" width="40" height="25" rx="4" fill="#9CA3AF" opacity="0.8" class="interactive"/>
+      <text x="1010" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">None</text>
+    </g>
+    <g class="option basic" data-option="basic">
+      <rect x="1040" y="445" width="40" height="25" rx="4" fill="#3B82F6" opacity="0.8" class="interactive"/>
+      <text x="1060" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Basic</text>
+    </g>
+    <g class="option advanced" data-option="advanced">
+      <rect x="1090" y="445" width="50" height="25" rx="4" fill="#1D4ED8" opacity="0.8" class="interactive"/>
+      <text x="1115" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Advanced</text>
+    </g>
+    <g class="option expert" data-option="expert">
+      <rect x="1150" y="445" width="40" height="25" rx="4" fill="#1E3A8A" opacity="0.8" class="interactive"/>
+      <text x="1170" y="461" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="white">Expert</text>
+    </g>
+  </g>
+  
+  <!-- Optimization Strategy Recommendations -->
+  <g class="strategy-section">
+    <rect x="50" y="540" width="1300" height="360" rx="12" fill="url(#recommendationGradient)" opacity="0.1" stroke="#9C27B0" stroke-width="2"/>
+    <text x="700" y="570" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#4A148C">
+      📋 Optimization Strategies & Recommendations
+    </text>
+    
+    <!-- Strategy 1: Startup + Small Team + Simple -->
+    <g class="strategy startup-simple" data-strategy="startup-simple">
+      <rect x="80" y="600" width="280" height="120" rx="8" fill="url(#optimizationGradient)" opacity="0.9" filter="url(#optimizationGlow)" class="interactive"/>
+      <text x="220" y="625" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        🚀 Lean Context Strategy
+      </text>
+      <text x="90" y="645" font-family="Inter, sans-serif" font-size="11" fill="#E8F5E8">• Minimal context overhead</text>
+      <text x="90" y="660" font-family="Inter, sans-serif" font-size="11" fill="#E8F5E8">• Focus on user stories</text>
+      <text x="90" y="675" font-family="Inter, sans-serif" font-size="11" fill="#E8F5E8">• Lightweight documentation</text>
+      <text x="90" y="690" font-family="Inter, sans-serif" font-size="11" fill="#E8F5E8">• Rapid iteration cycles</text>
+      <text x="90" y="705" font-family="Inter, sans-serif" font-size="11" fill="#E8F5E8">• AI pair programming focus</text>
+    </g>
+    
+    <!-- Strategy 2: Enterprise + Large Team + Complex -->
+    <g class="strategy enterprise-complex" data-strategy="enterprise-complex">
+      <rect x="380" y="600" width="280" height="120" rx="8" fill="url(#strategyGradient)" opacity="0.9" filter="url(#strategyGlow)" class="interactive"/>
+      <text x="520" y="625" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        🏢 Enterprise Context Framework
+      </text>
+      <text x="390" y="645" font-family="Inter, sans-serif" font-size="11" fill="#FFF3E0">• Comprehensive architecture docs</text>
+      <text x="390" y="660" font-family="Inter, sans-serif" font-size="11" fill="#FFF3E0">• Multi-layer context hierarchy</text>
+      <text x="390" y="675" font-family="Inter, sans-serif" font-size="11" fill="#FFF3E0">• Cross-team knowledge sharing</text>
+      <text x="390" y="690" font-family="Inter, sans-serif" font-size="11" fill="#FFF3E0">• Governance & compliance</text>
+      <text x="390" y="705" font-family="Inter, sans-serif" font-size="11" fill="#FFF3E0">• Automated context validation</text>
+    </g>
+    
+    <!-- Strategy 3: Consulting + Variable + Advanced AI -->
+    <g class="strategy consulting-advanced" data-strategy="consulting-advanced">
+      <rect x="680" y="600" width="280" height="120" rx="8" fill="url(#recommendationGradient)" opacity="0.9" filter="url(#recommendationGlow)" class="interactive"/>
+      <text x="820" y="625" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        🎯 Adaptive Context System
+      </text>
+      <text x="690" y="645" font-family="Inter, sans-serif" font-size="11" fill="#F3E5F5">• Client-specific templates</text>
+      <text x="690" y="660" font-family="Inter, sans-serif" font-size="11" fill="#F3E5F5">• Domain expertise integration</text>
+      <text x="690" y="675" font-family="Inter, sans-serif" font-size="11" fill="#F3E5F5">• Knowledge transfer protocols</text>
+      <text x="690" y="690" font-family="Inter, sans-serif" font-size="11" fill="#F3E5F5">• Performance benchmarking</text>
+      <text x="690" y="705" font-family="Inter, sans-serif" font-size="11" fill="#F3E5F5">• AI model fine-tuning</text>
+    </g>
+    
+    <!-- Strategy 4: Mixed Teams + Moderate Complexity -->
+    <g class="strategy mixed-moderate" data-strategy="mixed-moderate">
+      <rect x="980" y="600" width="280" height="120" rx="8" fill="url(#decisionGradient)" opacity="0.9" filter="url(#decisionGlow)" class="interactive"/>
+      <text x="1120" y="625" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">
+        ⚖️ Balanced Context Approach
+      </text>
+      <text x="990" y="645" font-family="Inter, sans-serif" font-size="11" fill="#E8F4FD">• Modular context design</text>
+      <text x="990" y="660" font-family="Inter, sans-serif" font-size="11" fill="#E8F4FD">• Progressive enhancement</text>
+      <text x="990" y="675" font-family="Inter, sans-serif" font-size="11" fill="#E8F4FD">• Team skill assessment</text>
+      <text x="990" y="690" font-family="Inter, sans-serif" font-size="11" fill="#E8F4FD">• Context quality metrics</text>
+      <text x="990" y="705" font-family="Inter, sans-serif" font-size="11" fill="#E8F4FD">• AI assistance calibration</text>
+    </g>
+  </g>
+  
+  <!-- Implementation Metrics -->
+  <g class="metrics-section">
+    <text x="700" y="760" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#4A148C">
+      📊 Expected Optimization Outcomes
+    </text>
+    
+    <!-- Metrics Grid -->
+    <g class="metric" data-metric="productivity">
+      <rect x="80" y="780" width="120" height="60" rx="6" fill="#4CAF50" opacity="0.8"/>
+      <text x="140" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Productivity</text>
+      <text x="140" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">+45%</text>
+    </g>
+    
+    <g class="metric" data-metric="accuracy">
+      <rect x="220" y="780" width="120" height="60" rx="6" fill="#2196F3" opacity="0.8"/>
+      <text x="280" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Accuracy</text>
+      <text x="280" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">92%</text>
+    </g>
+    
+    <g class="metric" data-metric="time-saved">
+      <rect x="360" y="780" width="120" height="60" rx="6" fill="#FF9800" opacity="0.8"/>
+      <text x="420" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Time Saved</text>
+      <text x="420" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">8hr/wk</text>
+    </g>
+    
+    <g class="metric" data-metric="quality">
+      <rect x="500" y="780" width="120" height="60" rx="6" fill="#9C27B0" opacity="0.8"/>
+      <text x="560" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Code Quality</text>
+      <text x="560" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">A+</text>
+    </g>
+    
+    <g class="metric" data-metric="satisfaction">
+      <rect x="640" y="780" width="120" height="60" rx="6" fill="#E91E63" opacity="0.8"/>
+      <text x="700" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Satisfaction</text>
+      <text x="700" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">9.2/10</text>
+    </g>
+    
+    <g class="metric" data-metric="maintenance">
+      <rect x="780" y="780" width="120" height="60" rx="6" fill="#795548" opacity="0.8"/>
+      <text x="840" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Maintenance</text>
+      <text x="840" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">-60%</text>
+    </g>
+    
+    <g class="metric" data-metric="knowledge">
+      <rect x="920" y="780" width="120" height="60" rx="6" fill="#607D8B" opacity="0.8"/>
+      <text x="980" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Knowledge</text>
+      <text x="980" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">+200%</text>
+    </g>
+    
+    <g class="metric" data-metric="onboarding">
+      <rect x="1060" y="780" width="120" height="60" rx="6" fill="#FF5722" opacity="0.8"/>
+      <text x="1120" y="800" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="white">Onboarding</text>
+      <text x="1120" y="820" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="white">2 days</text>
+    </g>
+  </g>
+  
+  <!-- Decision Flow Arrows -->
+  <line x1="700" y1="180" x2="700" y2="220" stroke="#667EEA" stroke-width="3" marker-end="url(#decisionArrow)"/>
+  <line x1="620" y1="320" x2="400" y2="380" stroke="#10B981" stroke-width="2" marker-end="url(#optimizationArrow)"/>
+  <line x1="700" y1="320" x2="700" y2="380" stroke="#F59E0B" stroke-width="2" marker-end="url(#strategyArrow)"/>
+  <line x1="780" y1="320" x2="1000" y2="380" stroke="#3B82F6" stroke-width="2" marker-end="url(#decisionArrow)"/>
+  
+  <!-- Recommendation Flow Arrows -->
+  <line x1="290" y1="480" x2="220" y2="600" stroke="#8B5CF6" stroke-width="2" marker-end="url(#optimizationArrow)"/>
+  <line x1="700" y1="480" x2="520" y2="600" stroke="#F59E0B" stroke-width="2" marker-end="url(#strategyArrow)"/>
+  <line x1="1090" y1="480" x2="820" y2="600" stroke="#3B82F6" stroke-width="2" marker-end="url(#decisionArrow)"/>
+  <line x1="850" y1="480" x2="1120" y2="600" stroke="#667EEA" stroke-width="2" marker-end="url(#recommendationArrow)"/>
+  
+  <!-- Current Selection Indicators -->
+  <g id="selection-indicators" opacity="0">
+    <circle cx="700" cy="140" r="8" fill="#4CAF50" stroke="white" stroke-width="2"/>
+    <circle cx="700" cy="270" r="6" fill="#FF9800" stroke="white" stroke-width="2"/>
+    <circle cx="290" cy="430" r="6" fill="#8B5CF6" stroke="white" stroke-width="2"/>
+    <circle cx="700" cy="430" r="6" fill="#F59E0B" stroke="white" stroke-width="2"/>
+    <circle cx="1090" cy="430" r="6" fill="#3B82F6" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Interactive JavaScript for PWA Integration -->
+  <script type="text/javascript">
+    <![CDATA[
+    class ContextOptimizationDecisionTree {
+      constructor() {
+        this.selections = {
+          projectType: null,
+          teamSize: null,
+          complexity: null,
+          aiTools: null
+        };
+        this.currentStrategy = null;
+        this.init();
+      }
+      
+      init() {
+        this.setupEventListeners();
+        this.updateRecommendations();
+        console.log('Context Optimization Decision Tree initialized');
+      }
+      
+      setupEventListeners() {
+        // Project type selection
+        document.querySelectorAll('[data-node="project-type"] .option').forEach(option => {
+          option.addEventListener('click', (e) => {
+            this.handleSelection('projectType', option.dataset.option);
+          });
+        });
+        
+        // Team size selection
+        document.querySelectorAll('[data-node="team-size"] .option').forEach(option => {
+          option.addEventListener('click', (e) => {
+            this.handleSelection('teamSize', option.dataset.option);
+          });
+        });
+        
+        // Complexity selection
+        document.querySelectorAll('[data-node="complexity"] .option').forEach(option => {
+          option.addEventListener('click', (e) => {
+            this.handleSelection('complexity', option.dataset.option);
+          });
+        });
+        
+        // AI tools selection
+        document.querySelectorAll('[data-node="ai-tools"] .option').forEach(option => {
+          option.addEventListener('click', (e) => {
+            this.handleSelection('aiTools', option.dataset.option);
+          });
+        });
+        
+        // Strategy interactions
+        document.querySelectorAll('.strategy').forEach(strategy => {
+          strategy.addEventListener('click', (e) => {
+            this.showStrategyDetails(strategy.dataset.strategy);
+          });
+        });
+        
+        // Metric interactions
+        document.querySelectorAll('.metric').forEach(metric => {
+          metric.addEventListener('click', (e) => {
+            this.showMetricDetails(metric.dataset.metric);
+          });
+        });
+      }
+      
+      handleSelection(category, value) {
+        this.selections[category] = value;
+        this.updateVisualFeedback(category, value);
+        this.updateRecommendations();
+        this.logSelection(category, value);
+        
+        // Trigger callback for PWA integration
+        if (typeof window.onContextDecisionUpdate === 'function') {
+          window.onContextDecisionUpdate(this.selections, this.getCurrentStrategy());
+        }
+      }
+      
+      updateVisualFeedback(category, value) {
+        // Remove previous selections for this category
+        document.querySelectorAll(`[data-node="${this.getCategoryNode(category)}"] .option`).forEach(opt => {
+          opt.style.opacity = '0.6';
+          opt.style.transform = 'scale(1)';
+        });
+        
+        // Highlight selected option
+        const selectedElement = document.querySelector(`[data-node="${this.getCategoryNode(category)}"] .option[data-option="${value}"]`);
+        if (selectedElement) {
+          selectedElement.style.opacity = '1';
+          selectedElement.style.transform = 'scale(1.1)';
+          selectedElement.style.filter = 'url(#optimizationGlow)';
+        }
+      }
+      
+      getCategoryNode(category) {
+        const mapping = {
+          'projectType': 'project-type',
+          'teamSize': 'team-size',
+          'complexity': 'complexity',
+          'aiTools': 'ai-tools'
+        };
+        return mapping[category];
+      }
+      
+      updateRecommendations() {
+        const strategy = this.getCurrentStrategy();
+        
+        // Update strategy visibility
+        document.querySelectorAll('.strategy').forEach(strategyEl => {
+          if (strategyEl.dataset.strategy === strategy) {
+            strategyEl.style.opacity = '1';
+            strategyEl.style.filter = 'url(#recommendationGlow)';
+            strategyEl.style.transform = 'scale(1.05)';
+          } else {
+            strategyEl.style.opacity = '0.4';
+            strategyEl.style.filter = 'none';
+            strategyEl.style.transform = 'scale(1)';
+          }
+        });
+        
+        // Update metrics based on strategy
+        this.updateMetrics(strategy);
+      }
+      
+      getCurrentStrategy() {
+        const { projectType, teamSize, complexity, aiTools } = this.selections;
+        
+        if (!projectType || !teamSize || !complexity || !aiTools) {
+          return 'mixed-moderate'; // Default strategy
+        }
+        
+        // Strategy decision logic
+        if (projectType === 'startup' && (teamSize === 'solo' || teamSize === 'small') && 
+            (complexity === 'simple' || complexity === 'moderate')) {
+          return 'startup-simple';
+        }
+        
+        if (projectType === 'enterprise' && (teamSize === 'medium' || teamSize === 'large') && 
+            (complexity === 'complex' || complexity === 'enterprise')) {
+          return 'enterprise-complex';
+        }
+        
+        if (projectType === 'consulting' && 
+            (aiTools === 'advanced' || aiTools === 'expert')) {
+          return 'consulting-advanced';
+        }
+        
+        return 'mixed-moderate';
+      }
+      
+      updateMetrics(strategy) {
+        const metricValues = this.getMetricValues(strategy);
+        
+        Object.entries(metricValues).forEach(([metric, value]) => {
+          const metricElement = document.querySelector(`[data-metric="${metric}"] text:last-child`);
+          if (metricElement) {
+            metricElement.textContent = value;
+          }
+        });
+      }
+      
+      getMetricValues(strategy) {
+        const strategies = {
+          'startup-simple': {
+            'productivity': '+45%',
+            'accuracy': '88%',
+            'time-saved': '6hr/wk',
+            'quality': 'B+',
+            'satisfaction': '8.8/10',
+            'maintenance': '-40%',
+            'knowledge': '+150%',
+            'onboarding': '1 day'
+          },
+          'enterprise-complex': {
+            'productivity': '+35%',
+            'accuracy': '95%',
+            'time-saved': '12hr/wk',
+            'quality': 'A+',
+            'satisfaction': '9.5/10',
+            'maintenance': '-70%',
+            'knowledge': '+300%',
+            'onboarding': '3 days'
+          },
+          'consulting-advanced': {
+            'productivity': '+55%',
+            'accuracy': '97%',
+            'time-saved': '15hr/wk',
+            'quality': 'A++',
+            'satisfaction': '9.8/10',
+            'maintenance': '-80%',
+            'knowledge': '+400%',
+            'onboarding': '4 hrs'
+          },
+          'mixed-moderate': {
+            'productivity': '+40%',
+            'accuracy': '92%',
+            'time-saved': '8hr/wk',
+            'quality': 'A',
+            'satisfaction': '9.2/10',
+            'maintenance': '-60%',
+            'knowledge': '+200%',
+            'onboarding': '2 days'
+          }
+        };
+        
+        return strategies[strategy] || strategies['mixed-moderate'];
+      }
+      
+      showStrategyDetails(strategy) {
+        const details = this.getStrategyDetails(strategy);
+        
+        // Trigger callback for PWA integration
+        if (typeof window.onStrategySelect === 'function') {
+          window.onStrategySelect(strategy, details);
+        }
+        
+        console.log(`Strategy selected: ${strategy}`, details);
+      }
+      
+      getStrategyDetails(strategy) {
+        const strategies = {
+          'startup-simple': {
+            name: 'Lean Context Strategy',
+            description: 'Optimized for rapid development and minimal overhead',
+            techniques: [
+              'Just-in-time context creation',
+              'User story driven development',
+              'Minimal documentation overhead',
+              'AI pair programming integration',
+              'Rapid feedback loops'
+            ],
+            timeToImplement: '1-2 weeks',
+            expectedROI: '300%',
+            riskLevel: 'Low'
+          },
+          'enterprise-complex': {
+            name: 'Enterprise Context Framework',
+            description: 'Comprehensive system for large-scale development',
+            techniques: [
+              'Multi-layer architecture documentation',
+              'Cross-functional team coordination',
+              'Automated compliance checking',
+              'Knowledge management systems',
+              'AI governance frameworks'
+            ],
+            timeToImplement: '2-3 months',
+            expectedROI: '250%',
+            riskLevel: 'Medium'
+          },
+          'consulting-advanced': {
+            name: 'Adaptive Context System',
+            description: 'Flexible framework for diverse client environments',
+            techniques: [
+              'Client-specific template generation',
+              'Domain expertise integration',
+              'Performance benchmarking',
+              'AI model customization',
+              'Knowledge transfer protocols'
+            ],
+            timeToImplement: '3-6 weeks',
+            expectedROI: '400%',
+            riskLevel: 'Medium-High'
+          },
+          'mixed-moderate': {
+            name: 'Balanced Context Approach',
+            description: 'Versatile strategy for diverse team compositions',
+            techniques: [
+              'Modular context architecture',
+              'Progressive complexity introduction',
+              'Team skill assessment integration',
+              'Quality metrics tracking',
+              'AI assistance calibration'
+            ],
+            timeToImplement: '4-8 weeks',
+            expectedROI: '275%',
+            riskLevel: 'Low-Medium'
+          }
+        };
+        
+        return strategies[strategy] || strategies['mixed-moderate'];
+      }
+      
+      showMetricDetails(metric) {
+        const details = this.getMetricDetails(metric);
+        
+        // Trigger callback for PWA integration
+        if (typeof window.onMetricSelect === 'function') {
+          window.onMetricSelect(metric, details);
+        }
+        
+        console.log(`Metric selected: ${metric}`, details);
+      }
+      
+      getMetricDetails(metric) {
+        const metrics = {
+          'productivity': {
+            name: 'Productivity Improvement',
+            description: 'Increase in development velocity and output quality',
+            measurement: 'Story points per sprint, features delivered per month',
+            factors: ['Context quality', 'AI assistance effectiveness', 'Team coordination']
+          },
+          'accuracy': {
+            name: 'Code Accuracy',
+            description: 'Reduction in bugs and quality issues',
+            measurement: 'Bug density, code review findings, test coverage',
+            factors: ['Context precision', 'AI model training', 'Review processes']
+          },
+          'time-saved': {
+            name: 'Time Savings',
+            description: 'Hours saved per week through optimization',
+            measurement: 'Time tracking, task completion rates',
+            factors: ['Automation level', 'Context reusability', 'Knowledge sharing']
+          },
+          'quality': {
+            name: 'Code Quality Score',
+            description: 'Overall code quality assessment',
+            measurement: 'SonarQube metrics, review scores, maintainability index',
+            factors: ['Context depth', 'AI guidance quality', 'Team expertise']
+          },
+          'satisfaction': {
+            name: 'Developer Satisfaction',
+            description: 'Team satisfaction with development experience',
+            measurement: 'Survey scores, retention rates, engagement metrics',
+            factors: ['Tool effectiveness', 'Workflow efficiency', 'Learning opportunities']
+          },
+          'maintenance': {
+            name: 'Maintenance Reduction',
+            description: 'Decrease in ongoing maintenance overhead',
+            measurement: 'Support tickets, bug fixes, refactoring needs',
+            factors: ['Code quality', 'Documentation completeness', 'Architecture clarity']
+          },
+          'knowledge': {
+            name: 'Knowledge Transfer',
+            description: 'Improvement in team knowledge sharing',
+            measurement: 'Onboarding time, cross-training success, documentation usage',
+            factors: ['Context accessibility', 'AI explanation quality', 'Team practices']
+          },
+          'onboarding': {
+            name: 'Onboarding Time',
+            description: 'Time required for new team member productivity',
+            measurement: 'Days to first commit, weeks to full productivity',
+            factors: ['Documentation quality', 'AI assistance availability', 'Mentoring systems']
+          }
+        };
+        
+        return metrics[metric] || {};
+      }
+      
+      logSelection(category, value) {
+        const timestamp = new Date().toISOString();
+        console.log(`Context optimization selection: ${category} = ${value} at ${timestamp}`);
+        
+        // Store in localStorage for persistence
+        const selections = JSON.parse(localStorage.getItem('contextOptimizationSelections') || '{}');
+        selections[category] = value;
+        selections.lastUpdated = timestamp;
+        localStorage.setItem('contextOptimizationSelections', JSON.stringify(selections));
+      }
+      
+      exportRecommendations() {
+        const strategy = this.getCurrentStrategy();
+        const details = this.getStrategyDetails(strategy);
+        const metrics = this.getMetricValues(strategy);
+        
+        return {
+          selections: this.selections,
+          strategy: strategy,
+          details: details,
+          expectedMetrics: metrics,
+          timestamp: new Date().toISOString()
+        };
+      }
+      
+      // PWA offline support
+      getOfflineData() {
+        return {
+          strategies: ['startup-simple', 'enterprise-complex', 'consulting-advanced', 'mixed-moderate'],
+          selections: this.selections,
+          currentStrategy: this.getCurrentStrategy()
+        };
+      }
+    }
+    
+    // Initialize when DOM is loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        window.contextOptimizationTree = new ContextOptimizationDecisionTree();
+      });
+    } else {
+      window.contextOptimizationTree = new ContextOptimizationDecisionTree();
+    }
+    
+    // Expose global functions for PWA integration
+    window.getContextOptimizationState = () => {
+      return window.contextOptimizationTree ? window.contextOptimizationTree.exportRecommendations() : null;
+    };
+    
+    window.setContextOptimizationSelections = (selections) => {
+      if (window.contextOptimizationTree) {
+        Object.entries(selections).forEach(([category, value]) => {
+          window.contextOptimizationTree.handleSelection(category, value);
+        });
+      }
+    };
+    ]]>
+  </script>
+  
+  <!-- Accessibility enhancements -->
+  <style>
+    .interactive {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .interactive:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+    
+    .interactive:focus {
+      outline: 2px solid #4CAF50;
+      outline-offset: 2px;
+    }
+    
+    .option:hover {
+      filter: url(#optimizationGlow);
+    }
+    
+    .strategy:hover {
+      filter: url(#recommendationGlow);
+    }
+    
+    .metric:hover {
+      transform: scale(1.05);
+      filter: url(#strategyGlow);
+    }
+    
+    @media (max-width: 768px) {
+      .decision-node {
+        transform: scale(0.8);
+      }
+      
+      .strategy {
+        width: 260px;
+        margin: 10px 0;
+      }
+      
+      .metric {
+        width: 100px;
+        margin: 5px;
+      }
+    }
+  </style>
+</svg>
