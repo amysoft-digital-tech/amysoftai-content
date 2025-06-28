@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="st04-title st04-desc">
+  <title id="st04-title">Multi-Dimensional Test Strategy Matrix - 3D Strategic Framework</title>
+  <desc id="st04-desc">Advanced 3D matrix visualization showing intersection of test types, complexity levels, and AI assistance levels with strategic recommendations for optimal testing approaches</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- 3D Matrix gradient themes -->
+    <linearGradient id="matrixPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Test Type Gradients -->
+    <linearGradient id="unitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="integrationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <linearGradient id="e2eGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Complexity Level Gradients -->
+    <linearGradient id="simpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <linearGradient id="moderateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <linearGradient id="complexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="matrix3DGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#667EEA" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="cellGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 3D Transformation Patterns -->
+    <pattern id="cubePattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#F8FAFC"/>
+      <path d="M0 0 L20 0 L15 5 L-5 5 Z" fill="#E2E8F0"/>
+      <path d="M20 0 L20 20 L15 15 L15 5 Z" fill="#CBD5E1"/>
+      <rect x="0" y="0" width="15" height="15" fill="url(#matrixPrimaryGradient)" opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1400" height="80" fill="url(#matrixPrimaryGradient)" />
+  <text x="60" y="35" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="white">
+    Multi-Dimensional Test Strategy Matrix
+  </text>
+  <text x="60" y="55" font-family="Inter, sans-serif" font-size="16" fill="#E2E8F0">
+    3D Strategic Framework - Test Types × Complexity × AI Assistance
+  </text>
+  
+  <!-- 3D Matrix Icon -->
+  <g id="matrix-3d-icon" transform="translate(1280, 20)">
+    <g transform="perspective(100) rotateX(15) rotateY(25)">
+      <rect x="0" y="0" width="30" height="30" fill="white" opacity="0.8" stroke="#667EEA" stroke-width="2"/>
+      <rect x="5" y="-5" width="30" height="30" fill="white" opacity="0.6" stroke="#667EEA" stroke-width="1"/>
+      <rect x="10" y="-10" width="30" height="30" fill="white" opacity="0.4" stroke="#667EEA" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Matrix Control Panel -->
+  <g id="matrix-controls" transform="translate(50, 100)">
+    <rect x="0" y="0" width="1300" height="60" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">Matrix Navigation:</text>
+    
+    <!-- Dimension controls -->
+    <g transform="translate(150, 15)">
+      <rect x="0" y="0" width="120" height="30" rx="4" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" class="dimension-btn" data-dimension="test-types">
+        <title>Test Types Dimension</title>
+      </rect>
+      <text x="60" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#1E40AF">Test Types (3)</text>
+    </g>
+    
+    <g transform="translate(280, 15)">
+      <rect x="0" y="0" width="120" height="30" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" class="dimension-btn" data-dimension="complexity">
+        <title>Complexity Levels Dimension</title>
+      </rect>
+      <text x="60" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#92400E">Complexity (3)</text>
+    </g>
+    
+    <g transform="translate(410, 15)">
+      <rect x="0" y="0" width="120" height="30" rx="4" fill="#F3E8FF" stroke="#8B5CF6" stroke-width="1" class="dimension-btn" data-dimension="ai-assistance">
+        <title>AI Assistance Levels Dimension</title>
+      </rect>
+      <text x="60" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#7C3AED">AI Assistance (3)</text>
+    </g>
+    
+    <!-- Matrix view controls -->
+    <g transform="translate(580, 15)">
+      <circle cx="15" cy="15" r="10" fill="#10B981" class="view-btn active" data-view="3d">
+        <title>3D Matrix View</title>
+      </circle>
+      <text x="35" y="19" font-family="Inter, sans-serif" font-size="10" fill="#15803D">3D View</text>
+    </g>
+    
+    <g transform="translate(670, 15)">
+      <circle cx="15" cy="15" r="10" fill="#9CA3AF" class="view-btn" data-view="2d">
+        <title>2D Matrix View</title>
+      </circle>
+      <text x="35" y="19" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">2D View</text>
+    </g>
+    
+    <!-- Current selection display -->
+    <rect x="780" y="5" width="500" height="50" rx="6" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1"/>
+    <text x="795" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0369A1">Current Selection:</text>
+    <text x="795" y="35" font-family="Inter, sans-serif" font-size="10" fill="#075985" id="current-selection">Integration Testing × Moderate Complexity × AI Assisted</text>
+    <text x="795" y="47" font-family="Inter, sans-serif" font-size="9" fill="#075985" id="recommendation-preview">Recommended: Hybrid approach with 60% automation</text>
+  </g>
+  
+  <!-- Main 3D Matrix Visualization -->
+  <g id="matrix-3d" transform="translate(100, 180)">
+    <!-- 3D Coordinate System -->
+    <g id="coordinate-system" class="matrix-3d-view">
+      <!-- Z-axis (Test Types) -->
+      <line x1="200" y1="400" x2="200" y2="100" stroke="#10B981" stroke-width="3" marker-end="url(#arrow)"/>
+      <text x="180" y="90" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#10B981" transform="rotate(-90, 180, 90)">Test Types</text>
+      
+      <!-- X-axis (Complexity) -->
+      <line x1="200" y1="400" x2="500" y2="400" stroke="#F59E0B" stroke-width="3" marker-end="url(#arrow)"/>
+      <text x="520" y="405" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#F59E0B">Complexity</text>
+      
+      <!-- Y-axis (AI Assistance) - 3D perspective -->
+      <line x1="200" y1="400" x2="50" y2="250" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow)"/>
+      <text x="30" y="240" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#8B5CF6" transform="rotate(-45, 30, 240)">AI Assistance</text>
+    </g>
+    
+    <!-- 3D Matrix Cells (27 total combinations) -->
+    
+    <!-- Unit Testing Layer (Z=0) -->
+    <g class="test-type-layer" data-type="unit" transform="translate(0, 0)">
+      <!-- Simple Unit Tests -->
+      <g class="matrix-cell" data-test="unit" data-complexity="simple" data-ai="manual" transform="translate(220, 380)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">2-4 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">Jest/Vitest</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="unit" data-complexity="simple" data-ai="assisted" transform="translate(190, 350)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">1-2 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">AI+Jest</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="unit" data-complexity="simple" data-ai="automated" transform="translate(160, 320)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">30 min</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">Auto-Gen</text>
+      </g>
+      
+      <!-- Moderate Unit Tests -->
+      <g class="matrix-cell" data-test="unit" data-complexity="moderate" data-ai="manual" transform="translate(320, 380)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Moderate</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">6-8 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">TDD</text>
+      </g>
+      
+      <g class="matrix-cell highlighted" data-test="unit" data-complexity="moderate" data-ai="assisted" transform="translate(290, 350)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#10B981" stroke-width="3" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Moderate</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">3-4 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">AI+TDD</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="unit" data-complexity="moderate" data-ai="automated" transform="translate(260, 320)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Moderate</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">1-2 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">Smart-Gen</text>
+      </g>
+      
+      <!-- Complex Unit Tests -->
+      <g class="matrix-cell" data-test="unit" data-complexity="complex" data-ai="manual" transform="translate(420, 380)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Complex</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">12-16 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">Expert TDD</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="unit" data-complexity="complex" data-ai="assisted" transform="translate(390, 350)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Complex</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">6-8 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">AI+Expert</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="unit" data-complexity="complex" data-ai="automated" transform="translate(360, 320)">
+        <rect width="80" height="60" rx="4" fill="url(#unitGradient)" stroke="#059669" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Unit+Complex</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">3-4 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D1FAE5">AI-Expert</text>
+      </g>
+    </g>
+    
+    <!-- Integration Testing Layer (Z=1) -->
+    <g class="test-type-layer" data-type="integration" transform="translate(0, -100)">
+      <!-- Simple Integration Tests -->
+      <g class="matrix-cell" data-test="integration" data-complexity="simple" data-ai="manual" transform="translate(220, 280)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">4-6 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">Postman</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="integration" data-complexity="simple" data-ai="assisted" transform="translate(190, 250)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">2-3 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">AI+API</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="integration" data-complexity="simple" data-ai="automated" transform="translate(160, 220)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">1 hr</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">Auto-API</text>
+      </g>
+      
+      <!-- Moderate Integration Tests (Current Selection) -->
+      <g class="matrix-cell selected" data-test="integration" data-complexity="moderate" data-ai="manual" transform="translate(320, 280)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#3B82F6" stroke-width="3" 
+              class="cell-3d interactive-cell" filter="url(#matrix3DGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Moderate</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">8-12 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">Full Stack</text>
+      </g>
+      
+      <g class="matrix-cell recommended" data-test="integration" data-complexity="moderate" data-ai="assisted" transform="translate(290, 250)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#10B981" stroke-width="4" 
+              class="cell-3d interactive-cell" filter="url(#matrix3DGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Moderate</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">4-6 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">⭐ Optimal</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="integration" data-complexity="moderate" data-ai="automated" transform="translate(260, 220)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Moderate</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">2-3 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">Smart-Int</text>
+      </g>
+      
+      <!-- Complex Integration Tests -->
+      <g class="matrix-cell" data-test="integration" data-complexity="complex" data-ai="manual" transform="translate(420, 280)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Complex</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">16-24 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">Enterprise</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="integration" data-complexity="complex" data-ai="assisted" transform="translate(390, 250)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Complex</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">8-12 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">AI+Enterprise</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="integration" data-complexity="complex" data-ai="automated" transform="translate(360, 220)">
+        <rect width="80" height="60" rx="4" fill="url(#integrationGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">Int+Complex</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">4-6 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#DBEAFE">Auto-Ent</text>
+      </g>
+    </g>
+    
+    <!-- E2E Testing Layer (Z=2) -->
+    <g class="test-type-layer" data-type="e2e" transform="translate(0, -200)">
+      <!-- Simple E2E Tests -->
+      <g class="matrix-cell" data-test="e2e" data-complexity="simple" data-ai="manual" transform="translate(220, 180)">
+        <rect width="80" height="60" rx="4" fill="url(#e2eGradient)" stroke="#7C3AED" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">E2E+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Manual</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#F3E8FF">6-8 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#F3E8FF">Cypress</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="e2e" data-complexity="simple" data-ai="assisted" transform="translate(190, 150)">
+        <rect width="80" height="60" rx="4" fill="url(#e2eGradient)" stroke="#7C3AED" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">E2E+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">AI Assisted</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#F3E8FF">3-4 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#F3E8FF">AI+Playwright</text>
+      </g>
+      
+      <g class="matrix-cell" data-test="e2e" data-complexity="simple" data-ai="automated" transform="translate(160, 120)">
+        <rect width="80" height="60" rx="4" fill="url(#e2eGradient)" stroke="#7C3AED" stroke-width="2" 
+              class="cell-3d interactive-cell" filter="url(#cellGlow)"/>
+        <text x="40" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="white">E2E+Simple</text>
+        <text x="40" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white">Automated</text>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#F3E8FF">1-2 hrs</text>
+        <text x="40" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#F3E8FF">Auto-Gen</text>
+      </g>
+      
+      <!-- Continue with remaining E2E cells... -->
+      <!-- (Additional E2E matrix cells would follow the same pattern) -->
+    </g>
+  </g>
+  
+  <!-- Strategy Recommendation Panel -->
+  <g id="recommendation-panel" transform="translate(650, 200)">
+    <rect x="0" y="0" width="700" height="400" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="700" height="50" rx="12" fill="url(#matrixPrimaryGradient)"/>
+    <text x="25" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      🎯 Strategic Recommendation Engine
+    </text>
+    
+    <!-- Current selection details -->
+    <g transform="translate(25, 70)">
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">Integration Testing × Moderate Complexity × AI Assisted</text>
+      
+      <!-- Recommendation details -->
+      <rect x="0" y="30" width="650" height="120" rx="6" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1"/>
+      <text x="15" y="50" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0369A1">🌟 Optimal Strategy Recommendation</text>
+      
+      <text x="15" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#075985">Hybrid Approach: 60% AI-Generated + 40% Human Review</text>
+      <text x="15" y="85" font-family="Inter, sans-serif" font-size="10" fill="#0C4A6E">• Use AI to generate API contract tests and basic data flow scenarios</text>
+      <text x="15" y="98" font-family="Inter, sans-serif" font-size="10" fill="#0C4A6E">• Manual design for business logic edge cases and error handling</text>
+      <text x="15" y="111" font-family="Inter, sans-serif" font-size="10" fill="#0C4A6E">• AI-assisted test data generation with realistic edge cases</text>
+      <text x="15" y="124" font-family="Inter, sans-serif" font-size="10" fill="#0C4A6E">• Automated maintenance with smart test healing capabilities</text>
+      <text x="15" y="137" font-family="Inter, sans-serif" font-size="10" fill="#0C4A6E">• Expected ROI: 65% time reduction with 85% coverage reliability</text>
+      
+      <!-- Resource estimation -->
+      <rect x="0" y="160" width="320" height="80" rx="6" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+      <text x="15" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#92400E">📊 Resource Estimation</text>
+      <text x="15" y="195" font-family="Inter, sans-serif" font-size="10" fill="#78350F">Initial Setup: 4-6 hours</text>
+      <text x="15" y="208" font-family="Inter, sans-serif" font-size="10" fill="#78350F">Test Development: 8-12 hours</text>
+      <text x="15" y="221" font-family="Inter, sans-serif" font-size="10" fill="#78350F">Maintenance: 2 hours/month</text>
+      <text x="15" y="234" font-family="Inter, sans-serif" font-size="10" fill="#78350F">Total Investment: 14-20 hours</text>
+      
+      <!-- Timeline -->
+      <rect x="330" y="160" width="320" height="80" rx="6" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+      <text x="345" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#15803D">⏱️ Implementation Timeline</text>
+      <text x="345" y="195" font-family="Inter, sans-serif" font-size="10" fill="#166534">Week 1: AI setup + basic tests</text>
+      <text x="345" y="208" font-family="Inter, sans-serif" font-size="10" fill="#166534">Week 2: Manual edge cases</text>
+      <text x="345" y="221" font-family="Inter, sans-serif" font-size="10" fill="#166534">Week 3: Integration + review</text>
+      <text x="345" y="234" font-family="Inter, sans-serif" font-size="10" fill="#166534">Week 4: Optimization</text>
+      
+      <!-- Prompt templates -->
+      <rect x="0" y="250" width="650" height="80" rx="6" fill="#F3E8FF" stroke="#C4B5FD" stroke-width="1"/>
+      <text x="15" y="270" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#7C3AED">🤖 AI Prompt Templates</text>
+      <text x="15" y="285" font-family="Inter, sans-serif" font-size="10" fill="#5B21B6">"Generate integration tests for [API_ENDPOINT] with moderate complexity..."</text>
+      <text x="15" y="298" font-family="Inter, sans-serif" font-size="10" fill="#5B21B6">"Create test data scenarios for [BUSINESS_LOGIC] including edge cases..."</text>
+      <text x="15" y="311" font-family="Inter, sans-serif" font-size="10" fill="#5B21B6">"Design error handling tests for [SERVICE_INTEGRATION] with..."</text>
+      <text x="15" y="324" font-family="Inter, sans-serif" font-size="9" font-style="italic" fill="#8B5CF6">Click to view complete prompt library →</text>
+    </g>
+  </g>
+  
+  <!-- Matrix Legend -->
+  <g id="matrix-legend" transform="translate(50, 620)">
+    <rect x="0" y="0" width="600" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">Matrix Legend & Navigation</text>
+    
+    <!-- Test types legend -->
+    <g transform="translate(20, 35)">
+      <rect x="0" y="0" width="15" height="15" fill="url(#unitGradient)"/>
+      <text x="20" y="12" font-family="Inter, sans-serif" font-size="10" fill="#374151">Unit Testing</text>
+      
+      <rect x="100" y="0" width="15" height="15" fill="url(#integrationGradient)"/>
+      <text x="120" y="12" font-family="Inter, sans-serif" font-size="10" fill="#374151">Integration Testing</text>
+      
+      <rect x="230" y="0" width="15" height="15" fill="url(#e2eGradient)"/>
+      <text x="250" y="12" font-family="Inter, sans-serif" font-size="10" fill="#374151">E2E Testing</text>
+    </g>
+    
+    <!-- Complexity legend -->
+    <g transform="translate(20, 55)">
+      <circle cx="7" cy="7" r="7" fill="url(#simpleGradient)"/>
+      <text x="20" y="12" font-family="Inter, sans-serif" font-size="10" fill="#374151">Simple Complexity</text>
+      
+      <circle cx="137" cy="7" r="7" fill="url(#moderateGradient)"/>
+      <text x="150" y="12" font-family="Inter, sans-serif" font-size="10" fill="#374151">Moderate Complexity</text>
+      
+      <circle cx="277" cy="7" r="7" fill="url(#complexGradient)"/>
+      <text x="290" y="12" font-family="Inter, sans-serif" font-size="10" fill="#374151">Complex</text>
+    </g>
+    
+    <!-- AI assistance legend -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="12" height="12" fill="none" stroke="#6B7280" stroke-width="2"/>
+      <text x="18" y="10" font-family="Inter, sans-serif" font-size="10" fill="#374151">Manual</text>
+      
+      <rect x="70" y="0" width="12" height="12" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="76" cy="6" r="2" fill="#8B5CF6"/>
+      <text x="88" y="10" font-family="Inter, sans-serif" font-size="10" fill="#374151">AI Assisted</text>
+      
+      <rect x="160" y="0" width="12" height="12" fill="#10B981"/>
+      <text x="178" y="10" font-family="Inter, sans-serif" font-size="10" fill="#374151">Fully Automated</text>
+    </g>
+  </g>
+  
+  <!-- Performance Metrics -->
+  <g id="performance-metrics" transform="translate(670, 620)">
+    <rect x="0" y="0" width="680" height="120" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">Matrix Performance & Analytics</text>
+    
+    <g transform="translate(20, 35)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Total Strategy Combinations: 27</text>
+      <text x="200" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Optimal Paths Identified: 12</text>
+      <text x="400" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Avg ROI Improvement: 58%</text>
+      
+      <text x="0" y="30" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Matrix Load Time: 1.2s</text>
+      <text x="200" y="30" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">3D Rendering: Hardware Accelerated</text>
+      <text x="400" y="30" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Mobile Fallback: Active</text>
+      
+      <text x="0" y="45" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Accessibility: WCAG 2.1 AA</text>
+      <text x="200" y="45" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Offline Support: Available</text>
+      <text x="400" y="45" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Recommendation Accuracy: 94%</text>
+      
+      <text x="0" y="60" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Interactive Elements: 27 cells</text>
+      <text x="200" y="60" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Prompt Templates: 81 available</text>
+      <text x="400" y="60" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Strategy Coverage: 100%</text>
+    </g>
+  </g>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .interactive-cell {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .interactive-cell:hover {
+      transform: scale(1.05) rotateX(-5deg) rotateY(5deg);
+      filter: url(#matrix3DGlow);
+    }
+    
+    .matrix-cell.selected rect {
+      stroke-width: 4;
+      stroke: #3B82F6;
+    }
+    
+    .matrix-cell.recommended rect {
+      stroke-width: 5;
+      stroke: #10B981;
+      animation: recommendPulse 2s ease-in-out infinite;
+    }
+    
+    .dimension-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .dimension-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+    
+    .view-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .view-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .view-btn.active {
+      filter: url(#matrix3DGlow);
+    }
+    
+    @keyframes recommendPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    /* 3D transformations */
+    .matrix-3d-view {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    
+    .cell-3d {
+      transform-style: preserve-3d;
+    }
+    
+    /* Mobile fallback */
+    @media (max-width: 768px) {
+      .matrix-3d-view {
+        transform: none;
+        perspective: none;
+      }
+      
+      .cell-3d {
+        transform: none !important;
+      }
+      
+      .test-type-layer {
+        transform: translateY(0) !important;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for 3D matrix interactions -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      const matrixCells = document.querySelectorAll('.matrix-cell');
+      const dimensionBtns = document.querySelectorAll('.dimension-btn');
+      const viewBtns = document.querySelectorAll('.view-btn');
+      let currentView = '3d';
+      
+      // Matrix cell interactions
+      matrixCells.forEach(cell => {
+        cell.addEventListener('click', function() {
+          // Remove previous selections
+          matrixCells.forEach(c => c.classList.remove('selected'));
+          
+          // Select current cell
+          this.classList.add('selected');
+          
+          // Update recommendation panel
+          updateRecommendation(this);
+        });
+        
+        cell.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // Dimension navigation
+      dimensionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const dimension = this.getAttribute('data-dimension');
+          highlightDimension(dimension);
+        });
+      });
+      
+      // View switching
+      viewBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const view = this.getAttribute('data-view');
+          switchView(view);
+        });
+      });
+      
+      function updateRecommendation(cell) {
+        const testType = cell.getAttribute('data-test');
+        const complexity = cell.getAttribute('data-complexity');
+        const aiLevel = cell.getAttribute('data-ai');
+        
+        // Update current selection display
+        const selectionText = `${capitalizeFirst(testType)} Testing × ${capitalizeFirst(complexity)} Complexity × ${aiLevel === 'manual' ? 'Manual' : aiLevel === 'assisted' ? 'AI Assisted' : 'Automated'}`;
+        document.getElementById('current-selection').textContent = selectionText;
+        
+        // Generate recommendation preview
+        const recommendation = generateRecommendation(testType, complexity, aiLevel);
+        document.getElementById('recommendation-preview').textContent = recommendation;
+      }
+      
+      function generateRecommendation(testType, complexity, aiLevel) {
+        const recommendations = {
+          'unit-simple-manual': 'Basic TDD approach with standard frameworks',
+          'unit-simple-assisted': 'AI-generated test skeletons with manual refinement',
+          'unit-simple-automated': 'Fully automated test generation and maintenance',
+          'unit-moderate-assisted': 'Hybrid approach with 60% automation',
+          'integration-moderate-assisted': 'Recommended: Hybrid approach with 60% automation',
+          'integration-complex-assisted': 'AI-assisted enterprise testing strategy',
+          'e2e-simple-assisted': 'AI-generated user journey tests with validation'
+        };
+        
+        const key = `${testType}-${complexity}-${aiLevel}`;
+        return recommendations[key] || 'Custom strategy recommended based on selection';
+      }
+      
+      function highlightDimension(dimension) {
+        // Visual highlighting logic for dimension exploration
+        const layers = document.querySelectorAll('.test-type-layer');
+        layers.forEach(layer => {
+          layer.style.opacity = dimension === 'test-types' ? '1' : '0.3';
+        });
+        
+        setTimeout(() => {
+          layers.forEach(layer => layer.style.opacity = '1');
+        }, 2000);
+      }
+      
+      function switchView(view) {
+        currentView = view;
+        const matrix3D = document.getElementById('matrix-3d');
+        
+        viewBtns.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('data-view') === view) {
+            btn.classList.add('active');
+          }
+        });
+        
+        if (view === '2d') {
+          matrix3D.style.transform = 'none';
+          matrix3D.style.perspective = 'none';
+          
+          // Flatten all layers
+          const layers = document.querySelectorAll('.test-type-layer');
+          layers.forEach((layer, index) => {
+            layer.style.transform = `translate(${index * 150}px, 0)`;
+          });
+        } else {
+          matrix3D.style.transform = '';
+          matrix3D.style.perspective = '1000px';
+          
+          // Restore 3D positioning
+          const layers = document.querySelectorAll('.test-type-layer');
+          layers.forEach((layer, index) => {
+            layer.style.transform = `translate(0, ${-index * 100}px)`;
+          });
+        }
+      }
+      
+      function capitalizeFirst(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+      
+      // Initialize with default selection
+      const defaultCell = document.querySelector('.matrix-cell.recommended');
+      if (defaultCell) {
+        updateRecommendation(defaultCell);
+      }
+      
+      // Keyboard navigation for accessibility
+      let focusedCellIndex = 0;
+      const cells = Array.from(matrixCells);
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || 
+            e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          
+          cells[focusedCellIndex].classList.remove('focused');
+          
+          if (e.key === 'ArrowRight') focusedCellIndex = Math.min(focusedCellIndex + 1, cells.length - 1);
+          if (e.key === 'ArrowLeft') focusedCellIndex = Math.max(focusedCellIndex - 1, 0);
+          if (e.key === 'ArrowUp') focusedCellIndex = Math.max(focusedCellIndex - 3, 0);
+          if (e.key === 'ArrowDown') focusedCellIndex = Math.min(focusedCellIndex + 3, cells.length - 1);
+          
+          cells[focusedCellIndex].classList.add('focused');
+          cells[focusedCellIndex].focus();
+        }
+      });
+    });
+    ]]>
+  </script>
+</svg>
