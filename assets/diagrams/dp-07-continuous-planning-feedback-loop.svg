@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="1000" viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dp07-title dp07-desc">
+  <title id="dp07-title">Continuous Planning Feedback Loop - Adaptive Planning Learning System</title>
+  <desc id="dp07-desc">Continuous improvement system that learns from planning outcomes, team feedback, and delivery results to optimize future planning accuracy and effectiveness with multi-source feedback collection and AI-powered recommendations</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Feedback loop gradient themes -->
+    <linearGradient id="feedbackPrimaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Feedback Source Gradients -->
+    <linearGradient id="teamFeedbackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="deliveryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="outcomeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="learningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="feedbackGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#667EEA" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="learningGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="improvementGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10B981" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="feedbackArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#667EEA" />
+    </marker>
+    
+    <marker id="learningArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#F59E0B" />
+    </marker>
+    
+    <!-- Feedback patterns -->
+    <pattern id="feedbackPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#F0F9FF"/>
+      <circle cx="10" cy="10" r="3" fill="#3B82F6" opacity="0.4"/>
+      <path d="M5 10 Q10 5 15 10 Q10 15 5 10" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.3"/>
+    </pattern>
+    
+    <pattern id="improvementPattern" patternUnits="userSpaceOnUse" width="18" height="18">
+      <rect width="18" height="18" fill="#F0FDF4"/>
+      <path d="M3 15 L9 3 L15 15 L12 12 L9 15 L6 12 Z" fill="#10B981" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#F8FAFC" />
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1400" height="80" fill="url(#feedbackPrimaryGradient)" />
+  <text x="60" y="35" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="white">
+    Continuous Planning Feedback Loop
+  </text>
+  <text x="60" y="55" font-family="Inter, sans-serif" font-size="16" fill="#E2E8F0">
+    Adaptive Planning Learning System - Multi-Source Feedback & AI-Powered Process Optimization
+  </text>
+  
+  <!-- Feedback Loop Icon -->
+  <g id="feedback-icon" transform="translate(1280, 20)">
+    <circle cx="25" cy="25" r="20" fill="white" opacity="0.2"/>
+    <path d="M15 15 Q25 10 35 15 Q30 25 25 30 Q20 25 15 15" stroke="white" stroke-width="2" fill="none"/>
+    <circle cx="25" cy="25" r="3" fill="white"/>
+    <path d="M20 20 L30 30 M30 20 L20 30" stroke="white" stroke-width="1"/>
+  </g>
+  
+  <!-- Feedback Collection Dashboard -->
+  <g id="feedback-dashboard" transform="translate(50, 100)">
+    <rect x="0" y="0" width="1300" height="120" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="1300" height="45" rx="12" fill="url(#feedbackPrimaryGradient)"/>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      📊 Real-Time Feedback Collection Dashboard
+    </text>
+    
+    <!-- Feedback metrics -->
+    <g transform="translate(25, 55)">
+      <!-- Team Feedback -->
+      <g class="feedback-metric" data-source="team">
+        <rect x="0" y="0" width="180" height="50" rx="6" fill="#F0FDF4" stroke="#10B981" stroke-width="1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#059669">👥 Team Feedback</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#10B981">127 responses</text>
+        <text x="15" y="46" font-family="Inter, sans-serif" font-size="9" fill="#059669">Satisfaction: 8.4/10</text>
+        
+        <!-- Real-time indicator -->
+        <circle cx="165" cy="15" r="4" fill="#10B981" class="pulse-indicator">
+          <title>Live feedback collection</title>
+        </circle>
+      </g>
+      
+      <!-- Delivery Metrics -->
+      <g class="feedback-metric" data-source="delivery" transform="translate(200, 0)">
+        <rect x="0" y="0" width="180" height="50" rx="6" fill="#F0F9FF" stroke="#3B82F6" stroke-width="1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1D4ED8">🚀 Delivery Results</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#3B82F6">94% on-time</text>
+        <text x="15" y="46" font-family="Inter, sans-serif" font-size="9" fill="#1D4ED8">Quality: 96% pass rate</text>
+        
+        <circle cx="165" cy="15" r="4" fill="#3B82F6" class="pulse-indicator">
+          <title>Automated metric collection</title>
+        </circle>
+      </g>
+      
+      <!-- Planning Outcomes -->
+      <g class="feedback-metric" data-source="outcomes" transform="translate(400, 0)">
+        <rect x="0" y="0" width="180" height="50" rx="6" fill="#F3E8FF" stroke="#8B5CF6" stroke-width="1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#7C3AED">📈 Planning Accuracy</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#8B5CF6">87% accurate</text>
+        <text x="15" y="46" font-family="Inter, sans-serif" font-size="9" fill="#7C3AED">Improving: +5% this sprint</text>
+        
+        <circle cx="165" cy="15" r="4" fill="#8B5CF6" class="pulse-indicator">
+          <title>Outcome tracking active</title>
+        </circle>
+      </g>
+      
+      <!-- AI Learning Status -->
+      <g class="feedback-metric" data-source="learning" transform="translate(600, 0)">
+        <rect x="0" y="0" width="180" height="50" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#D97706">🤖 AI Learning Engine</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#F59E0B">15 insights</text>
+        <text x="15" y="46" font-family="Inter, sans-serif" font-size="9" fill="#D97706">Confidence: 92%</text>
+        
+        <circle cx="165" cy="15" r="4" fill="#F59E0B" class="pulse-indicator" filter="url(#learningGlow)">
+          <title>AI learning in progress</title>
+        </circle>
+      </g>
+      
+      <!-- Process Health -->
+      <g class="feedback-metric" data-source="process" transform="translate(800, 0)">
+        <rect x="0" y="0" width="180" height="50" rx="6" fill="#F8FAFC" stroke="#6B7280" stroke-width="1"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#374151">⚙️ Process Health</text>
+        <text x="15" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6B7280">Optimizing</text>
+        <text x="15" y="46" font-family="Inter, sans-serif" font-size="9" fill="#6B7280">3 improvements active</text>
+        
+        <circle cx="165" cy="15" r="4" fill="#6B7280" class="pulse-indicator">
+          <title>Process monitoring active</title>
+        </circle>
+      </g>
+      
+      <!-- Quick Actions -->
+      <g transform="translate(1000, 10)">
+        <rect x="0" y="0" width="120" height="30" rx="4" fill="#10B981" class="action-btn" data-action="collect-feedback">
+          <title>Collect team feedback</title>
+        </rect>
+        <text x="60" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="white">
+          Collect Feedback
+        </text>
+        
+        <rect x="130" y="0" width="120" height="30" rx="4" fill="#F59E0B" class="action-btn" data-action="generate-insights">
+          <title>Generate AI insights</title>
+        </rect>
+        <text x="190" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="white">
+          Generate Insights
+        </text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Central Feedback Loop Visualization -->
+  <g id="feedback-loop-core" transform="translate(200, 280)">
+    <!-- Feedback Loop Circle -->
+    <circle cx="500" cy="300" r="200" fill="none" stroke="#667EEA" stroke-width="4" stroke-dasharray="10,5" 
+            class="feedback-loop-circle" filter="url(#feedbackGlow)"/>
+    
+    <!-- Center Hub -->
+    <g id="learning-hub" transform="translate(500, 300)">
+      <circle cx="0" cy="0" r="60" fill="url(#learningGradient)" stroke="#D97706" stroke-width="3" 
+              class="interactive-element learning-hub" filter="url(#learningGlow)"/>
+      <text x="0" y="-10" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white">
+        AI Learning
+      </text>
+      <text x="0" y="5" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="white">
+        Engine
+      </text>
+      <text x="0" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#FEF3C7">
+        92% Confidence
+      </text>
+    </g>
+    
+    <!-- Feedback Sources (Around the circle) -->
+    
+    <!-- 1. Team Feedback Collection -->
+    <g class="feedback-source" data-source="team" transform="translate(500, 100)">
+      <circle cx="0" cy="0" r="45" fill="url(#teamFeedbackGradient)" stroke="#059669" stroke-width="2" 
+              class="interactive-element feedback-node"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="white">
+        Team Feedback
+      </text>
+      <text x="0" y="8" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D1FAE5">
+        127 responses
+      </text>
+      <text x="0" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#D1FAE5">
+        8.4/10 satisfaction
+      </text>
+      
+      <!-- Feedback details -->
+      <g transform="translate(-80, -60)">
+        <rect x="0" y="0" width="160" height="40" rx="4" fill="white" stroke="#10B981" stroke-width="1" opacity="0.95"/>
+        <text x="8" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#059669">Recent Feedback:</text>
+        <text x="8" y="24" font-family="Inter, sans-serif" font-size="8" fill="#059669">"Planning clarity improved 40%"</text>
+        <text x="8" y="34" font-family="Inter, sans-serif" font-size="8" fill="#059669">"Velocity estimates more accurate"</text>
+      </g>
+    </g>
+    
+    <!-- 2. Delivery Results -->
+    <g class="feedback-source" data-source="delivery" transform="translate(673, 173)">
+      <circle cx="0" cy="0" r="45" fill="url(#deliveryGradient)" stroke="#1D4ED8" stroke-width="2" 
+              class="interactive-element feedback-node"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="white">
+        Delivery Data
+      </text>
+      <text x="0" y="8" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#DBEAFE">
+        94% on-time
+      </text>
+      <text x="0" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#DBEAFE">
+        96% quality rate
+      </text>
+      
+      <!-- Metrics popup -->
+      <g transform="translate(60, -20)">
+        <rect x="0" y="0" width="140" height="40" rx="4" fill="white" stroke="#3B82F6" stroke-width="1" opacity="0.95"/>
+        <text x="8" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#1D4ED8">Sprint Metrics:</text>
+        <text x="8" y="24" font-family="Inter, sans-serif" font-size="8" fill="#1D4ED8">Story points: 87% accuracy</text>
+        <text x="8" y="34" font-family="Inter, sans-serif" font-size="8" fill="#1D4ED8">Cycle time: 15% improved</text>
+      </g>
+    </g>
+    
+    <!-- 3. Planning Outcomes -->
+    <g class="feedback-source" data-source="outcomes" transform="translate(673, 427)">
+      <circle cx="0" cy="0" r="45" fill="url(#outcomeGradient)" stroke="#7C3AED" stroke-width="2" 
+              class="interactive-element feedback-node"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="white">
+        Plan Accuracy
+      </text>
+      <text x="0" y="8" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#F3E8FF">
+        87% accurate
+      </text>
+      <text x="0" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#F3E8FF">
+        +5% improvement
+      </text>
+      
+      <!-- Accuracy breakdown -->
+      <g transform="translate(60, -20)">
+        <rect x="0" y="0" width="140" height="40" rx="4" fill="white" stroke="#8B5CF6" stroke-width="1" opacity="0.95"/>
+        <text x="8" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#7C3AED">Accuracy Trends:</text>
+        <text x="8" y="24" font-family="Inter, sans-serif" font-size="8" fill="#7C3AED">Timeline: 89% within range</text>
+        <text x="8" y="34" font-family="Inter, sans-serif" font-size="8" fill="#7C3AED">Scope: 85% completion rate</text>
+      </g>
+    </g>
+    
+    <!-- 4. Historical Analysis -->
+    <g class="feedback-source" data-source="history" transform="translate(327, 427)">
+      <circle cx="0" cy="0" r="45" fill="#6B7280" stroke="#374151" stroke-width="2" 
+              class="interactive-element feedback-node"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="white">
+        Historical Data
+      </text>
+      <text x="0" y="8" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#E5E7EB">
+        6 months data
+      </text>
+      <text x="0" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#E5E7EB">
+        248 data points
+      </text>
+      
+      <!-- Historical insights -->
+      <g transform="translate(-140, -20)">
+        <rect x="0" y="0" width="140" height="40" rx="4" fill="white" stroke="#6B7280" stroke-width="1" opacity="0.95"/>
+        <text x="8" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#374151">Pattern Analysis:</text>
+        <text x="8" y="24" font-family="Inter, sans-serif" font-size="8" fill="#374151">Seasonal trends identified</text>
+        <text x="8" y="34" font-family="Inter, sans-serif" font-size="8" fill="#374151">Risk patterns mapped</text>
+      </g>
+    </g>
+    
+    <!-- 5. External Factors -->
+    <g class="feedback-source" data-source="external" transform="translate(327, 173)">
+      <circle cx="0" cy="0" r="45" fill="#EC4899" stroke="#BE185D" stroke-width="2" 
+              class="interactive-element feedback-node"/>
+      <text x="0" y="-5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="white">
+        External Factors
+      </text>
+      <text x="0" y="8" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#FCE7F3">
+        Market trends
+      </text>
+      <text x="0" y="18" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#FCE7F3">
+        Tech changes
+      </text>
+      
+      <!-- External insights -->
+      <g transform="translate(-140, -20)">
+        <rect x="0" y="0" width="140" height="40" rx="4" fill="white" stroke="#EC4899" stroke-width="1" opacity="0.95"/>
+        <text x="8" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#BE185D">External Impact:</text>
+        <text x="8" y="24" font-family="Inter, sans-serif" font-size="8" fill="#BE185D">Dependencies: 23% delay risk</text>
+        <text x="8" y="34" font-family="Inter, sans-serif" font-size="8" fill="#BE185D">Market shifts tracked</text>
+      </g>
+    </g>
+    
+    <!-- Feedback Flow Arrows -->
+    <g class="feedback-flows">
+      <!-- From Team to Center -->
+      <path d="M 500 145 Q 480 220 500 240" stroke="#10B981" stroke-width="3" 
+            marker-end="url(#feedbackArrow)" class="flow-arrow team-flow"/>
+      
+      <!-- From Delivery to Center -->
+      <path d="M 645 195 Q 580 240 560 260" stroke="#3B82F6" stroke-width="3" 
+            marker-end="url(#feedbackArrow)" class="flow-arrow delivery-flow"/>
+      
+      <!-- From Outcomes to Center -->
+      <path d="M 645 405 Q 580 360 560 340" stroke="#8B5CF6" stroke-width="3" 
+            marker-end="url(#feedbackArrow)" class="flow-arrow outcome-flow"/>
+      
+      <!-- From History to Center -->
+      <path d="M 355 405 Q 420 360 440 340" stroke="#6B7280" stroke-width="3" 
+            marker-end="url(#feedbackArrow)" class="flow-arrow history-flow"/>
+      
+      <!-- From External to Center -->
+      <path d="M 355 195 Q 420 240 440 260" stroke="#EC4899" stroke-width="3" 
+            marker-end="url(#feedbackArrow)" class="flow-arrow external-flow"/>
+    </g>
+  </g>
+  
+  <!-- AI Learning Engine Panel -->
+  <g id="learning-engine" transform="translate(50, 650)">
+    <rect x="0" y="0" width="600" height="200" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="600" height="45" rx="12" fill="url(#learningGradient)"/>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="white">
+      🤖 AI Learning Engine & Improvement Recommendations
+    </text>
+    
+    <!-- Learning insights -->
+    <g transform="translate(25, 60)">
+      <!-- Current learning status -->
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#D97706">Active Learning Insights</text>
+      
+      <!-- Insight 1 -->
+      <g class="learning-insight" data-confidence="high">
+        <rect x="0" y="30" width="550" height="25" rx="4" fill="#F0FDF4" stroke="#10B981" stroke-width="1"/>
+        <circle cx="15" cy="42" r="4" fill="#10B981"/>
+        <text x="28" y="40" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#059669">
+          High Confidence: Sprint planning accuracy improves 23% when team feedback exceeds 8.0/10
+        </text>
+        <text x="28" y="50" font-family="Inter, sans-serif" font-size="9" fill="#059669">
+          Recommendation: Prioritize team satisfaction in planning sessions (92% confidence)
+        </text>
+      </g>
+      
+      <!-- Insight 2 -->
+      <g class="learning-insight" data-confidence="medium" transform="translate(0, 35)">
+        <rect x="0" y="30" width="550" height="25" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+        <circle cx="15" cy="42" r="4" fill="#F59E0B"/>
+        <text x="28" y="40" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#D97706">
+          Medium Confidence: External dependency tracking reduces delivery delays by 18%
+        </text>
+        <text x="28" y="50" font-family="Inter, sans-serif" font-size="9" fill="#D97706">
+          Recommendation: Implement automated dependency monitoring (78% confidence)
+        </text>
+      </g>
+      
+      <!-- Insight 3 -->
+      <g class="learning-insight" data-confidence="low" transform="translate(0, 70)">
+        <rect x="0" y="30" width="550" height="25" rx="4" fill="#FEF2F2" stroke="#EF4444" stroke-width="1"/>
+        <circle cx="15" cy="42" r="4" fill="#EF4444"/>
+        <text x="28" y="40" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#DC2626">
+          Learning in Progress: Historical patterns suggest seasonal velocity variations
+        </text>
+        <text x="28" y="50" font-family="Inter, sans-serif" font-size="9" fill="#DC2626">
+          Status: Collecting more data for pattern validation (45% confidence)
+        </text>
+      </g>
+      
+      <!-- Action buttons -->
+      <g transform="translate(0, 110)">
+        <rect x="0" y="0" width="120" height="30" rx="4" fill="#10B981" class="action-btn" data-action="apply-high">
+          <title>Apply high confidence recommendations</title>
+        </rect>
+        <text x="60" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="white">
+          Apply High Conf
+        </text>
+        
+        <rect x="130" y="0" width="120" height="30" rx="4" fill="#F59E0B" class="action-btn" data-action="review-medium">
+          <title>Review medium confidence insights</title>
+        </rect>
+        <text x="190" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="white">
+          Review Medium
+        </text>
+        
+        <rect x="260" y="0" width="120" height="30" rx="4" fill="#6B7280" class="action-btn" data-action="configure">
+          <title>Configure learning parameters</title>
+        </rect>
+        <text x="320" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="white">
+          Configure AI
+        </text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Process Optimization Timeline -->
+  <g id="optimization-timeline" transform="translate(670, 650)">
+    <rect x="0" y="0" width="680" height="200" rx="12" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="0" y="0" width="680" height="45" rx="12" fill="url(#improvementPattern)"/>
+    <text x="25" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#059669">
+      📈 Continuous Improvement Timeline
+    </text>
+    
+    <!-- Timeline visualization -->
+    <g transform="translate(25, 60)">
+      <!-- Timeline axis -->
+      <line x1="0" y1="70" x2="630" y2="70" stroke="#E5E7EB" stroke-width="2"/>
+      
+      <!-- Improvement milestones -->
+      <g class="improvement-milestone completed" data-milestone="1" transform="translate(50, 0)">
+        <circle cx="0" cy="70" r="8" fill="#10B981" stroke="#059669" stroke-width="2"/>
+        <text x="0" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#059669">
+          Week 1
+        </text>
+        <text x="0" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#059669">
+          Feedback Collection
+        </text>
+        <text x="0" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#10B981">
+          ✓ Implemented
+        </text>
+      </g>
+      
+      <g class="improvement-milestone completed" data-milestone="2" transform="translate(180, 0)">
+        <circle cx="0" cy="70" r="8" fill="#10B981" stroke="#059669" stroke-width="2"/>
+        <text x="0" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#059669">
+          Week 3
+        </text>
+        <text x="0" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#059669">
+          AI Learning Engine
+        </text>
+        <text x="0" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#10B981">
+          ✓ Active
+        </text>
+      </g>
+      
+      <g class="improvement-milestone current" data-milestone="3" transform="translate(310, 0)">
+        <circle cx="0" cy="70" r="8" fill="#F59E0B" stroke="#D97706" stroke-width="3" filter="url(#learningGlow)"/>
+        <text x="0" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#F59E0B">
+          Week 5
+        </text>
+        <text x="0" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#F59E0B">
+          Process Optimization
+        </text>
+        <text x="0" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#F59E0B">
+          ⏳ In Progress
+        </text>
+      </g>
+      
+      <g class="improvement-milestone future" data-milestone="4" transform="translate(440, 0)">
+        <circle cx="0" cy="70" r="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2"/>
+        <text x="0" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#9CA3AF">
+          Week 8
+        </text>
+        <text x="0" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#9CA3AF">
+          Advanced Analytics
+        </text>
+        <text x="0" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#9CA3AF">
+          Planned
+        </text>
+      </g>
+      
+      <g class="improvement-milestone future" data-milestone="5" transform="translate(570, 0)">
+        <circle cx="0" cy="70" r="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2"/>
+        <text x="0" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#9CA3AF">
+          Week 12
+        </text>
+        <text x="0" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#9CA3AF">
+          Predictive Planning
+        </text>
+        <text x="0" y="102" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#9CA3AF">
+          Future
+        </text>
+      </g>
+      
+      <!-- Current progress indicator -->
+      <g transform="translate(0, 120)">
+        <text x="0" y="15" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#374151">Current Progress:</text>
+        <rect x="120" y="5" width="300" height="12" rx="6" fill="#E5E7EB"/>
+        <rect x="120" y="5" width="180" height="12" rx="6" fill="#10B981"/>
+        <text x="430" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">60% Complete</text>
+        
+        <text x="0" y="35" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">
+          Next milestone: Advanced Analytics implementation in 3 weeks
+        </text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Mobile Quick Actions -->
+  <g id="mobile-actions" transform="translate(50, 870)" class="mobile-responsive">
+    <rect x="0" y="0" width="1300" height="60" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">📱 Quick Actions</text>
+    
+    <!-- Mobile action buttons -->
+    <g transform="translate(20, 30)">
+      <rect x="0" y="0" width="120" height="25" rx="4" fill="#10B981" class="mobile-btn" data-action="quick-feedback">
+        <title>Quick team feedback</title>
+      </rect>
+      <text x="60" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">
+        Quick Feedback
+      </text>
+      
+      <rect x="130" y="0" width="120" height="25" rx="4" fill="#3B82F6" class="mobile-btn" data-action="view-insights">
+        <title>View latest insights</title>
+      </rect>
+      <text x="190" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">
+        View Insights
+      </text>
+      
+      <rect x="260" y="0" width="120" height="25" rx="4" fill="#F59E0B" class="mobile-btn" data-action="apply-recommendations">
+        <title>Apply AI recommendations</title>
+      </rect>
+      <text x="320" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">
+        Apply AI Recs
+      </text>
+      
+      <rect x="390" y="0" width="120" height="25" rx="4" fill="#8B5CF6" class="mobile-btn" data-action="track-progress">
+        <title>Track improvement progress</title>
+      </rect>
+      <text x="450" y="17" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="white">
+        Track Progress
+      </text>
+    </g>
+  </g>
+  
+  <!-- Performance Metrics -->
+  <g id="performance-metrics" transform="translate(50, 940)">
+    <rect x="0" y="0" width="1300" height="50" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="20" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1E293B">📊 System Performance & Analytics</text>
+    
+    <g transform="translate(20, 25)">
+      <text x="0" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Feedback Collection: Real-time</text>
+      <text x="200" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">AI Learning: 92% confidence</text>
+      <text x="400" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Process Improvement: 3 active optimizations</text>
+      <text x="650" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Mobile Responsive: Touch-optimized</text>
+      <text x="850" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Accessibility: WCAG 2.1 AA</text>
+      <text x="1050" y="15" font-family="Inter, sans-serif" font-size="10" fill="#6B7280">Offline Sync: Available</text>
+    </g>
+  </g>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .interactive-element {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .interactive-element:hover {
+      transform: scale(1.05);
+      filter: url(#feedbackGlow);
+    }
+    
+    .feedback-node:hover {
+      stroke-width: 4;
+      filter: url(#feedbackGlow);
+    }
+    
+    .learning-hub:hover {
+      transform: scale(1.1);
+      filter: url(#learningGlow);
+    }
+    
+    .action-btn, .mobile-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .action-btn:hover, .mobile-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+    
+    .pulse-indicator {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .feedback-loop-circle {
+      animation: rotate 30s linear infinite;
+    }
+    
+    .flow-arrow {
+      animation: flow 3s ease-in-out infinite;
+    }
+    
+    .improvement-milestone.current circle {
+      animation: currentPulse 2s ease-in-out infinite;
+    }
+    
+    .learning-insight[data-confidence="high"] {
+      animation: confidencePulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+    
+    @keyframes rotate {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: 94.2; }
+    }
+    
+    @keyframes flow {
+      0%, 100% { stroke-opacity: 1; }
+      50% { stroke-opacity: 0.6; }
+    }
+    
+    @keyframes currentPulse {
+      0%, 100% { stroke-width: 3; }
+      50% { stroke-width: 5; }
+    }
+    
+    @keyframes confidencePulse {
+      0%, 100% { border-color: rgba(16, 185, 129, 0.3); }
+      50% { border-color: rgba(16, 185, 129, 0.8); }
+    }
+    
+    /* Mobile responsive design */
+    @media (max-width: 768px) {
+      .mobile-responsive {
+        display: block;
+      }
+      
+      #feedback-loop-core {
+        transform: scale(0.7) translate(100px, 200px);
+      }
+      
+      .feedback-source text {
+        font-size: 9px;
+      }
+      
+      .feedback-metric {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-responsive {
+        display: block;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for Feedback Loop Interactions -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      const feedbackSources = document.querySelectorAll('.feedback-source');
+      const learningHub = document.querySelector('.learning-hub');
+      const actionBtns = document.querySelectorAll('.action-btn, .mobile-btn');
+      const learningInsights = document.querySelectorAll('.learning-insight');
+      
+      let feedbackData = {
+        team: { satisfaction: 8.4, responses: 127 },
+        delivery: { onTime: 94, quality: 96 },
+        outcomes: { accuracy: 87, improvement: 5 },
+        learning: { insights: 15, confidence: 92 }
+      };
+      
+      // Feedback source interactions
+      feedbackSources.forEach(source => {
+        source.addEventListener('click', function() {
+          const sourceType = this.getAttribute('data-source');
+          showFeedbackDetails(sourceType);
+          
+          if (typeof window.exploreFeedbackSource === 'function') {
+            window.exploreFeedbackSource(sourceType);
+          }
+        });
+        
+        source.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // Learning hub interaction
+      if (learningHub) {
+        learningHub.addEventListener('click', function() {
+          showLearningDetails();
+          
+          if (typeof window.exploreLearningEngine === 'function') {
+            window.exploreLearningEngine();
+          }
+        });
+      }
+      
+      // Action button handlers
+      actionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const action = this.getAttribute('data-action');
+          handleAction(action);
+        });
+      });
+      
+      // Learning insight interactions
+      learningInsights.forEach(insight => {
+        insight.addEventListener('click', function() {
+          const confidence = this.getAttribute('data-confidence');
+          showInsightDetails(confidence, insight);
+        });
+      });
+      
+      function showFeedbackDetails(sourceType) {
+        const details = {
+          team: 'Team feedback shows 40% improvement in planning clarity',
+          delivery: 'Delivery metrics indicate 15% improvement in cycle time',
+          outcomes: 'Planning accuracy improved 5% this sprint',
+          history: 'Historical analysis reveals seasonal velocity patterns',
+          external: 'External factors tracking reduces dependency delays'
+        };
+        
+        if (typeof window.showFeedbackDetails === 'function') {
+          window.showFeedbackDetails(sourceType, details[sourceType]);
+        } else {
+          console.log(`Feedback Source: ${sourceType} - ${details[sourceType]}`);
+        }
+      }
+      
+      function showLearningDetails() {
+        if (typeof window.showLearningDetails === 'function') {
+          window.showLearningDetails(feedbackData.learning);
+        } else {
+          console.log('AI Learning Engine: 92% confidence, 15 insights generated');
+        }
+      }
+      
+      function handleAction(action) {
+        const actions = {
+          'collect-feedback': () => collectTeamFeedback(),
+          'generate-insights': () => generateAIInsights(),
+          'apply-high': () => applyHighConfidenceRecommendations(),
+          'review-medium': () => reviewMediumConfidenceInsights(),
+          'configure': () => configureLearningEngine(),
+          'quick-feedback': () => showQuickFeedbackForm(),
+          'view-insights': () => showLatestInsights(),
+          'apply-recommendations': () => applyRecommendations(),
+          'track-progress': () => showProgressTracking()
+        };
+        
+        if (actions[action]) {
+          actions[action]();
+        }
+        
+        if (typeof window.handleFeedbackAction === 'function') {
+          window.handleFeedbackAction(action);
+        }
+      }
+      
+      function collectTeamFeedback() {
+        if (typeof window.collectTeamFeedback === 'function') {
+          window.collectTeamFeedback();
+        } else {
+          alert('Team feedback collection initiated');
+        }
+      }
+      
+      function generateAIInsights() {
+        if (typeof window.generateAIInsights === 'function') {
+          window.generateAIInsights();
+        } else {
+          alert('Generating new AI insights from collected data');
+        }
+      }
+      
+      function applyHighConfidenceRecommendations() {
+        if (typeof window.applyRecommendations === 'function') {
+          window.applyRecommendations('high');
+        } else {
+          alert('Applying high confidence recommendations to planning process');
+        }
+      }
+      
+      function reviewMediumConfidenceInsights() {
+        if (typeof window.reviewInsights === 'function') {
+          window.reviewInsights('medium');
+        } else {
+          alert('Opening medium confidence insights for review');
+        }
+      }
+      
+      function configureLearningEngine() {
+        if (typeof window.configureLearning === 'function') {
+          window.configureLearning();
+        } else {
+          alert('Learning engine configuration panel would open here');
+        }
+      }
+      
+      function showQuickFeedbackForm() {
+        if (typeof window.showQuickFeedback === 'function') {
+          window.showQuickFeedback();
+        } else {
+          alert('Quick feedback form would appear here');
+        }
+      }
+      
+      function showLatestInsights() {
+        if (typeof window.showLatestInsights === 'function') {
+          window.showLatestInsights();
+        } else {
+          alert('Latest AI insights: Planning accuracy +5%, Team satisfaction +40%');
+        }
+      }
+      
+      function applyRecommendations() {
+        if (typeof window.applyRecommendations === 'function') {
+          window.applyRecommendations('all');
+        } else {
+          alert('Applying all available AI recommendations');
+        }
+      }
+      
+      function showProgressTracking() {
+        if (typeof window.showProgressTracking === 'function') {
+          window.showProgressTracking();
+        } else {
+          alert('Progress tracking: 60% complete, next milestone in 3 weeks');
+        }
+      }
+      
+      function showInsightDetails(confidence, element) {
+        if (typeof window.showInsightDetails === 'function') {
+          window.showInsightDetails(confidence, element);
+        }
+      }
+      
+      // Real-time updates
+      function updateFeedbackMetrics() {
+        if (typeof window.updateFeedbackMetrics === 'function') {
+          window.updateFeedbackMetrics();
+        }
+      }
+      
+      function updateLearningProgress() {
+        if (typeof window.updateLearningProgress === 'function') {
+          window.updateLearningProgress();
+        }
+      }
+      
+      // Initialize system
+      if (typeof window.initializeFeedbackLoop === 'function') {
+        window.initializeFeedbackLoop();
+      }
+      
+      // Keyboard navigation for accessibility
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          // Enhanced tab navigation for complex interface
+          const focusableElements = document.querySelectorAll('.interactive-element, .action-btn, .mobile-btn');
+          // Tab navigation logic would be implemented here
+        }
+      });
+      
+      // Periodic updates for real-time feedback
+      setInterval(updateFeedbackMetrics, 30000); // Update every 30 seconds
+      setInterval(updateLearningProgress, 60000); // Update learning every minute
+    });
+    ]]>
+  </script>
+</svg>
