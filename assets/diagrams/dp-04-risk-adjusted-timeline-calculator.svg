@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dp04-title dp04-desc">
+  <title id="dp04-title">Risk-Adjusted Timeline Calculator - Intelligent Risk Assessment & Timeline Optimization</title>
+  <desc id="dp04-desc">Interactive risk management system with automated timeline adjustment, risk assessment matrix, and predictive analytics for project planning optimization</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Risk level gradients -->
+    <linearGradient id="lowRiskGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="mediumRiskGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFECB3;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="highRiskGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEBEE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFCDD2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dashboard gradients -->
+    <linearGradient id="dashboardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E0E0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="hoverGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#1976D2" flood-opacity="0.4"/>
+    </filter>
+    
+    <filter id="activeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FF9800" flood-opacity="0.6"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    
+    <!-- Risk assessment patterns -->
+    <pattern id="riskPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#FFF"/>
+      <circle cx="10" cy="10" r="2" fill="#FF5722" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#FAFAFA" />
+  
+  <!-- Title Section -->
+  <text x="500" y="30" text-anchor="middle" class="title" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1A1A1A">
+    Risk-Adjusted Timeline Calculator
+  </text>
+  <text x="500" y="50" text-anchor="middle" class="subtitle" font-family="Inter, sans-serif" font-size="14" fill="#666">
+    Intelligent Risk Assessment & Timeline Optimization System
+  </text>
+  
+  <!-- Risk Assessment Matrix -->
+  <g class="risk-matrix-container">
+    <rect x="50" y="80" width="400" height="300" rx="8" fill="url(#dashboardGradient)" stroke="#BDBDBD" stroke-width="1"/>
+    
+    <!-- Matrix Title -->
+    <text x="250" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      Risk Assessment Matrix
+    </text>
+    
+    <!-- Probability Axis Label -->
+    <text x="70" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">Probability</text>
+    <text x="70" y="145" font-family="Inter, sans-serif" font-size="10" fill="#666">(High → Low)</text>
+    
+    <!-- Impact Axis Label -->
+    <text x="420" y="200" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242" text-anchor="end">Impact</text>
+    <text x="420" y="215" font-family="Inter, sans-serif" font-size="10" fill="#666" text-anchor="end">(Low → High)</text>
+    
+    <!-- Risk Matrix Grid -->
+    <g class="risk-grid">
+      <!-- High Probability, Low Impact -->
+      <rect x="100" y="160" width="80" height="60" fill="url(#mediumRiskGradient)" stroke="#FF9800" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="medium" tabindex="0" role="button" 
+            aria-label="Medium risk: High probability, low impact">
+        <title>Medium Risk: Likely to occur, minimal impact</title>
+      </rect>
+      <text x="140" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#E65100">Medium</text>
+      <text x="140" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#F57C00">+15% buffer</text>
+      
+      <!-- High Probability, Medium Impact -->
+      <rect x="190" y="160" width="80" height="60" fill="url(#highRiskGradient)" stroke="#F44336" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="high" tabindex="0" role="button"
+            aria-label="High risk: High probability, medium impact">
+        <title>High Risk: Likely to occur, significant impact</title>
+      </rect>
+      <text x="230" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#C62828">High</text>
+      <text x="230" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D32F2F">+30% buffer</text>
+      
+      <!-- High Probability, High Impact -->
+      <rect x="280" y="160" width="80" height="60" fill="url(#highRiskGradient)" stroke="#D32F2F" stroke-width="2" 
+            class="risk-cell interactive-element critical" data-risk="critical" tabindex="0" role="button"
+            aria-label="Critical risk: High probability, high impact">
+        <title>Critical Risk: Likely to occur, major impact</title>
+      </rect>
+      <text x="320" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#B71C1C">Critical</text>
+      <text x="320" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#C62828">+50% buffer</text>
+      
+      <!-- Medium Probability, Low Impact -->
+      <rect x="100" y="230" width="80" height="60" fill="url(#lowRiskGradient)" stroke="#4CAF50" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="low" tabindex="0" role="button"
+            aria-label="Low risk: Medium probability, low impact">
+        <title>Low Risk: Moderate chance, minimal impact</title>
+      </rect>
+      <text x="140" y="255" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2E7D32">Low</text>
+      <text x="140" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#388E3C">+5% buffer</text>
+      
+      <!-- Medium Probability, Medium Impact -->
+      <rect x="190" y="230" width="80" height="60" fill="url(#mediumRiskGradient)" stroke="#FF9800" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="medium" tabindex="0" role="button"
+            aria-label="Medium risk: Medium probability, medium impact">
+        <title>Medium Risk: Moderate chance, moderate impact</title>
+      </rect>
+      <text x="230" y="255" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#E65100">Medium</text>
+      <text x="230" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#F57C00">+20% buffer</text>
+      
+      <!-- Medium Probability, High Impact -->
+      <rect x="280" y="230" width="80" height="60" fill="url(#highRiskGradient)" stroke="#F44336" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="high" tabindex="0" role="button"
+            aria-label="High risk: Medium probability, high impact">
+        <title>High Risk: Moderate chance, major impact</title>
+      </rect>
+      <text x="320" y="255" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#C62828">High</text>
+      <text x="320" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D32F2F">+35% buffer</text>
+      
+      <!-- Low Probability, Low Impact -->
+      <rect x="100" y="300" width="80" height="60" fill="url(#lowRiskGradient)" stroke="#4CAF50" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="minimal" tabindex="0" role="button"
+            aria-label="Minimal risk: Low probability, low impact">
+        <title>Minimal Risk: Unlikely to occur, minimal impact</title>
+      </rect>
+      <text x="140" y="325" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2E7D32">Minimal</text>
+      <text x="140" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#388E3C">No buffer</text>
+      
+      <!-- Low Probability, Medium Impact -->
+      <rect x="190" y="300" width="80" height="60" fill="url(#lowRiskGradient)" stroke="#4CAF50" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="low" tabindex="0" role="button"
+            aria-label="Low risk: Low probability, medium impact">
+        <title>Low Risk: Unlikely to occur, moderate impact</title>
+      </rect>
+      <text x="230" y="325" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2E7D32">Low</text>
+      <text x="230" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#388E3C">+10% buffer</text>
+      
+      <!-- Low Probability, High Impact -->
+      <rect x="280" y="300" width="80" height="60" fill="url(#mediumRiskGradient)" stroke="#FF9800" stroke-width="1" 
+            class="risk-cell interactive-element" data-risk="medium" tabindex="0" role="button"
+            aria-label="Medium risk: Low probability, high impact">
+        <title>Medium Risk: Unlikely to occur, major impact</title>
+      </rect>
+      <text x="320" y="325" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#E65100">Medium</text>
+      <text x="320" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#F57C00">+25% buffer</text>
+    </g>
+  </g>
+  
+  <!-- Timeline Optimization Engine -->
+  <g class="timeline-optimizer">
+    <rect x="500" y="80" width="450" height="180" rx="8" fill="url(#dashboardGradient)" stroke="#BDBDBD" stroke-width="1"/>
+    
+    <!-- Engine Title -->
+    <text x="725" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      Timeline Optimization Engine
+    </text>
+    
+    <!-- Original vs Adjusted Timeline -->
+    <text x="520" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">Original Estimate:</text>
+    <rect x="630" y="120" width="180" height="12" fill="#E0E0E0" stroke="#BDBDBD" stroke-width="1"/>
+    <text x="820" y="130" font-family="Inter, sans-serif" font-size="11" fill="#666">8 weeks</text>
+    
+    <text x="520" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">Risk-Adjusted:</text>
+    <rect x="630" y="145" width="234" height="12" fill="#FFB74D" stroke="#FF9800" stroke-width="1"/>
+    <text x="875" y="155" font-family="Inter, sans-serif" font-size="11" fill="#E65100">10.4 weeks (+30%)</text>
+    
+    <!-- Confidence Indicator -->
+    <text x="520" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">Confidence:</text>
+    <circle cx="630" cy="175" r="8" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
+    <text x="650" y="180" font-family="Inter, sans-serif" font-size="11" fill="#2E7D32">85% delivery confidence</text>
+    
+    <!-- Risk Factors List -->
+    <text x="520" y="205" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">Active Risk Factors:</text>
+    <text x="520" y="220" font-family="Inter, sans-serif" font-size="10" fill="#D32F2F">• Technical complexity (+20%)</text>
+    <text x="520" y="235" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">• Team availability (+10%)</text>
+    <text x="520" y="250" font-family="Inter, sans-serif" font-size="10" fill="#388E3C">• Dependency risk (managed)</text>
+  </g>
+  
+  <!-- Real-time Monitoring Dashboard -->
+  <g class="monitoring-dashboard">
+    <rect x="50" y="400" width="900" height="250" rx="8" fill="url(#dashboardGradient)" stroke="#BDBDBD" stroke-width="1"/>
+    
+    <!-- Dashboard Title -->
+    <text x="500" y="425" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      Real-time Risk Monitoring & Mitigation Dashboard
+    </text>
+    
+    <!-- Risk Categories -->
+    <g class="risk-categories">
+      <!-- Technical Risk -->
+      <g class="risk-category" data-category="technical">
+        <rect x="80" y="450" width="180" height="80" rx="6" fill="url(#mediumRiskGradient)" stroke="#FF9800" stroke-width="1" 
+              class="interactive-element" tabindex="0" role="button" aria-describedby="tech-risk-desc">
+        </rect>
+        <text x="170" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#E65100">Technical Risk</text>
+        <text x="170" y="485" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">Medium Priority</text>
+        
+        <!-- Risk meter -->
+        <rect x="100" y="495" width="140" height="8" fill="#E0E0E0" rx="4"/>
+        <rect x="100" y="495" width="84" height="8" fill="#FF9800" rx="4"/>
+        <text x="170" y="515" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#E65100">60% risk level</text>
+        
+        <circle cx="240" cy="470" r="10" fill="#FF9800" stroke="#E65100" stroke-width="1" class="action-btn"
+                tabindex="0" role="button" aria-label="View technical risk mitigation">
+          <title>View mitigation strategies</title>
+        </circle>
+        <text x="240" y="475" text-anchor="middle" font-family="monospace" font-size="10" fill="#E65100">⚠</text>
+      </g>
+      
+      <!-- Resource Risk -->
+      <g class="risk-category" data-category="resource">
+        <rect x="280" y="450" width="180" height="80" rx="6" fill="url(#lowRiskGradient)" stroke="#4CAF50" stroke-width="1" 
+              class="interactive-element" tabindex="0" role="button" aria-describedby="resource-risk-desc">
+        </rect>
+        <text x="370" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2E7D32">Resource Risk</text>
+        <text x="370" y="485" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#388E3C">Low Priority</text>
+        
+        <!-- Risk meter -->
+        <rect x="300" y="495" width="140" height="8" fill="#E0E0E0" rx="4"/>
+        <rect x="300" y="495" width="42" height="8" fill="#4CAF50" rx="4"/>
+        <text x="370" y="515" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#2E7D32">30% risk level</text>
+        
+        <circle cx="440" cy="470" r="10" fill="#4CAF50" stroke="#2E7D32" stroke-width="1" class="action-btn"
+                tabindex="0" role="button" aria-label="View resource risk mitigation">
+          <title>View mitigation strategies</title>
+        </circle>
+        <text x="440" y="475" text-anchor="middle" font-family="monospace" font-size="10" fill="#2E7D32">✓</text>
+      </g>
+      
+      <!-- Schedule Risk -->
+      <g class="risk-category" data-category="schedule">
+        <rect x="480" y="450" width="180" height="80" rx="6" fill="url(#highRiskGradient)" stroke="#F44336" stroke-width="1" 
+              class="interactive-element" tabindex="0" role="button" aria-describedby="schedule-risk-desc">
+        </rect>
+        <text x="570" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#C62828">Schedule Risk</text>
+        <text x="570" y="485" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D32F2F">High Priority</text>
+        
+        <!-- Risk meter -->
+        <rect x="500" y="495" width="140" height="8" fill="#E0E0E0" rx="4"/>
+        <rect x="500" y="495" width="112" height="8" fill="#F44336" rx="4"/>
+        <text x="570" y="515" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#C62828">80% risk level</text>
+        
+        <circle cx="640" cy="470" r="10" fill="#F44336" stroke="#C62828" stroke-width="1" class="action-btn"
+                tabindex="0" role="button" aria-label="View schedule risk mitigation">
+          <title>View mitigation strategies</title>
+        </circle>
+        <text x="640" y="475" text-anchor="middle" font-family="monospace" font-size="10" fill="#C62828">!</text>
+      </g>
+      
+      <!-- External Risk -->
+      <g class="risk-category" data-category="external">
+        <rect x="680" y="450" width="180" height="80" rx="6" fill="url(#mediumRiskGradient)" stroke="#FF9800" stroke-width="1" 
+              class="interactive-element" tabindex="0" role="button" aria-describedby="external-risk-desc">
+        </rect>
+        <text x="770" y="470" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#E65100">External Risk</text>
+        <text x="770" y="485" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">Medium Priority</text>
+        
+        <!-- Risk meter -->
+        <rect x="700" y="495" width="140" height="8" fill="#E0E0E0" rx="4"/>
+        <rect x="700" y="495" width="70" height="8" fill="#FF9800" rx="4"/>
+        <text x="770" y="515" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#E65100">50% risk level</text>
+        
+        <circle cx="840" cy="470" r="10" fill="#FF9800" stroke="#E65100" stroke-width="1" class="action-btn"
+                tabindex="0" role="button" aria-label="View external risk mitigation">
+          <title>View mitigation strategies</title>
+        </circle>
+        <text x="840" y="475" text-anchor="middle" font-family="monospace" font-size="10" fill="#E65100">⚠</text>
+      </g>
+    </g>
+    
+    <!-- Automated Recommendations -->
+    <g class="recommendations">
+      <text x="100" y="560" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1976D2">
+        Automated Recommendations:
+      </text>
+      <text x="100" y="580" font-family="Inter, sans-serif" font-size="11" fill="#424242">
+        • Add 2-week buffer for critical path items (Schedule Risk mitigation)
+      </text>
+      <text x="100" y="595" font-family="Inter, sans-serif" font-size="11" fill="#424242">
+        • Schedule technical review session for complex components (Technical Risk mitigation)
+      </text>
+      <text x="100" y="610" font-family="Inter, sans-serif" font-size="11" fill="#424242">
+        • Monitor external API stability weekly (External Risk monitoring)
+      </text>
+      <text x="100" y="625" font-family="Inter, sans-serif" font-size="11" fill="#424242">
+        • Consider parallel development tracks for dependent features
+      </text>
+    </g>
+  </g>
+  
+  <!-- Interactive Control Panel -->
+  <g class="control-panel">
+    <rect x="500" y="280" width="450" height="100" rx="8" fill="url(#dashboardGradient)" stroke="#BDBDBD" stroke-width="1"/>
+    
+    <text x="725" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#1976D2">
+      Quick Risk Assessment
+    </text>
+    
+    <!-- Risk Assessment Buttons -->
+    <rect x="520" y="315" width="80" height="25" rx="4" fill="#4CAF50" stroke="#2E7D32" stroke-width="1" 
+          class="interactive-element assessment-btn" data-assessment="low" tabindex="0" role="button"
+          aria-label="Assess as low risk">
+      <title>Mark as low risk scenario</title>
+    </rect>
+    <text x="560" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="white">Low Risk</text>
+    
+    <rect x="610" y="315" width="80" height="25" rx="4" fill="#FF9800" stroke="#E65100" stroke-width="1" 
+          class="interactive-element assessment-btn" data-assessment="medium" tabindex="0" role="button"
+          aria-label="Assess as medium risk">
+      <title>Mark as medium risk scenario</title>
+    </rect>
+    <text x="650" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="white">Med Risk</text>
+    
+    <rect x="700" y="315" width="80" height="25" rx="4" fill="#F44336" stroke="#C62828" stroke-width="1" 
+          class="interactive-element assessment-btn" data-assessment="high" tabindex="0" role="button"
+          aria-label="Assess as high risk">
+      <title>Mark as high risk scenario</title>
+    </rect>
+    <text x="740" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="white">High Risk</text>
+    
+    <rect x="790" y="315" width="120" height="25" rx="4" fill="#1976D2" stroke="#0D47A1" stroke-width="1" 
+          class="interactive-element calculate-btn" tabindex="0" role="button"
+          aria-label="Calculate adjusted timeline">
+      <title>Calculate risk-adjusted timeline</title>
+    </rect>
+    <text x="850" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="white">Calculate Timeline</text>
+    
+    <!-- Results Display -->
+    <text x="520" y="360" font-family="Inter, sans-serif" font-size="12" fill="#424242">
+      Calculated Buffer: <tspan fill="#E65100" font-weight="600">+2.4 weeks</tspan> | 
+      New Delivery: <tspan fill="#2E7D32" font-weight="600">Week 42</tspan> | 
+      Confidence: <tspan fill="#1976D2" font-weight="600">87%</tspan>
+    </text>
+  </g>
+  
+  <!-- Connection Flow Arrows -->
+  <g class="flow-arrows">
+    <line x1="450" y1="200" x2="500" y2="200" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="475" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#666">feeds into</text>
+    
+    <line x1="725" y1="260" x2="725" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="745" y="270" font-family="Inter, sans-serif" font-size="10" fill="#666">controls</text>
+    
+    <line x1="725" y1="380" x2="725" y2="400" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="745" y="390" font-family="Inter, sans-serif" font-size="10" fill="#666">monitors</text>
+  </g>
+  
+  <!-- Hidden descriptions for accessibility -->
+  <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+    <div id="tech-risk-desc">Technical risk assessment including complexity, dependency, and implementation challenges</div>
+    <div id="resource-risk-desc">Resource availability and team capacity risk assessment</div>
+    <div id="schedule-risk-desc">Timeline and milestone delivery risk assessment</div>
+    <div id="external-risk-desc">External dependency and third-party service risk assessment</div>
+  </div>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .interactive-element {
+      cursor: pointer;
+      transition: filter 0.3s ease, transform 0.2s ease;
+    }
+    
+    .interactive-element:hover, .interactive-element:focus {
+      filter: url(#hoverGlow);
+      outline: none;
+    }
+    
+    .risk-cell:hover, .risk-cell:focus {
+      transform: scale(1.02);
+      outline: 2px solid #1976D2;
+      outline-offset: 2px;
+    }
+    
+    .critical {
+      filter: url(#activeGlow);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    .action-btn:hover, .action-btn:focus {
+      transform: scale(1.2);
+      filter: url(#hoverGlow);
+    }
+    
+    .assessment-btn:hover, .assessment-btn:focus,
+    .calculate-btn:hover, .calculate-btn:focus {
+      transform: translateY(-2px);
+      filter: url(#hoverGlow);
+    }
+    
+    .risk-category:hover .interactive-element {
+      filter: url(#hoverGlow);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 1024px) {
+      svg {
+        width: 100%;
+        height: auto;
+      }
+      
+      .risk-matrix-container,
+      .timeline-optimizer,
+      .monitoring-dashboard,
+      .control-panel {
+        transform: scale(0.9);
+        transform-origin: top left;
+      }
+      
+      text {
+        font-size: 10px;
+      }
+      
+      .title {
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .risk-matrix-container {
+        width: 100%;
+        x: 25;
+      }
+      
+      .timeline-optimizer,
+      .control-panel {
+        width: 100%;
+        x: 25;
+      }
+      
+      .monitoring-dashboard {
+        width: 100%;
+        x: 25;
+      }
+      
+      .risk-category {
+        width: 45%;
+        margin: 2%;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for interactivity -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      // Risk matrix interaction
+      const riskCells = document.querySelectorAll('.risk-cell');
+      const timelineOptimizer = document.querySelector('.timeline-optimizer');
+      
+      riskCells.forEach(cell => {
+        cell.addEventListener('click', function() {
+          const riskLevel = this.getAttribute('data-risk');
+          updateTimelineCalculation(riskLevel);
+          
+          // Visual feedback
+          riskCells.forEach(c => c.classList.remove('selected'));
+          this.classList.add('selected');
+        });
+        
+        cell.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // Assessment buttons
+      const assessmentBtns = document.querySelectorAll('.assessment-btn');
+      const calculateBtn = document.querySelector('.calculate-btn');
+      
+      assessmentBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const assessment = this.getAttribute('data-assessment');
+          highlightRelevantRisks(assessment);
+          
+          assessmentBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // Calculate button
+      calculateBtn.addEventListener('click', function() {
+        calculateRiskAdjustedTimeline();
+        showMitigationRecommendations();
+      });
+      
+      // Risk category monitoring
+      const riskCategories = document.querySelectorAll('.risk-category');
+      riskCategories.forEach(category => {
+        category.addEventListener('click', function() {
+          const categoryType = this.getAttribute('data-category');
+          showDetailedRiskAnalysis(categoryType);
+        });
+      });
+      
+      // Action buttons
+      const actionBtns = document.querySelectorAll('.action-btn');
+      actionBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const category = this.closest('.risk-category').getAttribute('data-category');
+          showMitigationStrategies(category);
+        });
+      });
+      
+      // Helper functions for PWA integration
+      function updateTimelineCalculation(riskLevel) {
+        if (typeof window.updateTimelineDisplay === 'function') {
+          window.updateTimelineDisplay(riskLevel);
+        }
+      }
+      
+      function highlightRelevantRisks(assessment) {
+        if (typeof window.highlightRiskFactors === 'function') {
+          window.highlightRiskFactors(assessment);
+        }
+      }
+      
+      function calculateRiskAdjustedTimeline() {
+        if (typeof window.performTimelineCalculation === 'function') {
+          window.performTimelineCalculation();
+        } else {
+          console.log('Calculating risk-adjusted timeline...');
+        }
+      }
+      
+      function showMitigationRecommendations() {
+        if (typeof window.showMitigationPanel === 'function') {
+          window.showMitigationPanel();
+        }
+      }
+      
+      function showDetailedRiskAnalysis(categoryType) {
+        if (typeof window.showRiskAnalysis === 'function') {
+          window.showRiskAnalysis(categoryType);
+        }
+      }
+      
+      function showMitigationStrategies(category) {
+        if (typeof window.showMitigationStrategies === 'function') {
+          window.showMitigationStrategies(category);
+        }
+      }
+      
+      // Real-time monitoring simulation
+      setInterval(function() {
+        if (typeof window.updateRiskMetrics === 'function') {
+          window.updateRiskMetrics();
+        }
+      }, 30000); // Update every 30 seconds
+    });
+    ]]>
+  </script>
+</svg>
