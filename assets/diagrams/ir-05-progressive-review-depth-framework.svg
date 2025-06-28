@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ir05-title ir05-desc">
+  <title id="ir05-title">Progressive Review Depth Framework - Intelligent Review Orchestration</title>
+  <desc id="ir05-desc">Multi-layered visualization showing progressive review depth levels from surface scanning to deep architectural analysis with AI and human intervention points</desc>
+  
+  <!-- Definitions for gradients, patterns, and interactive states -->
+  <defs>
+    <!-- Depth layer gradients -->
+    <radialGradient id="surfaceLayer" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#2196F3;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:0.5" />
+    </radialGradient>
+    
+    <radialGradient id="structuralLayer" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#4CAF50;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:0.5" />
+    </radialGradient>
+    
+    <radialGradient id="logicalLayer" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#FF9800;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#E65100;stop-opacity:0.5" />
+    </radialGradient>
+    
+    <radialGradient id="performanceLayer" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#9C27B0;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:0.5" />
+    </radialGradient>
+    
+    <radialGradient id="architecturalLayer" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#FFEBEE;stop-opacity:0.9" />
+      <stop offset="70%" style="stop-color:#F44336;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#C62828;stop-opacity:0.5" />
+    </radialGradient>
+    
+    <!-- AI confidence gradients -->
+    <linearGradient id="aiConfidenceHigh" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiConfidenceMedium" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E65100;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiConfidenceLow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F44336;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C62828;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Interactive effects -->
+    <filter id="depthGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#1976D2" flood-opacity="0.8"/>
+    </filter>
+    
+    <filter id="escalationGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#FF9800" flood-opacity="0.7"/>
+    </filter>
+    
+    <filter id="criticalGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#F44336" flood-opacity="0.9"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="escalationArrow" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#FF9800" />
+    </marker>
+    
+    <marker id="depthArrow" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976D2" />
+    </marker>
+    
+    <!-- Review depth patterns -->
+    <pattern id="reviewPattern" patternUnits="userSpaceOnUse" width="30" height="30">
+      <rect width="30" height="30" fill="#FFF"/>
+      <circle cx="15" cy="15" r="4" fill="#1976D2" opacity="0.3"/>
+      <rect x="8" y="8" width="14" height="2" fill="#4CAF50" opacity="0.4"/>
+      <rect x="8" y="12" width="10" height="2" fill="#FF9800" opacity="0.4"/>
+      <rect x="8" y="16" width="12" height="2" fill="#9C27B0" opacity="0.4"/>
+      <rect x="8" y="20" width="8" height="2" fill="#F44336" opacity="0.4"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#FAFAFA" />
+  
+  <!-- Title Section -->
+  <text x="600" y="35" text-anchor="middle" class="title" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1A1A1A">
+    Progressive Review Depth Framework
+  </text>
+  <text x="600" y="55" text-anchor="middle" class="subtitle" font-family="Inter, sans-serif" font-size="14" fill="#666">
+    Intelligent Review Orchestration with Adaptive Depth Control
+  </text>
+  
+  <!-- Control Panel -->
+  <g class="control-panel">
+    <rect x="50" y="80" width="280" height="140" rx="8" fill="url(#reviewPattern)" stroke="#1976D2" stroke-width="2"/>
+    <text x="190" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0D47A1">
+      🎛️ Depth Control System
+    </text>
+    
+    <!-- Current Review Context -->
+    <text x="70" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#1976D2">Active Review:</text>
+    <text x="70" y="145" font-family="Inter, sans-serif" font-size="11" fill="#424242">feat/user-authentication-system</text>
+    <text x="70" y="160" font-family="Inter, sans-serif" font-size="10" fill="#666">Complexity: High | Risk: Medium | Priority: Critical</text>
+    
+    <!-- AI Recommendation -->
+    <text x="70" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#FF9800">AI Recommendation:</text>
+    <text x="70" y="195" font-family="Inter, sans-serif" font-size="10" fill="#E65100">→ Escalate to Layer 4 (Performance Analysis)</text>
+    <text x="70" y="208" font-family="Inter, sans-serif" font-size="9" fill="#F57C00">Confidence: 87% | Risk factors detected</text>
+  </g>
+  
+  <!-- Resource Optimization Panel -->
+  <g class="resource-panel">
+    <rect x="350" y="80" width="280" height="140" rx="8" fill="#F5F5F5" stroke="#4CAF50" stroke-width="2"/>
+    <text x="490" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#2E7D32">
+      ⚖️ Resource Optimization
+    </text>
+    
+    <!-- Time/Cost Trade-offs -->
+    <text x="370" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#2E7D32">Current Allocation:</text>
+    <text x="370" y="145" font-family="Inter, sans-serif" font-size="11" fill="#424242">Time Budget: 45 min | Cost: $78 | Quality Target: 94%</text>
+    
+    <!-- Resource Meters -->
+    <text x="370" y="165" font-family="Inter, sans-serif" font-size="10" fill="#666">Time Used:</text>
+    <rect x="370" y="170" width="100" height="8" fill="#E0E0E0" rx="4"/>
+    <rect x="370" y="170" width="60" height="8" fill="#4CAF50" rx="4"/>
+    <text x="480" y="177" font-family="Inter, sans-serif" font-size="9" fill="#2E7D32">27 min (60%)</text>
+    
+    <text x="370" y="195" font-family="Inter, sans-serif" font-size="10" fill="#666">Quality Score:</text>
+    <rect x="370" y="200" width="100" height="8" fill="#E0E0E0" rx="4"/>
+    <rect x="370" y="200" width="85" height="8" fill="#4CAF50" rx="4"/>
+    <text x="480" y="207" font-family="Inter, sans-serif" font-size="9" fill="#2E7D32">85% (Target: 94%)</text>
+  </g>
+  
+  <!-- AI Confidence Indicators -->
+  <g class="ai-confidence">
+    <rect x="650" y="80" width="280" height="140" rx="8" fill="#F5F5F5" stroke="#9C27B0" stroke-width="2"/>
+    <text x="790" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#7B1FA2">
+      🤖 AI Confidence Indicators
+    </text>
+    
+    <!-- Confidence Levels -->
+    <text x="670" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#7B1FA2">Analysis Confidence:</text>
+    
+    <rect x="670" y="140" width="80" height="12" fill="url(#aiConfidenceHigh)" rx="6"/>
+    <text x="710" y="149" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">Syntax: 97%</text>
+    
+    <rect x="670" y="160" width="80" height="12" fill="url(#aiConfidenceMedium)" rx="6"/>
+    <text x="710" y="169" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">Logic: 73%</text>
+    
+    <rect x="670" y="180" width="80" height="12" fill="url(#aiConfidenceLow)" rx="6"/>
+    <text x="710" y="189" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">Security: 45%</text>
+    
+    <!-- Escalation Trigger -->
+    <text x="780" y="140" font-family="Inter, sans-serif" font-size="11" fill="#4CAF50">✓ High confidence</text>
+    <text x="780" y="160" font-family="Inter, sans-serif" font-size="11" fill="#FF9800">⚠ Medium - Monitor</text>
+    <text x="780" y="180" font-family="Inter, sans-serif" font-size="11" fill="#F44336">🚨 Low - Escalate</text>
+    
+    <text x="670" y="210" font-family="Inter, sans-serif" font-size="10" fill="#9C27B0">Recommendation: Human security expert review required</text>
+  </g>
+  
+  <!-- Decision Matrix -->
+  <g class="decision-matrix">
+    <rect x="950" y="80" width="200" height="140" rx="8" fill="#F5F5F5" stroke="#FF9800" stroke-width="2"/>
+    <text x="1050" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#E65100">
+      📊 Decision Matrix
+    </text>
+    
+    <!-- Decision Factors -->
+    <text x="970" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#E65100">Escalation Factors:</text>
+    <text x="970" y="145" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">• Security concerns: High</text>
+    <text x="970" y="160" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">• Complexity score: 8.2/10</text>
+    <text x="970" y="175" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">• Business impact: Critical</text>
+    <text x="970" y="190" font-family="Inter, sans-serif" font-size="10" fill="#F57C00">• AI confidence: Low (45%)</text>
+    
+    <text x="970" y="210" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#D84315">
+      → Proceed to Layer 4 & 5
+    </text>
+  </g>
+  
+  <!-- Progressive Depth Layers (Concentric Design) -->
+  <g class="depth-layers">
+    
+    <!-- Layer 5: Architectural Analysis (Outermost) -->
+    <g class="depth-layer architectural" data-layer="5">
+      <circle cx="600" cy="450" r="280" fill="url(#architecturalLayer)" stroke="#C62828" stroke-width="3" 
+              class="interactive-element depth-circle" tabindex="0" role="button" aria-describedby="architectural-desc"
+              opacity="0.3">
+        <title>Layer 5: Deep Architectural Analysis</title>
+      </circle>
+      
+      <text x="600" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#C62828">
+        Layer 5: Architectural Analysis
+      </text>
+      <text x="600" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#D32F2F">
+        Deep system design review, scalability, maintainability
+      </text>
+      
+      <!-- Escalation Indicators -->
+      <circle cx="320" cy="380" r="8" fill="#F44336" class="escalation-trigger expert">
+        <title>Expert escalation point</title>
+      </circle>
+      <text x="340" y="385" font-family="Inter, sans-serif" font-size="10" fill="#C62828">Expert Required</text>
+      
+      <!-- Cost/Time Indicators -->
+      <text x="320" y="400" font-family="Inter, sans-serif" font-size="9" fill="#D32F2F">
+        Cost: $240 | Time: 2-4 hours | ROI: Critical issues only
+      </text>
+    </g>
+    
+    <!-- Layer 4: Performance Analysis -->
+    <g class="depth-layer performance" data-layer="4">
+      <circle cx="600" cy="450" r="220" fill="url(#performanceLayer)" stroke="#7B1FA2" stroke-width="3" 
+              class="interactive-element depth-circle" tabindex="0" role="button" aria-describedby="performance-desc"
+              opacity="0.5">
+        <title>Layer 4: Performance Analysis</title>
+      </circle>
+      
+      <text x="600" y="250" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#7B1FA2">
+        Layer 4: Performance Analysis
+      </text>
+      <text x="600" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#8E24AA">
+        Performance impact, optimization opportunities, resource usage
+      </text>
+      
+      <!-- Escalation Indicators -->
+      <circle cx="380" cy="320" r="8" fill="#FF9800" class="escalation-trigger senior">
+        <title>Senior developer escalation point</title>
+      </circle>
+      <text x="400" y="325" font-family="Inter, sans-serif" font-size="10" fill="#7B1FA2">Senior Dev Required</text>
+      
+      <!-- AI Assistance -->
+      <rect x="750" y="310" width="80" height="20" rx="4" fill="#9C27B0" opacity="0.8"/>
+      <text x="790" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">AI Assisted</text>
+      
+      <text x="380" y="340" font-family="Inter, sans-serif" font-size="9" fill="#8E24AA">
+        Cost: $120 | Time: 1-2 hours | ROI: Performance issues
+      </text>
+    </g>
+    
+    <!-- Layer 3: Logical Structure -->
+    <g class="depth-layer logical" data-layer="3">
+      <circle cx="600" cy="450" r="160" fill="url(#logicalLayer)" stroke="#E65100" stroke-width="3" 
+              class="interactive-element depth-circle" tabindex="0" role="button" aria-describedby="logical-desc"
+              opacity="0.7">
+        <title>Layer 3: Logical Structure Analysis</title>
+      </circle>
+      
+      <text x="600" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#E65100">
+        Layer 3: Logical Structure
+      </text>
+      <text x="600" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#F57C00">
+        Business logic, algorithms, data flow, edge cases
+      </text>
+      
+      <!-- Escalation Indicators -->
+      <circle cx="460" cy="380" r="8" fill="#4CAF50" class="escalation-trigger standard">
+        <title>Standard review escalation point</title>
+      </circle>
+      <text x="480" y="385" font-family="Inter, sans-serif" font-size="10" fill="#E65100">Standard Review</text>
+      
+      <!-- Automated Checks -->
+      <rect x="680" y="370" width="80" height="20" rx="4" fill="#FF9800" opacity="0.8"/>
+      <text x="720" y="383" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white">AI + Human</text>
+      
+      <text x="460" y="400" font-family="Inter, sans-serif" font-size="9" fill="#F57C00">
+        Cost: $60 | Time: 30-60 min | ROI: Logic errors
+      </text>
+    </g>
+    
+    <!-- Layer 2: Structural Validation -->
+    <g class="depth-layer structural" data-layer="2">
+      <circle cx="600" cy="450" r="100" fill="url(#structuralLayer)" stroke="#2E7D32" stroke-width="3" 
+              class="interactive-element depth-circle" tabindex="0" role="button" aria-describedby="structural-desc"
+              opacity="0.8">
+        <title>Layer 2: Structural Validation</title>
+      </circle>
+      
+      <text x="600" y="370" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#2E7D32">
+        Layer 2: Structural Validation
+      </text>
+      <text x="600" y="390" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#388E3C">
+        Code organization, patterns, best practices
+      </text>
+      
+      <!-- Automated Indicators -->
+      <circle cx="520" cy="420" r="8" fill="#2196F3" class="automation-indicator">
+        <title>Automated analysis available</title>
+      </circle>
+      <text x="540" y="425" font-family="Inter, sans-serif" font-size="10" fill="#2E7D32">AI Optimized</text>
+      
+      <text x="520" y="440" font-family="Inter, sans-serif" font-size="9" fill="#388E3C">
+        Cost: $25 | Time: 15-30 min | ROI: Structure issues
+      </text>
+    </g>
+    
+    <!-- Layer 1: Surface Scanning (Center) -->
+    <g class="depth-layer surface" data-layer="1">
+      <circle cx="600" cy="450" r="50" fill="url(#surfaceLayer)" stroke="#0D47A1" stroke-width="3" 
+              class="interactive-element depth-circle" tabindex="0" role="button" aria-describedby="surface-desc">
+        <title>Layer 1: Surface Scanning</title>
+      </circle>
+      
+      <text x="600" y="445" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">
+        Layer 1
+      </text>
+      <text x="600" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#E3F2FD">
+        Surface Scan
+      </text>
+      
+      <!-- Center indicator -->
+      <circle cx="600" cy="480" r="4" fill="#FFFFFF"/>
+      <text x="600" y="495" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#0D47A1">
+        Syntax, formatting, basic checks
+      </text>
+      
+      <text x="600" y="510" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#1565C0">
+        Cost: $5 | Time: 2-5 min | ROI: Quick wins
+      </text>
+    </g>
+    
+    <!-- Escalation Paths -->
+    <g class="escalation-paths">
+      
+      <!-- Layer 1 to 2 -->
+      <path d="M 650 450 Q 680 430 680 400 Q 680 370 650 350" fill="none" stroke="#1976D2" stroke-width="3" 
+            marker-end="url(#depthArrow)" class="escalation-path" data-from="1" data-to="2">
+        <title>Escalation from Surface to Structural</title>
+      </path>
+      <text x="690" y="400" font-family="Inter, sans-serif" font-size="9" fill="#1976D2">Auto</text>
+      
+      <!-- Layer 2 to 3 -->
+      <path d="M 650 380 Q 720 360 750 380" fill="none" stroke="#FF9800" stroke-width="3" 
+            marker-end="url(#escalationArrow)" class="escalation-path" data-from="2" data-to="3">
+        <title>Escalation from Structural to Logical</title>
+      </path>
+      <text x="720" y="350" font-family="Inter, sans-serif" font-size="9" fill="#FF9800">AI Trigger</text>
+      
+      <!-- Layer 3 to 4 -->
+      <path d="M 680 320 Q 750 280 780 320" fill="none" stroke="#FF9800" stroke-width="3" 
+            marker-end="url(#escalationArrow)" class="escalation-path" data-from="3" data-to="4">
+        <title>Escalation from Logical to Performance</title>
+      </path>
+      <text x="750" y="270" font-family="Inter, sans-serif" font-size="9" fill="#FF9800">Risk Detected</text>
+      
+      <!-- Layer 4 to 5 -->
+      <path d="M 750 250 Q 820 220 850 280" fill="none" stroke="#F44336" stroke-width="3" 
+            marker-end="url(#escalationArrow)" class="escalation-path critical" data-from="4" data-to="5">
+        <title>Critical escalation to Architectural</title>
+      </path>
+      <text x="820" y="210" font-family="Inter, sans-serif" font-size="9" fill="#F44336">Critical</text>
+    </g>
+  </g>
+  
+  <!-- Current Review Progress -->
+  <g class="review-progress">
+    <rect x="50" y="650" width="500" height="120" rx="8" fill="#F5F5F5" stroke="#1976D2" stroke-width="1"/>
+    <text x="300" y="675" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1976D2">
+      📈 Current Review Progress
+    </text>
+    
+    <!-- Progress Steps -->
+    <g class="progress-steps">
+      <circle cx="100" cy="700" r="12" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" class="progress-step completed">
+        <title>Layer 1 completed</title>
+      </circle>
+      <text x="100" y="720" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#2E7D32">Layer 1</text>
+      <text x="100" y="732" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#4CAF50">✓ Complete</text>
+      
+      <line x1="112" y1="700" x2="138" y2="700" stroke="#4CAF50" stroke-width="2"/>
+      
+      <circle cx="150" cy="700" r="12" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" class="progress-step completed">
+        <title>Layer 2 completed</title>
+      </circle>
+      <text x="150" y="720" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#2E7D32">Layer 2</text>
+      <text x="150" y="732" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#4CAF50">✓ Complete</text>
+      
+      <line x1="162" y1="700" x2="188" y2="700" stroke="#4CAF50" stroke-width="2"/>
+      
+      <circle cx="200" cy="700" r="12" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" class="progress-step completed">
+        <title>Layer 3 completed</title>
+      </circle>
+      <text x="200" y="720" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#2E7D32">Layer 3</text>
+      <text x="200" y="732" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#4CAF50">✓ Complete</text>
+      
+      <line x1="212" y1="700" x2="238" y2="700" stroke="#FF9800" stroke-width="2"/>
+      
+      <circle cx="250" cy="700" r="12" fill="#FF9800" stroke="#E65100" stroke-width="2" class="progress-step active">
+        <title>Layer 4 in progress</title>
+      </circle>
+      <text x="250" y="720" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#E65100">Layer 4</text>
+      <text x="250" y="732" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#FF9800">In Progress</text>
+      
+      <line x1="262" y1="700" x2="288" y2="700" stroke="#E0E0E0" stroke-width="2"/>
+      
+      <circle cx="300" cy="700" r="12" fill="#F5F5F5" stroke="#BDBDBD" stroke-width="2" class="progress-step pending">
+        <title>Layer 5 pending</title>
+      </circle>
+      <text x="300" y="720" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#757575">Layer 5</text>
+      <text x="300" y="732" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#BDBDBD">Pending</text>
+    </g>
+    
+    <!-- Current Status -->
+    <g class="current-status">
+      <text x="350" y="695" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">
+        Current Status: Performance Analysis
+      </text>
+      <text x="350" y="710" font-family="Inter, sans-serif" font-size="11" fill="#FF9800">
+        🔍 Analyzing memory usage patterns and database query optimization
+      </text>
+      <text x="350" y="725" font-family="Inter, sans-serif" font-size="10" fill="#666">
+        Estimated completion: 25 minutes | Quality target: 94%
+      </text>
+      <text x="350" y="740" font-family="Inter, sans-serif" font-size="10" fill="#666">
+        AI confidence: 73% (Medium) | Escalation trigger: Security concerns
+      </text>
+      
+      <!-- Next Action -->
+      <rect x="350" y="750" width="120" height="25" rx="4" fill="#FF9800" stroke="#E65100" stroke-width="1" 
+            class="interactive-element next-action-btn" tabindex="0" role="button">
+        <title>Proceed to next analysis phase</title>
+      </rect>
+      <text x="410" y="765" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="white">Continue Analysis</text>
+      
+      <rect x="480" y="750" width="120" height="25" rx="4" fill="#F44336" stroke="#C62828" stroke-width="1" 
+            class="interactive-element escalate-btn" tabindex="0" role="button">
+        <title>Escalate to architectural review</title>
+      </rect>
+      <text x="540" y="765" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="white">Escalate to Layer 5</text>
+    </g>
+  </g>
+  
+  <!-- Automated Recommendations -->
+  <g class="automated-recommendations">
+    <rect x="580" y="650" width="570" height="120" rx="8" fill="#F5F5F5" stroke="#4CAF50" stroke-width="1"/>
+    <text x="865" y="675" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#2E7D32">
+      🤖 Automated Recommendations & Decision Logic
+    </text>
+    
+    <!-- Recommendation Engine -->
+    <g class="recommendation-engine">
+      <text x="600" y="700" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#2E7D32">
+        AI Analysis Results:
+      </text>
+      <text x="600" y="715" font-family="Inter, sans-serif" font-size="11" fill="#4CAF50">
+        ✓ Syntax and formatting: Excellent (97% confidence)
+      </text>
+      <text x="600" y="730" font-family="Inter, sans-serif" font-size="11" fill="#FF9800">
+        ⚠ Performance concerns: Database query optimization needed (73% confidence)
+      </text>
+      <text x="600" y="745" font-family="Inter, sans-serif" font-size="11" fill="#F44336">
+        🚨 Security vulnerability: Authentication bypass potential (45% confidence)
+      </text>
+      
+      <!-- Recommendations -->
+      <text x="850" y="700" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#424242">
+        Recommendations:
+      </text>
+      <text x="850" y="715" font-family="Inter, sans-serif" font-size="10" fill="#666">
+        1. Continue to Layer 4 for performance analysis
+      </text>
+      <text x="850" y="730" font-family="Inter, sans-serif" font-size="10" fill="#666">
+        2. Escalate security concerns to expert reviewer
+      </text>
+      <text x="850" y="745" font-family="Inter, sans-serif" font-size="10" fill="#666">
+        3. Consider architectural review if issues persist
+      </text>
+    </g>
+    
+    <!-- Decision Confidence -->
+    <g class="decision-confidence">
+      <text x="1000" y="700" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#424242">Decision Confidence:</text>
+      <rect x="1000" y="705" width="60" height="8" fill="#E0E0E0" rx="4"/>
+      <rect x="1000" y="705" width="42" height="8" fill="#FF9800" rx="4"/>
+      <text x="1070" y="712" font-family="Inter, sans-serif" font-size="9" fill="#E65100">70%</text>
+      
+      <text x="1000" y="730" font-family="Inter, sans-serif" font-size="10" fill="#666">Factors:</text>
+      <text x="1000" y="745" font-family="Inter, sans-serif" font-size="9" fill="#FF9800">• Mixed confidence levels</text>
+      <text x="1000" y="758" font-family="Inter, sans-serif" font-size="9" fill="#FF9800">• Security concerns present</text>
+    </g>
+  </g>
+  
+  <!-- Hidden descriptions for accessibility -->
+  <div style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+    <div id="surface-desc">Layer 1: Surface scanning with syntax, formatting, and basic checks analysis</div>
+    <div id="structural-desc">Layer 2: Structural validation covering code organization, patterns, and best practices</div>
+    <div id="logical-desc">Layer 3: Logical structure analysis including business logic, algorithms, data flow, and edge cases</div>
+    <div id="performance-desc">Layer 4: Performance analysis examining impact, optimization opportunities, and resource usage</div>
+    <div id="architectural-desc">Layer 5: Deep architectural analysis covering system design, scalability, and maintainability</div>
+  </div>
+  
+  <!-- CSS Styles -->
+  <style>
+    <![CDATA[
+    .interactive-element {
+      cursor: pointer;
+      transition: filter 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+    }
+    
+    .interactive-element:hover, .interactive-element:focus {
+      filter: url(#depthGlow);
+      outline: none;
+    }
+    
+    .depth-circle:hover, .depth-circle:focus {
+      opacity: 1 !important;
+      filter: url(#depthGlow);
+      transform: scale(1.02);
+      outline: 2px solid #1976D2;
+      outline-offset: 3px;
+    }
+    
+    .escalation-path:hover, .escalation-path:focus {
+      stroke-width: 5;
+      filter: url(#escalationGlow);
+    }
+    
+    .escalation-path.critical:hover {
+      filter: url(#criticalGlow);
+    }
+    
+    .next-action-btn:hover, .next-action-btn:focus,
+    .escalate-btn:hover, .escalate-btn:focus {
+      transform: translateY(-2px);
+      filter: url(#escalationGlow);
+    }
+    
+    .escalation-trigger {
+      animation: pulse 2s infinite;
+    }
+    
+    .automation-indicator {
+      animation: rotate 3s linear infinite;
+    }
+    
+    .progress-step.active {
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Layer-specific interactions */
+    .depth-layer.surface:hover circle {
+      fill: url(#surfaceLayer);
+      opacity: 1;
+    }
+    
+    .depth-layer.structural:hover circle {
+      fill: url(#structuralLayer);
+      opacity: 1;
+    }
+    
+    .depth-layer.logical:hover circle {
+      fill: url(#logicalLayer);
+      opacity: 1;
+    }
+    
+    .depth-layer.performance:hover circle {
+      fill: url(#performanceLayer);
+      opacity: 1;
+    }
+    
+    .depth-layer.architectural:hover circle {
+      fill: url(#architecturalLayer);
+      opacity: 1;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 1200px) {
+      svg {
+        width: 100%;
+        height: auto;
+      }
+      
+      .depth-layers {
+        transform: scale(0.9);
+        transform-origin: center;
+      }
+      
+      text {
+        font-size: 10px;
+      }
+      
+      .title {
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .control-panel,
+      .resource-panel,
+      .ai-confidence,
+      .decision-matrix {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      
+      .review-progress,
+      .automated-recommendations {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+      }
+      
+      .depth-layers circle {
+        stroke-width: 2;
+      }
+      
+      .escalation-path {
+        stroke-width: 2;
+      }
+    }
+    ]]>
+  </style>
+  
+  <!-- JavaScript for advanced depth control interactions -->
+  <script>
+    <![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
+      // Interactive elements
+      const depthLayers = document.querySelectorAll('.depth-layer');
+      const escalationPaths = document.querySelectorAll('.escalation-path');
+      const actionButtons = document.querySelectorAll('.next-action-btn, .escalate-btn');
+      const progressSteps = document.querySelectorAll('.progress-step');
+      
+      let currentLayer = 4; // Currently on Layer 4
+      let reviewState = {
+        timeUsed: 27,
+        timebudget: 45,
+        qualityScore: 85,
+        qualityTarget: 94,
+        aiConfidence: {
+          syntax: 97,
+          logic: 73,
+          security: 45
+        }
+      };
+      
+      // Depth layer interaction
+      depthLayers.forEach(layer => {
+        layer.addEventListener('click', function() {
+          const layerNum = parseInt(this.getAttribute('data-layer'));
+          exploreLayer(layerNum);
+          
+          if (typeof window.exploreReviewDepth === 'function') {
+            window.exploreReviewDepth(layerNum);
+          }
+        });
+        
+        layer.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+          }
+        });
+      });
+      
+      // Escalation path interaction
+      escalationPaths.forEach(path => {
+        path.addEventListener('click', function() {
+          const fromLayer = this.getAttribute('data-from');
+          const toLayer = this.getAttribute('data-to');
+          showEscalationDetails(fromLayer, toLayer);
+          
+          if (typeof window.showEscalationPath === 'function') {
+            window.showEscalationPath(fromLayer, toLayer);
+          }
+        });
+      });
+      
+      // Action button interaction
+      actionButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const action = this.classList.contains('next-action-btn') ? 'continue' : 'escalate';
+          handleReviewAction(action);
+          
+          if (typeof window.handleReviewAction === 'function') {
+            window.handleReviewAction(action);
+          }
+        });
+      });
+      
+      // Progress step interaction
+      progressSteps.forEach(step => {
+        step.addEventListener('click', function() {
+          const stepElement = this;
+          showStepDetails(stepElement);
+          
+          if (typeof window.showProgressStep === 'function') {
+            window.showProgressStep(stepElement);
+          }
+        });
+      });
+      
+      // Helper functions
+      function exploreLayer(layerNum) {
+        // Update layer highlighting
+        depthLayers.forEach(layer => {
+          layer.classList.remove('selected');
+        });
+        
+        const selectedLayer = document.querySelector(`[data-layer="${layerNum}"]`);
+        if (selectedLayer) {
+          selectedLayer.classList.add('selected');
+        }
+        
+        updateLayerInfo(layerNum);
+      }
+      
+      function updateLayerInfo(layerNum) {
+        const layerInfo = {
+          1: { name: 'Surface Scanning', cost: 5, time: '2-5 min', roi: 'Quick wins' },
+          2: { name: 'Structural Validation', cost: 25, time: '15-30 min', roi: 'Structure issues' },
+          3: { name: 'Logical Structure', cost: 60, time: '30-60 min', roi: 'Logic errors' },
+          4: { name: 'Performance Analysis', cost: 120, time: '1-2 hours', roi: 'Performance issues' },
+          5: { name: 'Architectural Analysis', cost: 240, time: '2-4 hours', roi: 'Critical issues only' }
+        };
+        
+        if (typeof window.updateLayerDetails === 'function') {
+          window.updateLayerDetails(layerInfo[layerNum]);
+        }
+      }
+      
+      function showEscalationDetails(fromLayer, toLayer) {
+        if (typeof window.showEscalationDetails === 'function') {
+          window.showEscalationDetails(fromLayer, toLayer);
+        } else {
+          console.log(`Escalation from Layer ${fromLayer} to Layer ${toLayer}`);
+        }
+      }
+      
+      function handleReviewAction(action) {
+        if (action === 'continue') {
+          // Continue current layer analysis
+          updateReviewProgress();
+        } else if (action === 'escalate') {
+          // Escalate to next layer
+          escalateToNextLayer();
+        }
+      }
+      
+      function updateReviewProgress() {
+        reviewState.timeUsed += 5;
+        reviewState.qualityScore += 2;
+        
+        if (typeof window.updateReviewState === 'function') {
+          window.updateReviewState(reviewState);
+        }
+      }
+      
+      function escalateToNextLayer() {
+        if (currentLayer < 5) {
+          currentLayer++;
+          updateProgressDisplay();
+          
+          if (typeof window.escalateReview === 'function') {
+            window.escalateReview(currentLayer);
+          }
+        }
+      }
+      
+      function updateProgressDisplay() {
+        // Update progress step visualization
+        progressSteps.forEach((step, index) => {
+          const stepNum = index + 1;
+          step.classList.remove('completed', 'active', 'pending');
+          
+          if (stepNum < currentLayer) {
+            step.classList.add('completed');
+          } else if (stepNum === currentLayer) {
+            step.classList.add('active');
+          } else {
+            step.classList.add('pending');
+          }
+        });
+      }
+      
+      function showStepDetails(stepElement) {
+        if (typeof window.showStepDetails === 'function') {
+          window.showStepDetails(stepElement);
+        }
+      }
+      
+      // Real-time updates
+      function updateDepthAnalysis() {
+        if (typeof window.updateDepthAnalysis === 'function') {
+          window.updateDepthAnalysis();
+        }
+      }
+      
+      function updateAIConfidence() {
+        if (typeof window.updateAIConfidence === 'function') {
+          window.updateAIConfidence();
+        }
+      }
+      
+      // Initialize system
+      if (typeof window.initializeDepthControl === 'function') {
+        window.initializeDepthControl();
+      }
+      
+      // Periodic updates
+      setInterval(updateDepthAnalysis, 30000); // Update every 30 seconds
+      setInterval(updateAIConfidence, 60000); // Update AI confidence every minute
+    });
+    ]]>
+  </script>
+</svg>
