@@ -1,0 +1,95 @@
+# Unified Template Schema for Beyond the AI Plateau
+# Version 2.0 - Complete Standardization
+
+required_frontmatter_fields:
+  # Core Identity
+  title: string # Template title with ID in parentheses
+  description: string # Brief description of template purpose
+  type: "template" # Always "template"
+  tier: enum # foundation|advanced|elite
+  template_category: enum # context-mastery|dynamic-planning|code-evolution|strategic-testing|intelligent-review|cross-principle-integration
+  template_subcategory: string # Specific area within category
+  
+  # Usage Context
+  use_case: string # When and how to use this template
+  target_scenario: string # Specific situations for template usage
+  complexity_level: enum # foundation|intermediate|advanced|elite
+  skill_level: enum # foundational|intermediate|advanced|elite (alias for complexity_level)
+  
+  # Content Metadata
+  estimated_reading_time: string # e.g., "12 minutes"
+  word_count: number # Approximate word count
+  content_status: enum # draft|review|final
+  estimated_time_savings: string # e.g., "80% (3 hours → 35 minutes)"
+  
+  # Audience and Prerequisites
+  target_audience: array # List of target user types
+  prerequisites: array # Required knowledge/tools
+  integration_requirements: array # Technical integration needs
+  
+  # Effectiveness and Metrics
+  effectiveness_metrics: array # List of measurable outcomes
+  template_id: string # Unique identifier (e.g., CM-001, DP-F-001)
+  template_version: string # Version number
+  validation_status: enum # draft|testing|verified|deprecated
+  
+  # PWA and Technical Integration
+  pwa_integration: array # PWA-specific features
+  offline_accessible: boolean
+  offline_functionality: boolean
+  progressive_loading: boolean
+  caching_strategy: enum # cache_first|network_first|stale_while_revalidate
+  mobile_optimized: boolean
+  touch_friendly: boolean
+  copy_functionality: boolean
+  usage_tracking: boolean
+  
+  # Accessibility and SEO
+  accessibility_features: array # Accessibility compliance features
+  search_optimization: array # Keywords for search
+  cross_references: array # Related templates
+  
+  # Maintenance
+  last_updated: date # ISO format date
+  sync_requirements: array # Data sync needs
+  claude_code_optimized: boolean # Verified for Claude Code workflow
+
+optional_frontmatter_fields:
+  # Additional context when relevant
+  business_impact: string
+  roi_metrics: object
+  team_collaboration_features: array
+  integration_patterns: array
+  advanced_customization_options: array
+
+content_structure_requirements:
+  sections:
+    - "## Template Purpose" # Clear statement of what template accomplishes
+    - "## Usage Context" # When and how to use
+    - "## Template Prompt" # The actual AI prompt in code block
+    - "## Customization Variables" # Explanation of variables
+    - "## Expected Output Format" # What to expect from AI
+    - "## Implementation Guide" # Step-by-step usage instructions
+    - "## Claude Code Optimization" # Integration with Claude Code workflows
+    - "## Effectiveness Metrics" # Measured benefits and success indicators
+    - "## Usage Examples" # Real-world application examples
+    - "## Integration with Other Templates" # Workflow connections
+
+formatting_standards:
+  prompt_blocks: "```" # Use triple backticks for prompts
+  variable_format: "{VARIABLE_NAME}" # Uppercase with underscores
+  id_format: "[CATEGORY]-[LEVEL]-[NUMBER]" # e.g., CM-F-001, DP-A-012
+  cross_references: "Use template titles or IDs for consistency"
+
+skill_level_definitions:
+  foundational: "Basic templates for beginners new to AI-enhanced development"
+  intermediate: "Standard templates for regular use by experienced developers"
+  advanced: "Complex templates for sophisticated scenarios and expert users"
+  elite: "Cutting-edge templates for transformation and innovation scenarios"
+
+validation_requirements:
+  technical_accuracy: "All code examples tested and verified"
+  claude_code_compatibility: "Verified to work in Claude Code workflows"
+  effectiveness_testing: "Template effectiveness validated with metrics"
+  accessibility_compliance: "WCAG 2.1 AA compliance verified"
+  mobile_optimization: "Touch-friendly and mobile-responsive"
