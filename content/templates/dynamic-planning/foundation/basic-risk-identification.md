@@ -1,42 +1,109 @@
 ---
-title: "Basic Risk Identification Template"
+title: "Basic Risk Identification Template (DP-F-004)"
 description: "Foundational template for identifying and planning around common development project risks using AI assistance"
 type: "template"
 tier: "foundation"
 template_category: "dynamic-planning"
+template_subcategory: "risk-management"
+use_case: "Identify project risks early and create practical mitigation strategies before problems occur"
+target_scenario: "Use during project setup, sprint planning, or when facing uncertainty about project challenges"
+complexity_level: "foundation"
 skill_level: "foundational"
-estimated_time_savings: "30-45 minutes"
-complexity_level: "low"
+estimated_reading_time: "8 minutes"
+word_count: 2100
+content_status: "final"
+estimated_time_savings: "75% (2 hours → 30 minutes)"
+target_audience: ["developers", "project_managers", "team_leads", "beginners"]
 prerequisites: ["project_basics", "claude_code_access"]
-effectiveness_metrics: {
-  "risk_coverage": "80%",
-  "early_detection": "75%",
-  "mitigation_success": "85%"
-}
+integration_requirements: ["pwa-compatible", "offline-accessible", "progressive-loading", "template-testing"]
+effectiveness_metrics: ["risk_coverage", "early_detection", "mitigation_success"]
+template_id: "DP-F-004"
+template_version: "1.0"
+validation_status: "verified"
+pwa_integration: ["offline_accessible", "copy_to_clipboard", "usage_tracking", "template_sync"]
 offline_accessible: true
+offline_functionality: true
+progressive_loading: true
+caching_strategy: "cache_first"
+mobile_optimized: true
+touch_friendly: true
 copy_functionality: true
 usage_tracking: true
+accessibility_features: ["semantic-markup", "screen-reader-compatible", "keyboard-navigation"]
 search_optimization: ["risk identification", "project risks", "foundational", "planning"]
-integration_requirements: ["pwa-compatible", "offline-accessible", "progressive-loading"]
-cross_references: ["basic-project-initialization", "simple-sprint-planning", "contingency-planning-basics"]
+cross_references: ["basic-project-initialization", "simple-sprint-planning", "story-point-estimation"]
+last_updated: "2025-06-30"
+sync_requirements: ["template_usage", "risk_patterns", "mitigation_strategies"]
 claude_code_optimized: true
-last_updated: "2025-06-27"
-validation_status: "verified"
 ---
 
-# Basic Risk Identification Template
+# Basic Risk Identification Template (DP-F-004)
 
-## Overview
+## Template Purpose
 
-This foundational template helps identify common development project risks before they become problems. Using AI assistance, teams can quickly recognize potential issues and create simple mitigation plans.
+Identify common development project risks before they become problems using AI assistance. Perfect for teams learning proactive risk management and mitigation planning.
 
-**When to use**: During project setup, sprint planning, or when facing uncertainty about project challenges.
+## Usage Context
 
-**Time investment**: 20-30 minutes, saves hours of crisis management later.
+Use this template when:
+- Starting new projects or major features
+- Facing uncertainty about project challenges
+- Learning systematic risk management practices
+- Preparing for sprint planning sessions
+- Training teams on proactive risk identification
 
-**Expected outcome**: Clear list of potential risks with practical mitigation strategies.
+## Template Prompt
 
-## Template Usage
+```
+# Project Risk Assessment Assistant
+
+Help me identify potential risks for my development project and suggest practical mitigation strategies.
+
+**Project Type**: {PROJECT_TYPE}
+**Technology Stack**: {TECHNOLOGY_STACK}
+**Team Experience**: {TEAM_EXPERIENCE_LEVEL}
+**Timeline**: {PROJECT_TIMELINE}
+**Budget/Resource Constraints**: {RESOURCE_CONSTRAINTS}
+**External Dependencies**: {EXTERNAL_DEPENDENCIES}
+
+## Project Context
+{PROJECT_DETAILS}
+
+## Specific Areas to Assess
+1. **Technical Risks**: What could go wrong with our technology choices?
+2. **Timeline Risks**: What might cause delays?
+3. **Team Risks**: What people/skill challenges might we face?
+4. **External Risks**: What outside factors could impact us?
+5. **Quality Risks**: What could compromise our deliverable quality?
+
+For each risk category, please provide:
+- Top 3-5 most likely risks
+- Simple early warning signs
+- Basic mitigation strategies
+- Contingency plans if risks materialize
+
+Format as a prioritized risk register with actionable mitigation plans.
+```
+
+## Customization Variables
+
+- `{PROJECT_TYPE}`: Web app, mobile app, API, library, etc.
+- `{TECHNOLOGY_STACK}`: Main technologies and frameworks
+- `{TEAM_EXPERIENCE_LEVEL}`: Beginner, intermediate, mixed with new tech
+- `{PROJECT_TIMELINE}`: How long until key deadlines
+- `{RESOURCE_CONSTRAINTS}`: Any known budget or resource limitations
+- `{EXTERNAL_DEPENDENCIES}`: Third-party services, APIs, etc.
+- `{PROJECT_DETAILS}`: Specific project context and requirements
+
+## Expected Output Format
+
+### Risk Assessment Report
+- **High Priority Risks**: Immediate attention required
+- **Medium Priority Risks**: Regular monitoring needed
+- **Low Priority Risks**: Acknowledge and revisit periodically
+- **Risk Mitigation Strategies**: Actionable prevention and response plans
+
+## Implementation Guide
 
 ### Step 1: Risk Discovery
 
